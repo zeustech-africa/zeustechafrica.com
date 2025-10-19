@@ -32,8 +32,9 @@
         .nav-links { display:flex; gap:1.25rem; }
         .nav-links a { color:var(--light); text-decoration:none; font-weight:600; }
 
-        .hero { padding:6rem 0; text-align:center; display:flex; flex-direction:column; align-items:center; justify-content:center; }
-        .hero img { width:100%; max-width:600px; border-radius:12px; box-shadow:0 8px 32px rgba(0,0,0,0.6); margin-bottom:1.5rem; }
+    .hero { padding:6rem 0; text-align:center; display:flex; flex-direction:column; align-items:center; justify-content:center;
+        background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('zeustech-website-opt.jpg');
+        background-size: cover; background-position: center; background-repeat: no-repeat; }
         .hero h1 { font-size:2.6rem; color:var(--light); text-shadow:0 0 8px rgba(255,215,0,0.06); margin-bottom:0.6rem; }
         .hero p { color:#CBD5E1; max-width:700px; margin:0 auto 1rem; font-weight:300; }
         .badge { background:rgba(255,215,0,0.08); color:var(--primary); padding:0.4rem 1rem; border-radius:20px; border:1px solid rgba(255,215,0,0.16); }
@@ -67,15 +68,14 @@
         }
         @keyframes shine { 0%{transform:translateX(-25%);}50%{transform:translateX(25%);}100%{transform:translateX(-25%);} }
 
-        /* Section backgrounds (no photo gallery). Using the two images you provided. */
-        #projects {
-            background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('https://i.imgur.com/JW1BwTA.jpeg');
-            background-size: cover; background-position: center; background-repeat: no-repeat; color:var(--light);
-        }
-        #opportunity {
-            background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('https://i.imgur.com/QzR7LrR.jpeg');
-            background-size: cover; background-position: center; background-repeat: no-repeat; color:var(--light);
-        }
+        /* Section backgrounds (no photo gallery). Using the provided tech images. */
+        #about { background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('https://i.imgur.com/7ZJXwLH.png'); background-size:cover; background-position:center; }
+        #projects { background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('https://i.imgur.com/JW1BwTA.jpeg'); background-size:cover; background-position:center; }
+        #opportunity { background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('https://i.imgur.com/QzR7LrR.jpeg'); background-size:cover; background-position:center; }
+        #collaborate { background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://i.imgur.com/7ZJXwLH.png'); background-size:cover; background-position:center; }
+
+        /* Ensure containers sit above watermark */
+        .container { position: relative; z-index: 2; }
 
         footer { background:transparent; color:#cbd5e1; padding:2.5rem 0; border-top:1px solid rgba(255,215,0,0.06); }
         .footer-content { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem; }
