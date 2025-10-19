@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content="ZeusTech (Pty) Ltd — A CIPC-registered South African innovator developing a patent-pending digital transaction system with R4–6 billion annual revenue potential at scale.">
-    <meta name="keywords" content="ZeusTech Africa, tech innovation South Africa, CIPC registered company, patent pending technology, exclusive license opportunity">
-    <meta name="author" content="ZeusTech (Pty) Ltd">
-    <title>ZeusTech Africa | Institutional-Grade Innovation</title>
+    <meta name="description" content="ZeusTech Africa — A CIPC-registered South African technology company developing patent-pending systems with R4–6 billion annual revenue potential at scale. Partner with us to build the future of African tech.">
+    <meta name="keywords" content="ZeusTech Africa, tech innovation South Africa, CIPC registered company, patent pending technology, exclusive license opportunity, FuelPass Estimator, African Silicon Valley">
+    <meta name="author" content="Zeustech (Pty) Ltd">
+    <title>ZeusTech Africa | Building Africa’s Tech Future</title>
     <style>
         :root {
             --primary: #FFD700; /* Gold */
@@ -14,17 +14,19 @@
             --light: #FFFFFF;
             --gray: #1E293B;
             --hover: #F59E0B;
+            --card-bg: rgba(30, 41, 59, 0.7);
         }
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', system-ui, sans-serif;
+            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
         }
         body {
             background: var(--dark);
             color: var(--light);
             line-height: 1.6;
+            overflow-x: hidden;
         }
         .container {
             width: 90%;
@@ -67,11 +69,15 @@
             border-bottom: 2px solid var(--primary);
         }
         .hero {
-            padding: 5rem 0;
+            padding: 6rem 0;
             text-align: center;
             background: linear-gradient(135deg, var(--dark) 0%, #0f0c0c 100%);
             position: relative;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
         .hero::before {
             content: '';
@@ -84,16 +90,18 @@
                                     radial-gradient(circle at 80% 80%, rgba(255,215,0,0.05) 0%, transparent 20%);
         }
         .hero h1 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             margin-bottom: 1rem;
             color: var(--light);
             text-shadow: 0 0 10px var(--primary);
+            font-weight: 600;
         }
         .hero p {
             font-size: 1.2rem;
             max-width: 700px;
             margin: 0 auto 2rem;
             color: #CBD5E1;
+            font-weight: 300;
         }
         .badge {
             display: inline-block;
@@ -105,6 +113,10 @@
             font-weight: 600;
             margin-top: 1rem;
             border: 1px solid var(--primary);
+            transition: transform 0.2s;
+        }
+        .badge:hover {
+            transform: scale(1.05);
         }
         .section {
             padding: 4rem 0;
@@ -116,6 +128,7 @@
             color: var(--primary);
             text-transform: uppercase;
             letter-spacing: 2px;
+            font-weight: 600;
         }
         .cards {
             display: grid;
@@ -124,7 +137,7 @@
             margin-top: 2rem;
         }
         .card {
-            background: rgba(30, 41, 59, 0.5);
+            background: var(--card-bg);
             padding: 2rem;
             border-radius: 12px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.3);
@@ -140,44 +153,89 @@
             color: var(--primary);
             margin-bottom: 1rem;
             font-size: 1.3rem;
+            font-weight: 600;
         }
         .card p {
             color: #CBD5E1;
+            font-weight: 300;
         }
-        .opportunity-card {
-            background: rgba(30, 41, 59, 0.7);
-            border: 1px solid var(--primary);
-            padding: 2.5rem;
-            text-align: center;
+        .project-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid rgba(255,215,0,0.2);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
-        .opportunity-card h3 {
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(255,215,0,0.1);
+            border-color: var(--primary);
+        }
+        .project-card h3 {
             color: var(--primary);
-            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        .project-card p {
+            color: #CBD5E1;
+            font-weight: 300;
             margin-bottom: 1rem;
         }
-        .opportunity-card p {
-            color: #CBD5E1;
-            font-size: 1.1rem;
-            line-height: 1.7;
+        .project-card .status {
+            font-size: 0.9rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-top: 1rem;
         }
-        .contact-card {
-            background: rgba(30, 41, 59, 0.7);
-            border: 1px solid var(--primary);
-            padding: 2.5rem;
+        .cta-button {
+            display: inline-block;
+            background: var(--primary);
+            color: var(--dark);
+            padding: 0.8rem 1.5rem;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.2s;
+            margin-top: 1rem;
+        }
+        .cta-button:hover {
+            background: var(--hover);
+            transform: translateY(-2px);
+        }
+        .collaborate-section {
+            background: rgba(0,0,0,0.8);
+            padding: 4rem 0;
             text-align: center;
         }
-        .contact-card p {
+        .collaborate-section h2 {
+            color: var(--primary);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .collaborate-section p {
             color: #CBD5E1;
             font-size: 1.1rem;
-            margin: 0.5rem 0;
+            max-width: 600px;
+            margin: 0 auto 2rem;
         }
-        .contact-card a {
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        .contact-links a {
             color: var(--primary);
             text-decoration: none;
             font-weight: 600;
             transition: color 0.2s;
         }
-        .contact-card a:hover {
+        .contact-links a:hover {
             color: var(--hover);
         }
         footer {
@@ -197,12 +255,14 @@
             margin-bottom: 1rem;
             font-size: 1.2rem;
             color: var(--primary);
+            font-weight: 600;
         }
         .footer-section p, .footer-section a {
             color: #CBD5E1;
             text-decoration: none;
             display: block;
             margin: 0.3rem 0;
+            font-weight: 300;
         }
         .footer-section a:hover {
             color: var(--primary);
@@ -213,12 +273,14 @@
             border-top: 1px solid rgba(255,215,0,0.2);
             color: #94A3B8;
             font-size: 0.9rem;
+            font-weight: 300;
         }
         @media (max-width: 768px) {
             .hero h1 { font-size: 2rem; }
             .hero p { font-size: 1rem; }
             nav { flex-direction: column; gap: 1rem; }
             .section h2 { font-size: 1.5rem; }
+            .cards { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -229,8 +291,9 @@
                 <div class="logo">ZEUSTECH</div>
                 <div class="nav-links">
                     <a href="#about">About</a>
+                    <a href="#projects">Projects</a>
                     <a href="#opportunity">Opportunity</a>
-                    <a href="#contact">Collaborate</a>
+                    <a href="#collaborate">Collaborate</a>
                 </div>
             </nav>
         </div>
@@ -241,6 +304,7 @@
             <h1>Institutional-Grade Innovation, Ready for Scale</h1>
             <p>A CIPC-registered South African technology company developing a patent-pending system with the potential to generate R4–6 billion in annual system revenues at full national deployment.</p>
             <div class="badge">CIPC Reg: 2025/794787/07 | Patent-Pending: CIPC #1437055</div>
+            <a href="#projects" class="cta-button">Explore Our Work</a>
         </div>
     </section>
 
@@ -261,14 +325,40 @@
                     <p>Suite 12, Century City Office Park<br>Century Boulevard, Century City<br>Cape Town, 7441<br>South Africa</p>
                 </div>
             </div>
+            <div style="margin-top: 2rem; text-align: center;">
+                <p>We partner with young innovators to protect, commercialize, and scale their ideas — connecting them to IP lawyers, investors, and global markets.</p>
+            </div>
         </div>
     </section>
 
-    <section id="opportunity" class="section" style="background: rgba(0,0,0,0.8);">
+    <section id="projects" class="section" style="background: rgba(0,0,0,0.8);">
+        <div class="container">
+            <h2>Our Work</h2>
+            <div class="cards">
+                <div class="project-card">
+                    <h3>FuelPass™ Estimator</h3>
+                    <p>A live, working tool that calculates estimated fuel costs for trips across South Africa — designed for integration into banking and logistics platforms.</p>
+                    <div class="status">✅ Completed | Live Demo Available</div>
+                    <a href="https://fuelpass.zeustechafrica.com" target="_blank" class="cta-button">Try It Now</a>
+                </div>
+                <div class="project-card">
+                    <h3>Human-Tech Platform</h3>
+                    <p>An AI-powered interface that bridges human decision-making with real-time data analytics — currently in pilot with healthcare providers.</p>
+                    <div class="status">🚀 Ongoing | Pilot Phase</div>
+                </div>
+                <div class="project-card">
+                    <h3>Pan-African Fintech Ecosystem</h3>
+                    <p>A scalable digital transaction infrastructure designed for national rollout — with exclusive licensing available for qualified institutions.</p>
+                    <div class="status">🔮 Future | In Development</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="opportunity" class="section">
         <div class="container">
             <h2>Strategic Opportunity</h2>
-            <div class="opportunity-card">
-                <h3>Exclusive National License Available</h3>
+            <div style="text-align: center; max-width: 800px; margin: 0 auto;">
                 <p>We have developed a ready-to-deploy digital transaction system designed for integration by qualified financial institutions capable of national-scale rollout.</p>
                 <p style="margin-top: 1rem; font-weight: 600;">At full operational scale, this system can generate annual system revenues of R4–6 billion, creating a significant new passive income stream for the licensed partner.</p>
                 <p style="margin-top: 1rem;">An exclusive national license is available, offering 10-year market exclusivity and first-mover advantage in a transformative revenue category.</p>
@@ -276,18 +366,15 @@
         </div>
     </section>
 
-    <section id="contact" class="section">
+    <section id="collaborate" class="collaborate-section">
         <div class="container">
             <h2>Collaborate With Us</h2>
-            <div class="contact-card">
-                <p>We are open to strategic discussions with qualified institutions capable of national-scale deployment.</p>
-                <p style="margin-top: 1rem; font-size: 1.1rem;">
-                    <strong>CEO & Founder:</strong> <a href="mailto:ceo@zeustechafrica.com">ceo@zeustechafrica.com</a>
-                </p>
-                <p style="margin-top: 0.5rem; font-size: 1.1rem;">
-                    <strong>Partnerships:</strong> <a href="mailto:partners@zeustechafrica.com">partners@zeustechafrica.com</a>
-                </p>
+            <p>We are open to strategic discussions with qualified institutions and young innovators seeking to protect, commercialize, and scale their technology.</p>
+            <div class="contact-links">
+                <a href="mailto:ceo@zeustechafrica.com">CEO & Founder</a>
+                <a href="mailto:partners@zeustechafrica.com">Partnerships</a>
             </div>
+            <a href="mailto:ceo@zeustechafrica.com" class="cta-button">Start a Conversation</a>
         </div>
     </section>
 
