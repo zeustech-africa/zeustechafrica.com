@@ -293,6 +293,45 @@
             .section h2 { font-size: 1.5rem; }
             .cards { grid-template-columns: 1fr; }
         }
+            /* Full-page watermark using the transparent ZeusTech logo */
+            body::before {
+                content: '';
+                position: fixed;
+                inset: 0;
+                background-image: url('logo.svg');
+                background-repeat: no-repeat;
+                background-position: center 40%;
+                background-size: 60vw;
+                opacity: 0.04;
+                pointer-events: none;
+                z-index: 0;
+                filter: drop-shadow(0 6px 12px rgba(0,0,0,0.35));
+            }
+            /* subtle moving shine over the watermark */
+            body::after {
+                content: '';
+                position: fixed;
+                inset: 0;
+                background: radial-gradient(800px 200px at -20% 40%, rgba(255,255,255,0.06), transparent 30%),
+                                        radial-gradient(600px 160px at 120% 60%, rgba(255,255,255,0.04), transparent 30%);
+                mix-blend-mode: screen;
+                opacity: 0.9;
+                pointer-events: none;
+                z-index: 0;
+                animation: shine 8s linear infinite;
+            }
+            @keyframes shine {
+                0% { transform: translateX(-30%); }
+                50% { transform: translateX(30%); }
+                100% { transform: translateX(-30%); }
+            }
+            /* make sure page content sits above watermark */
+            .container, header, .section, footer {
+                position: relative;
+                z-index: 1;
+            }
+            /* header logo tweaks: keep it visible but let the watermark be subtle */
+            .logo img { height: 36px; vertical-align: middle; margin-right: 8px; opacity: 0.95; }
                 /* Gallery styles */
                 .gallery {
                         display: grid;
@@ -386,15 +425,15 @@
             </div>
                             <!-- Gallery using user-provided images (place files named gallery-1.jpg .. gallery-7.jpg in the repo root) -->
                             <h2 style="margin-top:2.5rem;">Gallery</h2>
-                            <div class="gallery" aria-hidden="false">
-                                <img src="gallery-1.jpg" loading="lazy" alt="Gallery image 1">
-                                <img src="gallery-2.jpg" loading="lazy" alt="Gallery image 2">
-                                <img src="gallery-3.jpg" loading="lazy" alt="Gallery image 3">
-                                <img src="gallery-4.jpg" loading="lazy" alt="Gallery image 4">
-                                <img src="gallery-5.jpg" loading="lazy" alt="Gallery image 5">
-                                <img src="gallery-6.jpg" loading="lazy" alt="Gallery image 6">
-                                <img src="gallery-7.jpg" loading="lazy" alt="Gallery image 7">
-                            </div>
+                                    <div class="gallery" aria-hidden="false">
+                                        <img src="https://i.imgur.com/uFzpEJZ.jpg" loading="lazy" alt="Gallery image 1">
+                                        <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?q=80&w=1600&auto=format&fit=crop" loading="lazy" alt="Gallery image 2">
+                                        <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1600&auto=format&fit=crop" loading="lazy" alt="Gallery image 3">
+                                        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1600&auto=format&fit=crop" loading="lazy" alt="Gallery image 4">
+                                        <img src="https://images.unsplash.com/photo-1517148815978-75f6acaaff70?q=80&w=1600&auto=format&fit=crop" loading="lazy" alt="Gallery image 5">
+                                        <img src="https://images.unsplash.com/photo-1526378722026-8f2f7c6a7b6d?q=80&w=1600&auto=format&fit=crop" loading="lazy" alt="Gallery image 6">
+                                        <img src="https://images.unsplash.com/photo-1508873699372-7ae1450f9f20?q=80&w=1600&auto=format&fit=crop" loading="lazy" alt="Gallery image 7">
+                                    </div>
         </div>
     </section>
 
