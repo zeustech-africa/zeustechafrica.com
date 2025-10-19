@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content="ZeusTech Africa — A CIPC-registered South African technology company developing patent-pending systems with R4–6 billion annual revenue potential at scale. Partner with us to build the future of African tech.">
-    <meta name="keywords" content="ZeusTech Africa, tech innovation South Africa, CIPC registered company, patent pending technology, exclusive license opportunity, FuelPass Estimator, African tech company, Zeustech Live Studio, human-tech, fintech">
+    <meta name="description" content="ZeusTech Africa — A CIPC-registered South African technology company developing patent-pending systems with R4–6 billion annual revenue potential at scale.">
+    <meta name="keywords" content="ZeusTech Africa, tech innovation South Africa, CIPC registered company, patent pending technology, exclusive license opportunity, FuelPass Estimator, African tech company">
     <meta name="author" content="ZeusTech (Pty) Ltd">
     <title>ZeusTech Africa | Building Africa’s Tech Future</title>
     <style>
@@ -12,352 +12,82 @@
             --primary: #FFD700; /* Gold */
             --dark: #000000;
             --light: #FFFFFF;
-            --gray: #1E293B;
-            --hover: #F59E0B;
-            --card-bg: rgba(30, 41, 59, 0.7);
             --glass: rgba(30, 41, 59, 0.3);
         }
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        }
+        * { box-sizing: border-box; }
+        html,body { margin:0; padding:0; height:100%; }
         body {
             background: var(--dark);
             color: var(--light);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
             line-height: 1.6;
-            overflow-x: hidden;
+            -webkit-font-smoothing:antialiased;
+            overflow-x:hidden;
         }
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-        header {
-            background: rgba(0,0,0,0.8);
-            backdrop-filter: blur(10px);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            border-bottom: 1px solid var(--primary);
-        }
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1.2rem 0;
-        }
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary);
-            letter-spacing: 1px;
-        }
-        .nav-links {
-            display: flex;
-            gap: 1.5rem;
-        }
-        .nav-links a {
-            text-decoration: none;
-            color: var(--light);
-            font-weight: 500;
-            transition: color 0.2s, border-bottom 0.2s;
-        }
-        .nav-links a:hover {
-            color: var(--primary);
-            border-bottom: 2px solid var(--primary);
-        }
-        .hero {
-            padding: 6rem 0;
-            text-align: center;
-            background: linear-gradient(135deg, var(--dark) 0%, #0f0c0c 100%);
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-        .hero::before {
+        .container { width:90%; max-width:1200px; margin:0 auto; padding:0 1rem; position:relative; z-index:1; }
+        header { background: rgba(0,0,0,0.7); backdrop-filter: blur(8px); position:sticky; top:0; z-index:5; border-bottom:1px solid rgba(255,215,0,0.12); }
+        nav { display:flex; justify-content:space-between; align-items:center; padding:1rem 0; }
+        .logo { display:flex; align-items:center; gap:0.5rem; color:var(--primary); font-weight:700; }
+        .logo img { height:36px; opacity:0.95; }
+        .nav-links { display:flex; gap:1.25rem; }
+        .nav-links a { color:var(--light); text-decoration:none; font-weight:600; }
+
+        .hero { padding:6rem 0; text-align:center; display:flex; flex-direction:column; align-items:center; justify-content:center; }
+        .hero img { width:100%; max-width:600px; border-radius:12px; box-shadow:0 8px 32px rgba(0,0,0,0.6); margin-bottom:1.5rem; }
+        .hero h1 { font-size:2.6rem; color:var(--light); text-shadow:0 0 8px rgba(255,215,0,0.06); margin-bottom:0.6rem; }
+        .hero p { color:#CBD5E1; max-width:700px; margin:0 auto 1rem; font-weight:300; }
+        .badge { background:rgba(255,215,0,0.08); color:var(--primary); padding:0.4rem 1rem; border-radius:20px; border:1px solid rgba(255,215,0,0.16); }
+        .cta-button { background:var(--primary); color:#000; padding:0.6rem 1.25rem; border-radius:999px; display:inline-block; text-decoration:none; font-weight:700; margin-top:0.75rem; }
+
+        .section { padding:3.5rem 0; }
+        .section h2 { text-align:center; color:var(--primary); font-size:1.8rem; letter-spacing:1.6px; margin-bottom:1.25rem; }
+        .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1.25rem; }
+        .card, .project-card { background:var(--glass); padding:1.25rem; border-radius:12px; box-shadow:0 6px 18px rgba(0,0,0,0.45); border:1px solid rgba(255,215,0,0.08); }
+        .project-card img { width:100%; border-radius:8px; margin-top:0.75rem; }
+
+        /* Use ZeusTech logo as subtle site-wide watermark */
+        body::before {
             content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 20% 20%, rgba(255,215,0,0.05) 0%, transparent 20%),
-                                    radial-gradient(circle at 80% 80%, rgba(255,215,0,0.05) 0%, transparent 20%);
+            position: fixed;
+            inset: 0;
+            background-image: url('logo.svg');
+            background-repeat: no-repeat;
+            background-position: 50% 40%;
+            background-size: 60vw;
+            opacity: 0.06; /* slightly higher so it's visible on photo backgrounds */
+            pointer-events: none;
+            z-index:0;
+            filter: saturate(0.9) blur(0.2px);
         }
-        .hero img {
-            width: 100%;
-            max-width: 600px;
-            height: auto;
-            border-radius: 12px;
-            box-shadow: 0 8px 32px rgba(255,215,0,0.1);
-            margin-bottom: 2rem;
+        body::after {
+            content: '';
+            position: fixed; inset:0; pointer-events:none; z-index:0;
+            background: radial-gradient(800px 200px at -20% 40%, rgba(255,255,255,0.04), transparent 30%), radial-gradient(600px 160px at 120% 60%, rgba(255,255,255,0.03), transparent 30%);
+            mix-blend-mode: screen; opacity:0.85; animation: shine 10s linear infinite;
         }
-        .hero h1 {
-            font-size: 2.8rem;
-            margin-bottom: 1rem;
-            color: var(--light);
-            text-shadow: 0 0 10px var(--primary);
-            font-weight: 600;
+        @keyframes shine { 0%{transform:translateX(-25%);}50%{transform:translateX(25%);}100%{transform:translateX(-25%);} }
+
+        /* Section backgrounds (no photo gallery). Using the two images you provided. */
+        #projects {
+            background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('https://i.imgur.com/JW1BwTA.jpeg');
+            background-size: cover; background-position: center; background-repeat: no-repeat; color:var(--light);
         }
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 2rem;
-            color: #CBD5E1;
-            font-weight: 300;
+        #opportunity {
+            background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('https://i.imgur.com/QzR7LrR.jpeg');
+            background-size: cover; background-position: center; background-repeat: no-repeat; color:var(--light);
         }
-        .badge {
-            display: inline-block;
-            background: rgba(255,215,0,0.1);
-            color: var(--primary);
-            padding: 0.4rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-top: 1rem;
-            border: 1px solid var(--primary);
-            transition: transform 0.2s;
-        }
-        .badge:hover {
-            transform: scale(1.05);
-        }
-        .cta-button {
-            display: inline-block;
-            background: var(--primary);
-            color: var(--dark);
-            padding: 0.8rem 1.5rem;
-            border-radius: 30px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: background 0.2s, transform 0.2s;
-            margin-top: 1rem;
-        }
-        .cta-button:hover {
-            background: var(--hover);
-            transform: translateY(-2px);
-        }
-        .section {
-            padding: 4rem 0;
-        }
-        .section h2 {
-            text-align: center;
-            font-size: 2rem;
-            margin-bottom: 2rem;
-            color: var(--primary);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: 600;
-        }
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        .card {
-            background: var(--glass);
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-            transition: transform 0.2s, box-shadow 0.2s;
-            border: 1px solid rgba(255,215,0,0.2);
-            backdrop-filter: blur(10px);
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(255,215,0,0.1);
-            border-color: var(--primary);
-        }
-        .card h3 {
-            color: var(--primary);
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-            font-weight: 600;
-        }
-        .card p {
-            color: #CBD5E1;
-            font-weight: 300;
-        }
-        .project-card {
-            background: var(--glass);
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-            transition: transform 0.2s, box-shadow 0.2s;
-            border: 1px solid rgba(255,215,0,0.2);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            backdrop-filter: blur(10px);
-        }
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(255,215,0,0.1);
-            border-color: var(--primary);
-        }
-        .project-card h3 {
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-            font-size: 1.3rem;
-            font-weight: 600;
-        }
-        .project-card p {
-            color: #CBD5E1;
-            font-weight: 300;
-            margin-bottom: 1rem;
-        }
-        .project-card .status {
-            font-size: 0.9rem;
-            color: var(--primary);
-            font-weight: 600;
-            margin-top: 1rem;
-        }
-        .collaborate-section {
-            background: rgba(0,0,0,0.8);
-            padding: 4rem 0;
-            text-align: center;
-        }
-        .collaborate-section h2 {
-            color: var(--primary);
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-        .collaborate-section p {
-            color: #CBD5E1;
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin: 0 auto 2rem;
-        }
-        .contact-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-top: 1rem;
-        }
-        .contact-links a {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.2s;
-        }
-        .contact-links a:hover {
-            color: var(--hover);
-        }
-        footer {
-            background: var(--dark);
-            color: var(--light);
-            padding: 2.5rem 0 1.5rem;
-            margin-top: 3rem;
-            border-top: 1px solid var(--primary);
-        }
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-        .footer-section h3 {
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-            color: var(--primary);
-            font-weight: 600;
-        }
-        .footer-section p, .footer-section a {
-            color: #CBD5E1;
-            text-decoration: none;
-            display: block;
-            margin: 0.3rem 0;
-            font-weight: 300;
-        }
-        .footer-section a:hover {
-            color: var(--primary);
-        }
-        .copyright {
-            text-align: center;
-            padding-top: 1.5rem;
-            border-top: 1px solid rgba(255,215,0,0.2);
-            color: #94A3B8;
-            font-size: 0.9rem;
-            font-weight: 300;
-        }
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
-            .hero p { font-size: 1rem; }
-            nav { flex-direction: column; gap: 1rem; }
-            .section h2 { font-size: 1.5rem; }
-            .cards { grid-template-columns: 1fr; }
-        }
-            /* Full-page watermark using the transparent ZeusTech logo */
-            body::before {
-                content: '';
-                position: fixed;
-                inset: 0;
-                background-image: url('logo.svg');
-                background-repeat: no-repeat;
-                background-position: center 40%;
-                background-size: 60vw;
-                opacity: 0.04;
-                pointer-events: none;
-                z-index: 0;
-                filter: drop-shadow(0 6px 12px rgba(0,0,0,0.35));
-            }
-            /* subtle moving shine over the watermark */
-            body::after {
-                content: '';
-                position: fixed;
-                inset: 0;
-                background: radial-gradient(800px 200px at -20% 40%, rgba(255,255,255,0.06), transparent 30%),
-                                        radial-gradient(600px 160px at 120% 60%, rgba(255,255,255,0.04), transparent 30%);
-                mix-blend-mode: screen;
-                opacity: 0.9;
-                pointer-events: none;
-                z-index: 0;
-                animation: shine 8s linear infinite;
-            }
-            @keyframes shine {
-                0% { transform: translateX(-30%); }
-                50% { transform: translateX(30%); }
-                100% { transform: translateX(-30%); }
-            }
-            /* make sure page content sits above watermark */
-            .container, header, .section, footer {
-                position: relative;
-                z-index: 1;
-            }
-            /* header logo tweaks: keep it visible but let the watermark be subtle */
-            .logo img { height: 36px; vertical-align: middle; margin-right: 8px; opacity: 0.95; }
-                /* Gallery styles */
-                .gallery {
-                        display: grid;
-                        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-                        gap: 1rem;
-                        margin-top: 2rem;
-                }
-                .gallery img {
-                        width: 100%;
-                        height: 160px;
-                        object-fit: cover;
-                        border-radius: 8px;
-                        box-shadow: 0 6px 18px rgba(0,0,0,0.4);
-                        transition: transform 0.2s, box-shadow 0.2s;
-                }
-                .gallery img:hover {
-                        transform: translateY(-6px) scale(1.02);
-                        box-shadow: 0 12px 36px rgba(0,0,0,0.5);
-                }
+
+        footer { background:transparent; color:#cbd5e1; padding:2.5rem 0; border-top:1px solid rgba(255,215,0,0.06); }
+        .footer-content { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem; }
+
+        @media (max-width:768px){ .hero h1{font-size:1.9rem;} .nav-links{display:none;} }
     </style>
 </head>
 <body>
     <header>
         <div class="container">
             <nav>
-                <div class="logo"><img src="logo.svg" alt="ZeusTech" style="height:36px; vertical-align:middle; margin-right:8px;"> ZEUSTECH</div>
+                <div class="logo"><img src="logo.svg" alt="ZeusTech">ZEUSTECH</div>
                 <div class="nav-links">
                     <a href="#about">About</a>
                     <a href="#projects">Projects</a>
@@ -370,7 +100,7 @@
 
     <section class="hero">
         <div class="container">
-                <img src="zeustech-website-opt.jpg" alt="ZeusTech HQ" style="width: 100%; max-width: 600px; height: auto; border-radius: 12px; box-shadow: 0 8px 32px rgba(255,215,0,0.1); margin-bottom: 2rem;">
+            <img src="zeustech-website-opt.jpg" alt="ZeusTech HQ">
             <h1>Institutional-Grade Innovation, Ready for Scale</h1>
             <p>A CIPC-registered South African technology company developing a patent-pending system with the potential to generate R4–6 billion in annual system revenues at full national deployment.</p>
             <div class="badge">CIPC Reg: 2025/794787/07 | Patent-Pending: CIPC #1437055</div>
@@ -382,23 +112,72 @@
         <div class="container">
             <h2>About ZeusTech</h2>
             <div class="cards">
-                <div class="card">
-                    <h3>Legally Registered</h3>
-                    <p>ZeusTech (Pty) Ltd is a fully registered private company under the Companies and Intellectual Property Commission of South Africa (Registration No. 2025/794787/07).</p>
+                <div class="card"><h3>Legally Registered</h3><p>ZeusTech (Pty) Ltd is a fully registered private company under the Companies and Intellectual Property Commission of South Africa (Registration No. 2025/794787/07).</p></div>
+                <div class="card"><h3>Protected Innovation</h3><p>Our core technology is protected under CIPC Patent Application No. 1437055, ensuring exclusivity and defensibility.</p></div>
+                <div class="card"><h3>Head Office</h3><p>Suite 12, Century City Office Park<br>Century Boulevard, Century City<br>Cape Town, 7441<br>South Africa</p></div>
+            </div>
+            <div style="margin-top:1.25rem;text-align:center;"><p>We partner with young innovators to protect, commercialize, and scale their ideas — connecting them to IP lawyers, investors, and global markets.</p></div>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <div class="container">
+            <h2>Our Work</h2>
+            <div class="cards">
+                <div class="project-card">
+                    <h3>FuelPass™ Estimator</h3>
+                    <p>A live, working tool that calculates estimated fuel costs for trips across South Africa — designed for integration into banking and logistics platforms.</p>
+                    <div class="status">✅ Completed | Live Demo Available</div>
+                    <a href="https://fuelpass.zeustechafrica.com" target="_blank" class="cta-button">Try It Now</a>
                 </div>
-                <div class="card">
-                    <h3>Protected Innovation</h3>
-                    <p>Our core technology is protected under CIPC Patent Application No. 1437055, ensuring exclusivity and defensibility.</p>
+                <div class="project-card">
+                    <h3>Zeustech Live Studio</h3>
+                    <p>A state-of-the-art innovation hub and broadcast facility designed to showcase African tech talent and global partnerships.</p>
+                    <div class="status">🚀 Ongoing | Concept Phase</div>
+                    <img src="https://i.imgur.com/7ZJXwLH.png" alt="Zeustech Live Studio Concept">
                 </div>
-                <div class="card">
-                    <h3>Head Office</h3>
-                    <p>Suite 12, Century City Office Park<br>Century Boulevard, Century City<br>Cape Town, 7441<br>South Africa</p>
+                <div class="project-card">
+                    <h3>Human-Tech Platform</h3>
+                    <p>An AI-powered interface that bridges human decision-making with real-time data analytics — currently in pilot with healthcare providers.</p>
+                    <div class="status">🚀 Ongoing | Pilot Phase</div>
                 </div>
             </div>
-            <div style="margin-top: 2rem; text-align: center;">
-                <p>We partner with young innovators to protect, commercialize, and scale their ideas — connecting them to IP lawyers, investors, and global markets.</p>
+            <!-- Photo gallery removed per request; section uses provided background image. -->
+        </div>
+    </section>
+
+    <section id="opportunity" class="section">
+        <div class="container">
+            <h2>Strategic Opportunity</h2>
+            <div style="text-align:center; max-width:800px; margin:0 auto;">
+                <p>We have developed a ready-to-deploy digital transaction system designed for integration by qualified financial institutions capable of national-scale rollout.</p>
+                <p style="margin-top:1rem; font-weight:600;">At full operational scale, this system can generate annual system revenues of R4–6 billion, creating a significant new passive income stream for the licensed partner.</p>
+                <p style="margin-top:1rem;">An exclusive national license is available, offering 10-year market exclusivity and first-mover advantage in a transformative revenue category.</p>
             </div>
         </div>
+    </section>
+
+    <section id="collaborate" class="collaborate-section">
+        <div class="container">
+            <h2>Collaborate With Us</h2>
+            <p>We are open to strategic discussions with qualified institutions and young innovators seeking to protect, commercialize, and scale their technology.</p>
+            <div class="contact-links"><a href="mailto:ceo@zeustechafrica.com">CEO & Founder</a><a href="mailto:partners@zeustechafrica.com">Partnerships</a></div>
+            <a href="mailto:ceo@zeustechafrica.com" class="cta-button">Start a Conversation</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section"><h3>ZeusTech (Pty) Ltd</h3><p>CIPC Reg: 2025/794787/07</p><p>Patent-Pending: CIPC #1437055</p></div>
+                <div class="footer-section"><h3>Head Office</h3><p>Suite 12, Century City Office Park</p><p>Century Boulevard, Century City</p><p>Cape Town, 7441</p><p>South Africa</p></div>
+                <div class="footer-section"><h3>Contact</h3><a href="mailto:ceo@zeustechafrica.com">ceo@zeustechafrica.com</a><a href="mailto:partners@zeustechafrica.com">partners@zeustechafrica.com</a></div>
+            </div>
+            <div class="copyright">&copy; 2025 ZeusTech (Pty) Ltd. All rights reserved. Confidential and proprietary.</div>
+        </div>
+    </footer>
+</body>
+</html>
     </section>
 
     <section id="projects" class="section" style="background: rgba(0,0,0,0.8);">
@@ -423,17 +202,7 @@
                     <div class="status">🚀 Ongoing | Pilot Phase</div>
                 </div>
             </div>
-                            <!-- Gallery using user-provided images (place files named gallery-1.jpg .. gallery-7.jpg in the repo root) -->
-                            <h2 style="margin-top:2.5rem;">Gallery</h2>
-                                    <div class="gallery" aria-hidden="false">
-                                        <img src="https://i.imgur.com/uFzpEJZ.jpg" loading="lazy" alt="Gallery image 1">
-                                        <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?q=80&w=1600&auto=format&fit=crop" loading="lazy" alt="Gallery image 2">
-                                        <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1600&auto=format&fit=crop" loading="lazy" alt="Gallery image 3">
-                                        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1600&auto=format&fit=crop" loading="lazy" alt="Gallery image 4">
-                                        <img src="https://images.unsplash.com/photo-1517148815978-75f6acaaff70?q=80&w=1600&auto=format&fit=crop" loading="lazy" alt="Gallery image 5">
-                                        <img src="https://images.unsplash.com/photo-1526378722026-8f2f7c6a7b6d?q=80&w=1600&auto=format&fit=crop" loading="lazy" alt="Gallery image 6">
-                                        <img src="https://images.unsplash.com/photo-1508873699372-7ae1450f9f20?q=80&w=1600&auto=format&fit=crop" loading="lazy" alt="Gallery image 7">
-                                    </div>
+            <!-- Photo gallery removed per request; section uses provided background image. -->
         </div>
     </section>
 
