@@ -1,665 +1,300 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>ZeusTech — Innovation · IP · Commercialisation · ORDER</title>
-    <meta name="description" content="ZeusTech (Pty) Ltd — A CIPC-registered innovation & technology company providing IP protection, commercialization services, investor-ready tech structuring, and integrated solutions.">
-    <meta name="theme-color" content="#000">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZeusTech — Institutional-Grade Innovation</title>
+  <style>
+    :root {
+      --primary: #2b7be4;
+      --secondary: #1a5fd6;
+      --accent: #ffcc00;
+      --dark: #0d1a2c;
+      --light: #f4f6f8;
+      --text: #ffffff;
+      --card-bg: rgba(255, 255, 255, 0.95);
+      --shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    }
 
-    <meta property="og:title" content="ZeusTech — Innovation · IP · Commercialisation · ORDER">
-    <meta property="og:description" content="A CIPC-registered innovation & technology company providing IP protection, commercialization services, and operational rollouts to scale promising technologies into investable ventures.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://zeustechafrica.com">
-    <meta property="og:image" content="https://i.imgur.com/uFzpEJZ.jpeg">
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-    <style>
-        :root{
-            --bg:#0b1220;
-            --card:#0f1724;
-            --muted:#9aa4b2;
-            --accent:#ffd700;
-            --accent-2:#00bcd4;
-            --max:1100px;
-        }
-        *{box-sizing:border-box}
-    html,body{height:100%;margin:0;font-family:'SF Pro Display', Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:var(--bg); color:#eef2f7}
-        a{color:inherit}
-    .site{max-width:var(--max);margin:0 auto;padding:36px}
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--text);
+      line-height: 1.6;
+      background: var(--dark);
+    }
 
-        header{display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:1px solid rgba(255,215,0,0.04)}
-        .brand{display:flex;gap:12px;align-items:center}
-    .brand .logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,#111827,#0ea5e9);display:flex;align-items:center;justify-content:center;font-weight:800;color:white}
-        nav{display:flex;gap:14px}
-        nav a{padding:8px 12px;border-radius:8px;color:#dbeafe}
-        nav a.primary{background:var(--accent);color:#000}
+    .section {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 3rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
 
-        .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;padding:48px 0}
-    .hero h1{font-size:2.8rem;margin:0 0 16px;color:#fff;line-height:1.05;letter-spacing:0.5px}
-        .lead{color:var(--muted);max-width:36rem}
-        .hero .actions{margin-top:18px;display:flex;gap:12px;flex-wrap:wrap}
-    .btn{display:inline-block;padding:12px 18px;border-radius:999px;background:var(--accent);color:#000;font-weight:800;text-decoration:none;box-shadow:0 6px 18px rgba(255,215,0,0.06)}
-        .btn.alt{background:var(--accent-2);color:#000}
+    .section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+      background-position: center;
+      z-index: -1;
+      filter: brightness(0.7);
+    }
 
-    .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:20px}
-    .card{background:var(--card);padding:22px;border-radius:14px;border:1px solid rgba(255,215,0,0.04)}
-        .card h3{margin:0 0 8px;color:var(--accent)}
-        .muted{color:var(--muted)}
+    .section.hero::before {
+      background-image: 
+url('https://zeustechafrica.com/images/studio.jpg');
+    }
 
-        section{padding:36px 0;border-top:1px solid rgba(255,255,255,0.02)}
-        h2{color:var(--accent);letter-spacing:1px;margin:0 0 12px}
+    .section.about::before {
+      background-image: 
+url('https://zeustechafrica.com/images/digital-hand.jpg');
+    }
 
-        .investor{display:grid;grid-template-columns:2fr 1fr;gap:18px}
-        aside .panel{background:var(--card);padding:16px;border-radius:10px}
+    .section.fuel-pass::before {
+      background-image: 
+url('https://zeustechafrica.com/images/fuelpass.jpg');
+    }
 
-        .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
-        .project{background:linear-gradient(180deg,rgba(255,215,0,0.02),rgba(255,255,255,0.01));padding:16px;border-radius:10px;color:#021024}
-        .project h3{color:#021024}
+    .section.innovations::before {
+      background-image: 
+url('https://zeustechafrica.com/images/ai-brain.jpg');
+    }
 
-        .contact-grid{display:grid;grid-template-columns:1fr 360px;gap:18px}
-        footer{padding:28px 0;border-top:1px solid rgba(255,255,255,0.02);color:var(--muted)}
+    .section.studio::before {
+      background-image: 
+url('https://zeustechafrica.com/images/studio.jpg');
+    }
 
-    /* Prefer WebP backgrounds where supported, fall back to JPG */
-    .hero{background-image: image-set(url('images/projects-1600.webp') type('image/webp') 1x, url('images/projects-900.webp') type('image/webp') 900w, url('images/projects-480.webp') type('image/webp') 480w, url('images/projects-1600.jpg') type('image/jpeg') 1x); background-size:cover; background-position:center}
-    #about{background-image: image-set(url('images/about-1600.webp') type('image/webp') 1x, url('images/about-900.webp') type('image/webp') 900w, url('images/about-480.webp') type('image/webp') 480w, url('images/about-1600.jpg') type('image/jpeg') 1x); background-size:cover; background-position:center}
-    #services, #projects, #opportunity{background-image: image-set(url('images/opportunity-1600.webp') type('image/webp') 1x, url('images/opportunity-900.webp') type('image/webp') 900w, url('images/opportunity-480.webp') type('image/webp') 480w, url('images/opportunity-1600.jpg') type('image/jpeg') 1x); background-size:cover; background-position:center}
+    .section.ceo::before {
+      background-image: url('https://zeustechafrica.com/images/ceo.jpg');
+    }
 
-    @media(max-width:920px){.hero{grid-template-columns:1fr}.cards{grid-template-columns:1fr}.investor{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr}}
-    </style>
+    .container {
+      max-width: 1200px;
+      width: 100%;
+      text-align: center;
+    }
+
+    h1, h2, h3 {
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    p {
+      margin-bottom: 1.5rem;
+      font-size: 1.1rem;
+    }
+
+    .btn {
+      display: inline-block;
+      background: linear-gradient(90deg, var(--primary), 
+var(--secondary));
+      color: white;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 0.2s, box-shadow 0.2s;
+      margin: 0.5rem;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 1rem 2rem;
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    nav a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    .footer {
+      background: var(--dark);
+      padding: 2rem;
+      text-align: center;
+      border-top: 1px solid var(--primary);
+      margin-top: 3rem;
+    }
+
+    @media (max-width: 768px) {
+      .section {
+        padding: 2rem 1rem;
+        min-height: auto;
+        padding-top: 100px;
+      }
+
+      .container {
+        padding: 0 1rem;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="site">
-        <header>
-        <div class="brand">
-            <div class="logo"><img src="logo.svg" alt="ZeusTech logo" style="width:36px;height:36px;display:block"></div>
-                <div>
-                    <div style="font-weight:700">ZeusTech (Pty) Ltd</div>
-                    <div style="font-size:13px;color:var(--muted)">CIPC Reg: 2025/794787/07 · Cape Town</div>
-                </div>
-            </div>
-            <nav>
-                <a href="#about">About</a>
-                <a href="#services">Services</a>
-                <a href="#projects">Projects</a>
-                <a href="#contact" class="primary">Contact</a>
-            </nav>
-        </header>
 
-        <main>
-            <section class="hero" id="home">
-                <div>
-                    <h1>ZEUSTECH — BUILDING THE FUTURE THROUGH INNOVATION</h1>
-                    <p class="lead">A CIPC-registered technology & innovation company — structuring, protecting, and commercialising ideas at scale. We help young innovators protect their IP, package technologies for investors, and execute go-to-market rollouts with ORDER.</p>
-                    <div class="actions">
-                        <a class="btn" href="#contact">Partner With Us</a>
-                        <a class="btn alt" href="#services">Protect Your IP</a>
-                        <a class="btn" href="#projects">Investor Briefing</a>
-                    </div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#fuel-pass">FuelPass</a>
+    <a href="#innovations">Innovations</a>
+    <a href="#studio">Live Studio</a>
+    <a href="#ceo">CEO</a>
+  </nav>
 
-                    <div class="cards" style="margin-top:18px">
-                        <div class="card"><h3>IP Structuring & Protection</h3><p class="muted">Patent strategy, provisional filings, trademarks, design registration and portfolio management to ensure defensible ownership.</p></div>
-                        <div class="card"><h3>Innovation Commercialisation</h3><p class="muted">Go-to-market planning, licensing, investor-ready structuring and revenue modelling to create investable technology units.</p></div>
-                    </div>
-                </div>
-
-                        <div>
-                            <picture>
-                                <source type="image/webp" srcset="images/projects-1600.webp 1x, images/projects-900.webp 900w, images/projects-480.webp 480w">
-                                <source type="image/jpeg" srcset="images/projects-1600.jpg 1x, images/projects-900.jpg 900w, images/projects-480.jpg 480w">
-                                <img src="images/projects-1600.jpg" alt="ZeusTech CEO & Innovation Studio" style="width:100%;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,0.6)">
-                            </picture>
-                        </div>
-            </section>
-
-            <section id="about">
-                <h2>About ZeusTech</h2>
-                <div class="cards">
-                    <div class="card"><h3>Legally Registered</h3><p class="muted">ZeusTech (Pty) Ltd is a fully registered private company under the Companies and Intellectual Property Commission of South Africa (Registration No. 2025/794787/07).</p></div>
-                    <div class="card"><h3>Protected Innovation</h3><p class="muted">Our core technology is protected under CIPC Patent Application No. 1437055, ensuring exclusivity and defensibility.</p></div>
-                </div>
-                <div style="margin-top:18px;max-width:900px"> <p class="muted">We partner with young innovators to protect, commercialize, and scale their ideas — connecting them to IP lawyers, investors, and global markets.</p></div>
-            </section>
-
-            <section id="services">
-                <h2>Services</h2>
-                <div class="cards">
-                    <div class="card"><h3>IP Protection & Filing</h3><p class="muted">Patent filings, trademark registration, prior-art searches, PCT support and prosecution tracking.</p></div>
-                    <div class="card"><h3>IP Commercialisation & Sales</h3><p class="muted">Valuation, licensing strategy, market testing, and IP sale advisory.</p></div>
-                    <div class="card"><h3>Investment Readiness</h3><p class="muted">Financial modeling, investor decks, cap table planning, term-sheet support and milestone-based structuring.</p></div>
-                </div>
-            </section>
-
-            <section id="projects">
-                <h2>Our Work</h2>
-                <div class="projects">
-                    <div class="project">
-                        <h3>FuelPass™ Estimator</h3>
-                        <p>Live tool calculating estimated fuel costs — designed for integration into banking and logistics platforms.</p>
-                        <p style="margin-top:8px"><a class="btn" href="https://fuelpass.zeustechafrica.com" target="_blank">Try It Now</a></p>
-                    </div>
-
-                    <div class="project">
-                        <h3>Zeustech Live Studio</h3>
-                        <p>State-of-the-art innovation hub and broadcast facility designed to showcase African tech talent and global partnerships.</p>
-                    </div>
-
-                    <div class="project">
-                        <h3>Human-Tech Platform</h3>
-                        <p>An AI-powered interface that bridges human decision-making with real-time data analytics — currently in pilot with healthcare providers.</p>
-                    </div>
-                </div>
-            </section>
-
-            <section id="opportunity">
-                <h2>Strategic Opportunity</h2>
-                <div style="max-width:800px;margin:0 auto;color:var(--muted)">
-                    <p>We have developed a ready-to-deploy digital transaction system designed for integration by qualified financial institutions capable of national-scale rollout.</p>
-                    <p style="margin-top:12px;font-weight:700;color:#fff">At full operational scale, this system can generate annual system revenues of R4–6 billion, creating a significant new passive income stream for the licensed partner.</p>
-                    <p style="margin-top:12px;color:var(--muted)">An exclusive national license is available, offering 10-year market exclusivity and first-mover advantage in a transformative revenue category.</p>
-                </div>
-            </section>
-
-            <section id="collaborate">
-                <h2>Collaborate With Us</h2>
-                <div style="max-width:800px;margin:0 auto;color:var(--muted);text-align:center">
-                    <p>We are open to strategic discussions with qualified institutions and young innovators seeking to protect, commercialize, and scale their technology.</p>
-                    <p style="margin-top:12px"><a class="btn" href="mailto:ceo@zeustechafrica.com">Start a Conversation</a></p>
-                </div>
-            </section>
-
-            <section id="contact">
-                <h2>Contact & Partnerships</h2>
-                <div class="contact-grid">
-                    <div class="card">
-                        <p class="muted">Ready to commercialise or protect your technology? Reach out for a confidential consultation.</p>
-                        <form onsubmit="event.preventDefault();alert('Demo form. Integrate Formspree or Netlify Forms for real submissions.')" style="margin-top:12px">
-                            <input type="text" placeholder="Name" style="width:100%;padding:10px;border-radius:8px;margin-bottom:8px;border:none">
-                            <input type="email" placeholder="Email" style="width:100%;padding:10px;border-radius:8px;margin-bottom:8px;border:none">
-                            <textarea placeholder="Message" rows="4" style="width:100%;padding:10px;border-radius:8px;margin-bottom:8px;border:none"></textarea>
-                            <button class="btn" type="submit">Send Message</button>
-                        </form>
-                    </div>
-                    <aside class="panel">
-                        <h3>Office</h3>
-                        <p class="muted">Suite 12, Century City Office Park<br>Century Boulevard, Century City<br>Cape Town, 7441</p>
-                        <h3 style="margin-top:12px">Email</h3>
-                        <p class="muted">ceo@zeustechafrica.com<br>partners@zeustechafrica.com</p>
-                    </aside>
-                </div>
-            </section>
-
-        </main>
-
-        <footer>
-            <div style="display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap">
-                <div>
-                    <div style="font-weight:700">ZeusTech (Pty) Ltd</div>
-                    <div style="font-size:13px;color:var(--muted)">CIPC Reg: 2025/794787/07</div>
-                </div>
-                <div style="color:var(--muted)">© 2025 ZeusTech (Pty) Ltd. All rights reserved.</div>
-                <div style="display:flex;gap:10px">
-                    <a href="#about">About</a>
-                    <a href="#services">Services</a>
-                    <a href="#contact">Contact</a>
-                </div>
-            </div>
-        </footer>
-
+  <section id="home" class="section hero">
+    <div class="container">
+      <h1>ZEUSTECH</h1>
+      <p>Institutional-Grade Innovation, Ready for Scale</p>
+      <p>A CIPC-registered South African technology company developing a 
+patent-pending system with the potential to generate R4–6 billion in 
+annual system revenues at full national deployment.</p>
+      <div style="margin-top: 2rem;">
+        <a href="#fuel-pass" class="btn">See FuelPass™</a>
+        <a href="#innovations" class="btn">Explore Innovations</a>
+      </div>
     </div>
-</body>
-</html>
-                    <p class="lead">A CIPC-registered technology & innovation company — structuring, protecting, and commercialising ideas at scale. We help young innovators protect their IP, package technologies for investors, and execute go-to-market rollouts with ORDER.</p>
-                    <div class="cta">
-                        <a class="btn" href="#contact">Partner With Us</a>
-                        <a class="btn" href="#services" style="background:#00bcd4">Protect Your IP</a>
-                        <a class="btn" href="#investors" style="background:#0d47a1;opacity:.9">Investor Briefing</a>
-                    </div>
+  </section>
 
-                    <div class="badges" style="margin-top:18px">
-                        <!-- Inline placeholder badges as SVGs -->
-                        <span class="badge"> 
-                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="4" fill="#0d47a1"/><path d="M6 12l3 3 7-9" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                            <strong style="font-size:13px">CIPC Registered</strong>
-                        </span>
-
-                        <span class="badge">
-                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" fill="#ffb703"/><path d="M7 12h10M12 7v10" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                            <strong style="font-size:13px">Proudly South African</strong>
-                        </span>
-
-                        <span class="badge">
-                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="3" width="20" height="14" rx="2" fill="#00e5ff" /><path d="M6 10h12" stroke="#072b58" stroke-width="1.4" stroke-linecap="round"/></svg>
-                            <strong style="font-size:13px">Innovation Patent Filing Partner</strong>
-                        </span>
-
-                        <span class="badge">
-                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="4" fill="#c7c7c7"/><path d="M7 12h10M7 8h10" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                            <strong style="font-size:13px">ISO Certified (Placeholder)</strong>
-                        </span>
-
-                        <span class="badge">
-                            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" fill="#3b82f6"/><path d="M9 12h6" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/></svg>
-                            <strong style="font-size:13px">Member: African Innovation Council</strong>
-                        </span>
-                    </div>
-                </div>
-
-                <div style="background:linear-gradient(135deg,#eff8ff,#ffffff);padding:16px;border-radius:10px;text-align:center">
-                    <div style="height:280px;display:flex;align-items:center;justify-content:center">
-                        <!-- Placeholder visual area -->
-                        <svg width="220" height="220" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="0" y="0" width="220" height="220" rx="12" fill="#fff" stroke="#e6eef7" />
-                            <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-size="16" fill="#0d47a1" font-family="Arial">ZeusTech Studio</text>
-                        </svg>
-                    </div>
-                    <div style="margin-top:12px;color:#475569">ZeusTech Live Studio — 3,000 capacity live & broadcast-ready facility (concept).</div>
-                </div>
-            </section>
-
-            <!-- WHAT WE DO -->
-            <section id="about">
-                <div class="cards">
-                    <div class="card">
-                        <h3>IP Structuring & Protection</h3>
-                        <p class="muted">Patent strategy, provisional filings, trademarks, design registration and portfolio management to ensure defensible ownership.</p>
-                    </div>
-                    <div class="card">
-                        <h3>Innovation Commercialisation</h3>
-                        <p class="muted">Go-to-market planning, licensing, investor-ready structuring and revenue modelling to create investable technology units.</p>
-                    </div>
-                    <div class="card">
-                        <h3>ORDER — Operations & Rollout</h3>
-                        <p class="muted">Operational playbooks, partner integration, deployment blueprints and SOPs to turn ideas into scalable services.</p>
-                    </div>
-                    <div class="card">
-                        <h3>Legal & Advisory Network</h3>
-                        <p class="muted">Access to IP sales consultants, specialist IP lawyers and commercialization advisors for secure transactions and negotiations.</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- SERVICES -->
-            <section id="services">
-                <h2 style="color:#0d47a1;margin-bottom:10px">Services</h2>
-                <div class="services">
-                    <div class="panel">
-                        <h3>IP Protection & Filing</h3>
-                        <p class="muted">Patent filings, trademark registration, prior-art searches, PCT support and prosecution tracking. Deliverables: filing dossiers, prosecution timelines and IP roadmaps.</p>
-                    </div>
-                    <div class="panel">
-                        <h3>IP Commercialisation & Sales</h3>
-                        <p class="muted">Valuation, licensing strategy, market testing, and IP sale advisory. Deliverables: licensing agreements, pitch decks and buyer introductions.</p>
-                    </div>
-                    <div class="panel">
-                        <h3>Investment Readiness</h3>
-                        <p class="muted">Financial modeling, investor decks, cap table planning, term-sheet support and milestone-based structuring for funding rounds.</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- INVESTORS -->
-            <section id="investors">
-                <h2 style="color:#0d47a1;margin-bottom:10px">Financial Capability & Investor Snapshot</h2>
-                <div class="investor">
-                    <div>
-                        <div class="panel">
-                            <h3>Why Invest in ZeusTech</h3>
-                            <p class="muted">ZeusTech aggregates defensible IP and converts it into investable business units through disciplined commercialization frameworks and ORDER-powered rollouts. We reduce time-to-market and de-risk projects for investors by securing IP, validating product-market fit, and delivering phased revenue milestones.</p>
-                            <ul style="margin-top:8px;color:#374151">
-                                <li>Revenue channels: licensing, SaaS/subscription, transaction commissions, and service agreements.</li>
-                                <li>Exit strategies: licensing sales, IP sales to strategic acquirers, or product-driven equity growth.</li>
-                                <li>Risk mitigation: legal ownership, escrow arrangements, phased deployment milestones.</li>
-                            </ul>
-                        </div>
-
-                        <div style="margin-top:12px" class="panel">
-                            <h3>Young Innovators & IP Care</h3>
-                            <p class="muted">Dedicated mentorship and IP-support programs for young innovators: provisional filings, IP roadmaps, commercialization guidance and investor introductions.</p>
-                            <a href="#contact" class="btn" style="margin-top:8px;display:inline-block">Apply to Innovator Program</a>
-                        </div>
-                    </div>
-
-                    <aside>
-                        <div class="panel">
-                            <h3>Investor Snapshot</h3>
-                            <p class="muted"><strong>Typical funding stages:</strong> Seed → Series A (varies by vertical).</p>
-                            <p class="muted"><strong>Monetisation:</strong> Licensing, SaaS, transaction fees, venue/event revenue and services contracts.</p>
-                            <p class="muted"><strong>Deliverables:</strong> Investor pack, confidential pipeline, pro forma financials and milestone structure.</p>
-                            <a href="#contact" class="btn" style="background:#00bcd4;margin-top:8px;display:inline-block">Request Investor Brief</a>
-                        </div>
-                    </aside>
-                </div>
-            </section>
-
-            <!-- How We Work -->
-            <section>
-                <h2 style="color:#0d47a1;margin-bottom:8px">How We Work</h2>
-                <div class="card" style="display:flex;gap:12px;align-items:flex-start">
-                    <div style="flex:1">
-                        <h4>1. Assess & Secure</h4>
-                        <p class="muted">IP audit, provisional protection, and legal vetting.</p>
-                    </div>
-                    <div style="flex:1">
-                        <h4>2. Structure & Commercialise</h4>
-                        <p class="muted">Go-to-market, partner strategy, pricing and financial modelling.</p>
-                    </div>
-                    <div style="flex:1">
-                        <h4>3. Deploy & Scale</h4>
-                        <p class="muted">ORDER-driven rollout, partner onboarding and performance monitoring.</p>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Contact & Form -->
-            <section id="contact">
-                <h2 style="color:#0d47a1;margin-bottom:8px">Contact & Partnerships</h2>
-                <div style="display:grid;grid-template-columns:1fr 360px;gap:18px;align-items:start">
-                    <div class="panel">
-                        <p class="muted">Ready to commercialise or protect your technology? Reach out for a confidential consultation.</p>
-                        <form class="contact-form" onsubmit="event.preventDefault();alert('This is a demo. Please integrate a backend to receive messages.')">
-                            <input type="text" placeholder="Name" required />
-                            <input type="email" placeholder="Email" required />
-                            <input type="text" placeholder="Company (optional)" />
-                            <textarea rows="5" placeholder="Message"></textarea>
-                            <button class="btn" type="submit">Send Message</button>
-                        </form>
-                    </div>
-
-                    <aside class="panel">
-                        <h4>Office</h4>
-                        <p class="muted">Cape Town, South Africa</p>
-                        <h4 style="margin-top:8px">General Enquiries</h4>
-                        <p class="muted">info@zeustech.co.za</p>
-                        <div class="footer-badges" style="margin-top:12px">
-                            <!-- small badge placeholders -->
-                            <div class="badge"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect width="24" height="24" rx="4" fill="#0d47a1"/></svg><small style="font-size:12px">CIPC</small></div>
-                            <div class="badge"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" fill="#ffb703"/></svg><small style="font-size:12px">Proudly SA</small></div>
-                            <div class="badge"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="2" y="3" width="20" height="14" rx="2" fill="#00e5ff"/></svg><small style="font-size:12px">Patent Partner</small></div>
-                        </div>
-                    </aside>
-                </div>
-            </section>
-
-        </main>
-
-        <footer>
-            <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
-                <div>
-                    <div style="font-weight:700">ZeusTech (Pty) Ltd</div>
-                    <div style="font-size:12px;color:#6b7280">CIPC Registered · Cape Town, South Africa</div>
-                </div>
-                <div style="font-size:13px;color:#6b7280">© 2025 ZeusTech (Pty) Ltd. All rights reserved.</div>
-                <div style="display:flex;gap:10px">
-                    <a href="#about">About</a>
-                    <a href="#services">Services</a>
-                    <a href="#contact">Contact</a>
-                </div>
-            </div>
-        </footer>
+  <section id="about" class="section about">
+    <div class="container">
+      <h2>About ZeusTech</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, 
+minmax(300px, 1fr)); gap: 2rem; text-align: left; margin-top: 2rem;">
+        <div>
+          <h3>Legally Registered</h3>
+          <p>ZeusTech (Pty) Ltd is a fully registered private company 
+under the Companies and Intellectual Property Commission of South Africa 
+(Registration No. 2025/794787/07).</p>
+        </div>
+        <div>
+          <h3>Protected Innovation</h3>
+          <p>Our core technology is protected under CIPC Patent 
+Application No. 1437055, ensuring exclusivity and defensibility.</p>
+        </div>
+        <div>
+          <h3>Head Office</h3>
+          <p>Suite 12, Century City Office Park<br>Cape Town, 
+7441<br>South Africa</p>
+        </div>
+      </div>
     </div>
+  </section>
+
+  <section id="fuel-pass" class="section fuel-pass">
+    <div class="container">
+      <h2>FuelPass™: The R4–6B Fuel Wallet System</h2>
+      <p>A live, working tool that calculates estimated fuel costs for 
+trips across South Africa — designed for integration into banking and 
+logistics platforms.</p>
+      <p>Users input their address, vehicle details, driving style, and 
+frequency — and get an accurate, conservative estimate of fuel needed for 
+daily, weekly, or monthly travel.</p>
+      <p>An exclusive national license is available, offering 10-year 
+market exclusivity and first-mover advantage in a transformative revenue 
+category.</p>
+      <div style="margin-top: 2rem;">
+        <a href="mailto:ceo@zeustechafrica.com" class="btn">Request 
+Licensing Dossier</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="innovations" class="section innovations">
+    <div class="container">
+      <h2>Our Innovations</h2>
+      <p>ZeusTech is building a portfolio of high-impact, patent-pending 
+systems designed to solve real-world problems for South Africans and 
+global markets.</p>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, 
+minmax(300px, 1fr)); gap: 2rem; text-align: left; margin-top: 2rem;">
+        <div>
+          <h3>FuelPass™</h3>
+          <p>A digital fuel wallet that locks funds for fuel only, with 
+real-time intelligence for drivers.</p>
+        </div>
+        <div>
+          <h3>SafeTouch</h3>
+          <p>A contactless, biometric authentication system for secure 
+transactions in high-risk environments.</p>
+        </div>
+        <div>
+          <h3>GaniShield Alert</h3>
+          <p>A real-time security alert system for homes, businesses, and 
+vehicles — powered by AI and IoT.</p>
+        </div>
+        <div>
+          <h3>Utility Bills Alert</h3>
+          <p>A system that notifies users when their electricity or water 
+is about to run out — so they never get disconnected unexpectedly.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="studio" class="section studio">
+    <div class="container">
+      <h2>ZeusTech Live Studio</h2>
+      <p>A state-of-the-art, AI-driven broadcast facility with 30,000+ 
+virtual capacity — designed to showcase African tech talent and global 
+partnerships.</p>
+      <p>Coming soon: Live innovation showcases, investor pitch events, 
+and global tech summits — all streamed from Cape Town.</p>
+    </div>
+  </section>
+
+  <section id="ceo" class="section ceo">
+    <div class="container">
+      <h2>CEO & Founder</h2>
+      <p>Oghenetega Blondy Obebeduo</p>
+      <p>Leading ZeusTech from our Cape Town HQ — where innovation meets 
+execution.</p>
+      <div style="margin-top: 2rem;">
+        <a href="mailto:ceo@zeustechafrica.com" class="btn">Contact the 
+CEO</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>ZeusTech (Pty) Ltd | CIPC Reg: 2025/794787/07 | Patent-Pending: 
+CIPC #1437055</p>
+    <p>© 2025 ZeusTech (Pty) Ltd. All rights reserved. Confidential and 
+proprietary.</p>
+  </footer>
 
 </body>
 </html>
-    </section>
-
-    <section id="projects" class="section" style="background: rgba(0,0,0,0.8);">
-        <div class="container">
-            <h2>Our Work</h2>
-                <div class="cards">
-                <div class="project-card">
-                    <h3>FuelPass™ Estimator</h3>
-                    <p>A live, working tool that calculates estimated fuel costs for trips across South Africa — designed for integration into banking and logistics platforms.</p>
-                    <div class="status">✅ Completed | Live Demo Available</div>
-                    <a href="https://fuelpass.zeustechafrica.com" target="_blank" class="cta-button">Try It Now</a>
-                </div>
-                <div class="project-card">
-                    <h3>Zeustech Live Studio</h3>
-                    <p>A state-of-the-art innovation hub and broadcast facility designed to showcase African tech talent and global partnerships.</p>
-                    <div class="status">🚀 Ongoing | Concept Phase</div>
-                    <img src="https://i.imgur.com/7ZJXwLH.png" alt="Zeustech Live Studio Concept" style="width: 100%; height: auto; border-radius: 8px; margin-top: 1rem;">
-                </div>
-                <div class="project-card">
-                    <h3>Human-Tech Platform</h3>
-                    <p>An AI-powered interface that bridges human decision-making with real-time data analytics — currently in pilot with healthcare providers.</p>
-                    <div class="status">🚀 Ongoing | Pilot Phase</div>
-                </div>
-            </div>
-            <!-- Photo gallery removed per request; section uses provided background image. -->
-        </div>
-    </section>
-
-    <section id="opportunity" class="section">
-        <div class="container">
-            <h2>Strategic Opportunity</h2>
-            <div style="text-align: center; max-width: 800px; margin: 0 auto;">
-                <p>We have developed a ready-to-deploy digital transaction system designed for integration by qualified financial institutions capable of national-scale rollout.</p>
-                <p style="margin-top: 1rem; font-weight: 600;">At full operational scale, this system can generate annual system revenues of R4–6 billion, creating a significant new passive income stream for the licensed partner.</p>
-                <p style="margin-top: 1rem;">An exclusive national license is available, offering 10-year market exclusivity and first-mover advantage in a transformative revenue category.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="collaborate" class="collaborate-section">
-        <div class="container">
-            <h2>Collaborate With Us</h2>
-            <p>We are open to strategic discussions with qualified institutions and young innovators seeking to protect, commercialize, and scale their technology.</p>
-            <div class="contact-links">
-                <a href="mailto:ceo@zeustechafrica.com">CEO & Founder</a>
-                <a href="mailto:partners@zeustechafrica.com">Partnerships</a>
-            </div>
-            <a href="mailto:ceo@zeustechafrica.com" class="cta-button">Start a Conversation</a>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>ZeusTech (Pty) Ltd</h3>
-                    <p>CIPC Reg: 2025/794787/07</p>
-                    <p>Patent-Pending: CIPC #1437055</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Head Office</h3>
-                    <p>Suite 12, Century City Office Park</p>
-                    <p>Century Boulevard, Century City</p>
-                    <p>Cape Town, 7441</p>
-                    <p>South Africa</p>
-                </div>
-                <div class="footer-section">
-                    <h3>Contact</h3>
-                    <a href="mailto:ceo@zeustechafrica.com">ceo@zeustechafrica.com</a>
-                    <a href="mailto:partners@zeustechafrica.com">partners@zeustechafrica.com</a>
-                </div>
-            </div>
-            <div class="copyright">
-                &copy; 2025 ZeusTech (Pty) Ltd. All rights reserved. Confidential and proprietary.
-            </div>
-        </div>
-    </footer>
-</body>
-</html>
-                        display: flex;
-                        justify-content: center;
-                        gap: 1.5rem;
-                        margin-top: 1rem;
-                    }
-                    .contact-links a {
-                        color: var(--primary);
-                        text-decoration: none;
-                        font-weight: 600;
-                        transition: color 0.2s;
-                    }
-                    .contact-links a:hover {
-                        color: var(--hover);
-                    }
-                    footer {
-                        background: var(--dark);
-                        color: var(--light);
-                        padding: 2.5rem 0 1.5rem;
-                        margin-top: 3rem;
-                        border-top: 1px solid var(--primary);
-                    }
-                    .footer-content {
-                        display: grid;
-                        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-                        gap: 2rem;
-                        margin-bottom: 2rem;
-                    }
-                    .footer-section h3 {
-                        margin-bottom: 1rem;
-                        font-size: 1.2rem;
-                        color: var(--primary);
-                        font-weight: 600;
-                    }
-                    .footer-section p, .footer-section a {
-                        color: #CBD5E1;
-                        text-decoration: none;
-                        display: block;
-                        margin: 0.3rem 0;
-                        font-weight: 300;
-                    }
-                    .footer-section a:hover {
-                        color: var(--primary);
-                    }
-                    .copyright {
-                        text-align: center;
-                        padding-top: 1.5rem;
-                        border-top: 1px solid rgba(255,215,0,0.2);
-                        color: #94A3B8;
-                        font-size: 0.9rem;
-                        font-weight: 300;
-                    }
-                    @media (max-width: 768px) {
-                        .hero h1 { font-size: 2rem; }
-                        .hero p { font-size: 1rem; }
-                        nav { flex-direction: column; gap: 1rem; }
-                        .section h2 { font-size: 1.5rem; }
-                        .cards { grid-template-columns: 1fr; }
-                    }
-                </style>
-            </head>
-            <body>
-                <header>
-                    <div class="container">
-                        <nav>
-                            <div class="logo">ZEUSTECH</div>
-                            <div class="nav-links">
-                                <a href="#about">About</a>
-                                <a href="#projects">Projects</a>
-                                <a href="#opportunity">Opportunity</a>
-                                <a href="#collaborate">Collaborate</a>
-                            </div>
-                        </nav>
-                    </div>
-                </header>
-
-                <section class="hero">
-                    <div class="container">
-                        <img src="https://i.imgur.com/7ZJXwLH.png" alt="CEO Oghenetega Obebeduo at ZeusTech HQ" style="width: 100%; max-width: 600px; height: auto; border-radius: 12px; box-shadow: 0 8px 32px rgba(255,215,0,0.1); margin-bottom: 2rem;">
-                        <h1>Institutional-Grade Innovation, Ready for Scale</h1>
-                        <p>A CIPC-registered South African technology company developing a patent-pending system with the potential to generate R4–6 billion in annual system revenues at full national deployment.</p>
-                        <div class="badge">CIPC Reg: 2025/794787/07 | Patent-Pending: CIPC #1437055</div>
-                        <a href="#projects" class="cta-button">Explore Our Work</a>
-                    </div>
-                </section>
-
-                <section id="about" class="section">
-                    <div class="container">
-                        <h2>About ZeusTech</h2>
-                        <div class="cards">
-                            <div class="card">
-                                <h3>Legally Registered</h3>
-                                <p>ZeusTech (Pty) Ltd is a fully registered private company under the Companies and Intellectual Property Commission of South Africa (Registration No. 2025/794787/07).</p>
-                            </div>
-                            <div class="card">
-                                <h3>Protected Innovation</h3>
-                                <p>Our core technology is protected under CIPC Patent Application No. 1437055, ensuring exclusivity and defensibility.</p>
-                            </div>
-                            <div class="card">
-                                <h3>Head Office</h3>
-                                <p>Suite 12, Century City Office Park<br>Century Boulevard, Century City<br>Cape Town, 7441<br>South Africa</p>
-                            </div>
-                        </div>
-                        <div style="margin-top: 2rem; text-align: center;">
-                            <p>We partner with young innovators to protect, commercialize, and scale their ideas — connecting them to IP lawyers, investors, and global markets.</p>
-                        </div>
-                    </div>
-                </section>
-
-                <section id="projects" class="section" style="background: rgba(0,0,0,0.8);">
-                    <div class="container">
-                        <h2>Our Work</h2>
-                        <div class="cards">
-                            <div class="project-card">
-                                <h3>FuelPass™ Estimator</h3>
-                                <p>A live, working tool that calculates estimated fuel costs for trips across South Africa — designed for integration into banking and logistics platforms.</p>
-                                <div class="status">✅ Completed | Live Demo Available</div>
-                                <a href="https://fuelpass.zeustechafrica.com" target="_blank" class="cta-button">Try It Now</a>
-                            </div>
-                            <div class="project-card">
-                                <h3>Zeustech Live Studio</h3>
-                                <p>A state-of-the-art innovation hub and broadcast facility designed to showcase African tech talent and global partnerships.</p>
-                                <div class="status">🚀 Ongoing | Concept Phase</div>
-                                <img src="https://i.imgur.com/7ZJXwLH.png" alt="Zeustech Live Studio Concept" style="width: 100%; height: auto; border-radius: 8px; margin-top: 1rem;">
-                            </div>
-                            <div class="project-card">
-                                <h3>Human-Tech Platform</h3>
-                                <p>An AI-powered interface that bridges human decision-making with real-time data analytics — currently in pilot with healthcare providers.</p>
-                                <div class="status">� Ongoing | Pilot Phase</div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section id="opportunity" class="section">
-                    <div class="container">
-                        <h2>Strategic Opportunity</h2>
-                        <div style="text-align: center; max-width: 800px; margin: 0 auto;">
-                            <p>We have developed a ready-to-deploy digital transaction system designed for integration by qualified financial institutions capable of national-scale rollout.</p>
-                            <p style="margin-top: 1rem; font-weight: 600;">At full operational scale, this system can generate annual system revenues of R4–6 billion, creating a significant new passive income stream for the licensed partner.</p>
-                            <p style="margin-top: 1rem;">An exclusive national license is available, offering 10-year market exclusivity and first-mover advantage in a transformative revenue category.</p>
-                        </div>
-                    </div>
-                </section>
-
-                <section id="collaborate" class="collaborate-section">
-                    <div class="container">
-                        <h2>Collaborate With Us</h2>
-                        <p>We are open to strategic discussions with qualified institutions and young innovators seeking to protect, commercialize, and scale their technology.</p>
-                        <div class="contact-links">
-                            <a href="mailto:ceo@zeustechafrica.com">CEO & Founder</a>
-                            <a href="mailto:partners@zeustechafrica.com">Partnerships</a>
-                        </div>
-                        <a href="mailto:ceo@zeustechafrica.com" class="cta-button">Start a Conversation</a>
-                    </div>
-                </section>
-
-                <footer>
-                    <div class="container">
-                        <div class="footer-content">
-                            <div class="footer-section">
-                                <h3>ZeusTech (Pty) Ltd</h3>
-                                <p>CIPC Reg: 2025/794787/07</p>
-                                <p>Patent-Pending: CIPC #1437055</p>
-                            </div>
-                            <div class="footer-section">
-                                <h3>Head Office</h3>
-                                <p>Suite 12, Century City Office Park</p>
-                                <p>Century Boulevard, Century City</p>
-                                <p>Cape Town, 7441</p>
-                                <p>South Africa</p>
-                            </div>
-                            <div class="footer-section">
-                                <h3>Contact</h3>
-                                <a href="mailto:ceo@zeustechafrica.com">ceo@zeustechafrica.com</a>
-                                <a href="mailto:partners@zeustechafrica.com">partners@zeustechafrica.com</a>
-                            </div>
-                        </div>
-                        <div class="copyright">
-                            &copy; 2025 ZeusTech (Pty) Ltd. All rights reserved. Confidential and proprietary.
-                        </div>
-                    </div>
-                </footer>
-            </body>
-            </html>
