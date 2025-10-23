@@ -1,295 +1,356 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ZeusTech — Institutional-Grade Innovation</title>
-  <style>
-    :root {
-      --primary: #2b7be4;
-      --secondary: #1a5fd6;
-      --accent: #ffcc00;
-      --dark: #0d1a2c;
-      --light: #f4f6f8;
-      --text: #ffffff;
-      --card-bg: rgba(255, 255, 255, 0.95);
-      --shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: var(--text);
-      line-height: 1.6;
-      background: var(--dark);
-    }
-
-    .section {
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 3rem 2rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .section::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-size: cover;
-      background-position: center;
-      z-index: -1;
-      filter: brightness(0.7);
-    }
-
-    .section.hero::before {
-      background-image: url('https://zeustechafrica.com/images/studio.jpg');
-    }
-
-    .section.about::before {
-      background-image: url('https://zeustechafrica.com/images/digital-hand.jpg');
-    }
-
-    .section.fuel-pass::before {
-      background-image: url('https://zeustechafrica.com/images/fuelpass.jpg');
-    }
-
-    .section.innovations::before {
-      background-image: url('https://zeustechafrica.com/images/ai-brain.jpg');
-    }
-
-    .section.studio::before {
-      background-image: url('https://zeustechafrica.com/images/studio.jpg');
-    }
-
-    .section.ceo::before {
-      background-image: url('https://zeustechafrica.com/images/ceo.jpg');
-    }
-
-    .container {
-      max-width: 1200px;
-      width: 100%;
-      text-align: center;
-    }
-
-    h1, h2, h3 {
-      color: var(--accent);
-      margin-bottom: 1rem;
-    }
-
-    p {
-      margin-bottom: 1.5rem;
-      font-size: 1.1rem;
-    }
-
-    .btn {
-      display: inline-block;
-      background: linear-gradient(90deg, var(--primary), 
-var(--secondary));
-      color: white;
-      padding: 12px 24px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: transform 0.2s, box-shadow 0.2s;
-      margin: 0.5rem;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-    }
-
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.8);
-      padding: 1rem 2rem;
-      z-index: 1000;
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-    }
-
-    nav a {
-      color: var(--accent);
-      text-decoration: none;
-      font-weight: 600;
-      transition: color 0.2s;
-    }
-
-    nav a:hover {
-      color: var(--primary);
-    }
-
-    .footer {
-      background: var(--dark);
-      padding: 2rem;
-      text-align: center;
-      border-top: 1px solid var(--primary);
-      margin-top: 3rem;
-    }
-
-    @media (max-width: 768px) {
-      .section {
-        padding: 2rem 1rem;
-        min-height: auto;
-        padding-top: 100px;
-      }
-
-      .container {
-        padding: 0 1rem;
-      }
-
-      nav {
-        flex-direction: column;
-        gap: 1rem;
-      }
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>ZEUSTECH — Innovating Africa at the Level of Creation</title>
+  <meta name="description" content="ZeusTech is Africa’s innovation 
+powerhouse — building protected, high-impact technologies in FinTech, 
+Human Tech, and smart infrastructure.">
+  <meta name="keywords" content="ZeusTech, African tech, innovation, 
+Fuelpass, ORDER app, IP protection, Cape Town startup, ZeusTech Africa">
+  <meta name="author" content="ZeusTech (Pty) Ltd">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="ZEUSTECH — Africa’s Tech Future">
+  <meta property="og:description" content="Building the future of African 
+innovation with protected, scalable technologies.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://zeustechafrica.com">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="css/style.css" />
+  <link 
+href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&family=Poppins:wght@500&display=swap" 
+rel="stylesheet">
 </head>
 <body>
 
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#fuel-pass">FuelPass</a>
-    <a href="#innovations">Innovations</a>
-    <a href="#studio">Live Studio</a>
-    <a href="#ceo">CEO</a>
-  </nav>
+  <!-- Tesla-Style Header: Logo Left, Nav Right -->
+  <header class="header">
+    <div class="logo">
+      <img src="assets/zeustech-logo-newlayout.jpg" alt="ZEUSTECH">
+    </div>
+    <div class="hamburger">☰</div>
+    <nav class="main-nav">
+      <a href="#fuelpass">FuelPass</a>
+      <a href="#order">ORDER</a>
+      <a href="#studio">Live Studio</a>
+      <a href="#innovations">Innovations</a>
+    </nav>
+  </header>
 
-  <section id="home" class="section hero">
-    <div class="container">
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-content">
+      <a href="#fuelpass">FuelPass</a>
+      <a href="#order">ORDER</a>
+      <a href="#studio">Live Studio</a>
+      <a href="#innovations">Innovations</a>
+      <a href="#story">Our Story</a>
+      <a href="#team">Team</a>
+      <a href="mailto:ceo@zeustechafrica.com">Contact</a>
+    </div>
+  </div>
+
+  <!-- 1. HERO SECTION -->
+  <section id="hero" class="section hero">
+    <video autoplay muted loop playsinline>
+      <source src="assets/hero/hero.mp4" type="video/mp4">
+    </video>
+    <div class="overlay">
       <h1>ZEUSTECH</h1>
-      <p>Institutional-Grade Innovation, Ready for Scale</p>
-      <p>A CIPC-registered South African technology company developing a 
-patent-pending system with the potential to generate R4–6 billion in 
-annual system revenues at full national deployment.</p>
-      <div style="margin-top: 2rem;">
-        <a href="#fuel-pass" class="btn">See FuelPass™</a>
-        <a href="#innovations" class="btn">Explore Innovations</a>
-      </div>
+      <p>Innovating Africa at the Level of Creation</p>
+      <a href="#innovations" class="cta">Explore Our Innovations</a>
     </div>
   </section>
 
-  <section id="about" class="section about">
-    <div class="container">
-      <h2>About ZeusTech</h2>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, 
-minmax(300px, 1fr)); gap: 2rem; text-align: left; margin-top: 2rem;">
-        <div>
-          <h3>Legally Registered</h3>
-          <p>ZeusTech (Pty) Ltd is a fully registered private company 
-under the Companies and Intellectual Property Commission of South Africa 
-(Registration No. 2025/794787/07).</p>
-        </div>
-        <div>
-          <h3>Protected Innovation</h3>
-          <p>Our core technology is protected under CIPC Patent 
-Application No. 1437055, ensuring exclusivity and defensibility.</p>
-        </div>
-        <div>
-          <h3>Head Office</h3>
-          <p>Suite 12, Century City Office Park<br>Cape Town, 
-7441<br>South Africa</p>
-        </div>
-      </div>
+  <!-- 2. FUELPASS ESTIMATOR (PUBLIC) -->
+  <section id="fuelpass" class="section">
+    <video autoplay muted loop playsinline>
+      <source src="assets/fuelpass/fuelpass_calculator_bg.mp4" 
+type="video/mp4">
+    </video>
+    <div class="overlay">
+      <img src="assets/fuelpass/fuelpass-estimator-logo.png" alt="FuelPass 
+Estimator" class="section-logo">
+      <h2>FuelPass Estimator</h2>
+      <p>Know Your Journey. Plan fuel costs with precision — for any trip, 
+any vehicle.</p>
+      <a href="https://fuelpass-estimator.zeustechafrica.com" 
+target="_blank" class="cta primary">Try Now</a>
     </div>
   </section>
 
-  <section id="fuel-pass" class="section fuel-pass">
-    <div class="container">
-      <h2>FuelPass™: The R4–6B Fuel Wallet System</h2>
-      <p>A live, working tool that calculates estimated fuel costs for 
-trips across South Africa — designed for integration into banking and 
-logistics platforms.</p>
-      <p>Users input their address, vehicle details, driving style, and 
-frequency — and get an accurate, conservative estimate of fuel needed for 
-daily, weekly, or monthly travel.</p>
-      <p>An exclusive national license is available, offering 10-year 
-market exclusivity and first-mover advantage in a transformative revenue 
-category.</p>
-      <div style="margin-top: 2rem;">
-        <a href="mailto:ceo@zeustechafrica.com" class="btn">Request 
-Licensing Dossier</a>
-      </div>
+  <!-- 3. ORDER (GATED) -->
+  <section id="order" class="section">
+    <video autoplay muted loop playsinline>
+      <source src="assets/order/order.mp4" type="video/mp4">
+    </video>
+    <div class="overlay dark">
+      <img src="assets/order/orderlogo.png" alt="ORDER App" 
+class="section-logo">
+      <h2>ORDER</h2>
+      <p>Services at Your Fingertips — connecting communities with 
+verified professionals on demand.</p>
+      <p class="insight">Market potential: R3–5B/year in SA alone at full 
+scale.</p>
+      <a 
+href="mailto:ceo@zeustechafrica.com?subject=ORDER%20Innovation%20Access%20Request" 
+class="cta">Request Access</a>
     </div>
   </section>
 
-  <section id="innovations" class="section innovations">
-    <div class="container">
-      <h2>Our Innovations</h2>
-      <p>ZeusTech is building a portfolio of high-impact, patent-pending 
-systems designed to solve real-world problems for South Africans and 
-global markets.</p>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, 
-minmax(300px, 1fr)); gap: 2rem; text-align: left; margin-top: 2rem;">
-        <div>
-          <h3>FuelPass™</h3>
-          <p>A digital fuel wallet that locks funds for fuel only, with 
-real-time intelligence for drivers.</p>
-        </div>
-        <div>
-          <h3>SafeTouch</h3>
-          <p>A contactless, biometric authentication system for secure 
-transactions in high-risk environments.</p>
-        </div>
-        <div>
-          <h3>GaniShield Alert</h3>
-          <p>A real-time security alert system for homes, businesses, and 
-vehicles — powered by AI and IoT.</p>
-        </div>
-        <div>
-          <h3>Utility Bills Alert</h3>
-          <p>A system that notifies users when their electricity or water 
-is about to run out — so they never get disconnected unexpectedly.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="studio" class="section studio">
-    <div class="container">
+  <!-- 4. LIVE STUDIO -->
+  <section id="studio" class="section">
+    <video autoplay muted loop playsinline>
+      <source src="assets/studio/live_studio_4k_effect.mp4" 
+type="video/mp4">
+    </video>
+    <div class="overlay dark">
+      <img src="assets/studio/zeustech-live-studio-logo.PNG" alt="ZeusTech 
+Live Studio" class="section-logo">
       <h2>ZeusTech Live Studio</h2>
-      <p>A state-of-the-art, AI-driven broadcast facility with 30,000+ 
-virtual capacity — designed to showcase African tech talent and global 
-partnerships.</p>
-      <p>Coming soon: Live innovation showcases, investor pitch events, 
-and global tech summits — all streamed from Cape Town.</p>
+      <p>The Stage for Africa’s Future — a multi-billion-rand 
+creative-technology hub in Cape Town.</p>
+      <a 
+href="mailto:ceo@zeustechafrica.com?subject=Live%20Studio%20Partnership" 
+class="cta">See the Vision</a>
     </div>
   </section>
 
-  <section id="ceo" class="section ceo">
-    <div class="container">
-      <h2>CEO & Founder</h2>
-      <p>Oghenetega Blondy Obebeduo</p>
-      <p>Leading ZeusTech from our Cape Town HQ — where innovation meets 
-execution.</p>
-      <div style="margin-top: 2rem;">
-        <a href="mailto:ceo@zeustechafrica.com" class="btn">Contact the 
-CEO</a>
+  <!-- 5. OUR STORY SECTION -->
+  <section id="story" class="section">
+    <video autoplay muted loop playsinline>
+      <source src="assets/vision/vision.mp4" type="video/mp4">
+    </video>
+    <div class="overlay story-content">
+      <h2>Our Story</h2>
+
+      <h3>🌍 Mission Statement</h3>
+      <p>To structure, protect, and commercialize African innovation — 
+transforming ideas into scalable, investor-ready technologies that solve 
+real-world problems.</p>
+
+      <h3>🚀 Vision Statement</h3>
+      <p>To become Africa’s foremost technology and innovation powerhouse 
+— empowering creators, advancing IP ownership, and driving inclusive 
+economic growth through protected, high-impact technologies.</p>
+
+      <h3>💡 Core Company Values</h3>
+      <ul>
+        <li><strong>Innovation:</strong> Constantly challenging the status 
+quo to build solutions that matter.</li>
+        <li><strong>Integrity:</strong> Upholding transparency, 
+accountability, and ethical leadership.</li>
+        <li><strong>Empowerment:</strong> Elevating innovators through 
+knowledge, resources, and strategic partnerships.</li>
+        <li><strong>Collaboration:</strong> Building strong ecosystems 
+that connect creators, investors, and markets.</li>
+        <li><strong>Excellence:</strong> Delivering measurable impact and 
+long-term value in every project.</li>
+      </ul>
+
+      <h3>🧭 Leadership Team</h3>
+      <div class="team-list">
+        <div class="team-member">
+          <h4>Oghenetega Blondy Obebeduo — Founder & CEO</h4>
+          <p>A visionary technologist and serial entrepreneur, Oghenetega 
+drives ZeusTech’s mission to protect, scale, and commercialize African 
+innovations globally. With deep expertise in IP strategy, digital 
+infrastructure, and technology incubation, he empowers creators to turn 
+ideas into scalable ventures.</p>
+        </div>
+        <div class="team-member">
+          <h4>Cody Haricombe — Legal Counsel (IP & Corporate Affairs)</h4>
+          <p>Cody specializes in intellectual property law and corporate 
+structuring, ensuring that ZeusTech innovations are fully protected and 
+compliant. He oversees IP filings, licensing frameworks, and strategic 
+legal partnerships.</p>
+        </div>
+        <div class="team-member">
+          <h4>Ogheneovo Vicent Obebeduo — Chief Technology Officer 
+(CTO)</h4>
+          <p>Ogheneovo leads all technical architecture, software 
+development, and integration efforts. He ensures that ZeusTech’s 
+platforms, like FuelPass and ORDER, are scalable, secure, and 
+cutting-edge.</p>
+        </div>
+        <div class="team-member">
+          <h4>Cyril Aiyewhenre Imhenrion — Chief Operations Officer 
+(COO)</h4>
+          <p>Cyril manages operational execution, partnerships, and 
+strategic rollouts. He ensures that projects move from concept to market 
+efficiently and with maximum impact.</p>
+        </div>
+      </div>
+
+      <h3>⚖️ Verification & Affiliations</h3>
+      <p><strong>Legal Partner:</strong> Cody Haricombe Attorneys — Cape 
+Town, South Africa. Expertise: IP Law, Corporate Structuring.</p>
+      <p><strong>CIPC Registration:</strong> 2025/794787/07</p>
+      <p><strong>SARS Tax Reference:</strong> Registered under ZeusTech 
+(Pty) Ltd</p>
+
+      <h3>🌍 Partnership Program</h3>
+      <p><strong>Government:</strong> TIA, CSIR, Municipalities — 
+digitizing infrastructure and public services.</p>
+      <p><strong>Private Sector:</strong> Tech firms, telecoms, energy 
+companies — integrating scalable innovation.</p>
+      <p><strong>NGOs:</strong> Youth empowerment, STEM education, 
+financial inclusion — democratizing access to tech.</p>
+
+      <h3>🎤 Public Speaking & Awareness</h3>
+      <p>Key Topics: “African Innovation Ownership”, “Commercializing 
+African Tech”, “Building Africa’s Innovation Ecosystem”.</p>
+
+      <a href="#team" class="cta">Meet the Team</a>
+    </div>
+  </section>
+
+  <!-- 6. VISION -->
+  <section id="vision" class="section">
+    <video autoplay muted loop playsinline>
+      <source src="assets/vision/vision.mp4" type="video/mp4">
+    </video>
+    <div class="overlay">
+      <h2>The God-Level Mind</h2>
+      <p>The Power to Create — where human intelligence meets divine 
+innovation.</p>
+      <a href="#story" class="cta">Read Our Story</a>
+    </div>
+  </section>
+
+  <!-- 7. INNOVATIONS -->
+  <section id="innovations" class="section innovations-grid">
+    <h2 class="section-title">Innovation Portfolio</h2>
+    
+    <!-- FuelPass Estimator (Public) -->
+    <div class="card public">
+      <img src="assets/innovations/techlab.jpg" alt="FuelPass Estimator">
+      <h3>FuelPass Estimator</h3>
+      <p>Real-time fuel cost planning for African drivers.</p>
+      <a href="https://fuelpass-estimator.zeustechafrica.com" 
+target="_blank" class="cta small">Use Tool</a>
+    </div>
+
+    <!-- Gated Innovation 1 -->
+    <div class="card gated">
+      <img src="assets/innovations/ai-brain.jpg" alt="Smart Urban Flow">
+      <div class="lock">🔒</div>
+      <h3>Smart Urban Flow</h3>
+      <p>Optimizing city movement and resource efficiency.</p>
+      <p class="insight">R2–4B/year revenue potential in major metros.</p>
+      <a 
+href="mailto:ceo@zeustechafrica.com?subject=Innovation%20Access%20Request" 
+class="cta small">Request Access</a>
+    </div>
+
+    <!-- Gated Innovation 2 -->
+    <div class="card gated">
+      <img src="assets/innovations/humanandaibrains.JPG" alt="Seamless 
+Daily Services">
+      <div class="lock">🔒</div>
+      <h3>Seamless Daily Services</h3>
+      <p>Empowering communities with instant access to trusted 
+professionals.</p>
+      <p class="insight">Scalable across 10M+ households in SA.</p>
+      <a 
+href="mailto:ceo@zeustechafrica.com?subject=Innovation%20Access%20Request" 
+class="cta small">Request Access</a>
+    </div>
+
+    <!-- Gated Innovation 3 -->
+    <div class="card gated">
+      <img src="assets/innovations/digital-hand.jpg" alt="Next-Gen Finance 
+Tools">
+      <div class="lock">🔒</div>
+      <h3>Next-Gen Finance Tools</h3>
+      <p>Smarter, safer financial solutions for everyday users.</p>
+      <p class="insight">Licensing value: R500M–R2B per market.</p>
+      <a 
+href="mailto:ceo@zeustechafrica.com?subject=Innovation%20Access%20Request" 
+class="cta small">Request Access</a>
+    </div>
+  </section>
+
+  <!-- 8. TEAM -->
+  <section id="team" class="section">
+    <div class="bg" style="background-image: 
+url('assets/team/ceooffice.jpg');"></div>
+    <div class="overlay dark team-content">
+      <h2>The Architects of ZeusTech</h2>
+      <p>Meet the leaders shaping Africa’s innovation future.</p>
+      
+      <!-- CEO -->
+      <div class="team-member">
+        <img src="assets/team/ceo.jpg" alt="Oghenetega Blondy Obebeduo">
+        <h3>Oghenetega Blondy Obebeduo</h3>
+        <p>Founder & CEO — A visionary technologist and serial 
+entrepreneur, Oghenetega drives ZeusTech’s mission to protect, scale, and 
+commercialize African innovations globally. With deep expertise in IP 
+strategy, digital infrastructure, and technology incubation, he empowers 
+creators to turn ideas into scalable ventures.</p>
+      </div>
+
+      <!-- Legal Counsel -->
+      <div class="team-member text-only">
+        <h3>Cody Haricombe</h3>
+        <p>Legal Counsel (IP & Corporate Affairs) — Cody specializes in 
+intellectual property law and corporate structuring, ensuring that 
+ZeusTech innovations are fully protected and compliant. He oversees IP 
+filings, licensing frameworks, and strategic legal partnerships.</p>
+      </div>
+
+      <!-- CTO -->
+      <div class="team-member text-only">
+        <h3>Ogheneovo Vicent Obebeduo</h3>
+        <p>Chief Technology Officer (CTO) — Ogheneovo leads all technical 
+architecture, software development, and integration efforts. He ensures 
+that ZeusTech’s platforms, like FuelPass and ORDER, are scalable, secure, 
+and cutting-edge.</p>
+      </div>
+
+      <!-- COO -->
+      <div class="team-member text-only">
+        <h3>Cyril Aiyewhenre Imhenrion</h3>
+        <p>Chief Operations Officer (COO) — Cyril manages operational 
+execution, partnerships, and strategic rollouts. He ensures that projects 
+move from concept to market efficiently and with maximum impact.</p>
       </div>
     </div>
   </section>
 
+  <!-- 9. PARTNERSHIPS -->
+  <section id="partnerships" class="section">
+    <div class="bg" style="background-image: 
+url('assets/partnerships/innovationcollaboration.JPG');"></div>
+    <div class="overlay dark">
+      <h2>Building an Ecosystem of Support</h2>
+      <p>Collaborating with forward-thinking partners to scale African 
+innovation.</p>
+      <p>Current supporters: ElizzCollections, Zizipho Collections, 
+Picknstyle, ANTHONY C ENTERPRISE Pty Ltd</p>
+      <a 
+href="mailto:ceo@zeustechafrica.com?subject=Partnership%20Opportunity" 
+class="cta">Join Us</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer class="footer">
-    <p>ZeusTech (Pty) Ltd | CIPC Reg: 2025/794787/07 | Patent-Pending: 
-CIPC #1437055</p>
-    <p>© 2025 ZeusTech (Pty) Ltd. All rights reserved. Confidential and 
-proprietary.</p>
+    <p>© 2025 ZeusTech (Pty) Ltd — CIPC Reg: 2025/794787/07</p>
+    <p>God’s Hand Reaching Mankind Through Tech.</p>
+    <div class="social">
+      <a href="mailto:ceo@zeustechafrica.com">Contact</a>
+    </div>
   </footer>
+
+  <!-- Mobile Menu Script -->
+  <script>
+    document.querySelector('.hamburger').addEventListener('click', 
+function() {
+      document.getElementById('mobileMenu').classList.toggle('active');
+    });
+  </script>
 
 </body>
 </html>

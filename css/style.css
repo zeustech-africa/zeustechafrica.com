@@ -1,0 +1,377 @@
+/* ZEUSTECH — Tesla-Style CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --gold: #D4AF37;
+  --glow: #FFD700;
+  --black: #000000;
+  --white: #FFFFFF;
+  --light-bg: #f8f9fa;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: var(--black);
+  overflow-x: hidden;
+}
+
+/* HEADER — Tesla Style: Logo Left, Nav Right */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 5%;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.header .logo img {
+  height: 40px;
+  display: block;
+}
+
+.main-nav a {
+  color: var(--white);
+  text-decoration: none;
+  margin-left: 25px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  transition: opacity 0.3s ease;
+}
+
+.main-nav a:hover {
+  opacity: 0.8;
+}
+
+.hamburger {
+  color: white;
+  font-size: 24px;
+  display: none;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+/* MOBILE HAMBURGER MENU */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1500;
+}
+
+.mobile-menu.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.mobile-menu-content a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2rem;
+  margin: 15px 0;
+  text-align: center;
+  transition: color 0.2s ease;
+}
+
+.mobile-menu-content a:hover {
+  color: var(--gold);
+}
+
+/* SECTIONS */
+.section {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10%;
+  position: relative;
+  color: var(--white);
+}
+
+.section .bg,
+.section video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.overlay {
+  text-align: center;
+  max-width: 800px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
+
+.overlay.dark {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.overlay.story-content {
+  text-align: left;
+  max-width: 900px;
+  background: rgba(0, 0, 0, 0.85);
+  padding: 30px;
+  border-radius: 15px;
+}
+
+.section h1,
+.section h2,
+.section h3,
+.section h4 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  margin-bottom: 15px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#hero h1 {
+  font-size: 4rem;
+}
+
+.section h2 {
+  font-size: 2.8rem;
+  color: var(--gold);
+}
+
+.section h3 {
+  font-size: 1.8rem;
+  margin-top: 25px;
+}
+
+.section h4 {
+  font-size: 1.4rem;
+  margin-top: 20px;
+  color: var(--glow);
+}
+
+.section p {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+.section ul {
+  text-align: left;
+  margin: 20px 0 30px 0;
+  padding-left: 20px;
+}
+
+.section ul li {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+.insight {
+  font-style: italic;
+  color: var(--glow);
+  margin-top: 10px;
+  font-size: 1.1rem;
+}
+
+.cta {
+  display: inline-block;
+  padding: 12px 30px;
+  background: var(--gold);
+  color: var(--black);
+  text-decoration: none;
+  border-radius: 30px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  margin-top: 20px;
+}
+
+.cta:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+.cta.primary {
+  background: var(--glow);
+}
+
+/* LOGO ICONS IN SECTIONS */
+.section-logo {
+  width: 200px;
+  margin-bottom: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* INNOVATIONS GRID */
+.innovations-grid {
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  background: var(--black);
+  color: var(--white);
+}
+
+.innovations-grid .section-title {
+  font-size: 3rem;
+  margin-bottom: 50px;
+  text-align: center;
+  color: var(--gold);
+}
+
+.innovations-grid .card {
+  width: 100%;
+  max-width: 900px;
+  margin: 30px 0;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.card img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8rem;
+  color: var(--gold);
+}
+
+.card .lock {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 1.5rem;
+  color: var(--gold);
+}
+
+.card .cta.small {
+  padding: 8px 20px;
+  font-size: 1rem;
+}
+
+/* TEAM SECTION */
+.team-content {
+  max-width: 900px;
+}
+
+.team-member {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.team-member img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid var(--gold);
+  margin-bottom: 15px;
+}
+
+.team-member.text-only h3 {
+  margin-top: 30px;
+  color: var(--gold);
+}
+
+.team-member.text-only p {
+  margin-top: 8px;
+}
+
+/* FOOTER */
+.footer {
+  background: var(--black);
+  color: var(--white);
+  text-align: center;
+  padding: 30px 20px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.footer .social a {
+  color: var(--gold);
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .header {
+    padding: 15px 5%;
+  }
+
+  .main-nav {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  #hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .section h2 {
+    font-size: 2rem;
+  }
+
+  .section p,
+  .section ul li {
+    font-size: 1.1rem;
+  }
+
+  .innovations-grid .card {
+    padding: 20px;
+  }
+
+  .section-logo {
+    width: 150px;
+  }
+
+  .overlay.story-content {
+    padding: 20px;
+  }
+
+  /* Ensure mobile menu stays on top */
+  .mobile-menu {
+    z-index: 2000;
+  }
+}
