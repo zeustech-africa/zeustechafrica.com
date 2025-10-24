@@ -36,6 +36,27 @@
       margin-bottom: 15px;
       display: block;
     }
+    /* MailerLite form override */
+    #mlb2-32443778.ml-form-embedContainer {
+      background: transparent !important;
+      max-width: 600px;
+      margin: 40px auto 0 !important;
+    }
+    #mlb2-32443778 .ml-form-embedWrapper {
+      background: rgba(0,0,0,0.7) !important;
+      border-radius: 10px !important;
+      padding: 20px !important;
+    }
+    #mlb2-32443778 input, #mlb2-32443778 button {
+      background: rgba(255,255,255,0.1) !important;
+      border: 1px solid #555 !important;
+      color: white !important;
+    }
+    #mlb2-32443778 button {
+      background: #D4AF37 !important;
+      color: #000 !important;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
@@ -105,6 +126,69 @@
         <h3>Building Africa’s Silicon Valley: The ZeusTech Live Studio Vision</h3>
         <p>More than a production hub — it’s a launchpad for African creators, innovators, and global collaborations. Located in Cape Town, this multi-billion-rand ecosystem will redefine media and tech in Africa.</p>
       </div>
+    </div>
+  </section>
+
+  <!-- Newsletter Signup -->
+  <section class="section" style="background: #000;">
+    <div class="overlay" style="background: transparent; padding: 0; max-width: 800px;">
+      <!-- PASTE MAILERLITE CODE HERE -->
+      <style type="text/css">@import url("https://assets.mlcdn.com/fonts.css?version=1761043");</style>
+      <style type="text/css">
+        /* ... [all your CSS from above] ... */
+      </style>
+      <div id="mlb2-32443778" class="ml-form-embedContainer ml-subscribe-form ml-subscribe-form-32443778">
+        <div class="ml-form-align-center ">
+          <div class="ml-form-embedWrapper embedForm">
+            <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
+              <div class="ml-form-embedContent">
+                <h4>Join Our Innovation Network</h4>
+                <p>Get exclusive updates on ZeusTech’s latest technologies and investment opportunities.</p>
+              </div>
+              <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/1875555/forms/169061530384467761/subscribe" data-code="" method="post" target="_blank">
+                <div class="ml-form-formContent">
+                  <div class="ml-form-fieldRow ">
+                    <div class="ml-field-group ml-field-email ml-validate-email ml-validate-required">
+                      <input aria-label="email" aria-required="true" type="email" class="form-control" data-inputmask="" name="fields[email]" placeholder="Email" autocomplete="email">
+                    </div>
+                  </div>
+                  <div class="ml-form-fieldRow ml-last-item">
+                    <div class="ml-field-group ml-field-name ml-validate-required">
+                      <input aria-label="name" aria-required="true" type="text" class="form-control" data-inputmask="" name="fields[name]" placeholder="Name" autocomplete="given-name">
+                    </div>
+                  </div>
+                </div>
+                <input type="hidden" name="ml-submit" value="1">
+                <div class="ml-form-embedSubmit">
+                  <button type="submit" class="primary">Subscribe</button>
+                  <button disabled="disabled" style="display: none;" type="button" class="loading">
+                    <div class="ml-form-embedSubmitLoad"></div>
+                    <span class="sr-only">Loading...</span>
+                  </button>
+                </div>
+                <input type="hidden" name="anticsrf" value="true">
+              </form>
+            </div>
+            <div class="ml-form-successBody row-success" style="display: none">
+              <div class="ml-form-successContent">
+                <h4>Thank you!</h4>
+                <p>You have successfully joined our subscriber list.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <script>
+        function ml_webform_success_32443778() {
+          var $ = ml_jQuery || jQuery;
+          $('.ml-subscribe-form-32443778 .row-success').show();
+          $('.ml-subscribe-form-32443778 .row-form').hide();
+        }
+      </script>
+      <script src="https://groot.mailerlite.com/js/w/webforms.min.js?v176e10baa5e7ed80d35ae235be3d5024" type="text/javascript"></script>
+      <script>
+        fetch("https://assets.mailerlite.com/jsonp/1875555/forms/169061530384467761/takel")
+      </script>
     </div>
   </section>
 
