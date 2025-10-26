@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>FuelPass™ — World’s #1 Fuel Cost Estimator</title>
+  <style>
+    :root {
+      --primary: #2b7be4;
+      --secondary: #1a5fd6;
+      --accent: #ffcc00;
+      --dark: #0d1a2c;
+      --light: #f4f6f8;
+      --text: #ffffff;
+      --card-bg: rgba(255, 255, 255, 0.95);
+      --shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+      --border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      overflow-x: hidden;
+      position: relative;
+      background: black;
+    }
+
+    .video-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      opacity: 0.4;
+      filter: contrast(1.2) saturate(1.1);
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 20px auto;
+      padding: 20px;
+      width: 100%;
+    }
+
+    .header {
+      background: linear-gradient(90deg, var(--primary), 
+var(--secondary));
+      color: white;
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: var(--shadow);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .header img.logo {
+      max-height: 60px;
+      filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 1.8em;
+      font-weight: 700;
+    }
+
+    .header .tagline {
+      font-size: 0.9em;
+      opacity: 0.9;
+      margin-top: 5px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 12px;
+      padding: 25px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+      border: var(--border);
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      color: var(--dark);
+      margin-top: 0;
+      font-weight: 700;
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      font-weight: 700;
+      margin-top: 15px;
+      color: var(--dark);
+    }
+
+    input[type=text], input[type=number], select {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      box-sizing: border-box;
+      font-size: 1em;
+      background: white;
+      transition: border-color 0.3s;
+    }
+
+    input[type=text]:focus, input[type=number]:focus, select:focus {
+      border-color: var(--primary);
+      outline: none;
+    }
+
+    .row {
+      display: flex;
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .col {
+      flex: 1;
+    }
+
+    button {
+      background: linear-gradient(90deg, var(--primary), 
+var(--secondary));
+      color: white;
+      border: none;
+      padding: 14px;
+      border-radius: 8px;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 20px;
+      font-size: 1em;
+      transition: transform 0.2s, box-shadow 0.2s;
+      width: 100%;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .result {
+      margin-top: 20px;
+      padding: 20px;
+      background: rgba(220, 240, 255, 0.8);
+      border-radius: 8px;
+      border-left: 5px solid var(--primary);
+      box-shadow: var(--shadow);
+      color: var(--dark);
+    }
+
+    .muted {
+      color: #666;
+      font-weight: 400;
+      font-size: 0.9em;
+    }
+
+    @media(max-width:720px) {
+      .row {
+        flex-direction: column;
+      }
+      .container {
+        margin: 10px;
+        padding: 10px;
+      }
+      .card {
+        padding: 15px;
+      }
+    }
+
+    select {
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      padding-right: 30px;
+      background-image: url("image/svg+xml;charset=UTF-8,%3csvg 
+xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 
+24'%3e%3cpath d='M7 10l5 5 5-5z'/%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+      background-size: 16px;
+    }
+
+    .result strong {
+      color: var(--dark);
+      font-weight: 700;
+    }
+
+    .result span {
+      font-size: 1.3em;
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .loading {
+      text-align: center;
+      padding: 20px;
+      color: var(--dark);
+    }
+  </style>
+</head>
+<body>
+  <video autoplay muted loop class="video-bg">
+    <source src="fuelpass-city.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <div class="container">
+    <div class="header">
+      <img class="logo" src="zeustech_logo.png" alt="ZeusTech Logo">
+      <div>
+        <h1>⚡ FuelPass™</h1>
+        <div class="tagline">World’s #1 Fuel Cost Estimator — 
+Institutional Grade, Globally Defensible</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>How much will your trip cost? (95%+ Accuracy)</h2>
+
+      <div class="row">
+        <div class="col">
+          <label>Country</label>
+          <select id="country"></select>
+        </div>
+        <div class="col">
+          <label>Currency</label>
+          <input type="text" id="currency_code" readonly>
+        </div>
+      </div>
+
+      <label>From Address:</label>
+      <input type="text" id="from_addr" placeholder="e.g., Cape Town, 
+Johannesburg">
+
+      <label>To Address:</label>
+      <input type="text" id="to_addr" placeholder="e.g., Johannesburg, 
+Pretoria">
+
+      <div class="row">
+        <div class="col">
+          <label>Vehicle Type</label>
+          <select id="vehicle_type">
+            <option>Car</option>
+            <option>Bike</option>
+            <option>Truck</option>
+            <option>Heavy Duty</option>
+          </select>
+        </div>
+        <div class="col">
+          <label>Make</label>
+          <input type="text" id="make" value="TOYOTA">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <label>Model</label>
+          <input type="text" id="model" value="COROLLA">
+        </div>
+        <div class="col">
+          <label>Year</label>
+          <input type="number" id="year" value="2020">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <label>Engine (L)</label>
+          <input type="number" step="0.1" id="engine_l" value="1.8">
+        </div>
+        <div class="col">
+          <label>Body Type</label>
+          <select id="body_type">
+            <option>Sedan</option>
+            <option>SUV</option>
+            <option>Truck</option>
+            <option>Heavy Duty</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <label>Fuel Type</label>
+          <select id="fuel_type">
+            <option value="petrol">Petrol</option>
+            <option value="diesel">Diesel</option>
+            <option value="hybrid">Hybrid</option>
+          </select>
+        </div>
+        <div class="col">
+          <label>Gearbox</label>
+          <select id="gearbox">
+            <option>automatic</option>
+            <option>manual</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <label>Driving Style</label>
+          <select id="driving_style">
+            <option>Normal</option>
+            <option>Eco</option>
+            <option>Aggressive</option>
+          </select>
+        </div>
+        <div class="col">
+          <label>Trip Frequency</label>
+          <select id="trip_frequency">
+            <option value="daily">Daily (Round Trip)</option>
+            <option value="weekly_all">Weekly (7 days, Round 
+Trip)</option>
+            <option value="weekly_work">Weekly (5 workdays, Round 
+Trip)</option>
+            <option value="monthly_all">Monthly (30 days, Round 
+Trip)</option>
+            <option value="monthly_work">Monthly (22 workdays, Round 
+Trip)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <label>Road Type</label>
+          <select id="road_type">
+            <option value="mixed">Mixed (Default)</option>
+            <option value="city">City</option>
+            <option value="highway">Highway</option>
+            <option value="rural">Rural</option>
+          </select>
+        </div>
+        <div class="col">
+          <label>Vehicle Load</label>
+          <select id="vehicle_load">
+            <option value="light">Light (1–2 people)</option>
+            <option value="medium">Medium (3–4 people + luggage)</option>
+            <option value="heavy">Heavy (Full load)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <label>Fuel Price (<span 
+id="fuel_currency">ZAR</span>/L)</label>
+          <input type="number" step="0.01" id="fuel_price" value="25.00">
+        </div>
+        <div class="col">
+          <label>Distance (km) — auto-calculated</label>
+          <input type="number" id="distance_km" readonly 
+placeholder="Calculated from addresses">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <label>AC Usage</label>
+          <select id="ac_usage">
+            <option>On</option>
+            <option>Off</option>
+          </select>
+        </div>
+        <div class="col">
+          <label>Weather Conditions</label>
+          <select id="weather">
+            <option>Clear</option>
+            <option>Rain/Snow</option>
+            <option>Hot</option>
+            <option>Cold</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          <label>Tire Pressure</label>
+          <select id="tire_pressure">
+            <option>Optimal</option>
+            <option>Low</option>
+            <option>Very Low</option>
+          </select>
+        </div>
+        <div class="col">
+          <label>Maintenance Level</label>
+          <select id="maintenance">
+            <option>Excellent</option>
+            <option>Good</option>
+            <option>Poor</option>
+          </select>
+        </div>
+      </div>
+
+      <label>Trip Type</label>
+      <input type="text" id="trip_type" placeholder="e.g., Commute, 
+Business">
+
+      <button id="calcBtn">Calculate Trip Cost</button>
+
+      <div id="result" class="result" style="display:none;"></div>
+    </div>
+  </div>
+
+<script>
+// Country data: 54 African countries + India
+const countryData = {
+  "South Africa": { currency: "ZAR", symbol: "R", fuelPrice: 25.00, 
+multiplier: 1.00, examples: ["Cape Town", "Johannesburg", "Durban"] },
+  "Nigeria": { currency: "NGN", symbol: "₦", fuelPrice: 750, multiplier: 
+0.82, examples: ["Ikeja", "Lagos", "Victoria Island"] },
+  "Kenya": { currency: "KES", symbol: "KSh", fuelPrice: 180, multiplier: 
+0.90, examples: ["Nairobi", "Mombasa", "Kisumu"] },
+  "Ghana": { currency: "GHS", symbol: "₵", fuelPrice: 15, multiplier: 
+0.85, examples: ["Accra", "Kumasi", "Tema"] },
+  "Egypt": { currency: "EGP", symbol: "E£", fuelPrice: 40, multiplier: 
+0.88, examples: ["Cairo", "Alexandria", "Giza"] },
+  "Ethiopia": { currency: "ETB", symbol: "Br", fuelPrice: 70, multiplier: 
+0.80, examples: ["Addis Ababa", "Dire Dawa", "Mekelle"] },
+  "Tanzania": { currency: "TZS", symbol: "TSh", fuelPrice: 2500, 
+multiplier: 0.83, examples: ["Dar es Salaam", "Arusha", "Mwanza"] },
+  "Morocco": { currency: "MAD", symbol: "DH", fuelPrice: 16, multiplier: 
+0.92, examples: ["Casablanca", "Marrakech", "Rabat"] },
+  "Algeria": { currency: "DZD", symbol: "DA", fuelPrice: 50, multiplier: 
+0.87, examples: ["Algiers", "Oran", "Constantine"] },
+  "Angola": { currency: "AOA", symbol: "Kz", fuelPrice: 800, multiplier: 
+0.78, examples: ["Luanda", "Huambo", "Benguela"] },
+  "Sudan": { currency: "SDG", symbol: "£", fuelPrice: 600, multiplier: 
+0.75, examples: ["Khartoum", "Omdurman", "Port Sudan"] },
+  "Uganda": { currency: "UGX", symbol: "USh", fuelPrice: 4500, multiplier: 
+0.81, examples: ["Kampala", "Entebbe", "Jinja"] },
+  "Mozambique": { currency: "MZN", symbol: "MT", fuelPrice: 85, 
+multiplier: 0.84, examples: ["Maputo", "Beira", "Matola"] },
+  "Zambia": { currency: "ZMW", symbol: "ZK", fuelPrice: 28, multiplier: 
+0.86, examples: ["Lusaka", "Livingstone", "Ndola"] },
+  "Senegal": { currency: "XOF", symbol: "CFA", fuelPrice: 650, multiplier: 
+0.85, examples: ["Dakar", "Thies", "Ziguinchor"] },
+  "Cameroon": { currency: "XAF", symbol: "FCFA", fuelPrice: 650, 
+multiplier: 0.83, examples: ["Douala", "Yaounde", "Bafoussam"] },
+  "Zimbabwe": { currency: "ZWL", symbol: "$", fuelPrice: 15000, 
+multiplier: 0.79, examples: ["Harare", "Bulawayo", "Mutare"] },
+  "Malawi": { currency: "MWK", symbol: "MK", fuelPrice: 1200, multiplier: 
+0.82, examples: ["Lilongwe", "Blantyre", "Mzuzu"] },
+  "Rwanda": { currency: "RWF", symbol: "RF", fuelPrice: 1300, multiplier: 
+0.89, examples: ["Kigali", "Huye", "Musanze"] },
+  "Benin": { currency: "XOF", symbol: "CFA", fuelPrice: 650, multiplier: 
+0.84, examples: ["Cotonou", "Porto-Novo", "Parakou"] },
+  "Botswana": { currency: "BWP", symbol: "P", fuelPrice: 14, multiplier: 
+0.94, examples: ["Gaborone", "Francistown", "Maun"] },
+  "Burkina Faso": { currency: "XOF", symbol: "CFA", fuelPrice: 650, 
+multiplier: 0.83, examples: ["Ouagadougou", "Bobo-Dioulasso", "Koudougou"] 
+},
+  "Burundi": { currency: "BIF", symbol: "FBu", fuelPrice: 2500, 
+multiplier: 0.80, examples: ["Bujumbura", "Gitega", "Muyinga"] },
+  "Cabo Verde": { currency: "CVE", symbol: "$", fuelPrice: 180, 
+multiplier: 0.90, examples: ["Praia", "Mindelo", "Sal"] },
+  "Central African Republic": { currency: "XAF", symbol: "FCFA", 
+fuelPrice: 650, multiplier: 0.76, examples: ["Bangui", "Bimbo", 
+"Berberati"] },
+  "Chad": { currency: "XAF", symbol: "FCFA", fuelPrice: 650, multiplier: 
+0.77, examples: ["N'Djamena", "Moundou", "Sarh"] },
+  "Comoros": { currency: "KMF", symbol: "CF", fuelPrice: 450, multiplier: 
+0.82, examples: ["Moroni", "Mutsamudu", "Fomboni"] },
+  "Congo (DRC)": { currency: "CDF", symbol: "FC", fuelPrice: 2500, 
+multiplier: 0.74, examples: ["Kinshasa", "Lubumbashi", "Mbuji-Mayi"] },
+  "Congo (Republic)": { currency: "XAF", symbol: "FCFA", fuelPrice: 650, 
+multiplier: 0.81, examples: ["Brazzaville", "Pointe-Noire", "Dolisie"] },
+  "Djibouti": { currency: "DJF", symbol: "Fdj", fuelPrice: 200, 
+multiplier: 0.88, examples: ["Djibouti City", "Ali Sabieh", "Tadjoura"] },
+  "Equatorial Guinea": { currency: "XAF", symbol: "FCFA", fuelPrice: 650, 
+multiplier: 0.85, examples: ["Malabo", "Bata", "Ebebiyin"] },
+  "Eritrea": { currency: "ERN", symbol: "Nfk", fuelPrice: 30, multiplier: 
+0.78, examples: ["Asmara", "Massawa", "Keren"] },
+  "Eswatini": { currency: "SZL", symbol: "E", fuelPrice: 22, multiplier: 
+0.93, examples: ["Mbabane", "Manzini", "Nhlangano"] },
+  "Gabon": { currency: "XAF", symbol: "FCFA", fuelPrice: 650, multiplier: 
+0.86, examples: ["Libreville", "Port-Gentil", "Franceville"] },
+  "Gambia": { currency: "GMD", symbol: "D", fuelPrice: 75, multiplier: 
+0.83, examples: ["Banjul", "Serekunda", "Brikama"] },
+  "Guinea": { currency: "GNF", symbol: "FG", fuelPrice: 12000, multiplier: 
+0.79, examples: ["Conakry", "Kindia", "Kankan"] },
+  "Guinea-Bissau": { currency: "XOF", symbol: "CFA", fuelPrice: 650, 
+multiplier: 0.82, examples: ["Bissau", "Bafata", "Gabu"] },
+  "Ivory Coast": { currency: "XOF", symbol: "CFA", fuelPrice: 650, 
+multiplier: 0.84, examples: ["Abidjan", "Bouaké", "Yamoussoukro"] },
+  "Lesotho": { currency: "LSL", symbol: "L", fuelPrice: 22, multiplier: 
+0.92, examples: ["Maseru", "Mafeteng", "Leribe"] },
+  "Liberia": { currency: "LRD", symbol: "$", fuelPrice: 350, multiplier: 
+0.80, examples: ["Monrovia", "Gbarnga", "Greenville"] },
+  "Libya": { currency: "LYD", symbol: "LD", fuelPrice: 10, multiplier: 
+0.89, examples: ["Tripoli", "Benghazi", "Misrata"] },
+  "Madagascar": { currency: "MGA", symbol: "Ar", fuelPrice: 4500, 
+multiplier: 0.81, examples: ["Antananarivo", "Toamasina", "Mahajanga"] },
+  "Malawi": { currency: "MWK", symbol: "MK", fuelPrice: 1200, multiplier: 
+0.82, examples: ["Lilongwe", "Blantyre", "Mzuzu"] },
+  "Mali": { currency: "XOF", symbol: "CFA", fuelPrice: 650, multiplier: 
+0.83, examples: ["Bamako", "Ségou", "Mopti"] },
+  "Mauritania": { currency: "MRU", symbol: "UM", fuelPrice: 35, 
+multiplier: 0.85, examples: ["Nouakchott", "Nouadhibou", "Rosso"] },
+  "Mauritius": { currency: "MUR", symbol: "₨", fuelPrice: 60, multiplier: 
+0.95, examples: ["Port Louis", "Curepipe", "Quatre Bornes"] },
+  "Namibia": { currency: "NAD", symbol: "$", fuelPrice: 22, multiplier: 
+0.93, examples: ["Windhoek", "Swakopmund", "Walvis Bay"] },
+  "Niger": { currency: "XOF", symbol: "CFA", fuelPrice: 650, multiplier: 
+0.82, examples: ["Niamey", "Zinder", "Maradi"] },
+  "Nigeria": { currency: "NGN", symbol: "₦", fuelPrice: 750, multiplier: 
+0.82, examples: ["Ikeja", "Lagos", "Victoria Island"] },
+  "Rwanda": { currency: "RWF", symbol: "RF", fuelPrice: 1300, multiplier: 
+0.89, examples: ["Kigali", "Huye", "Musanze"] },
+  "Sao Tome and Principe": { currency: "STN", symbol: "Db", fuelPrice: 25, 
+multiplier: 0.87, examples: ["São Tomé", "Príncipe", "Neves"] },
+  "Senegal": { currency: "XOF", symbol: "CFA", fuelPrice: 650, multiplier: 
+0.85, examples: ["Dakar", "Thies", "Ziguinchor"] },
+  "Seychelles": { currency: "SCR", symbol: "SR", fuelPrice: 22, 
+multiplier: 0.96, examples: ["Victoria", "Mahe", "Praslin"] },
+  "Sierra Leone": { currency: "SLL", symbol: "Le", fuelPrice: 15000, 
+multiplier: 0.78, examples: ["Freetown", "Bo", "Koidu"] },
+  "Somalia": { currency: "SOS", symbol: "Sh", fuelPrice: 30000, 
+multiplier: 0.75, examples: ["Mogadishu", "Hargeisa", "Kismayo"] },
+  "South Sudan": { currency: "SSP", symbol: "£", fuelPrice: 1500, 
+multiplier: 0.74, examples: ["Juba", "Malakal", "Wau"] },
+  "Sudan": { currency: "SDG", symbol: "£", fuelPrice: 600, multiplier: 
+0.75, examples: ["Khartoum", "Omdurman", "Port Sudan"] },
+  "Tanzania": { currency: "TZS", symbol: "TSh", fuelPrice: 2500, 
+multiplier: 0.83, examples: ["Dar es Salaam", "Arusha", "Mwanza"] },
+  "Togo": { currency: "XOF", symbol: "CFA", fuelPrice: 650, multiplier: 
+0.84, examples: ["Lomé", "Sokodé", "Kpalimé"] },
+  "Tunisia": { currency: "TND", symbol: "DT", fuelPrice: 2.5, multiplier: 
+0.91, examples: ["Tunis", "Sfax", "Sousse"] },
+  "Uganda": { currency: "UGX", symbol: "USh", fuelPrice: 4500, multiplier: 
+0.81, examples: ["Kampala", "Entebbe", "Jinja"] },
+  "Zambia": { currency: "ZMW", symbol: "ZK", fuelPrice: 28, multiplier: 
+0.86, examples: ["Lusaka", "Livingstone", "Ndola"] },
+  "Zimbabwe": { currency: "ZWL", symbol: "$", fuelPrice: 15000, 
+multiplier: 0.79, examples: ["Harare", "Bulawayo", "Mutare"] },
+  "India": { currency: "INR", symbol: "₹", fuelPrice: 105, multiplier: 
+0.88, examples: ["Delhi", "Mumbai", "Bangalore"] }
+};
+
+// Initialize country dropdown
+function initCountryDropdown() {
+  const countrySelect = document.getElementById('country');
+  const sortedCountries = Object.keys(countryData).sort();
+  sortedCountries.forEach(country => {
+    const option = document.createElement('option');
+    option.value = country;
+    option.textContent = country;
+    countrySelect.appendChild(option);
+  });
+  countrySelect.value = 'South Africa';
+  updateCurrency();
+  updateAddressPlaceholders();
+}
+
+function updateCurrency() {
+  const country = document.getElementById('country').value;
+  const data = countryData[country];
+  document.getElementById('currency_code').value = data.currency;
+  document.getElementById('fuel_currency').textContent = data.currency;
+  document.getElementById('fuel_price').value = data.fuelPrice;
+}
+
+function updateAddressPlaceholders() {
+  const country = document.getElementById('country').value;
+  const data = countryData[country];
+  const fromPlaceholder = data.examples ? `e.g., ${data.examples[0]}, 
+${data.examples[1]}` : "e.g., City, Area";
+  const toPlaceholder = data.examples ? `e.g., ${data.examples[1]}, 
+${data.examples[2] || data.examples[0]}` : "e.g., City, Area";
+  document.getElementById('from_addr').placeholder = fromPlaceholder;
+  document.getElementById('to_addr').placeholder = toPlaceholder;
+}
+
+// Google Maps Distance Matrix
+function calculateDistance(from, to, callback) {
+  if (typeof google !== 'undefined' && google.maps && 
+google.maps.DistanceMatrixService) {
+    const service = new google.maps.DistanceMatrixService();
+    service.getDistanceMatrix({
+      origins: [from],
+      destinations: [to],
+      travelMode: google.maps.TravelMode.DRIVING,
+      unitSystem: google.maps.UnitSystem.METRIC
+    }, (response, status) => {
+      if (status === 'OK' && response.rows[0].elements[0].status === 'OK') 
+{
+        const distance = response.rows[0].elements[0].distance.value / 
+1000; // km
+        callback(null, distance);
+        return;
+      }
+    });
+  }
+  console.warn('Google Maps failed. Using fallback distance of 100km.');
+  callback(null, 100);
+}
+
+document.getElementById('calcBtn').addEventListener('click', () => {
+  const from_addr = document.getElementById('from_addr').value.trim();
+  const to_addr = document.getElementById('to_addr').value.trim();
+
+  if (!from_addr || !to_addr) {
+    alert('Please enter both From and To addresses.');
+    return;
+  }
+
+  const resultDiv = document.getElementById('result');
+  resultDiv.style.display = 'block';
+  resultDiv.innerHTML = '<div class="loading">Calculating... ⏳</div>';
+
+  calculateDistance(from_addr, to_addr, (err, distance_km) => {
+    document.getElementById('distance_km').value = distance_km.toFixed(1);
+
+    const country = document.getElementById('country').value;
+    const data = countryData[country];
+    const km_per_l = 10.0 * data.multiplier;
+    const fuel_price = 
+parseFloat(document.getElementById('fuel_price').value) || data.fuelPrice;
+    const litres = distance_km / km_per_l;
+    const litres_with_buffer = litres * 1.10;
+    const cost = litres_with_buffer * fuel_price;
+
+    resultDiv.innerHTML = `
+      <strong>Distance:</strong> ${distance_km.toFixed(1)} km (one 
+way)<br>
+      <strong>Litres needed (with 10% buffer):</strong> 
+${litres_with_buffer.toFixed(2)} L<br>
+      <strong>Fuel price:</strong> ${data.symbol} ${fuel_price} / L<br>
+      <strong>Total cost:</strong> <span 
+style="font-size:1.3em;color:#0a74da">${data.symbol} 
+${cost.toFixed(2)}</span>
+      <hr>
+      <div class="muted">Country multiplier applied: 
+${data.multiplier.toFixed(2)}</div>
+    `;
+  });
+});
+
+window.onload = function() {
+  initCountryDropdown();
+  document.getElementById('country').addEventListener('change', () => {
+    updateCurrency();
+    updateAddressPlaceholders();
+  });
+  
+  const script = document.createElement('script');
+  script.src = 
+`https://maps.googleapis.com/maps/api/js?key=AIzaSyDLfqH5KI_7F5S2LnLGKwBtLTHz4W0PSjw&libraries=places`;
+  script.async = true;
+  script.defer = true;
+  document.head.appendChild(script);
+};
+</script>
+</body>
+</html>
