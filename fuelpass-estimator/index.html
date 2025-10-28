@@ -244,12 +244,10 @@ Institutional Grade, Globally Defensible</div>
       </div>
 
       <label>From Address:</label>
-      <input type="text" id="from_addr" placeholder="e.g., Cape Town, 
-Johannesburg">
+      <input type="text" id="from_addr" placeholder="e.g., Cape Town">
 
       <label>To Address:</label>
-      <input type="text" id="to_addr" placeholder="e.g., Johannesburg, 
-Pretoria">
+      <input type="text" id="to_addr" placeholder="e.g., Stellenbosch">
 
       <div class="row">
         <div class="col">
@@ -364,9 +362,9 @@ id="fuel_currency">ZAR</span>/L)</label>
           <input type="number" step="0.01" id="fuel_price" value="25.00">
         </div>
         <div class="col">
-          <label>Distance (km) — auto-calculated</label>
-          <input type="number" id="distance_km" readonly 
-placeholder="Calculated from addresses">
+          <label>One-Way Distance (km)</label>
+          <input type="number" id="distance_km" value="3.6" step="0.1" 
+min="0.1" placeholder="e.g., 3.6">
         </div>
       </div>
 
@@ -553,7 +551,6 @@ multiplier: 0.79, examples: ["Harare", "Bulawayo", "Mutare"] },
 0.88, examples: ["Delhi", "Mumbai", "Bangalore"] }
 };
 
-// Initialize country dropdown
 function initCountryDropdown() {
   const countrySelect = document.getElementById('country');
   const sortedCountries = Object.keys(countryData).sort();
@@ -565,7 +562,6 @@ function initCountryDropdown() {
   });
   countrySelect.value = 'South Africa';
   updateCurrency();
-  updateAddressPlaceholders();
 }
 
 function updateCurrency() {
@@ -576,96 +572,78 @@ function updateCurrency() {
   document.getElementById('fuel_price').value = data.fuelPrice;
 }
 
-function updateAddressPlaceholders() {
-  const country = document.getElementById('country').value;
-  const data = countryData[country];
-  const fromPlaceholder = data.examples ? `e.g., ${data.examples[0]}, 
-${data.examples[1]}` : "e.g., City, Area";
-  const toPlaceholder = data.examples ? `e.g., ${data.examples[1]}, 
-${data.examples[2] || data.examples[0]}` : "e.g., City, Area";
-  document.getElementById('from_addr').placeholder = fromPlaceholder;
-  document.getElementById('to_addr').placeholder = toPlaceholder;
-}
-
-// Google Maps Distance Matrix
-function calculateDistance(from, to, callback) {
-  if (typeof google !== 'undefined' && google.maps && 
-google.maps.DistanceMatrixService) {
-    const service = new google.maps.DistanceMatrixService();
-    service.getDistanceMatrix({
-      origins: [from],
-      destinations: [to],
-      travelMode: google.maps.TravelMode.DRIVING,
-      unitSystem: google.maps.UnitSystem.METRIC
-    }, (response, status) => {
-      if (status === 'OK' && response.rows[0].elements[0].status === 'OK') 
-{
-        const distance = response.rows[0].elements[0].distance.value / 
-1000; // km
-        callback(null, distance);
-        return;
-      }
-    });
-  }
-  console.warn('Google Maps failed. Using fallback distance of 100km.');
-  callback(null, 100);
-}
-
 document.getElementById('calcBtn').addEventListener('click', () => {
-  const from_addr = document.getElementById('from_addr').value.trim();
-  const to_addr = document.getElementById('to_addr').value.trim();
-
-  if (!from_addr || !to_addr) {
-    alert('Please enter both From and To addresses.');
+  const distanceOneWay = 
+parseFloat(document.getElementById('distance_km').value);
+  if (isNaN(distanceOneWay) || distanceOneWay <= 0) {
+    alert('Please enter a valid one-way distance (greater than 0 km).');
     return;
   }
 
+  const tripFreq = document.getElementById('trip_frequency').value;
+  let tripDays = 1;
+  let isRoundTrip = true;
+
+  switch(tripFreq) {
+    case 'daily':
+      tripDays = 1;
+      isRoundTrip = true;
+      break;
+    case 'weekly_all':
+      tripDays = 7;
+      isRoundTrip = true;
+      break;
+    case 'weekly_work':
+      tripDays = 5;
+      isRoundTrip = true;
+      break;
+    case 'monthly_all':
+      tripDays = 30;
+      isRoundTrip = true;
+      break;
+    case 'monthly_work':
+      tripDays = 22;
+      isRoundTrip = true;
+      break;
+  }
+
+  const distanceTotal = distanceOneWay * (isRoundTrip ? 2 : 1) * tripDays;
+
   const resultDiv = document.getElementById('result');
   resultDiv.style.display = 'block';
-  resultDiv.innerHTML = '<div class="loading">Calculating... ⏳</div>';
 
-  calculateDistance(from_addr, to_addr, (err, distance_km) => {
-    document.getElementById('distance_km').value = distance_km.toFixed(1);
-
-    const country = document.getElementById('country').value;
-    const data = countryData[country];
-    const km_per_l = 10.0 * data.multiplier;
-    const fuel_price = 
+  const country = document.getElementById('country').value;
+  const data = countryData[country];
+  const km_per_l = 10.0 * data.multiplier;
+  const fuel_price = 
 parseFloat(document.getElementById('fuel_price').value) || data.fuelPrice;
-    const litres = distance_km / km_per_l;
-    const litres_with_buffer = litres * 1.10;
-    const cost = litres_with_buffer * fuel_price;
+  const litres = distanceTotal / km_per_l;
+  const litres_with_buffer = litres * 1.10;
+  const cost = litres_with_buffer * fuel_price;
 
-    resultDiv.innerHTML = `
-      <strong>Distance:</strong> ${distance_km.toFixed(1)} km (one 
-way)<br>
-      <strong>Litres needed (with 10% buffer):</strong> 
+  resultDiv.innerHTML = `
+    <strong>One-way distance:</strong> ${distanceOneWay.toFixed(1)} km<br>
+    <strong>Total distance:</strong> ${distanceTotal.toFixed(1)} km 
+(${tripDays} ${tripDays === 1 ? 'day' : 'days'}, ${isRoundTrip ? 
+'round-trip' : 'one-way'})<br>
+    <strong>Litres needed (with 10% buffer):</strong> 
 ${litres_with_buffer.toFixed(2)} L<br>
-      <strong>Fuel price:</strong> ${data.symbol} ${fuel_price} / L<br>
-      <strong>Total cost:</strong> <span 
+    <strong>Fuel price:</strong> ${data.symbol} ${fuel_price} / L<br>
+    <strong>Total cost:</strong> <span 
 style="font-size:1.3em;color:#0a74da">${data.symbol} 
 ${cost.toFixed(2)}</span>
-      <hr>
-      <div class="muted">Country multiplier applied: 
+    <hr>
+    <div class="muted">Country multiplier applied: 
 ${data.multiplier.toFixed(2)}</div>
-    `;
-  });
+  `;
 });
 
-window.onload = function() {
+document.addEventListener('DOMContentLoaded', () => {
   initCountryDropdown();
   document.getElementById('country').addEventListener('change', () => {
     updateCurrency();
-    updateAddressPlaceholders();
   });
-  
-  const script = document.createElement('script');
-  script.src = 
-`https://maps.googleapis.com/maps/api/js?key=AIzaSyDLfqH5KI_7F5S2LnLGKwBtLTHz4W0PSjw&libraries=places`;
-  script.async = true;
-  script.defer = true;
-  document.head.appendChild(script);
-};
+});
 </script>
 </body>
 </html>
