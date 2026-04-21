@@ -1,431 +1,640 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>ZEUSTECH — Innovating Africa at the Level of Creation</title>
-  <meta name="description" content="ZeusTech is Africa’s innovation powerhouse — building protected, high-impact technologies in FinTech, Human Tech, and smart infrastructure.">
-  <meta name="keywords" content="ZeusTech, African tech, innovation, Fuelpass, ORDER app, IP protection, Cape Town startup, ZeusTech Africa">
-  <meta name="author" content="ZeusTech (Pty) Ltd">
-  <meta name="robots" content="index, follow">
-  <meta property="og:title" content="ZEUSTECH — Africa’s Tech Future">
-  <meta property="og:description" content="Building the future of African innovation with protected, scalable technologies.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://zeustechafrica.com">
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="stylesheet" href="css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>ZEUSTECH | Classic Luxury Innovation</title>
+  <!-- Google Fonts: Elegant Serif + Refined Sans for premium contrast -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Font Awesome 6 (free icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-    /* Additional premium styling */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: 'Inter', 'Montserrat', 'Open Sans', sans-serif;
+      background-color: #0a0704;  /* deep charcoal with warmth */
+      font-family: 'Manrope', sans-serif;
+      color: #e9e2d4;
+      line-height: 1.4;
+      scroll-behavior: smooth;
     }
-    
-    /* Hero Section Text Upgrades */
-    .hero .overlay h1 {
-      font-size: clamp(3rem, 8vw, 5.5rem);
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      background: linear-gradient(135deg, #FFFFFF 0%, #34B7F1 100%);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 20px;
+
+    /* premium gold palette */
+    :root {
+      --gold-primary: #C9A03D;
+      --gold-dark: #9E771D;
+      --gold-light: #E5C56A;
+      --gold-glow: rgba(201, 160, 61, 0.25);
+      --black-rich: #0f0c09;
+      --paper-dark: #1a1612;
+      --luxe-border: rgba(201, 160, 61, 0.3);
     }
-    
-    .hero .overlay p {
-      font-size: clamp(1.2rem, 3vw, 1.8rem);
-      font-weight: 500;
-      color: rgba(255,255,255,0.9);
-      max-width: 800px;
-      margin: 0 auto 20px;
+
+    /* classic container */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 40px;
     }
-    
-    .hero .overlay .sub-text {
-      font-size: 1rem;
-      color: rgba(255,255,255,0.6);
-      max-width: 600px;
-      margin: 0 auto 30px;
-    }
-    
-    .hero .overlay .stats-row {
+
+    /* ===== HEADER & NAV ===== */
+    .navbar {
+      padding: 28px 0 24px;
+      border-bottom: 1px solid var(--luxe-border);
       display: flex;
-      justify-content: center;
-      gap: 48px;
-      margin: 30px 0;
-      flex-wrap: wrap;
-    }
-    
-    .hero .overlay .stat {
-      text-align: center;
-    }
-    
-    .hero .overlay .stat-number {
-      display: block;
-      font-size: 2rem;
-      font-weight: 700;
-      color: #34B7F1;
-    }
-    
-    .hero .overlay .stat-label {
-      font-size: 0.8rem;
-      color: rgba(255,255,255,0.6);
-    }
-    
-    .hero .overlay .trust-badges {
-      display: flex;
-      justify-content: center;
-      gap: 24px;
-      flex-wrap: wrap;
-      margin-top: 30px;
-      font-size: 0.8rem;
-      color: rgba(255,255,255,0.5);
-    }
-    
-    .hero .overlay .trust-badges span {
-      display: inline-flex;
+      justify-content: space-between;
       align-items: center;
-      gap: 6px;
+      flex-wrap: wrap;
+      gap: 24px;
     }
-    
-    .hero .cta {
-      background: linear-gradient(135deg, #34B7F1 0%, #2A9FD6 100%);
-      padding: 14px 36px;
-      font-size: 1rem;
-      font-weight: 600;
-      border-radius: 40px;
-      transition: all 0.3s;
+
+    /* ZEUSTECH wordmark — bold, classic, gold, refined */
+    .logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.8rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-primary) 45%, var(--gold-dark) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      transition: all 0.3s ease;
+      position: relative;
       display: inline-block;
     }
-    
-    .hero .cta:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 25px rgba(52, 183, 241, 0.3);
+
+    .logo::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 70px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--gold-primary), transparent);
     }
-    
-    /* Section Title Upgrades */
-    .section h2 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      background: linear-gradient(135deg, #FFFFFF, #34B7F1);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 20px;
+
+    .nav-links {
+      display: flex;
+      gap: 40px;
+      list-style: none;
     }
-    
-    /* Card Upgrades */
-    .card {
-      transition: transform 0.3s, box-shadow 0.3s;
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+      letter-spacing: 0.5px;
+      color: #ddd6cb;
+      transition: 0.25s;
+      font-family: 'Manrope', sans-serif;
+      text-transform: uppercase;
+      font-size: 0.85rem;
     }
-    
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 20px 30px -15px rgba(0,0,0,0.3);
+
+    .nav-links a:hover {
+      color: var(--gold-primary);
     }
-    
-    .card .cta.small {
-      background: linear-gradient(135deg, #34B7F1, #2A9FD6);
+
+    /* hero / main section */
+    .hero {
+      padding: 80px 0 60px;
     }
-    
-    /* Team Member Text Upgrades */
-    .team-member h4 {
-      color: #34B7F1;
+
+    .badge-row {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+
+    .badge {
+      font-family: 'Manrope', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      background: rgba(201, 160, 61, 0.08);
+      padding: 6px 14px;
+      border-radius: 40px;
+      border: 0.5px solid var(--gold-primary);
+      color: var(--gold-light);
+      backdrop-filter: blur(2px);
+    }
+
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 4.8rem;
       font-weight: 600;
+      line-height: 1.15;
+      margin: 20px 0 24px;
+      letter-spacing: -0.5px;
+      color: #f2e8da;
     }
-    
-    /* Footer Link Upgrades */
-    .social a {
-      transition: color 0.3s;
+
+    .hero h1 span {
+      color: var(--gold-primary);
+      border-bottom: 2px solid var(--gold-primary);
+      display: inline-block;
+      padding-bottom: 4px;
     }
-    
-    .social a:hover {
-      color: #34B7F1;
+
+    .hero-description {
+      font-size: 1.2rem;
+      max-width: 650px;
+      color: #cbc3b5;
+      line-height: 1.5;
+      margin-bottom: 48px;
+      font-weight: 400;
+      border-left: 3px solid var(--gold-primary);
+      padding-left: 24px;
+    }
+
+    /* CTA group */
+    .cta-group {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 70px;
+    }
+
+    .btn-primary {
+      background: transparent;
+      border: 1.5px solid var(--gold-primary);
+      padding: 14px 32px;
+      font-family: 'Manrope', sans-serif;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.8rem;
+      color: var(--gold-primary);
+      cursor: pointer;
+      transition: 0.3s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-primary:hover {
+      background: var(--gold-primary);
+      color: #0f0c09;
+      border-color: var(--gold-primary);
+      box-shadow: 0 8px 20px rgba(201, 160, 61, 0.3);
+    }
+
+    .btn-outline {
+      background: rgba(201, 160, 61, 0.05);
+      border: 1px solid rgba(201, 160, 61, 0.5);
+      padding: 14px 32px;
+      font-family: 'Manrope', sans-serif;
+      font-weight: 500;
+      letter-spacing: 1px;
+      font-size: 0.8rem;
+      color: #e9e2d4;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--gold-primary);
+      color: var(--gold-light);
+      background: rgba(201, 160, 61, 0.1);
+    }
+
+    /* stats grid - classic premium cards */
+    .stats-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      margin: 50px 0 70px;
+      border-top: 1px solid var(--luxe-border);
+      padding-top: 50px;
+    }
+
+    .stat-item {
+      flex: 1;
+      min-width: 140px;
+    }
+
+    .stat-number {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3.4rem;
+      font-weight: 700;
+      color: var(--gold-primary);
+      letter-spacing: 1px;
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #b9ae9c;
+      margin-top: 10px;
+      font-weight: 500;
+    }
+
+    .stat-note {
+      font-size: 0.7rem;
+      color: #8f8676;
+      margin-top: 5px;
+    }
+
+    /* innovations section — refined cards */
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem;
+      font-weight: 500;
+      margin-bottom: 48px;
+      letter-spacing: -0.3px;
+      color: #f0e7db;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 0;
+      width: 70px;
+      height: 2px;
+      background: var(--gold-primary);
+    }
+
+    .innovations-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 32px;
+      margin: 40px 0 70px;
+    }
+
+    .innovation-card {
+      background: #13100c;
+      padding: 32px 24px;
+      border: 1px solid #2a241e;
+      transition: all 0.3s ease;
+      border-radius: 0px;   /* sharp & classic */
+      position: relative;
+    }
+
+    .innovation-card:hover {
+      border-color: var(--gold-primary);
+      transform: translateY(-5px);
+      background: #181410;
+      box-shadow: 0 20px 30px -12px rgba(0,0,0,0.5);
+    }
+
+    .card-icon {
+      font-size: 2.4rem;
+      color: var(--gold-primary);
+      margin-bottom: 24px;
+    }
+
+    .innovation-card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.7rem;
+      font-weight: 600;
+      margin-bottom: 14px;
+      letter-spacing: 0.5px;
+    }
+
+    .innovation-card p {
+      font-size: 0.9rem;
+      line-height: 1.5;
+      color: #cac1b2;
+    }
+
+    /* certificates & trust row */
+    .trust-banner {
+      background: #0d0a07;
+      border-top: 1px solid var(--luxe-border);
+      border-bottom: 1px solid var(--luxe-border);
+      padding: 40px 0;
+      margin: 40px 0 60px;
+    }
+
+    .trust-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .trust-item {
+      font-family: 'Manrope', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #ddcfbc;
+    }
+
+    .trust-item i {
+      font-size: 1.4rem;
+      color: var(--gold-primary);
+    }
+
+    /* live studio / order mini banner */
+    .action-strip {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      background: linear-gradient(95deg, #0f0c09 0%, #1a1510 100%);
+      padding: 28px 32px;
+      margin-bottom: 60px;
+      border-left: 5px solid var(--gold-primary);
+    }
+
+    .action-strip p {
+      font-size: 1.1rem;
+      font-weight: 500;
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    .action-strip .gold-link {
+      color: var(--gold-primary);
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: 1px;
+      border-bottom: 1px solid var(--gold-primary);
+      padding-bottom: 2px;
+    }
+
+    /* footer */
+    .footer {
+      padding: 50px 0 40px;
+      border-top: 1px solid rgba(201, 160, 61, 0.2);
+      margin-top: 40px;
+      font-size: 0.8rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      background: linear-gradient(135deg, var(--gold-light), var(--gold-primary));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 32px;
+    }
+
+    .footer-links a {
+      text-decoration: none;
+      color: #b4a68f;
+      transition: 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold-primary);
+    }
+
+    /* responsive */
+    @media (max-width: 900px) {
+      .container {
+        padding: 0 24px;
+      }
+      .hero h1 {
+        font-size: 3.2rem;
+      }
+      .logo {
+        font-size: 2.2rem;
+      }
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .nav-links {
+        gap: 24px;
+        flex-wrap: wrap;
+      }
+    }
+
+    @media (max-width: 580px) {
+      .hero h1 {
+        font-size: 2.4rem;
+      }
+      .stats-grid {
+        flex-direction: column;
+        gap: 24px;
+      }
+    }
+
+    /* additional luxury touches */
+    .gold-separator {
+      width: 80px;
+      height: 1px;
+      background: var(--gold-primary);
+      margin: 20px 0;
+    }
+
+    button, a {
+      cursor: pointer;
+    }
+
+    ::selection {
+      background: var(--gold-primary);
+      color: #0f0c09;
     }
   </style>
 </head>
 <body>
 
-  <!-- Tesla-Style Header: Logo Left, Nav Right -->
-  <header class="header">
-    <div class="logo">
-      <img src="assets/zeustech-logo-newlayout.jpg" alt="ZEUSTECH">
-    </div>
-    <div class="hamburger">☰</div>
-    <nav class="main-nav">
-      <a href="#fuelpass">FuelPass</a>
-      <a href="zeuschat.html">ZeusChat</a>
-      <a href="#order">ORDER</a>
-      <a href="#studio">Live Studio</a>
-      <a href="#innovations">Innovations</a>
-    </nav>
-  </header>
+<div class="container">
+  <!-- navigation with classic elegance -->
+  <div class="navbar">
+    <div class="logo">ZEUSTECH</div>
+    <ul class="nav-links">
+      <li><a href="#">Innovations</a></li>
+      <li><a href="#">Studio</a></li>
+      <li><a href="#">Ventures</a></li>
+      <li><a href="#">Concierge</a></li>
+    </ul>
+  </div>
 
-  <!-- Mobile Menu Overlay -->
-  <div class="mobile-menu" id="mobileMenu">
-    <div class="mobile-menu-content">
-      <a href="#fuelpass">FuelPass</a>
-      <a href="#order">ORDER</a>
-      <a href="#studio">Live Studio</a>
-      <a href="#innovations">Innovations</a>
-      <a href="#story">Our Story</a>
-      <a href="#team">Team</a>
-      <a href="mailto:ceo@zeustechafrica.com">Contact</a>
+  <!-- hero -->
+  <div class="hero">
+    <div class="badge-row">
+      <span class="badge"><i class="fas fa-crown" style="margin-right: 6px;"></i> Est. 2020</span>
+      <span class="badge"><i class="fas fa-globe-africa"></i> Cape Town · Pan-African</span>
+      <span class="badge"><i class="fas fa-chart-line"></i> SARS & CIPC Compliant</span>
+    </div>
+    <h1>Innovating Africa <br> at the <span>Level of Creation</span></h1>
+    <div class="hero-description">
+      We build complete, production-ready platforms. From viral marketing systems to AI-powered apps.
+    </div>
+    <div class="cta-group">
+      <a href="#" class="btn-primary">Explore our innovations →</a>
+      <a href="#" class="btn-outline"><i class="fas fa-play-circle" style="margin-right: 8px;"></i> Live Studio</a>
+    </div>
+
+    <!-- key metrics - gold bold numbers -->
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-number">6+</div>
+        <div class="stat-label">Production Platforms</div>
+        <div class="stat-note">Enterprise-grade ecosystems</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">10,000+</div>
+        <div class="stat-label">Active Users</div>
+        <div class="stat-note">Across Africa & global</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">100%</div>
+        <div class="stat-label">CIPC Registered</div>
+        <div class="stat-note">Fully tax compliant & insured</div>
+      </div>
     </div>
   </div>
 
-  <!-- 1. HERO SECTION (UPGRADED TEXT, 4K VIDEO KEPT) -->
-  <section id="hero" class="section hero">
-    <video autoplay muted loop playsinline>
-      <source src="assets/hero/hero.mp4" type="video/mp4">
-    </video>
-    <div class="overlay">
-      <h1>ZEUSTECH</h1>
-      <p>Innovating Africa at the Level of Creation</p>
-      <div class="sub-text">We build complete, production-ready platforms. From viral marketing systems to AI-powered apps.</div>
-      
-      <div class="stats-row">
-        <div class="stat">
-          <span class="stat-number">6+</span>
-          <span class="stat-label">Production Platforms</span>
-        </div>
-        <div class="stat">
-          <span class="stat-number">10,000+</span>
-          <span class="stat-label">Users Ready</span>
-        </div>
-        <div class="stat">
-          <span class="stat-number">100%</span>
-          <span class="stat-label">CIPC Registered</span>
-        </div>
+  <!-- innovations showcase (matching the original platforms) -->
+  <div>
+    <h2 class="section-title">Our Signature Platforms</h2>
+    <div class="innovations-grid">
+      <div class="innovation-card">
+        <div class="card-icon"><i class="fas fa-bolt"></i></div>
+        <h3>FuelPass</h3>
+        <p>Seamless energy & logistics infrastructure, built for African mobility ecosystems with real-time settlement.</p>
       </div>
-      
-      <a href="#innovations" class="cta">Explore Our Innovations →</a>
-      
-      <div class="trust-badges">
-        <span>✅ CIPC Registered Company</span>
-        <span>✅ SARS Tax Compliant</span>
-        <span>📍 Based in Cape Town</span>
-        <span>💳 Payment Ready</span>
-        <span>📱 Mobile-First</span>
+      <div class="innovation-card">
+        <div class="card-icon"><i class="fas fa-comments"></i></div>
+        <h3>ZeusChat</h3>
+        <p>AI-powered communication hub, blending conversational agents with ultra-low latency messaging.</p>
+      </div>
+      <div class="innovation-card">
+        <div class="card-icon"><i class="fas fa-chalkboard-user"></i></div>
+        <h3>Live Studio</h3>
+        <p>Broadcast-ready platform for creators, brands & interactive content — with viral marketing DNA.</p>
+      </div>
+      <div class="innovation-card">
+        <div class="card-icon"><i class="fas fa-chart-simple"></i></div>
+        <h3>ZeusAnalytics</h3>
+        <p>Predictive intelligence for retail, fintech & logistics — powered by proprietary AI models.</p>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- 2. FUELPASS ESTIMATOR (PUBLIC) -->
-  <section id="fuelpass" class="section">
-    <video autoplay muted loop playsinline>
-      <source src="assets/fuelpass/fuelpass_calculator_bg.mp4" type="video/mp4">
-    </video>
-    <div class="overlay">
-      <img src="assets/fuelpass/fuelpass-estimator-logo.png" alt="FuelPass Estimator" class="section-logo">
-      <h2>FuelPass Estimator</h2>
-      <p>Know Your Journey. Plan fuel costs with precision — for any trip, any vehicle.</p>
-      <a href="/fuelpass-estimator/" target="_blank" class="cta primary">Try Now</a>
+  <!-- trust & registration line - CIPC, SARS, Cape Town -->
+  <div class="trust-banner">
+    <div class="trust-grid">
+      <div class="trust-item"><i class="fas fa-check-circle"></i> CIPC Registered Company</div>
+      <div class="trust-item"><i class="fas fa-file-invoice-dollar"></i> SARS Tax Compliant</div>
+      <div class="trust-item"><i class="fas fa-building"></i> Based in Cape Town</div>
+      <div class="trust-item"><i class="fas fa-credit-card"></i> Payment Ready</div>
+      <div class="trust-item"><i class="fas fa-mobile-alt"></i> Mobile-First</div>
     </div>
-  </section>
+  </div>
 
-  <!-- 3. ORDER (GATED) -->
-  <section id="order" class="section">
-    <video autoplay muted loop playsinline>
-      <source src="assets/order/order.mp4" type="video/mp4">
-    </video>
-    <div class="overlay dark">
-      <img src="assets/order/orderlogo.png" alt="ORDER App" class="section-logo">
-      <h2>ORDER</h2>
-      <p>Services at Your Fingertips — connecting communities with verified professionals on demand.</p>
-      <p class="insight">Market potential: R3–5B/year in SA alone at full scale.</p>
-      <a href="mailto:ceo@zeustechafrica.com?subject=ORDER%20Innovation%20Access%20Request" class="cta">Request Access</a>
+  <!-- "Order, Live Studio, ZeusChat, FuelPass" inspired elements (from screenshot) -->
+  <div class="action-strip">
+    <p><i class="fas fa-shopping-cart" style="color: var(--gold-primary); margin-right: 12px;"></i> <strong>ORDER</strong> — Bespoke platform development & white-label solutions</p>
+    <a href="#" class="gold-link">Request a consultation →</a>
+  </div>
+
+  <div style="display: flex; gap: 30px; flex-wrap: wrap; justify-content: space-between; margin-bottom: 30px;">
+    <div style="flex:1; min-width: 180px;">
+      <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; font-weight: 600; color: var(--gold-primary); margin-bottom: 8px;">ZeusChat</h3>
+      <p style="color:#bcb09b;">AI-native conversations, encrypted & realtime. Next‑gen business messaging.</p>
     </div>
-  </section>
-
-  <!-- 4. LIVE STUDIO -->
-  <section id="studio" class="section">
-    <video autoplay muted loop playsinline>
-      <source src="assets/studio/live_studio_4k_effect.mp4" type="video/mp4">
-    </video>
-    <div class="overlay dark">
-      <img src="assets/studio/zeustech-live-studio-logo.PNG" alt="ZeusTech Live Studio" class="section-logo">
-      <h2>ZeusTech Live Studio</h2>
-      <p>The Stage for Africa’s Future — a multi-billion-rand creative-technology hub in Cape Town.</p>
-      <a href="mailto:ceo@zeustechafrica.com?subject=Live%20Studio%20Partnership" class="cta">See the Vision</a>
+    <div style="flex:1; min-width: 180px;">
+      <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; font-weight: 600; color: var(--gold-primary); margin-bottom: 8px;">FuelPass</h3>
+      <p style="color:#bcb09b;">End-to-end fuel & logistics network — powering Africa's mobility revolution.</p>
     </div>
-  </section>
-
-  <!-- 5. OUR STORY SECTION -->
-  <section id="story" class="section">
-    <video autoplay muted loop playsinline>
-      <source src="assets/vision/vision.mp4" type="video/mp4">
-    </video>
-    <div class="overlay story-content">
-      <h2>Our Story</h2>
-
-      <h3>🌍 Mission Statement</h3>
-      <p>To structure, protect, and commercialize African innovation — transforming ideas into scalable, investor-ready technologies that solve real-world problems.</p>
-
-      <h3>🚀 Vision Statement</h3>
-      <p>To become Africa’s foremost technology and innovation powerhouse — empowering creators, advancing IP ownership, and driving inclusive economic growth through protected, high-impact technologies.</p>
-
-      <h3>💡 Core Company Values</h3>
-      <ul>
-        <li><strong>Innovation:</strong> Constantly challenging the status quo to build solutions that matter.</li>
-        <li><strong>Integrity:</strong> Upholding transparency, accountability, and ethical leadership.</li>
-        <li><strong>Empowerment:</strong> Elevating innovators through knowledge, resources, and strategic partnerships.</li>
-        <li><strong>Collaboration:</strong> Building strong ecosystems that connect creators, investors, and markets.</li>
-        <li><strong>Excellence:</strong> Delivering measurable impact and long-term value in every project.</li>
-      </ul>
-
-      <h3>🧭 Leadership Team</h3>
-      <div class="team-list">
-        <div class="team-member">
-          <h4>Oghenetega Blondy Obebeduo — Founder & CEO</h4>
-          <p>A visionary technologist and serial entrepreneur, Oghenetega drives ZeusTech’s mission to protect, scale, and commercialize African innovations globally. With deep expertise in IP strategy, digital infrastructure, and technology incubation, he empowers creators to turn ideas into scalable ventures.</p>
-        </div>
-        <div class="team-member">
-          <h4>Cody Haricombe — Legal Counsel (IP & Corporate Affairs)</h4>
-          <p>Cody specializes in intellectual property law and corporate structuring, ensuring that ZeusTech innovations are fully protected and compliant. He oversees IP filings, licensing frameworks, and strategic legal partnerships.</p>
-        </div>
-        <div class="team-member">
-          <h4>Ogheneovo Vicent Obebeduo — Chief Technology Officer (CTO)</h4>
-          <p>Ogheneovo leads all technical architecture, software development, and integration efforts. He ensures that ZeusTech’s platforms, like FuelPass and ORDER, are scalable, secure, and cutting-edge.</p>
-        </div>
-        <div class="team-member">
-          <h4>Cyril Aiyewhenre Imhenrion — Chief Operations Officer (COO)</h4>
-          <p>Cyril manages operational execution, partnerships, and strategic rollouts. He ensures that projects move from concept to market efficiently and with maximum impact.</p>
-        </div>
-      </div>
-
-      <h3>⚖️ Verification & Affiliations</h3>
-      <p><strong>Legal Partner:</strong> Cody Haricombe Attorneys — Cape Town, South Africa. Expertise: IP Law, Corporate Structuring.</p>
-      <p><strong>CIPC Registration:</strong> 2025/794787/07</p>
-      <p><strong>SARS Tax Reference:</strong> Registered under ZeusTech (Pty) Ltd</p>
-
-      <h3>🌍 Partnership Program</h3>
-      <p><strong>Government:</strong> TIA, CSIR, Municipalities — digitizing infrastructure and public services.</p>
-      <p><strong>Private Sector:</strong> Tech firms, telecoms, energy companies — integrating scalable innovation.</p>
-      <p><strong>NGOs:</strong> Youth empowerment, STEM education, financial inclusion — democratizing access to tech.</p>
-
-      <h3>🎤 Public Speaking & Awareness</h3>
-      <p>Key Topics: "African Innovation Ownership", "Commercializing African Tech", "Building Africa’s Innovation Ecosystem".</p>
-
-      <a href="#team" class="cta">Meet the Team</a>
+    <div style="flex:1; min-width: 180px;">
+      <h3 style="font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; font-weight: 600; color: var(--gold-primary); margin-bottom: 8px;">Live Studio</h3>
+      <p style="color:#bcb09b;">Immersive streaming & audience monetization — viral engine included.</p>
     </div>
-  </section>
+  </div>
 
-  <!-- 6. VISION -->
-  <section id="vision" class="section">
-    <video autoplay muted loop playsinline>
-      <source src="assets/vision/vision.mp4" type="video/mp4">
-    </video>
-    <div class="overlay">
-      <h2>The God-Level Mind</h2>
-      <p>The Power to Create — where human intelligence meets divine innovation.</p>
-      <a href="#story" class="cta">Read Our Story</a>
+  <!-- extra classic luxury note - rendezvous -->
+  <div style="margin: 50px 0 20px; text-align: center;">
+    <div class="gold-separator" style="margin: 0 auto 20px auto;"></div>
+    <p style="font-size: 0.9rem; letter-spacing: 1px; font-weight: 300; color: #b8ab95;"><i class="fas fa-gem" style="color: var(--gold-primary); margin-right: 8px;"></i> Precision engineering · Timeless execution</p>
+  </div>
+
+  <div class="footer">
+    <div class="footer-logo">ZEUSTECH</div>
+    <div class="footer-links">
+      <a href="#">Innovations</a>
+      <a href="#">Studio</a>
+      <a href="#">Legal</a>
+      <a href="#">Concierge</a>
     </div>
-  </section>
+    <div style="color:#8f7f68;">© 2026 — All rights reserved. Cape Town, South Africa</div>
+  </div>
+</div>
 
-  <!-- 7. INNOVATIONS -->
-  <section id="innovations" class="section innovations-grid">
-    <h2 class="section-title">Innovation Portfolio</h2>
-    
-    <!-- FuelPass Estimator (Public) -->
-    <div class="card public">
-      <img src="assets/innovations/techlab.jpg" alt="FuelPass Estimator">
-      <h3>FuelPass Estimator</h3>
-      <p>Real-time fuel cost planning for African drivers.</p>
-      <a href="/fuelpass-estimator/" target="_blank" class="cta small">Use Tool</a>
-    </div>
+<!-- subtle background texture: premium linen feel -->
+<style>
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(rgba(201, 160, 61, 0.02) 1px, transparent 1px);
+    background-size: 32px 32px;
+    pointer-events: none;
+    z-index: -1;
+  }
+  /* gold custom scroll */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #1a1612;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--gold-primary);
+    border-radius: 0px;
+  }
+</style>
 
-    <!-- Gated Innovation 1 -->
-    <div class="card gated">
-      <img src="assets/innovations/ai-brain.jpg" alt="Smart Urban Flow">
-      <div class="lock">🔒</div>
-      <h3>Smart Urban Flow</h3>
-      <p>Optimizing city movement and resource efficiency.</p>
-      <p class="insight">R2–4B/year revenue potential in major metros.</p>
-      <a href="mailto:ceo@zeustechafrica.com?subject=Innovation%20Access%20Request" class="cta small">Request Access</a>
-    </div>
-
-    <!-- Gated Innovation 2 -->
-    <div class="card gated">
-      <img src="assets/innovations/humanandaibrains.JPG" alt="Seamless Daily Services">
-      <div class="lock">🔒</div>
-      <h3>Seamless Daily Services</h3>
-      <p>Empowering communities with instant access to trusted professionals.</p>
-      <p class="insight">Scalable across 10M+ households in SA.</p>
-      <a href="mailto:ceo@zeustechafrica.com?subject=Innovation%20Access%20Request" class="cta small">Request Access</a>
-    </div>
-
-    <!-- Gated Innovation 3 -->
-    <div class="card gated">
-      <img src="assets/innovations/digital-hand.jpg" alt="Next-Gen Finance Tools">
-      <div class="lock">🔒</div>
-      <h3>Next-Gen Finance Tools</h3>
-      <p>Smarter, safer financial solutions for everyday users.</p>
-      <p class="insight">Licensing value: R500M–R2B per market.</p>
-      <a href="mailto:ceo@zeustechafrica.com?subject=Innovation%20Access%20Request" class="cta small">Request Access</a>
-    </div>
-  </section>
-
-  <!-- 8. TEAM -->
-  <section id="team" class="section">
-    <div class="bg" style="background-image: url('assets/team/ceooffice.jpg');"></div>
-    <div class="overlay dark team-content">
-      <h2>The Architects of ZeusTech</h2>
-      <p>Meet the leaders shaping Africa’s innovation future.</p>
-      
-      <!-- CEO -->
-      <div class="team-member">
-        <img src="assets/team/ceo.jpg" alt="Oghenetega Blondy Obebeduo">
-        <h3>Oghenetega Blondy Obebeduo</h3>
-        <p>Founder & CEO — A visionary technologist and serial entrepreneur, Oghenetega drives ZeusTech’s mission to protect, scale, and commercialize African innovations globally. With deep expertise in IP strategy, digital infrastructure, and technology incubation, he empowers creators to turn ideas into scalable ventures.</p>
-      </div>
-
-      <!-- Legal Counsel -->
-      <div class="team-member text-only">
-        <h3>Cody Haricombe</h3>
-        <p>Legal Counsel (IP & Corporate Affairs) — Cody specializes in intellectual property law and corporate structuring, ensuring that ZeusTech innovations are fully protected and compliant. He oversees IP filings, licensing frameworks, and strategic legal partnerships.</p>
-      </div>
-
-      <!-- CTO -->
-      <div class="team-member text-only">
-        <h3>Ogheneovo Vicent Obebeduo</h3>
-        <p>Chief Technology Officer (CTO) — Ogheneovo leads all technical architecture, software development, and integration efforts. He ensures that ZeusTech’s platforms, like FuelPass and ORDER, are scalable, secure, and cutting-edge.</p>
-      </div>
-
-      <!-- COO -->
-      <div class="team-member text-only">
-        <h3>Cyril Aiyewhenre Imhenrion</h3>
-        <p>Chief Operations Officer (COO) — Cyril manages operational execution, partnerships, and strategic rollouts. He ensures that projects move from concept to market efficiently and with maximum impact.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- 9. PARTNERSHIPS -->
-  <section id="partnerships" class="section">
-    <div class="bg" style="background-image: url('assets/partnerships/innovationcollaboration.JPG');"></div>
-    <div class="overlay dark">
-      <h2>Building an Ecosystem of Support</h2>
-      <p>Collaborating with forward-thinking partners to scale African innovation.</p>
-      <p>Current supporters: ElizzCollections, Zizipho Collections, Picknstyle, ANTHONY C ENTERPRISE Pty Ltd</p>
-      <a href="mailto:ceo@zeustechafrica.com?subject=Partnership%20Opportunity" class="cta">Join Us</a>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <p>© 2025 ZeusTech (Pty) Ltd — CIPC Reg: 2025/794787/07</p>
-    <p>God’s Hand Reaching Mankind Through Tech.</p>
-    <div class="social">
-      <a href="mailto:ceo@zeustechafrica.com">Contact</a>
-    </div>
-  </footer>
-
-  <!-- Mobile Menu Script -->
-  <script>
-    document.querySelector('.hamburger').addEventListener('click', function() {
-      document.getElementById('mobileMenu').classList.toggle('active');
+<!-- subtle interaction: refine boldness of zeustech logo with extra spark -->
+<script>
+  (function() {
+    // minor elegant micro-interaction: when hovering logo, slight golden glow
+    const logoElem = document.querySelector('.logo');
+    if(logoElem) {
+      logoElem.addEventListener('mouseenter', () => {
+        logoElem.style.textShadow = '0 0 8px rgba(201,160,61,0.4)';
+      });
+      logoElem.addEventListener('mouseleave', () => {
+        logoElem.style.textShadow = '0 2px 5px rgba(0,0,0,0.2)';
+      });
+    }
+    // add dynamic "premium" ripple on cards? subtle elegance.
+    const cards = document.querySelectorAll('.innovation-card');
+    cards.forEach(card => {
+      card.addEventListener('click', () => {
+        // just a soft micro-feedback to show interaction
+        card.style.transition = 'all 0.1s ease';
+        card.style.transform = 'scale(0.99)';
+        setTimeout(() => {
+          card.style.transform = '';
+        }, 120);
+      });
     });
-  </script>
+  })();
+</script>
 
 </body>
 </html>
