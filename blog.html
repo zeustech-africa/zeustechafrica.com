@@ -36,6 +36,18 @@
       margin-bottom: 15px;
       display: block;
     }
+    /* New badge for latest post */
+    .new-badge {
+      background: #34B7F1;
+      color: #000;
+      font-size: 12px;
+      font-weight: bold;
+      padding: 4px 10px;
+      border-radius: 20px;
+      display: inline-block;
+      margin-left: 15px;
+      vertical-align: middle;
+    }
     /* MailerLite form override */
     #mlb2-32443778.ml-form-embedContainer {
       background: transparent !important;
@@ -56,6 +68,16 @@
       background: #D4AF37 !important;
       color: #000 !important;
       font-weight: bold;
+    }
+    .read-more {
+      display: inline-block;
+      margin-top: 15px;
+      color: #34B7F1;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .read-more:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -96,35 +118,46 @@
     </video>
     <div class="overlay">
       <h1>ZeusTech Blog</h1>
-      <p>Innovation Insights from Africa’s Tech Frontier</p>
+      <p>Innovation Insights from Africa's Tech Frontier</p>
     </div>
   </section>
 
   <!-- Blog Posts -->
   <section class="section" style="background: #000;">
     <div style="max-width: 900px; text-align: left;">
+
+      <!-- ZEUSCHAT LAUNCH POST - NEWEST -->
+      <div class="blog-post">
+        <span class="date">April 21, 2026 <span class="new-badge">NEW</span></span>
+        <h3>🚀 ZeusChat Launch: Africa's First Anonymous Messaging Platform</h3>
+        <p>Today marks a historic moment for digital privacy in Africa. ZeusChat is officially live — a revolutionary messaging platform where your identity remains completely anonymous, your messages self-destruct, and your content earns you money.</p>
+        <p><strong>Key Features:</strong> No phone number required • End-to-end encryption • Ghost Mode Identity • 80% creator earnings • Ghost Market escrow protection • 24-hour auto-delete posts</p>
+        <a href="zeuschat.html" class="read-more">Learn more about ZeusChat →</a>
+      </div>
+
+      <!-- Existing Blog Posts -->
       <div class="blog-post">
         <span class="date">October 23, 2025</span>
-        <h3>Why IP Protection is Africa’s Next Tech Revolution</h3>
-        <p>In a continent rich with ideas but often lacking in protection frameworks, ZeusTech is building a new model: secure, scalable, and investor-ready innovation. Learn how we’re turning African ingenuity into global assets.</p>
+        <h3>Why IP Protection is Africa's Next Tech Revolution</h3>
+        <p>In a continent rich with ideas but often lacking in protection frameworks, ZeusTech is building a new model: secure, scalable, and investor-ready innovation. Learn how we're turning African ingenuity into global assets.</p>
       </div>
 
       <div class="blog-post">
         <span class="date">October 20, 2025</span>
         <h3>The Fuelpass Estimator: Solving Daily Pain Points for African Drivers</h3>
-        <p>With fuel prices fluctuating daily, the average commuter loses hundreds of rands monthly due to poor planning. Our free Fuelpass Estimator tool brings real-time clarity — and it’s just the beginning.</p>
+        <p>With fuel prices fluctuating daily, the average commuter loses hundreds of rands monthly due to poor planning. Our free Fuelpass Estimator tool brings real-time clarity — and it's just the beginning.</p>
       </div>
 
       <div class="blog-post">
         <span class="date">October 15, 2025</span>
         <h3>ORDER: The Future of On-Demand Services in Africa</h3>
-        <p>From barbers to plumbers, Africa’s informal service economy is massive — but fragmented. ORDER connects trusted professionals with communities, safely and instantly. Pilot testing begins Q1 2026.</p>
+        <p>From barbers to plumbers, Africa's informal service economy is massive — but fragmented. ORDER connects trusted professionals with communities, safely and instantly. Pilot testing begins Q1 2026.</p>
       </div>
 
       <div class="blog-post">
         <span class="date">October 10, 2025</span>
-        <h3>Building Africa’s Silicon Valley: The ZeusTech Live Studio Vision</h3>
-        <p>More than a production hub — it’s a launchpad for African creators, innovators, and global collaborations. Located in Cape Town, this multi-billion-rand ecosystem will redefine media and tech in Africa.</p>
+        <h3>Building Africa's Silicon Valley: The ZeusTech Live Studio Vision</h3>
+        <p>More than a production hub — it's a launchpad for African creators, innovators, and global collaborations. Located in Cape Town, this multi-billion-rand ecosystem will redefine media and tech in Africa.</p>
       </div>
     </div>
   </section>
@@ -143,7 +176,7 @@
             <div class="ml-form-embedBody ml-form-embedBodyDefault row-form">
               <div class="ml-form-embedContent">
                 <h4>Join Our Innovation Network</h4>
-                <p>Get exclusive updates on ZeusTech’s latest technologies and investment opportunities.</p>
+                <p>Get exclusive updates on ZeusTech's latest technologies and investment opportunities.</p>
               </div>
               <form class="ml-block-form" action="https://assets.mailerlite.com/jsonp/1875555/forms/169061530384467761/subscribe" data-code="" method="post" target="_blank">
                 <div class="ml-form-formContent">
@@ -195,7 +228,7 @@
   <!-- Footer -->
   <footer class="footer">
     <p>© 2025 ZeusTech (Pty) Ltd — CIPC Reg: 2025/794787/07</p>
-    <p>God’s Hand Reaching Mankind Through Tech.</p>
+    <p>God's Hand Reaching Mankind Through Tech.</p>
     <div class="social">
       <a href="mailto:ceo@zeustechafrica.com">Contact</a>
     </div>
