@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZeusChat - Ghost Mode Messaging | Anonymous Messaging Platform</title>
+    <meta name="description" content="ZeusChat is Africa's first anonymous messaging platform. No phone number required. Encrypted chats, ghost marketplace, and creator earnings. Join Ghost Town today.">
+    <meta name="keywords" content="anonymous messaging, private chat, encrypted messages, ghost mode, african messaging app, zeuschat">
+    <meta property="og:title" content="ZeusChat - Ghost Mode Messaging">
+    <meta property="og:description" content="Speak freely. Stay anonymous. No phone number required.">
+    <meta property="og:image" content="/images/zeuschat-og-image.png">
+    <meta property="og:url" content="https://zeustechafrica.com/zeuschat">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ZeusChat - Ghost Mode Messaging">
+    <meta name="twitter:description" content="Speak freely. Stay anonymous. No phone number required.">
+    <meta name="twitter:image" content="/images/zeuschat-og-image.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #34B7F1;
+            --bg-dark: #1A1A1A;
+            --accent: #DCF8C6;
+            --text-light: #f5f5f5;
+            --text-muted: #a0a0a0;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        section { padding: 80px 0; }
+        
+        /* Typography */
+        h1, h2, h3 { font-weight: 700; line-height: 1.2; margin-bottom: 16px; }
+        h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
+        h2 { font-size: clamp(1.8rem, 3vw, 2.5rem); }
+        h3 { font-size: 1.25rem; }
+        p { color: var(--text-muted); margin-bottom: 16px; }
+        
+        /* Navigation */
+        nav {
+            position: fixed; top: 0; left: 0; right: 0;
+            background: rgba(26, 26, 26, 0.95); backdrop-filter: blur(10px);
+            padding: 16px 0; z-index: 1000; border-bottom: 1px solid var(--glass-border);
+        }
+        nav .container { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+        .logo { font-weight: 800; font-size: 1.5rem; color: var(--primary); text-decoration: none; }
+        .nav-links { display: flex; gap: 24px; flex-wrap: wrap; }
+        .nav-links a { color: var(--text-light); text-decoration: none; font-weight: 500; transition: color 0.2s; }
+        .nav-links a:hover { color: var(--primary); }
+        
+        /* Buttons */
+        .btn {
+            display: inline-block; padding: 12px 28px; border-radius: 30px;
+            text-decoration: none; font-weight: 600; transition: all 0.3s ease; border: none; cursor: pointer;
+        }
+        .btn-primary { background: var(--primary); color: #000; }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(52, 183, 241, 0.3); }
+        .btn-secondary { background: transparent; border: 2px solid var(--primary); color: var(--primary); }
+        .btn-secondary:hover { background: var(--primary); color: #000; }
+        .btn-outline-light { background: transparent; border: 1px solid var(--text-muted); color: var(--text-light); }
+        .btn-outline-light:hover { border-color: var(--primary); color: var(--primary); }
+        
+        /* Cards/Glassmorphism */
+        .card {
+            background: var(--glass-bg); backdrop-filter: blur(10px);
+            border: 1px solid var(--glass-border); border-radius: 16px; padding: 24px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 8px 24px rgba(0,0,0,0.4); }
+        
+        /* Grids */
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+        .grid-4 { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 16px; }
+        
+        /* Hero */
+        .hero { text-align: center; padding: 140px 0 80px; }
+        .hero h1 span { color: var(--primary); }
+        .rating { margin-top: 20px; font-size: 0.9rem; color: var(--text-muted); }
+        .rating span { color: #FFD700; }
+        .hero-buttons { display: flex; gap: 16px; justify-content: center; margin-top: 30px; flex-wrap: wrap; }
+        
+        /* Sections */
+        .section-title { text-align: center; margin-bottom: 40px; }
+        .section-title p { max-width: 600px; margin: 0 auto; }
+        .icon { font-size: 2rem; margin-bottom: 12px; display: block; }
+        .feature-list { list-style: none; padding: 0; }
+        .feature-list li { margin-bottom: 12px; padding-left: 24px; position: relative; }
+        .feature-list li::before { content: "✓"; color: var(--primary); position: absolute; left: 0; font-weight: bold; }
+        
+        /* CTA Section */
+        .cta-section { background: linear-gradient(135deg, rgba(52, 183, 241, 0.1), transparent); border-radius: 20px; text-align: center; padding: 60px 40px; }
+        .qr-placeholder { width: 150px; height: 150px; background: #fff; margin: 20px auto; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #000; font-weight: 600; }
+        
+        /* Social Media Icons */
+        .social-links { display: flex; justify-content: center; gap: 24px; margin: 20px 0; flex-wrap: wrap; }
+        .social-icon { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; background: var(--glass-bg); border-radius: 50%; transition: all 0.3s ease; text-decoration: none; font-size: 1.4rem; }
+        .social-icon:hover { transform: translateY(-3px); background: var(--primary); }
+        .social-icon:hover span { filter: brightness(1); }
+        
+        /* Download Badges */
+        .download-badges { display: flex; justify-content: center; gap: 16px; margin: 20px 0; flex-wrap: wrap; }
+        .download-badge { height: 50px; transition: transform 0.2s; }
+        .download-badge:hover { transform: translateY(-2px); }
+        
+        /* Footer */
+        footer { background: #111; padding: 60px 0 20px; border-top: 1px solid var(--glass-border); }
+        .footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 24px; margin-bottom: 30px; }
+        .footer-links h4 { color: var(--text-light); margin-bottom: 16px; font-size: 1rem; }
+        .footer-links a { display: block; color: var(--text-muted); text-decoration: none; margin-bottom: 8px; transition: color 0.2s; font-size: 0.9rem; }
+        .footer-links a:hover { color: var(--primary); }
+        .copyright { text-align: center; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid var(--glass-border); padding-top: 20px; }
+        
+        /* Animations */
+        .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            section { padding: 60px 0; }
+            .grid-3, .grid-2, .grid-4 { grid-template-columns: 1fr; }
+            .hero { padding: 120px 0 40px; }
+            .nav-links { display: none; }
+            .cta-section { padding: 40px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">ZEUSTECH</a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="zeuschat.html">ZeusChat</a>
+                <a href="blog.html">Blog</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero fade-in">
+        <div class="container">
+            <h1>👻 <span>ZEUSCHAT</span><br>Ghost Mode Messaging</h1>
+            <h3>Simple. Secure. Reliable.</h3>
+            <p>No phone number required. Built for privacy-first messaging, trusted commerce, and creator earnings inside Ghost Town.</p>
+            <div class="hero-buttons">
+                <a href="#download" class="btn btn-primary">Get Started</a>
+                <a href="#features" class="btn btn-secondary">Learn More</a>
+            </div>
+            <div class="rating">⭐⭐⭐⭐⭐ (4.8 based on 10,000+ reviews)</div>
+        </div>
+    </section>
+
+    <!-- Key Features -->
+    <section id="features" class="fade-in">
+        <div class="container">
+            <div class="grid-3">
+                <div class="card">
+                    <span class="icon">🔒</span>
+                    <h3>End-to-End Encryption</h3>
+                    <p>Your messages are encrypted and only visible to you and the recipient.</p>
+                </div>
+                <div class="card">
+                    <span class="icon">👻</span>
+                    <h3>Ghost Mode Identity</h3>
+                    <p>No phone number required. Your Zeus-PIN is your anonymous identity.</p>
+                </div>
+                <div class="card">
+                    <span class="icon">💰</span>
+                    <h3>Creator Earnings</h3>
+                    <p>Earn 80% of every paid post. Your content, your value, your audience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ghost Community -->
+    <section class="fade-in">
+        <div class="container">
+            <div class="section-title">
+                <h2>👻 Ghost Community</h2>
+                <p>Where words disappear, but legends are born.</p>
+            </div>
+            <div class="card">
+                <ul class="feature-list">
+                    <li>TikTok-style feed with For You, Following, Trending tabs</li>
+                    <li>Post videos, images, and text anonymously</li>
+                    <li>Monetize your content - set your price (R5 - R50)</li>
+                    <li>24-hour auto-delete - what happens in Ghost Town stays</li>
+                    <li>Like, comment, share, and follow creators</li>
+                    <li>Earn 80% of every paid view</li>
+                </ul>
+                <div style="text-align: center; margin-top: 20px;">
+                    <a href="#" class="btn btn-primary">Join Ghost Community →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ghost Market -->
+    <section class="fade-in">
+        <div class="container">
+            <div class="section-title">
+                <h2>🏪 Ghost Market</h2>
+                <p>Africa's first anonymous buy & sell marketplace.</p>
+            </div>
+            <div class="card">
+                <ul class="feature-list">
+                    <li>Sell items without anyone knowing who you are</li>
+                    <li>Escrow protection - money held until you receive the item</li>
+                    <li>No contact exchange - all communication on platform</li>
+                    <li>AI-powered listings and price suggestions</li>
+                    <li>Seller ratings and reviews</li>
+                    <li>Integrated courier system with tracking</li>
+                </ul>
+                <div style="text-align: center; margin-top: 20px;">
+                    <a href="#" class="btn btn-primary">Start Selling →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modern Messaging -->
+    <section class="fade-in">
+        <div class="container">
+            <div class="section-title">
+                <h2>💬 Modern Messaging</h2>
+                <p>Everything you expect, and more.</p>
+            </div>
+            <div class="grid-4">
+                <div class="card" style="text-align: center;"><span class="icon">🎨</span><h3>Themes</h3></div>
+                <div class="card" style="text-align: center;"><span class="icon">🖼️</span><h3>Wallpapers</h3></div>
+                <div class="card" style="text-align: center;"><span class="icon">⚡</span><h3>Quick Replies</h3></div>
+                <div class="card" style="text-align: center;"><span class="icon">🌙</span><h3>Dark Mode</h3></div>
+                <div class="card" style="text-align: center;"><span class="icon">📹</span><h3>GIF & Stickers</h3></div>
+                <div class="card" style="text-align: center;"><span class="icon">🎙️</span><h3>Voice Notes</h3></div>
+                <div class="card" style="text-align: center;"><span class="icon">🌐</span><h3>Translation</h3></div>
+                <div class="card" style="text-align: center;"><span class="icon">🔒</span><h3>2-Step Verify</h3></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security & Privacy -->
+    <section class="fade-in">
+        <div class="container">
+            <div class="section-title">
+                <h2>🔐 Your Privacy, Protected</h2>
+            </div>
+            <div class="card">
+                <ul class="feature-list">
+                    <li>End-to-end encryption - Only you and recipient can read</li>
+                    <li>No phone number required - Your Zeus-PIN is your identity</li>
+                    <li>Messages self-destruct - Set timer (5s to 30s)</li>
+                    <li>No screenshots - Protected by design</li>
+                    <li>Admin verified - Every ghost is reviewed</li>
+                    <li>KYC for sellers - Fraud protection</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="fade-in">
+        <div class="container">
+            <div class="section-title">
+                <h2>💬 What Ghosts Are Saying</h2>
+            </div>
+            <div class="grid-2">
+                <div class="card">
+                    <p>"Finally, a platform that respects my privacy. No phone number, no tracking."</p>
+                    <small>— Anonymous Ghost (ZT-XXXX-1234)</small>
+                </div>
+                <div class="card">
+                    <p>"I made R1,500 in my first week on Ghost Community. My content, my earnings, my way."</p>
+                    <small>— Creator Ghost (ZT-XXXX-5678)</small>
+                </div>
+                <div class="card">
+                    <p>"Ghost Market changed how I sell. No fees, no names, just secure transactions."</p>
+                    <small>— Seller Ghost (ZT-XXXX-9012)</small>
+                </div>
+                <div class="card">
+                    <p>"The escrow system gives me peace of mind. I know I'm protected."</p>
+                    <small>— Buyer Ghost (ZT-XXXX-3456)</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="fade-in">
+        <div class="container">
+            <div class="section-title">
+                <h2>📊 Ghost Town By The Numbers</h2>
+            </div>
+            <div class="grid-4" style="text-align: center;">
+                <div class="card">
+                    <h2 style="color: var(--primary);">10,000+</h2>
+                    <p>Ghosts</p>
+                </div>
+                <div class="card">
+                    <h2 style="color: var(--primary);">R0</h2>
+                    <p>Fees to sell</p>
+                </div>
+                <div class="card">
+                    <h2 style="color: var(--primary);">24h</h2>
+                    <p>Post life</p>
+                </div>
+                <div class="card">
+                    <h2 style="color: var(--primary);">80%</h2>
+                    <p>Earnings for creators</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section id="download" class="fade-in">
+        <div class="container cta-section">
+            <h2>👻 Join The Ghost Town</h2>
+            <p>10,000+ Ghosts already inside. Not everyone belongs. Only the worthy enter. Join the most exclusive messaging experience on Earth. Limited spots. Admin approval required.</p>
+            <div class="hero-buttons">
+                <a href="#" class="btn btn-primary">Get Started - It's Free</a>
+                <a href="#" class="btn btn-secondary">Download App</a>
+            </div>
+            
+            <!-- Download Badges -->
+            <div class="download-badges">
+                <a href="#"><img src="/images/app-store-badge.svg" alt="Download on App Store" class="download-badge"></a>
+                <a href="#"><img src="/images/google-play-badge.svg" alt="Get it on Google Play" class="download-badge"></a>
+                <a href="#" class="btn btn-outline-light">Use Web App →</a>
+            </div>
+            
+            <!-- QR Code -->
+            <div style="margin-top: 30px;">
+                <p>📱 Scan to download on your phone</p>
+                <div class="qr-placeholder" id="qr-code">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://zeuschat1-0-ixax.onrender.com/mobile" alt="QR Code" width="150" height="150">
+                </div>
+                <p style="font-size: 0.8rem; margin-top: 10px;">Scan with your phone camera to install</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-links">
+                    <h4>Product</h4>
+                    <a href="#features">Features</a>
+                    <a href="#">Pricing</a>
+                    <a href="#download">Download</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <a href="index.html">About Us</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Resources</h4>
+                    <a href="#">Help Center</a>
+                    <a href="#">Community</a>
+                    <a href="#">Developers</a>
+                </div>
+                <div class="footer-links">
+                    <h4>Legal</h4>
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                    <a href="#">KYC Policy</a>
+                    <a href="#">Ghost Market Policy</a>
+                    <a href="#">Refunds</a>
+                </div>
+            </div>
+            
+            <!-- Social Media Links -->
+            <div class="social-links">
+                <a href="https://twitter.com/zeuschat" target="_blank" class="social-icon" aria-label="Twitter">
+                    <span>🐦</span>
+                </a>
+                <a href="https://tiktok.com/@zeuschat" target="_blank" class="social-icon" aria-label="TikTok">
+                    <span>🎵</span>
+                </a>
+                <a href="https://facebook.com/zeuschat" target="_blank" class="social-icon" aria-label="Facebook">
+                    <span>📘</span>
+                </a>
+                <a href="https://instagram.com/zeuschat" target="_blank" class="social-icon" aria-label="Instagram">
+                    <span>📷</span>
+                </a>
+                <a href="https://linkedin.com/company/zeuschat" target="_blank" class="social-icon" aria-label="LinkedIn">
+                    <span>🔗</span>
+                </a>
+                <a href="https://discord.gg/zeuschat" target="_blank" class="social-icon" aria-label="Discord">
+                    <span>💬</span>
+                </a>
+                <a href="https://youtube.com/@zeuschat" target="_blank" class="social-icon" aria-label="YouTube">
+                    <span>📺</span>
+                </a>
+            </div>
+            
+            <p style="text-align: center; margin: 20px 0; font-size: 0.85rem;">📱 Follow us: <strong>@zeuschat</strong> on all platforms</p>
+            
+            <div class="copyright">
+                <p>© 2026 ZeusTech Africa. All rights reserved.</p>
+                <p style="margin-top: 8px;">Zeus-PIN is your identity. Forever. Anonymous. Untraceable.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth fade-in animation on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+        
+        // Mobile menu toggle (simple)
+        const navToggle = document.createElement('button');
+        navToggle.innerHTML = '☰';
+        navToggle.style.cssText = 'background: none; border: none; color: white; font-size: 24px; cursor: pointer; display: none;';
+        document.querySelector('nav .container').prepend(navToggle);
+        
+        const navLinks = document.querySelector('.nav-links');
+        
+        function checkMobile() {
+            if (window.innerWidth <= 768) {
+                navToggle.style.display = 'block';
+                navLinks.style.display = 'none';
+            } else {
+                navToggle.style.display = 'none';
+                navLinks.style.display = 'flex';
+            }
+        }
+        
+        navToggle.addEventListener('click', () => {
+            if (navLinks.style.display === 'none' || navLinks.style.display === '') {
+                navLinks.style.display = 'flex';
+                navLinks.style.flexDirection = 'column';
+                navLinks.style.position = 'absolute';
+                navLinks.style.top = '70px';
+                navLinks.style.left = '0';
+                navLinks.style.right = '0';
+                navLinks.style.background = '#1a1a1a';
+                navLinks.style.padding = '20px';
+                navLinks.style.gap = '16px';
+            } else {
+                navLinks.style.display = 'none';
+            }
+        });
+        
+        window.addEventListener('resize', checkMobile);
+        checkMobile();
+    </script>
+</body>
+</html>
