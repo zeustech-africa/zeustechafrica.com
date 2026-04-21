@@ -4,23 +4,145 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ZEUSTECH — Innovating Africa at the Level of Creation</title>
-  <meta name="description" content="ZeusTech is Africa’s innovation 
-powerhouse — building protected, high-impact technologies in FinTech, 
-Human Tech, and smart infrastructure.">
-  <meta name="keywords" content="ZeusTech, African tech, innovation, 
-Fuelpass, ORDER app, IP protection, Cape Town startup, ZeusTech Africa">
+  <meta name="description" content="ZeusTech is Africa’s innovation powerhouse — building protected, high-impact technologies in FinTech, Human Tech, and smart infrastructure.">
+  <meta name="keywords" content="ZeusTech, African tech, innovation, Fuelpass, ORDER app, IP protection, Cape Town startup, ZeusTech Africa">
   <meta name="author" content="ZeusTech (Pty) Ltd">
   <meta name="robots" content="index, follow">
   <meta property="og:title" content="ZEUSTECH — Africa’s Tech Future">
-  <meta property="og:description" content="Building the future of African 
-innovation with protected, scalable technologies.">
+  <meta property="og:description" content="Building the future of African innovation with protected, scalable technologies.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://zeustechafrica.com">
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="stylesheet" href="css/style.css" />
-  <link 
-href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&family=Poppins:wght@500&display=swap" 
-rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* Additional premium styling */
+    body {
+      font-family: 'Inter', 'Montserrat', 'Open Sans', sans-serif;
+    }
+    
+    /* Hero Section Text Upgrades */
+    .hero .overlay h1 {
+      font-size: clamp(3rem, 8vw, 5.5rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #FFFFFF 0%, #34B7F1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 20px;
+    }
+    
+    .hero .overlay p {
+      font-size: clamp(1.2rem, 3vw, 1.8rem);
+      font-weight: 500;
+      color: rgba(255,255,255,0.9);
+      max-width: 800px;
+      margin: 0 auto 20px;
+    }
+    
+    .hero .overlay .sub-text {
+      font-size: 1rem;
+      color: rgba(255,255,255,0.6);
+      max-width: 600px;
+      margin: 0 auto 30px;
+    }
+    
+    .hero .overlay .stats-row {
+      display: flex;
+      justify-content: center;
+      gap: 48px;
+      margin: 30px 0;
+      flex-wrap: wrap;
+    }
+    
+    .hero .overlay .stat {
+      text-align: center;
+    }
+    
+    .hero .overlay .stat-number {
+      display: block;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #34B7F1;
+    }
+    
+    .hero .overlay .stat-label {
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.6);
+    }
+    
+    .hero .overlay .trust-badges {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+      font-size: 0.8rem;
+      color: rgba(255,255,255,0.5);
+    }
+    
+    .hero .overlay .trust-badges span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    
+    .hero .cta {
+      background: linear-gradient(135deg, #34B7F1 0%, #2A9FD6 100%);
+      padding: 14px 36px;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 40px;
+      transition: all 0.3s;
+      display: inline-block;
+    }
+    
+    .hero .cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(52, 183, 241, 0.3);
+    }
+    
+    /* Section Title Upgrades */
+    .section h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #FFFFFF, #34B7F1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 20px;
+    }
+    
+    /* Card Upgrades */
+    .card {
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 30px -15px rgba(0,0,0,0.3);
+    }
+    
+    .card .cta.small {
+      background: linear-gradient(135deg, #34B7F1, #2A9FD6);
+    }
+    
+    /* Team Member Text Upgrades */
+    .team-member h4 {
+      color: #34B7F1;
+      font-weight: 600;
+    }
+    
+    /* Footer Link Upgrades */
+    .social a {
+      transition: color 0.3s;
+    }
+    
+    .social a:hover {
+      color: #34B7F1;
+    }
+  </style>
 </head>
 <body>
 
@@ -52,7 +174,7 @@ rel="stylesheet">
     </div>
   </div>
 
-  <!-- 1. HERO SECTION -->
+  <!-- 1. HERO SECTION (UPGRADED TEXT, 4K VIDEO KEPT) -->
   <section id="hero" class="section hero">
     <video autoplay muted loop playsinline>
       <source src="assets/hero/hero.mp4" type="video/mp4">
@@ -60,24 +182,45 @@ rel="stylesheet">
     <div class="overlay">
       <h1>ZEUSTECH</h1>
       <p>Innovating Africa at the Level of Creation</p>
-      <a href="#innovations" class="cta">Explore Our Innovations</a>
+      <div class="sub-text">We build complete, production-ready platforms. From viral marketing systems to AI-powered apps.</div>
+      
+      <div class="stats-row">
+        <div class="stat">
+          <span class="stat-number">6+</span>
+          <span class="stat-label">Production Platforms</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">10,000+</span>
+          <span class="stat-label">Users Ready</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">CIPC Registered</span>
+        </div>
+      </div>
+      
+      <a href="#innovations" class="cta">Explore Our Innovations →</a>
+      
+      <div class="trust-badges">
+        <span>✅ CIPC Registered Company</span>
+        <span>✅ SARS Tax Compliant</span>
+        <span>📍 Based in Cape Town</span>
+        <span>💳 Payment Ready</span>
+        <span>📱 Mobile-First</span>
+      </div>
     </div>
   </section>
 
   <!-- 2. FUELPASS ESTIMATOR (PUBLIC) -->
   <section id="fuelpass" class="section">
     <video autoplay muted loop playsinline>
-      <source src="assets/fuelpass/fuelpass_calculator_bg.mp4" 
-type="video/mp4">
+      <source src="assets/fuelpass/fuelpass_calculator_bg.mp4" type="video/mp4">
     </video>
     <div class="overlay">
-      <img src="assets/fuelpass/fuelpass-estimator-logo.png" alt="FuelPass 
-Estimator" class="section-logo">
+      <img src="assets/fuelpass/fuelpass-estimator-logo.png" alt="FuelPass Estimator" class="section-logo">
       <h2>FuelPass Estimator</h2>
-      <p>Know Your Journey. Plan fuel costs with precision — for any trip, 
-any vehicle.</p>
-      <a href="/fuelpass-estimator/" target="_blank" class="cta 
-primary">Try Now</a>
+      <p>Know Your Journey. Plan fuel costs with precision — for any trip, any vehicle.</p>
+      <a href="/fuelpass-estimator/" target="_blank" class="cta primary">Try Now</a>
     </div>
   </section>
 
@@ -87,34 +230,24 @@ primary">Try Now</a>
       <source src="assets/order/order.mp4" type="video/mp4">
     </video>
     <div class="overlay dark">
-      <img src="assets/order/orderlogo.png" alt="ORDER App" 
-class="section-logo">
+      <img src="assets/order/orderlogo.png" alt="ORDER App" class="section-logo">
       <h2>ORDER</h2>
-      <p>Services at Your Fingertips — connecting communities with 
-verified professionals on demand.</p>
-      <p class="insight">Market potential: R3–5B/year in SA alone at full 
-scale.</p>
-      <a 
-href="mailto:ceo@zeustechafrica.com?subject=ORDER%20Innovation%20Access%20Request" 
-class="cta">Request Access</a>
+      <p>Services at Your Fingertips — connecting communities with verified professionals on demand.</p>
+      <p class="insight">Market potential: R3–5B/year in SA alone at full scale.</p>
+      <a href="mailto:ceo@zeustechafrica.com?subject=ORDER%20Innovation%20Access%20Request" class="cta">Request Access</a>
     </div>
   </section>
 
   <!-- 4. LIVE STUDIO -->
   <section id="studio" class="section">
     <video autoplay muted loop playsinline>
-      <source src="assets/studio/live_studio_4k_effect.mp4" 
-type="video/mp4">
+      <source src="assets/studio/live_studio_4k_effect.mp4" type="video/mp4">
     </video>
     <div class="overlay dark">
-      <img src="assets/studio/zeustech-live-studio-logo.PNG" alt="ZeusTech 
-Live Studio" class="section-logo">
+      <img src="assets/studio/zeustech-live-studio-logo.PNG" alt="ZeusTech Live Studio" class="section-logo">
       <h2>ZeusTech Live Studio</h2>
-      <p>The Stage for Africa’s Future — a multi-billion-rand 
-creative-technology hub in Cape Town.</p>
-      <a 
-href="mailto:ceo@zeustechafrica.com?subject=Live%20Studio%20Partnership" 
-class="cta">See the Vision</a>
+      <p>The Stage for Africa’s Future — a multi-billion-rand creative-technology hub in Cape Town.</p>
+      <a href="mailto:ceo@zeustechafrica.com?subject=Live%20Studio%20Partnership" class="cta">See the Vision</a>
     </div>
   </section>
 
@@ -127,81 +260,52 @@ class="cta">See the Vision</a>
       <h2>Our Story</h2>
 
       <h3>🌍 Mission Statement</h3>
-      <p>To structure, protect, and commercialize African innovation — 
-transforming ideas into scalable, investor-ready technologies that solve 
-real-world problems.</p>
+      <p>To structure, protect, and commercialize African innovation — transforming ideas into scalable, investor-ready technologies that solve real-world problems.</p>
 
       <h3>🚀 Vision Statement</h3>
-      <p>To become Africa’s foremost technology and innovation powerhouse 
-— empowering creators, advancing IP ownership, and driving inclusive 
-economic growth through protected, high-impact technologies.</p>
+      <p>To become Africa’s foremost technology and innovation powerhouse — empowering creators, advancing IP ownership, and driving inclusive economic growth through protected, high-impact technologies.</p>
 
       <h3>💡 Core Company Values</h3>
       <ul>
-        <li><strong>Innovation:</strong> Constantly challenging the status 
-quo to build solutions that matter.</li>
-        <li><strong>Integrity:</strong> Upholding transparency, 
-accountability, and ethical leadership.</li>
-        <li><strong>Empowerment:</strong> Elevating innovators through 
-knowledge, resources, and strategic partnerships.</li>
-        <li><strong>Collaboration:</strong> Building strong ecosystems 
-that connect creators, investors, and markets.</li>
-        <li><strong>Excellence:</strong> Delivering measurable impact and 
-long-term value in every project.</li>
+        <li><strong>Innovation:</strong> Constantly challenging the status quo to build solutions that matter.</li>
+        <li><strong>Integrity:</strong> Upholding transparency, accountability, and ethical leadership.</li>
+        <li><strong>Empowerment:</strong> Elevating innovators through knowledge, resources, and strategic partnerships.</li>
+        <li><strong>Collaboration:</strong> Building strong ecosystems that connect creators, investors, and markets.</li>
+        <li><strong>Excellence:</strong> Delivering measurable impact and long-term value in every project.</li>
       </ul>
 
       <h3>🧭 Leadership Team</h3>
       <div class="team-list">
         <div class="team-member">
           <h4>Oghenetega Blondy Obebeduo — Founder & CEO</h4>
-          <p>A visionary technologist and serial entrepreneur, Oghenetega 
-drives ZeusTech’s mission to protect, scale, and commercialize African 
-innovations globally. With deep expertise in IP strategy, digital 
-infrastructure, and technology incubation, he empowers creators to turn 
-ideas into scalable ventures.</p>
+          <p>A visionary technologist and serial entrepreneur, Oghenetega drives ZeusTech’s mission to protect, scale, and commercialize African innovations globally. With deep expertise in IP strategy, digital infrastructure, and technology incubation, he empowers creators to turn ideas into scalable ventures.</p>
         </div>
         <div class="team-member">
           <h4>Cody Haricombe — Legal Counsel (IP & Corporate Affairs)</h4>
-          <p>Cody specializes in intellectual property law and corporate 
-structuring, ensuring that ZeusTech innovations are fully protected and 
-compliant. He oversees IP filings, licensing frameworks, and strategic 
-legal partnerships.</p>
+          <p>Cody specializes in intellectual property law and corporate structuring, ensuring that ZeusTech innovations are fully protected and compliant. He oversees IP filings, licensing frameworks, and strategic legal partnerships.</p>
         </div>
         <div class="team-member">
-          <h4>Ogheneovo Vicent Obebeduo — Chief Technology Officer 
-(CTO)</h4>
-          <p>Ogheneovo leads all technical architecture, software 
-development, and integration efforts. He ensures that ZeusTech’s 
-platforms, like FuelPass and ORDER, are scalable, secure, and 
-cutting-edge.</p>
+          <h4>Ogheneovo Vicent Obebeduo — Chief Technology Officer (CTO)</h4>
+          <p>Ogheneovo leads all technical architecture, software development, and integration efforts. He ensures that ZeusTech’s platforms, like FuelPass and ORDER, are scalable, secure, and cutting-edge.</p>
         </div>
         <div class="team-member">
-          <h4>Cyril Aiyewhenre Imhenrion — Chief Operations Officer 
-(COO)</h4>
-          <p>Cyril manages operational execution, partnerships, and 
-strategic rollouts. He ensures that projects move from concept to market 
-efficiently and with maximum impact.</p>
+          <h4>Cyril Aiyewhenre Imhenrion — Chief Operations Officer (COO)</h4>
+          <p>Cyril manages operational execution, partnerships, and strategic rollouts. He ensures that projects move from concept to market efficiently and with maximum impact.</p>
         </div>
       </div>
 
       <h3>⚖️ Verification & Affiliations</h3>
-      <p><strong>Legal Partner:</strong> Cody Haricombe Attorneys — Cape 
-Town, South Africa. Expertise: IP Law, Corporate Structuring.</p>
+      <p><strong>Legal Partner:</strong> Cody Haricombe Attorneys — Cape Town, South Africa. Expertise: IP Law, Corporate Structuring.</p>
       <p><strong>CIPC Registration:</strong> 2025/794787/07</p>
-      <p><strong>SARS Tax Reference:</strong> Registered under ZeusTech 
-(Pty) Ltd</p>
+      <p><strong>SARS Tax Reference:</strong> Registered under ZeusTech (Pty) Ltd</p>
 
       <h3>🌍 Partnership Program</h3>
-      <p><strong>Government:</strong> TIA, CSIR, Municipalities — 
-digitizing infrastructure and public services.</p>
-      <p><strong>Private Sector:</strong> Tech firms, telecoms, energy 
-companies — integrating scalable innovation.</p>
-      <p><strong>NGOs:</strong> Youth empowerment, STEM education, 
-financial inclusion — democratizing access to tech.</p>
+      <p><strong>Government:</strong> TIA, CSIR, Municipalities — digitizing infrastructure and public services.</p>
+      <p><strong>Private Sector:</strong> Tech firms, telecoms, energy companies — integrating scalable innovation.</p>
+      <p><strong>NGOs:</strong> Youth empowerment, STEM education, financial inclusion — democratizing access to tech.</p>
 
       <h3>🎤 Public Speaking & Awareness</h3>
-      <p>Key Topics: “African Innovation Ownership”, “Commercializing 
-African Tech”, “Building Africa’s Innovation Ecosystem”.</p>
+      <p>Key Topics: "African Innovation Ownership", "Commercializing African Tech", "Building Africa’s Innovation Ecosystem".</p>
 
       <a href="#team" class="cta">Meet the Team</a>
     </div>
@@ -214,8 +318,7 @@ African Tech”, “Building Africa’s Innovation Ecosystem”.</p>
     </video>
     <div class="overlay">
       <h2>The God-Level Mind</h2>
-      <p>The Power to Create — where human intelligence meets divine 
-innovation.</p>
+      <p>The Power to Create — where human intelligence meets divine innovation.</p>
       <a href="#story" class="cta">Read Our Story</a>
     </div>
   </section>
@@ -229,8 +332,7 @@ innovation.</p>
       <img src="assets/innovations/techlab.jpg" alt="FuelPass Estimator">
       <h3>FuelPass Estimator</h3>
       <p>Real-time fuel cost planning for African drivers.</p>
-      <a href="/fuelpass-estimator/" target="_blank" class="cta small">Use 
-Tool</a>
+      <a href="/fuelpass-estimator/" target="_blank" class="cta small">Use Tool</a>
     </div>
 
     <!-- Gated Innovation 1 -->
@@ -240,43 +342,33 @@ Tool</a>
       <h3>Smart Urban Flow</h3>
       <p>Optimizing city movement and resource efficiency.</p>
       <p class="insight">R2–4B/year revenue potential in major metros.</p>
-      <a 
-href="mailto:ceo@zeustechafrica.com?subject=Innovation%20Access%20Request" 
-class="cta small">Request Access</a>
+      <a href="mailto:ceo@zeustechafrica.com?subject=Innovation%20Access%20Request" class="cta small">Request Access</a>
     </div>
 
     <!-- Gated Innovation 2 -->
     <div class="card gated">
-      <img src="assets/innovations/humanandaibrains.JPG" alt="Seamless 
-Daily Services">
+      <img src="assets/innovations/humanandaibrains.JPG" alt="Seamless Daily Services">
       <div class="lock">🔒</div>
       <h3>Seamless Daily Services</h3>
-      <p>Empowering communities with instant access to trusted 
-professionals.</p>
+      <p>Empowering communities with instant access to trusted professionals.</p>
       <p class="insight">Scalable across 10M+ households in SA.</p>
-      <a 
-href="mailto:ceo@zeustechafrica.com?subject=Innovation%20Access%20Request" 
-class="cta small">Request Access</a>
+      <a href="mailto:ceo@zeustechafrica.com?subject=Innovation%20Access%20Request" class="cta small">Request Access</a>
     </div>
 
     <!-- Gated Innovation 3 -->
     <div class="card gated">
-      <img src="assets/innovations/digital-hand.jpg" alt="Next-Gen Finance 
-Tools">
+      <img src="assets/innovations/digital-hand.jpg" alt="Next-Gen Finance Tools">
       <div class="lock">🔒</div>
       <h3>Next-Gen Finance Tools</h3>
       <p>Smarter, safer financial solutions for everyday users.</p>
       <p class="insight">Licensing value: R500M–R2B per market.</p>
-      <a 
-href="mailto:ceo@zeustechafrica.com?subject=Innovation%20Access%20Request" 
-class="cta small">Request Access</a>
+      <a href="mailto:ceo@zeustechafrica.com?subject=Innovation%20Access%20Request" class="cta small">Request Access</a>
     </div>
   </section>
 
   <!-- 8. TEAM -->
   <section id="team" class="section">
-    <div class="bg" style="background-image: 
-url('assets/team/ceooffice.jpg');"></div>
+    <div class="bg" style="background-image: url('assets/team/ceooffice.jpg');"></div>
     <div class="overlay dark team-content">
       <h2>The Architects of ZeusTech</h2>
       <p>Meet the leaders shaping Africa’s innovation future.</p>
@@ -285,54 +377,37 @@ url('assets/team/ceooffice.jpg');"></div>
       <div class="team-member">
         <img src="assets/team/ceo.jpg" alt="Oghenetega Blondy Obebeduo">
         <h3>Oghenetega Blondy Obebeduo</h3>
-        <p>Founder & CEO — A visionary technologist and serial 
-entrepreneur, Oghenetega drives ZeusTech’s mission to protect, scale, and 
-commercialize African innovations globally. With deep expertise in IP 
-strategy, digital infrastructure, and technology incubation, he empowers 
-creators to turn ideas into scalable ventures.</p>
+        <p>Founder & CEO — A visionary technologist and serial entrepreneur, Oghenetega drives ZeusTech’s mission to protect, scale, and commercialize African innovations globally. With deep expertise in IP strategy, digital infrastructure, and technology incubation, he empowers creators to turn ideas into scalable ventures.</p>
       </div>
 
       <!-- Legal Counsel -->
       <div class="team-member text-only">
         <h3>Cody Haricombe</h3>
-        <p>Legal Counsel (IP & Corporate Affairs) — Cody specializes in 
-intellectual property law and corporate structuring, ensuring that 
-ZeusTech innovations are fully protected and compliant. He oversees IP 
-filings, licensing frameworks, and strategic legal partnerships.</p>
+        <p>Legal Counsel (IP & Corporate Affairs) — Cody specializes in intellectual property law and corporate structuring, ensuring that ZeusTech innovations are fully protected and compliant. He oversees IP filings, licensing frameworks, and strategic legal partnerships.</p>
       </div>
 
       <!-- CTO -->
       <div class="team-member text-only">
         <h3>Ogheneovo Vicent Obebeduo</h3>
-        <p>Chief Technology Officer (CTO) — Ogheneovo leads all technical 
-architecture, software development, and integration efforts. He ensures 
-that ZeusTech’s platforms, like FuelPass and ORDER, are scalable, secure, 
-and cutting-edge.</p>
+        <p>Chief Technology Officer (CTO) — Ogheneovo leads all technical architecture, software development, and integration efforts. He ensures that ZeusTech’s platforms, like FuelPass and ORDER, are scalable, secure, and cutting-edge.</p>
       </div>
 
       <!-- COO -->
       <div class="team-member text-only">
         <h3>Cyril Aiyewhenre Imhenrion</h3>
-        <p>Chief Operations Officer (COO) — Cyril manages operational 
-execution, partnerships, and strategic rollouts. He ensures that projects 
-move from concept to market efficiently and with maximum impact.</p>
+        <p>Chief Operations Officer (COO) — Cyril manages operational execution, partnerships, and strategic rollouts. He ensures that projects move from concept to market efficiently and with maximum impact.</p>
       </div>
     </div>
   </section>
 
   <!-- 9. PARTNERSHIPS -->
   <section id="partnerships" class="section">
-    <div class="bg" style="background-image: 
-url('assets/partnerships/innovationcollaboration.JPG');"></div>
+    <div class="bg" style="background-image: url('assets/partnerships/innovationcollaboration.JPG');"></div>
     <div class="overlay dark">
       <h2>Building an Ecosystem of Support</h2>
-      <p>Collaborating with forward-thinking partners to scale African 
-innovation.</p>
-      <p>Current supporters: ElizzCollections, Zizipho Collections, 
-Picknstyle, ANTHONY C ENTERPRISE Pty Ltd</p>
-      <a 
-href="mailto:ceo@zeustechafrica.com?subject=Partnership%20Opportunity" 
-class="cta">Join Us</a>
+      <p>Collaborating with forward-thinking partners to scale African innovation.</p>
+      <p>Current supporters: ElizzCollections, Zizipho Collections, Picknstyle, ANTHONY C ENTERPRISE Pty Ltd</p>
+      <a href="mailto:ceo@zeustechafrica.com?subject=Partnership%20Opportunity" class="cta">Join Us</a>
     </div>
   </section>
 
@@ -347,8 +422,7 @@ class="cta">Join Us</a>
 
   <!-- Mobile Menu Script -->
   <script>
-    document.querySelector('.hamburger').addEventListener('click', 
-function() {
+    document.querySelector('.hamburger').addEventListener('click', function() {
       document.getElementById('mobileMenu').classList.toggle('active');
     });
   </script>
