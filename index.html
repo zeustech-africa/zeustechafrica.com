@@ -153,6 +153,198 @@
       z-index: 0;
     }
     
+    /* ========== HERO SECTION PREMIUM UPGRADE ========== */
+    .hero .overlay {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      padding: 80px 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+      background: rgba(10, 7, 4, 0.55);
+      backdrop-filter: blur(4px);
+      border-radius: 0px;
+      border-left: 3px solid var(--gold-primary);
+      border-right: 3px solid var(--gold-primary);
+      animation: fadeInUp 1s ease-out;
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .hero .overlay h1 {
+      font-size: 5.5rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-primary) 40%, var(--gold-dark) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      letter-spacing: 6px;
+      margin-bottom: 16px;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .hero .overlay h1::after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+    }
+    
+    .hero-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 400;
+      letter-spacing: 2px;
+      color: #f0e8dc;
+      margin: 30px 0 20px 0;
+      text-transform: uppercase;
+    }
+    
+    .hero-description {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto 20px auto;
+      color: #e0d6c8;
+      line-height: 1.6;
+    }
+    
+    .hero-stats-line {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--gold-light);
+      letter-spacing: 0.5px;
+      margin: 20px 0;
+      padding: 12px 0;
+      border-top: 1px solid rgba(201,160,61,0.3);
+      border-bottom: 1px solid rgba(201,160,61,0.3);
+      display: inline-block;
+      width: auto;
+    }
+    
+    /* CTA Buttons */
+    .hero-cta-group {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 30px 0 35px;
+    }
+    
+    .cta-primary {
+      display: inline-block;
+      padding: 14px 36px;
+      background: transparent;
+      border: 1.5px solid var(--gold-primary);
+      color: var(--gold-primary);
+      text-decoration: none;
+      font-family: 'Manrope', sans-serif;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.8rem;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .cta-primary:hover {
+      background: var(--gold-primary);
+      color: #0a0704;
+      box-shadow: 0 8px 25px rgba(201,160,61,0.3);
+    }
+    
+    .cta-secondary {
+      display: inline-block;
+      padding: 14px 36px;
+      background: rgba(201, 160, 61, 0.1);
+      border: 1px solid rgba(201, 160, 61, 0.6);
+      color: var(--gold-light);
+      text-decoration: none;
+      font-family: 'Manrope', sans-serif;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 0.8rem;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .cta-secondary:hover {
+      background: rgba(201, 160, 61, 0.2);
+      border-color: var(--gold-primary);
+      color: var(--gold-primary);
+    }
+    
+    /* Trust Badges */
+    .trust-badges {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 28px;
+      margin: 25px 0 30px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+    
+    .trust-badges span {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: #d4ccbc;
+    }
+    
+    .trust-badges i {
+      color: var(--gold-primary);
+      font-size: 1rem;
+    }
+    
+    /* Product Pills */
+    .product-pills {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-top: 35px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(201,160,61,0.25);
+    }
+    
+    .pill {
+      background: rgba(201, 160, 61, 0.12);
+      border: 1px solid rgba(201, 160, 61, 0.4);
+      padding: 10px 24px;
+      border-radius: 40px;
+      font-family: 'Manrope', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      color: var(--gold-light);
+      transition: all 0.3s;
+      text-decoration: none;
+    }
+    
+    .pill:hover {
+      background: rgba(201, 160, 61, 0.25);
+      border-color: var(--gold-primary);
+      transform: translateY(-2px);
+    }
+    
+    /* Other sections overlay (unchanged from previous upgrade) */
     .overlay, .overlay.dark, .story-content, .team-content {
       position: relative;
       z-index: 2;
@@ -163,19 +355,6 @@
       background: rgba(10, 7, 4, 0.65);
       backdrop-filter: blur(3px);
       border-radius: 0px;
-    }
-    
-    /* Gold Text & Styling */
-    .overlay h1 {
-      font-size: 5.5rem;
-      font-weight: 700;
-      background: linear-gradient(135deg, var(--gold-light) 0%, var(--gold-primary) 40%, var(--gold-dark) 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
-      letter-spacing: 4px;
-      margin-bottom: 20px;
     }
     
     .overlay h2, .section-title {
@@ -193,7 +372,6 @@
       font-weight: 400;
     }
     
-    /* Premium CTA Buttons - Gold */
     .cta, .cta.primary, .cta.small {
       display: inline-block;
       padding: 14px 36px;
@@ -216,14 +394,12 @@
       box-shadow: 0 8px 25px rgba(201,160,61,0.3);
     }
     
-    /* Section Logos */
     .section-logo {
       max-width: 180px;
       margin-bottom: 20px;
       filter: brightness(1.1) drop-shadow(0 2px 4px rgba(0,0,0,0.3));
     }
     
-    /* Innovations Grid - Premium Cards */
     .innovations-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -290,7 +466,6 @@
       letter-spacing: 0.5px;
     }
     
-    /* Team Section Upgraded */
     .team-member {
       margin: 40px 0;
       text-align: left;
@@ -326,7 +501,6 @@
       margin-top: 20px;
     }
     
-    /* Story Content Lists */
     .story-content ul {
       text-align: left;
       max-width: 700px;
@@ -355,7 +529,6 @@
       text-align: left;
     }
     
-    /* Footer Upgrade */
     .footer {
       background: #0a0704;
       padding: 50px 40px;
@@ -377,23 +550,25 @@
       font-weight: 500;
     }
     
-    /* Responsive */
     @media (max-width: 768px) {
       .main-nav { display: none; }
       .hamburger { display: block; }
-      .overlay h1 { font-size: 2.8rem; }
+      .hero .overlay h1 { font-size: 2.8rem; letter-spacing: 3px; }
+      .hero-tagline { font-size: 1.1rem; }
       .overlay h2, .section-title { font-size: 2rem; }
       .overlay { padding: 40px 20px; }
       .innovations-grid { padding: 50px 20px; gap: 25px; }
       .header { padding: 15px 20px; }
-      .cta { padding: 10px 24px; font-size: 0.7rem; }
+      .trust-badges { gap: 15px; flex-direction: column; align-items: center; }
+      .hero-cta-group { gap: 12px; }
+      .product-pills { gap: 12px; }
+      .pill { padding: 6px 16px; font-size: 0.7rem; }
     }
     
     @media (min-width: 769px) and (max-width: 1024px) {
-      .overlay h1 { font-size: 4rem; }
+      .hero .overlay h1 { font-size: 4rem; }
     }
     
-    /* Gold Scrollbar */
     ::-webkit-scrollbar {
       width: 8px;
     }
@@ -404,7 +579,6 @@
       background: var(--gold-primary);
     }
     
-    /* Selection Color */
     ::selection {
       background: var(--gold-primary);
       color: #0a0704;
@@ -413,7 +587,7 @@
 </head>
 <body>
 
-  <!-- Tesla-Style Header: Logo Left, Nav Right -->
+  <!-- Header (unchanged) -->
   <header class="header">
     <div class="logo">
       <img src="assets/zeustech-logo-newlayout.jpg" alt="ZEUSTECH">
@@ -428,7 +602,6 @@
     </nav>
   </header>
 
-  <!-- Mobile Menu Overlay -->
   <div class="mobile-menu" id="mobileMenu">
     <div class="mobile-menu-content">
       <a href="#fuelpass">FuelPass</a>
@@ -441,19 +614,48 @@
     </div>
   </div>
 
-  <!-- 1. HERO SECTION (4K Video Preserved) -->
+  <!-- 1. HERO SECTION - UPGRADED with BOLD, DYNAMIC, PREMIUM CONTENT -->
   <section id="hero" class="section hero">
     <video autoplay muted loop playsinline>
       <source src="assets/hero/hero.mp4" type="video/mp4">
     </video>
     <div class="overlay">
       <h1>ZEUSTECH</h1>
-      <p>Innovating Africa at the Level of Creation</p>
-      <a href="#innovations" class="cta">Explore Our Innovations</a>
+      <div class="hero-tagline">Innovating Africa at the Level of Creation</div>
+      
+      <div class="hero-description">
+        We build complete, production-ready platforms. From viral marketing systems to AI-powered apps.
+      </div>
+      
+      <div class="hero-stats-line">
+        <i class="fas fa-crown" style="color: var(--gold-primary); margin-right: 8px;"></i>
+        6 production platforms built. 10,000+ promoters ready. One registered company.
+      </div>
+      
+      <div class="hero-cta-group">
+        <a href="#innovations" class="cta-primary">Explore Our Innovations</a>
+        <a href="mailto:ceo@zeustechafrica.com?subject=Start%20a%20Project%20Inquiry" class="cta-secondary">Start a Project</a>
+      </div>
+      
+      <!-- Trust Badges Line -->
+      <div class="trust-badges">
+        <span><i class="fas fa-check-circle"></i> CIPC Registered Company</span>
+        <span><i class="fas fa-file-invoice-dollar"></i> SARS Tax Compliant</span>
+        <span><i class="fas fa-building"></i> Based in Cape Town</span>
+        <span><i class="fas fa-credit-card"></i> Payment Ready</span>
+        <span><i class="fas fa-mobile-alt"></i> Mobile-First</span>
+      </div>
+      
+      <!-- Product Pills: ZeusForce, ZeusChat, Verilinked -->
+      <div class="product-pills">
+        <a href="#innovations" class="pill">ZeusForce</a>
+        <a href="zeuschat.html" class="pill">ZeusChat</a>
+        <a href="#order" class="pill">Verilinked</a>
+      </div>
     </div>
   </section>
 
-  <!-- 2. FUELPASS ESTIMATOR -->
+  <!-- 2. FUELPASS ESTIMATOR (unchanged) -->
   <section id="fuelpass" class="section">
     <video autoplay muted loop playsinline>
       <source src="assets/fuelpass/fuelpass_calculator_bg.mp4" type="video/mp4">
@@ -466,7 +668,7 @@
     </div>
   </section>
 
-  <!-- 3. ORDER (GATED) -->
+  <!-- 3. ORDER (GATED) unchanged -->
   <section id="order" class="section">
     <video autoplay muted loop playsinline>
       <source src="assets/order/order.mp4" type="video/mp4">
@@ -480,7 +682,7 @@
     </div>
   </section>
 
-  <!-- 4. LIVE STUDIO -->
+  <!-- 4. LIVE STUDIO unchanged -->
   <section id="studio" class="section">
     <video autoplay muted loop playsinline>
       <source src="assets/studio/live_studio_4k_effect.mp4" type="video/mp4">
@@ -488,12 +690,12 @@
     <div class="overlay dark">
       <img src="assets/studio/zeustech-live-studio-logo.PNG" alt="ZeusTech Live Studio" class="section-logo">
       <h2>ZeusTech Live Studio</h2>
-      <p>The Stage for Africa’s Future — a multi-billion-rand creative-technology hub in Cape Town.</p>
+      <p>The Stage for Africa's Future — a multi-billion-rand creative-technology hub in Cape Town.</p>
       <a href="mailto:ceo@zeustechafrica.com?subject=Live%20Studio%20Partnership" class="cta">See the Vision</a>
     </div>
   </section>
 
-  <!-- 5. OUR STORY SECTION -->
+  <!-- 5. OUR STORY SECTION unchanged -->
   <section id="story" class="section">
     <video autoplay muted loop playsinline>
       <source src="assets/vision/vision.mp4" type="video/mp4">
@@ -505,7 +707,7 @@
       <p>To structure, protect, and commercialize African innovation — transforming ideas into scalable, investor-ready technologies that solve real-world problems.</p>
 
       <h3>🚀 Vision Statement</h3>
-      <p>To become Africa’s foremost technology and innovation powerhouse — empowering creators, advancing IP ownership, and driving inclusive economic growth through protected, high-impact technologies.</p>
+      <p>To become Africa's foremost technology and innovation powerhouse — empowering creators, advancing IP ownership, and driving inclusive economic growth through protected, high-impact technologies.</p>
 
       <h3>💡 Core Company Values</h3>
       <ul>
@@ -520,7 +722,7 @@
       <div class="team-list">
         <div class="team-member">
           <h4>Oghenetega Blondy Obebeduo — Founder & CEO</h4>
-          <p>A visionary technologist and serial entrepreneur, Oghenetega drives ZeusTech’s mission to protect, scale, and commercialize African innovations globally. With deep expertise in IP strategy, digital infrastructure, and technology incubation, he empowers creators to turn ideas into scalable ventures.</p>
+          <p>A visionary technologist and serial entrepreneur, Oghenetega drives ZeusTech's mission to protect, scale, and commercialize African innovations globally. With deep expertise in IP strategy, digital infrastructure, and technology incubation, he empowers creators to turn ideas into scalable ventures.</p>
         </div>
         <div class="team-member">
           <h4>Cody Haricombe — Legal Counsel (IP & Corporate Affairs)</h4>
@@ -528,7 +730,7 @@
         </div>
         <div class="team-member">
           <h4>Ogheneovo Vicent Obebeduo — Chief Technology Officer (CTO)</h4>
-          <p>Ogheneovo leads all technical architecture, software development, and integration efforts. He ensures that ZeusTech’s platforms, like FuelPass and ORDER, are scalable, secure, and cutting-edge.</p>
+          <p>Ogheneovo leads all technical architecture, software development, and integration efforts. He ensures that ZeusTech's platforms, like FuelPass and ORDER, are scalable, secure, and cutting-edge.</p>
         </div>
         <div class="team-member">
           <h4>Cyril Aiyewhenre Imhenrion — Chief Operations Officer (COO)</h4>
@@ -547,13 +749,13 @@
       <p><strong>NGOs:</strong> Youth empowerment, STEM education, financial inclusion — democratizing access to tech.</p>
 
       <h3>🎤 Public Speaking & Awareness</h3>
-      <p>Key Topics: "African Innovation Ownership", "Commercializing African Tech", "Building Africa’s Innovation Ecosystem".</p>
+      <p>Key Topics: "African Innovation Ownership", "Commercializing African Tech", "Building Africa's Innovation Ecosystem".</p>
 
       <a href="#team" class="cta">Meet the Team</a>
     </div>
   </section>
 
-  <!-- 6. VISION -->
+  <!-- 6. VISION unchanged -->
   <section id="vision" class="section">
     <video autoplay muted loop playsinline>
       <source src="assets/vision/vision.mp4" type="video/mp4">
@@ -565,7 +767,7 @@
     </div>
   </section>
 
-  <!-- 7. INNOVATIONS -->
+  <!-- 7. INNOVATIONS unchanged -->
   <section id="innovations" class="section innovations-grid">
     <h2 class="section-title">Innovation Portfolio</h2>
     
@@ -604,17 +806,17 @@
     </div>
   </section>
 
-  <!-- 8. TEAM -->
+  <!-- 8. TEAM unchanged -->
   <section id="team" class="section">
     <div class="bg" style="background-image: url('assets/team/ceooffice.jpg'); position: absolute; top:0; left:0; width:100%; height:100%; background-size: cover; background-position: center; z-index:0;"></div>
     <div class="overlay dark team-content">
       <h2>The Architects of ZeusTech</h2>
-      <p>Meet the leaders shaping Africa’s innovation future.</p>
+      <p>Meet the leaders shaping Africa's innovation future.</p>
       
       <div class="team-member">
         <img src="assets/team/ceo.jpg" alt="Oghenetega Blondy Obebeduo">
         <h3>Oghenetega Blondy Obebeduo</h3>
-        <p>Founder & CEO — A visionary technologist and serial entrepreneur, Oghenetega drives ZeusTech’s mission to protect, scale, and commercialize African innovations globally. With deep expertise in IP strategy, digital infrastructure, and technology incubation, he empowers creators to turn ideas into scalable ventures.</p>
+        <p>Founder & CEO — A visionary technologist and serial entrepreneur, Oghenetega drives ZeusTech's mission to protect, scale, and commercialize African innovations globally. With deep expertise in IP strategy, digital infrastructure, and technology incubation, he empowers creators to turn ideas into scalable ventures.</p>
       </div>
 
       <div class="team-member text-only">
@@ -624,7 +826,7 @@
 
       <div class="team-member text-only">
         <h3>Ogheneovo Vicent Obebeduo</h3>
-        <p>Chief Technology Officer (CTO) — Ogheneovo leads all technical architecture, software development, and integration efforts. He ensures that ZeusTech’s platforms, like FuelPass and ORDER, are scalable, secure, and cutting-edge.</p>
+        <p>Chief Technology Officer (CTO) — Ogheneovo leads all technical architecture, software development, and integration efforts. He ensures that ZeusTech's platforms, like FuelPass and ORDER, are scalable, secure, and cutting-edge.</p>
       </div>
 
       <div class="team-member text-only">
@@ -634,7 +836,7 @@
     </div>
   </section>
 
-  <!-- 9. PARTNERSHIPS -->
+  <!-- 9. PARTNERSHIPS unchanged -->
   <section id="partnerships" class="section">
     <div class="bg" style="background-image: url('assets/partnerships/innovationcollaboration.JPG'); position: absolute; top:0; left:0; width:100%; height:100%; background-size: cover; background-position: center; z-index:0;"></div>
     <div class="overlay dark">
@@ -645,7 +847,7 @@
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- Footer unchanged -->
   <footer class="footer">
     <p>© 2025 ZeusTech (Pty) Ltd — CIPC Reg: 2025/794787/07</p>
     <p>God's Hand Reaching Mankind Through Tech.</p>
@@ -654,7 +856,6 @@
     </div>
   </footer>
 
-  <!-- Mobile Menu Script -->
   <script>
     document.querySelector('.hamburger').addEventListener('click', function() {
       document.getElementById('mobileMenu').classList.toggle('active');
