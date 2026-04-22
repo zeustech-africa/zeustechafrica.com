@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DataCleanse — Get a Quote | ZEUSTECH</title>
+  <meta name="description" content="Get a fixed-price quote for professional data cleansing services. POPIA compliant, fast turnaround.">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Manrope', sans-serif;
+      background: #0a0704;
+      color: #e9e2d4;
+      line-height: 1.5;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+    
+    .header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    
+    .header h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 3rem;
+      color: #D4AF37;
+      margin-bottom: 10px;
+    }
+    
+    .header p {
+      color: #b4a68f;
+      font-size: 1.1rem;
+    }
+    
+    .pricing-summary {
+      background: rgba(212,175,55,0.1);
+      padding: 20px;
+      border-radius: 5px;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+    
+    .pricing-summary h3 {
+      color: #D4AF37;
+      margin-bottom: 15px;
+    }
+    
+    .pricing-summary .price {
+      display: inline-block;
+      margin: 0 15px;
+      text-align: left;
+    }
+    
+    .form-group {
+      margin-bottom: 25px;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: #D4AF37;
+    }
+    
+    input, select, textarea {
+      width: 100%;
+      padding: 12px 15px;
+      background: #1a1612;
+      border: 1px solid #3a2e24;
+      color: #e9e2d4;
+      border-radius: 5px;
+      font-family: 'Manrope', sans-serif;
+      font-size: 1rem;
+    }
+    
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: #D4AF37;
+    }
+    
+    .btn-submit {
+      background: transparent;
+      border: 2px solid #D4AF37;
+      color: #D4AF37;
+      padding: 14px 36px;
+      font-size: 1rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      width: 100%;
+      font-family: 'Manrope', sans-serif;
+    }
+    
+    .btn-submit:hover {
+      background: #D4AF37;
+      color: #0a0704;
+    }
+    
+    .back-link {
+      display: inline-block;
+      margin-top: 30px;
+      color: #b4a68f;
+      text-decoration: none;
+    }
+    
+    .back-link:hover {
+      color: #D4AF37;
+    }
+    
+    .footer {
+      text-align: center;
+      padding: 40px;
+      border-top: 1px solid rgba(212,175,55,0.3);
+      margin-top: 50px;
+    }
+    
+    .note {
+      background: rgba(212,175,55,0.1);
+      padding: 15px;
+      border-left: 3px solid #D4AF37;
+      margin-top: 20px;
+      font-size: 0.85rem;
+      color: #b4a68f;
+    }
+    
+    @media (max-width: 768px) {
+      .pricing-summary .price {
+        display: block;
+        margin: 10px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="header">
+      <h1>💰 Get a Quote</h1>
+      <p>Fixed-price data cleansing — no surprises, no hidden fees</p>
+    </div>
+    
+    <div class="pricing-summary">
+      <h3>📋 Our Standard Packages</h3>
+      <div class="price">
+        <strong>Starter:</strong> R5,000<br>
+        <small>Up to 10,000 rows</small>
+      </div>
+      <div class="price">
+        <strong>Standard:</strong> R15,000<br>
+        <small>Up to 100,000 rows</small>
+      </div>
+      <div class="price">
+        <strong>Premium:</strong> R50,000<br>
+        <small>Up to 1M rows + POPIA audit</small>
+      </div>
+      <p style="margin-top: 15px; font-size: 0.85rem;">📞 Custom quotes available for larger volumes</p>
+    </div>
+    
+    <form id="quoteForm" action="https://formsubmit.co/ceo@zeustechafrica.com" method="POST">
+      <input type="hidden" name="_subject" value="New DataCleanse Quote Request">
+      <input type="hidden" name="_cc" value="sisipho@zeustechafrica.com">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://zeustechafrica.com/datacleanse-thankyou.html">
+      
+      <div class="form-group">
+        <label>Full Name *</label>
+        <input type="text" name="name" required>
+      </div>
+      
+      <div class="form-group">
+        <label>Company Name *</label>
+        <input type="text" name="company" required>
+      </div>
+      
+      <div class="form-group">
+        <label>Email Address *</label>
+        <input type="email" name="email" required>
+      </div>
+      
+      <div class="form-group">
+        <label>Phone Number *</label>
+        <input type="tel" name="phone" required>
+      </div>
+      
+      <div class="form-group">
+        <label>Number of rows to be processed *</label>
+        <select name="row_volume" required>
+          <option value="">Select volume</option>
+          <option value="Less than 10,000 rows">Less than 10,000 rows (Starter: R5,000)</option>
+          <option value="10,000 - 100,000 rows">10,000 - 100,000 rows (Standard: R15,000)</option>
+          <option value="100,000 - 500,000 rows">100,000 - 500,000 rows (Custom quote)</option>
+          <option value="500,000 - 1,000,000 rows">500,000 - 1,000,000 rows (Premium: R50,000)</option>
+          <option value="1,000,000+ rows">1,000,000+ rows (Custom quote)</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label>Services needed (select all that apply)</label>
+        <select name="services" style="height: auto;">
+          <option value="">Select...</option>
+          <option value="Duplicate removal">Duplicate removal</option>
+          <option value="Format standardization">Format standardization</option>
+          <option value="ID/Phone/Email validation">ID/Phone/Email validation</option>
+          <option value="Full data audit & report">Full data audit & report</option>
+          <option value="POPIA compliance assessment">POPIA compliance assessment</option>
+          <option value="Ongoing data maintenance">Ongoing data maintenance</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label>Describe your data challenge in detail *</label>
+        <textarea name="description" rows="5" placeholder="e.g., I have 50,000 customer records in Excel with duplicate entries, missing phone numbers, and inconsistent date formats..." required></textarea>
+      </div>
+      
+      <div class="form-group">
+        <label>What is your target deadline?</label>
+        <input type="text" name="deadline" placeholder="e.g., 2 weeks, end of month">
+      </div>
+      
+      <button type="submit" class="btn-submit">REQUEST QUOTE →</button>
+    </form>
+    
+    <div class="note">
+      <i class="fas fa-clock"></i> We respond to quote requests within 24 hours.
+    </div>
+    
+    <a href="/#datacleanse" class="back-link">← Back to DataCleanse</a>
+  </div>
+  
+  <div class="footer">
+    <p>© 2025 ZeusTech (Pty) Ltd — DataCleanse by ZEUSTECH</p>
+  </div>
+  
+</body>
+</html>
