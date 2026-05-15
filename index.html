@@ -576,6 +576,32 @@
       font-weight: bold;
       font-size: 1.2rem;
     }
+
+    /* STEEZE SPECIFIC STYLES (matches Steeze welcome page) */
+    .steeze-hero {
+        min-height: 100vh;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+    }
+    .steeze-glass-card {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 1.5rem;
+        transition: all 0.3s ease;
+    }
+    .steeze-glass-card:hover {
+        border-color: var(--gold-primary);
+        transform: translateY(-4px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+    .steeze-gradient-text {
+        background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
     
     @media (max-width: 768px) {
       .main-nav { display: none; }
@@ -628,10 +654,11 @@
       <a href="#studio">Live Studio</a>
       <a href="#zeusclean">ZEUSCLEAN</a>
       <a href="#innovations">Innovations</a>
+      <a href="#steeze">STEEZE</a>
     </nav>
   </header>
 
-  <!-- Mobile Menu with ZEUSCLEAN added -->
+  <!-- Mobile Menu with STEEZE added -->
   <div class="mobile-menu" id="mobileMenu">
     <div class="mobile-menu-content">
       <a href="#fuelpass">FuelPass</a>
@@ -639,13 +666,14 @@
       <a href="#studio">Live Studio</a>
       <a href="#zeusclean">ZEUSCLEAN</a>
       <a href="#innovations">Innovations</a>
+      <a href="#steeze">STEEZE</a>
       <a href="#story">Our Story</a>
       <a href="#team">Team</a>
       <a href="mailto:ceo@zeustechafrica.com">Contact</a>
     </div>
   </div>
 
-  <!-- 1. HERO SECTION -->
+  <!-- 1. HERO SECTION (UNCHANGED) -->
   <section id="hero" class="section hero">
     <video autoplay muted loop playsinline>
       <source src="assets/hero/hero.mp4" type="video/mp4">
@@ -676,17 +704,18 @@
         <span><i class="fas fa-mobile-alt"></i> Mobile-First</span>
       </div>
       
-      <!-- Product Pills with ZEUSCLEAN added -->
+      <!-- Product Pills with STEEZE added -->
       <div class="product-pills">
         <a href="#innovations" class="pill">ZeusForce</a>
         <a href="zeuschat.html" class="pill">ZeusChat</a>
         <a href="#order" class="pill">Verilinked</a>
         <a href="#zeusclean" class="pill">ZEUSCLEAN</a>
+        <a href="#steeze" class="pill">STEEZE</a>
       </div>
     </div>
   </section>
 
-  <!-- 2. FUELPASS ESTIMATOR -->
+  <!-- 2. FUELPASS ESTIMATOR (UNCHANGED) -->
   <section id="fuelpass" class="section">
     <video autoplay muted loop playsinline>
       <source src="assets/fuelpass/fuelpass_calculator_bg.mp4" type="video/mp4">
@@ -699,7 +728,7 @@
     </div>
   </section>
 
-  <!-- 3. ORDER (GATED) -->
+  <!-- 3. ORDER (GATED) (UNCHANGED) -->
   <section id="order" class="section">
     <video autoplay muted loop playsinline>
       <source src="assets/order/order.mp4" type="video/mp4">
@@ -713,7 +742,7 @@
     </div>
   </section>
 
-  <!-- 4. LIVE STUDIO -->
+  <!-- 4. LIVE STUDIO (UNCHANGED) -->
   <section id="studio" class="section">
     <video autoplay muted loop playsinline>
       <source src="assets/studio/live_studio_4k_effect.mp4" type="video/mp4">
@@ -726,7 +755,7 @@
     </div>
   </section>
 
-  <!-- 5. ZEUSCLEAN - UPGRADED SERVICE SECTION (TWO BUTTONS) -->
+  <!-- 5. ZEUSCLEAN - UPGRADED SERVICE SECTION (UNCHANGED) -->
   <section id="zeusclean" class="section">
     <video autoplay muted loop playsinline>
       <source src="assets/datacleanse/datacleanse_bg.mp4" type="video/mp4">
@@ -764,7 +793,71 @@
     </div>
   </section>
 
-  <!-- 6. OUR STORY SECTION -->
+  <!-- ============================================== -->
+  <!-- 6. STEEZE SECTION (NEW - PREMIUM DESIGN)      -->
+  <!-- ============================================== -->
+  <section id="steeze" class="steeze-hero" style="position: relative; width: 100%; min-height: 100vh; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+    <!-- 4K Background Video (Same as Steeze Welcome Page) -->
+    <video autoplay muted loop playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
+      <source src="assets/videos/steeze-websitepage.mp4" type="video/mp4">
+    </video>
+    <div class="overlay" style="background: rgba(10, 7, 4, 0.75); backdrop-filter: blur(5px); border-left: 3px solid var(--gold-primary); border-right: 3px solid var(--gold-primary); text-align: center; z-index: 2;">
+      
+      <!-- Steeze Logo / Title -->
+      <div style="margin-bottom: 2rem;">
+        <span style="font-family: 'Cormorant Garamond', serif; font-size: 4.5rem; font-weight: 800; background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); -webkit-background-clip: text; background-clip: text; color: transparent; letter-spacing: 4px;">STEEZE</span>
+        <div style="font-size: 1rem; letter-spacing: 4px; color: var(--gold-light); margin-top: 0.5rem;">POWERED BY ZEUSLIVESTUDIO</div>
+      </div>
+
+      <h2 style="font-size: 2.2rem; font-weight: 700; margin-bottom: 1rem;">The Verified Entertainment Platform</h2>
+      <p style="font-size: 1.2rem; max-width: 800px; margin: 0 auto 2rem auto; color: #E0D6C8;">
+        Where creators get their own premium website-style profile, keep 70% of their earnings, and connect directly with verified fans — all without the noise of traditional social media.
+      </p>
+
+      <!-- Two Paths: For Creators & For Fans -->
+      <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; margin: 2.5rem auto;">
+        <!-- Creators Card -->
+        <div class="steeze-glass-card" style="flex: 1; min-width: 260px; max-width: 360px; padding: 2rem; text-align: left;">
+          <div style="font-size: 1.2rem; font-weight: 600; color: var(--gold-primary); margin-bottom: 1rem;">🎤 FOR CREATORS</div>
+          <ul style="list-style: none; padding: 0; margin: 0 0 1.5rem 0; font-size: 0.9rem; color: #cac1b2;">
+            <li style="margin-bottom: 0.75rem;">✅ Your own fully designed website profile</li>
+            <li style="margin-bottom: 0.75rem;">✅ Earn 70% (independent) or 50/50 (signed)</li>
+            <li style="margin-bottom: 0.75rem;">✅ Distribute to DistroKid, YouTube & Spotify</li>
+            <li style="margin-bottom: 0.75rem;">✅ No algorithm hiding your content</li>
+          </ul>
+          <a href="https://steeze.zeustechafrica.com/signup/creator" class="pill" style="display: inline-block; background: var(--gold-primary); color: #0a0704; border: none; font-weight: 800;">Join as Creator →</a>
+        </div>
+        <!-- Fans Card -->
+        <div class="steeze-glass-card" style="flex: 1; min-width: 260px; max-width: 360px; padding: 2rem; text-align: left;">
+          <div style="font-size: 1.2rem; font-weight: 600; color: var(--gold-primary); margin-bottom: 1rem;">🎧 FOR FANS (VIBES)</div>
+          <ul style="list-style: none; padding: 0; margin: 0 0 1.5rem 0; font-size: 0.9rem; color: #cac1b2;">
+            <li style="margin-bottom: 0.75rem;">✅ Pure entertainment — no politics or news</li>
+            <li style="margin-bottom: 0.75rem;">✅ Subscribe to creators (Gold = DMs + calls)</li>
+            <li style="margin-bottom: 0.75rem;">✅ Save any post = repost, help creators go viral</li>
+            <li style="margin-bottom: 0.75rem;">✅ Every account is ID + selfie verified</li>
+          </ul>
+          <a href="https://steeze.zeustechafrica.com/signup/vibes" class="pill" style="display: inline-block; background: transparent; border: 1px solid var(--gold-primary); color: var(--gold-primary); font-weight: 800;">Join as VIBE →</a>
+        </div>
+      </div>
+
+      <!-- Key Differentiators -->
+      <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin: 2rem auto; border-top: 1px solid rgba(212,175,55,0.4); padding-top: 2rem;">
+        <span class="trust-badges"><i class="fas fa-check-circle"></i> Verified Only — No Fake Accounts</span>
+        <span class="trust-badges"><i class="fas fa-globe"></i> Global Distribution</span>
+        <span class="trust-badges"><i class="fas fa-chart-line"></i> Keep 70% of Your Revenue</span>
+        <span class="trust-badges"><i class="fas fa-music"></i> Spotify-style Player</span>
+        <span class="trust-badges"><i class="fas fa-video"></i> Cinematic Video Player</span>
+      </div>
+
+      <!-- Final CTA -->
+      <div class="hero-cta-group" style="margin-top: 1rem;">
+        <a href="https://steeze.zeustechafrica.com" class="cta-primary" style="background: var(--gold-primary); color: #0a0704; border: none;">Explore STEEZE</a>
+        <a href="https://steeze.zeustechafrica.com/about" class="cta-secondary" style="border-color: var(--gold-primary);">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. OUR STORY SECTION (UNCHANGED - ADDED ID) -->
   <section id="story" class="section">
     <video autoplay muted loop playsinline>
       <source src="assets/vision/vision.mp4" type="video/mp4">
@@ -824,7 +917,7 @@
     </div>
   </section>
 
-  <!-- 7. VISION -->
+  <!-- 8. VISION (UNCHANGED) -->
   <section id="vision" class="section">
     <video autoplay muted loop playsinline>
       <source src="assets/vision/vision.mp4" type="video/mp4">
@@ -836,7 +929,7 @@
     </div>
   </section>
 
-  <!-- 8. INNOVATIONS -->
+  <!-- 9. INNOVATIONS (UNCHANGED) -->
   <section id="innovations" class="section innovations-grid">
     <h2 class="section-title">Innovation Portfolio</h2>
     
@@ -875,7 +968,7 @@
     </div>
   </section>
 
-  <!-- 9. TEAM -->
+  <!-- 10. TEAM (UNCHANGED) -->
   <section id="team" class="section">
     <div class="bg" style="background-image: url('assets/team/ceooffice.jpg'); position: absolute; top:0; left:0; width:100%; height:100%; background-size: cover; background-position: center; z-index:0;"></div>
     <div class="overlay dark team-content">
@@ -905,7 +998,7 @@
     </div>
   </section>
 
-  <!-- 10. PARTNERSHIPS -->
+  <!-- 11. PARTNERSHIPS (UNCHANGED) -->
   <section id="partnerships" class="section">
     <div class="bg" style="background-image: url('assets/partnerships/innovationcollaboration.JPG'); position: absolute; top:0; left:0; width:100%; height:100%; background-size: cover; background-position: center; z-index:0;"></div>
     <div class="overlay dark">
@@ -916,7 +1009,7 @@
     </div>
   </section>
 
-  <!-- Footer -->
+  <!-- Footer (UNCHANGED) -->
   <footer class="footer">
     <p>© 2025 ZeusTech (Pty) Ltd — CIPC Reg: 2025/794787/07</p>
     <p>ZEUSCLEAN by ZEUSTECH | The First POPIA-Certified Identity & Location Engine for the New South Africa</p>
