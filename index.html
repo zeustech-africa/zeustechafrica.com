@@ -41,7 +41,7 @@
       letter-spacing: 0.02em;
     }
     
-    /* --- PREMIUM HEADER --- */
+    /* --- PREMIUM HEADER (TRANSPARENT OVER VIDEO) --- */
     .header-premium {
       position: fixed;
       top: 0;
@@ -49,16 +49,29 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 25px 60px;
+      padding: 35px 60px;
       z-index: 1000;
-      background: rgba(255, 255, 255, 0.98);
-      backdrop-filter: blur(15px);
-      border-bottom: 1px solid rgba(10, 14, 39, 0.08);
+      background: linear-gradient(to bottom, rgba(10,14,39,0.5) 0%, transparent 100%);
+      backdrop-filter: blur(2px);
       transition: all 0.4s ease;
     }
     
+    /* Solid background when scrolling down */
+    .header-premium.scrolled {
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(15px);
+      padding: 20px 60px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    }
+    
     .header-premium .logo img {
-      height: 50px;
+      height: 75px; /* INCREASED LOGO SIZE */
+      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4));
+      transition: height 0.4s ease;
+    }
+    
+    .header-premium.scrolled .logo img {
+      height: 55px; /* Shrinks slightly on scroll for elegance */
       filter: drop-shadow(0 2px 8px rgba(0,0,0,0.1));
     }
     
@@ -72,12 +85,16 @@
       font-family: var(--font-modern);
       font-size: 0.85rem;
       font-weight: 600;
-      letter-spacing: 1.5px;
+      letter-spacing: 2px;
       text-transform: uppercase;
-      color: var(--color-primary);
+      color: #FFFFFF; /* White over video */
       text-decoration: none;
       position: relative;
       transition: color 0.3s ease;
+    }
+    
+    .header-premium.scrolled .main-nav a {
+      color: var(--color-primary); /* Dark text on white background */
     }
     
     .header-premium .main-nav a::after {
@@ -101,17 +118,25 @@
     
     .header-premium .nav-cta {
       padding: 12px 32px;
-      background: var(--color-primary);
-      color: var(--color-light) !important;
+      background: rgba(255,255,255,0.1);
+      color: #FFFFFF !important;
+      border: 1px solid rgba(255,255,255,0.4);
       border-radius: 0;
       font-weight: 700;
       letter-spacing: 2px;
+    }
+    
+    .header-premium.scrolled .nav-cta {
+      background: var(--color-primary);
+      color: var(--color-light) !important;
+      border-color: var(--color-primary);
     }
     
     .header-premium .nav-cta::after { display: none; }
     .header-premium .nav-cta:hover {
       background: var(--color-accent);
       color: var(--color-primary) !important;
+      border-color: var(--color-accent);
     }
     
     /* --- PREMIUM HERO (ENHANCED VISIBILITY) --- */
@@ -133,7 +158,6 @@
       z-index: 0;
     }
     
-    /* Darker cinematic overlay for maximum text visibility */
     .hero-premium::before {
       content: '';
       position: absolute;
@@ -156,7 +180,7 @@
       font-size: 1rem;
       font-weight: 700;
       letter-spacing: 8px;
-      color: var(--color-accent); /* Premium Gold */
+      color: var(--color-accent);
       text-transform: uppercase;
       margin-bottom: 24px;
       opacity: 0;
@@ -172,7 +196,7 @@
       line-height: 1.1;
       margin-bottom: 24px;
       letter-spacing: 2px;
-      text-shadow: 0 4px 25px rgba(0,0,0,0.6); /* Enhanced shadow for visibility */
+      text-shadow: 0 4px 25px rgba(0,0,0,0.6);
       opacity: 0;
       animation: fadeInUp 1.2s ease-out forwards;
       animation-delay: 0.4s;
@@ -191,7 +215,7 @@
     .hero-content p {
       font-family: var(--font-modern);
       font-size: 1.25rem;
-      font-weight: 400; /* Slightly bolder for readability */
+      font-weight: 400;
       color: rgba(255,255,255,0.95);
       margin-bottom: 40px;
       letter-spacing: 0.5px;
@@ -323,19 +347,13 @@
     
     /* --- ANIMATIONS --- */
     @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
     }
     
     /* --- RESPONSIVE --- */
     @media (max-width: 968px) {
-      .header-premium {
+      .header-premium, .header-premium.scrolled {
         padding: 20px 30px;
         flex-direction: column;
         gap: 20px;
@@ -358,7 +376,7 @@
 <body>
 
   <!-- PREMIUM HEADER -->
-  <header class="header-premium">
+  <header class="header-premium" id="mainHeader">
     <div class="logo">
       <img src="assets/zeustech-logo-newlayout.jpg" alt="ZEUSTECH">
     </div>
@@ -414,6 +432,18 @@
       <a href="mailto:ceo@zeustechafrica.com" style="color: var(--color-accent); text-decoration: none; border-bottom: 1px solid var(--color-accent);">ceo@zeustechafrica.com</a>
     </p>
   </footer>
+
+  <!-- SCROLL EFFECT SCRIPT -->
+  <script>
+    window.addEventListener('scroll', function() {
+      const header = document.getElementById('mainHeader');
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+  </script>
 
 </body>
 </html>
