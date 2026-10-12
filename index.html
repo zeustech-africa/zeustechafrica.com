@@ -7,389 +7,131 @@
   <meta name="description" content="ZeusTech is Africa's innovation powerhouse — building protected, high-impact technologies.">
   <link rel="icon" type="image/png" href="favicon.png">
   
-  <!-- Premium Typography: Classic Serif + Modern Sans -->
+  <!-- Premium Typography -->
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   
   <style>
-    /* --- PREMIUM CLASSIC THEME --- */
     :root {
-      --color-primary: #0A0E27; /* Deep Navy */
-      --color-secondary: #1A1F3A; /* Rich Blue */
-      --color-accent: #C9A961; /* Premium Gold */
-      --color-text: #2C3E50; /* Sophisticated Gray */
+      --color-primary: #0A0E27;
+      --color-secondary: #1A1F3A;
+      --color-accent: #C9A961;
+      --color-text: #2C3E50;
       --color-light: #FFFFFF;
-      --color-bg-alt: #F5F5F0; /* Warm Off-White */
+      --color-bg-alt: #F5F5F0;
       --font-classic: 'Cormorant Garamond', serif;
       --font-modern: 'Manrope', sans-serif;
     }
     
     * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: var(--font-modern); background: var(--color-light); color: var(--color-text); line-height: 1.7; overflow-x: hidden; }
+    h1, h2, h3, h4 { font-family: var(--font-classic); font-weight: 600; color: var(--color-primary); letter-spacing: 0.02em; }
     
-    body {
-      font-family: var(--font-modern);
-      background: var(--color-light);
-      color: var(--color-text);
-      line-height: 1.7;
-      overflow-x: hidden;
-    }
-    
-    h1, h2, h3, h4 {
-      font-family: var(--font-classic);
-      font-weight: 600;
-      color: var(--color-primary);
-      letter-spacing: 0.02em;
-    }
-    
-    /* --- PREMIUM HEADER (TRANSPARENT OVER VIDEO) --- */
-    .header-premium {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 35px 60px;
-      z-index: 1000;
-      background: linear-gradient(to bottom, rgba(10,14,39,0.5) 0%, transparent 100%);
-      backdrop-filter: blur(2px);
-      transition: all 0.4s ease;
-    }
-    
-    /* Solid background when scrolling down */
-    .header-premium.scrolled {
-      background: rgba(255, 255, 255, 0.98);
-      backdrop-filter: blur(15px);
-      padding: 20px 60px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-    }
-    
-    .header-premium .logo img {
-      height: 75px; /* INCREASED LOGO SIZE */
-      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4));
-      transition: height 0.4s ease;
-    }
-    
-    .header-premium.scrolled .logo img {
-      height: 55px; /* Shrinks slightly on scroll for elegance */
-      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.1));
-    }
-    
-    .header-premium .main-nav {
-      display: flex;
-      align-items: center;
-      gap: 40px;
-    }
-    
-    .header-premium .main-nav a {
-      font-family: var(--font-modern);
-      font-size: 0.85rem;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: #FFFFFF; /* White over video */
-      text-decoration: none;
-      position: relative;
-      transition: color 0.3s ease;
-    }
-    
-    .header-premium.scrolled .main-nav a {
-      color: var(--color-primary); /* Dark text on white background */
-    }
-    
-    .header-premium .main-nav a::after {
-      content: '';
-      position: absolute;
-      bottom: -5px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--color-accent);
-      transition: width 0.3s ease;
-    }
-    
-    .header-premium .main-nav a:hover {
-      color: var(--color-accent);
-    }
-    
-    .header-premium .main-nav a:hover::after {
-      width: 100%;
-    }
-    
-    .header-premium .nav-cta {
-      padding: 12px 32px;
-      background: rgba(255,255,255,0.1);
-      color: #FFFFFF !important;
-      border: 1px solid rgba(255,255,255,0.4);
-      border-radius: 0;
-      font-weight: 700;
-      letter-spacing: 2px;
-    }
-    
-    .header-premium.scrolled .nav-cta {
-      background: var(--color-primary);
-      color: var(--color-light) !important;
-      border-color: var(--color-primary);
-    }
-    
+    /* --- HEADER --- */
+    .header-premium { position: fixed; top: 0; width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 35px 60px; z-index: 1000; background: linear-gradient(to bottom, rgba(10,14,39,0.5) 0%, transparent 100%); backdrop-filter: blur(2px); transition: all 0.4s ease; }
+    .header-premium.scrolled { background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(15px); padding: 20px 60px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+    .header-premium .logo img { height: 75px; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4)); transition: height 0.4s ease; }
+    .header-premium.scrolled .logo img { height: 55px; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.1)); }
+    .header-premium .main-nav { display: flex; align-items: center; gap: 40px; }
+    .header-premium .main-nav a { font-family: var(--font-modern); font-size: 0.85rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #FFFFFF; text-decoration: none; position: relative; transition: color 0.3s ease; }
+    .header-premium.scrolled .main-nav a { color: var(--color-primary); }
+    .header-premium .main-nav a::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px; background: var(--color-accent); transition: width 0.3s ease; }
+    .header-premium .main-nav a:hover { color: var(--color-accent); }
+    .header-premium .main-nav a:hover::after { width: 100%; }
+    .header-premium .nav-cta { padding: 12px 32px; background: rgba(255,255,255,0.1); color: #FFFFFF !important; border: 1px solid rgba(255,255,255,0.4); border-radius: 0; font-weight: 700; letter-spacing: 2px; }
+    .header-premium.scrolled .nav-cta { background: var(--color-primary); color: var(--color-light) !important; border-color: var(--color-primary); }
     .header-premium .nav-cta::after { display: none; }
-    .header-premium .nav-cta:hover {
-      background: var(--color-accent);
-      color: var(--color-primary) !important;
-      border-color: var(--color-accent);
-    }
+    .header-premium .nav-cta:hover { background: var(--color-accent); color: var(--color-primary) !important; border-color: var(--color-accent); }
     
-    /* --- PREMIUM HERO (ENHANCED VISIBILITY) --- */
-    .hero-premium {
-      position: relative;
-      height: 100vh;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
-    }
+    /* --- HERO --- */
+    .hero-premium { position: relative; height: 100vh; width: 100%; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+    .hero-premium video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+    .hero-premium::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(10,14,39,0.75) 0%, rgba(10,14,39,0.45) 100%); z-index: 1; }
+    .hero-content { position: relative; z-index: 2; text-align: center; max-width: 1100px; padding: 0 40px; }
+    .hero-pre-title { font-family: var(--font-modern); font-size: 1rem; font-weight: 700; letter-spacing: 8px; color: var(--color-accent); text-transform: uppercase; margin-bottom: 24px; opacity: 0; animation: fadeInUp 1s ease-out forwards; animation-delay: 0.2s; }
+    .hero-content h1 { font-family: var(--font-classic); font-size: 5.5rem; font-weight: 400; color: var(--color-light); line-height: 1.1; margin-bottom: 24px; letter-spacing: 2px; text-shadow: 0 4px 25px rgba(0,0,0,0.6); opacity: 0; animation: fadeInUp 1.2s ease-out forwards; animation-delay: 0.4s; }
+    .hero-divider { width: 80px; height: 3px; background: var(--color-accent); margin: 0 auto 30px auto; opacity: 0; animation: fadeInUp 1s ease-out forwards; animation-delay: 0.5s; }
+    .hero-content p { font-family: var(--font-modern); font-size: 1.25rem; font-weight: 400; color: rgba(255,255,255,0.95); margin-bottom: 40px; letter-spacing: 0.5px; text-shadow: 0 2px 10px rgba(0,0,0,0.5); opacity: 0; animation: fadeInUp 1.2s ease-out forwards; animation-delay: 0.6s; }
+    .hero-cta { display: inline-block; padding: 16px 48px; background: transparent; color: var(--color-light); text-decoration: none; font-family: var(--font-modern); font-weight: 600; font-size: 0.85rem; letter-spacing: 3px; text-transform: uppercase; border: 2px solid rgba(255,255,255,0.6); transition: all 0.4s ease; opacity: 0; animation: fadeInUp 1.2s ease-out forwards; animation-delay: 0.8s; }
+    .hero-cta:hover { background: var(--color-accent); color: var(--color-primary); border-color: var(--color-accent); transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
     
-    .hero-premium video {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      object-fit: cover;
-      z-index: 0;
-    }
+    /* --- SPLIT-SCREEN --- */
+    .split-premium { display: flex; min-height: 90vh; width: 100%; align-items: center; }
+    .split-visual-premium { flex: 1; height: 100%; min-height: 600px; overflow: hidden; position: relative; }
+    .split-visual-premium video, .split-visual-premium img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 1.2s ease; }
+    .split-visual-premium:hover video, .split-visual-premium:hover img { transform: scale(1.05); }
+    .split-content-premium { flex: 1; padding: 100px 80px; background: var(--color-light); }
+    .split-content-premium.alt-bg { background: var(--color-bg-alt); }
+    .split-content-premium h2 { font-family: var(--font-classic); font-size: 3.2rem; font-weight: 400; margin-bottom: 30px; color: var(--color-primary); letter-spacing: 2px; }
+    .split-content-premium p { font-family: var(--font-modern); font-size: 1.1rem; color: var(--color-text); margin-bottom: 24px; line-height: 1.8; font-weight: 400; }
+    .split-content-premium strong { font-weight: 700; color: var(--color-primary); }
+    .values-list { list-style: none; margin-top: 40px; }
+    .values-list li { padding: 16px 0; padding-left: 45px; position: relative; font-family: var(--font-modern); font-size: 1.05rem; color: var(--color-text); border-bottom: 1px solid rgba(10,14,39,0.08); transition: all 0.3s ease; }
+    .values-list li:hover { padding-left: 50px; color: var(--color-primary); }
+    .values-list li::before { content: '✦'; position: absolute; left: 0; top: 16px; color: var(--color-accent); font-size: 1.4rem; font-weight: 300; }
     
-    .hero-premium::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: linear-gradient(to bottom, rgba(10,14,39,0.75) 0%, rgba(10,14,39,0.45) 100%);
-      z-index: 1;
-    }
+    /* --- SOLUTIONS GRID --- */
+    .solutions-section { padding: 100px 60px; background: var(--color-bg-alt); }
+    .section-header { text-align: center; max-width: 800px; margin: 0 auto 60px auto; }
+    .section-header h2 { font-size: 3.2rem; margin-bottom: 20px; }
+    .section-header p { font-size: 1.1rem; color: var(--color-text); }
+    .solutions-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto; }
+    .solution-card { background: var(--color-light); border-radius: 8px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: all 0.4s ease; }
+    .solution-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+    .solution-visual { height: 220px; overflow: hidden; }
+    .solution-visual img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+    .solution-card:hover .solution-visual img { transform: scale(1.05); }
+    .solution-content { padding: 30px; }
+    .solution-content h3 { font-family: var(--font-classic); font-size: 1.8rem; margin-bottom: 12px; color: var(--color-primary); }
+    .solution-content p { font-size: 1rem; color: var(--color-text); margin-bottom: 20px; line-height: 1.6; }
+    .solution-link { font-family: var(--font-modern); font-size: 0.85rem; font-weight: 700; color: var(--color-accent); text-decoration: none; letter-spacing: 1px; text-transform: uppercase; transition: color 0.3s ease; }
+    .solution-link:hover { color: var(--color-primary); }
     
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      text-align: center;
-      max-width: 1100px;
-      padding: 0 40px;
-    }
+    /* --- TEAM GRID --- */
+    .team-section { padding: 100px 60px; background: var(--color-light); }
+    .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; max-width: 900px; margin: 0 auto; }
+    .team-card { text-align: center; padding: 40px 30px; background: var(--color-bg-alt); border-radius: 8px; transition: all 0.4s ease; }
+    .team-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.08); }
+    .team-photo { width: 150px; height: 150px; border-radius: 50%; overflow: hidden; margin: 0 auto 20px auto; border: 3px solid var(--color-accent); }
+    .team-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .team-info h3 { font-family: var(--font-classic); font-size: 1.6rem; margin-bottom: 8px; }
+    .team-info .role { color: var(--color-accent); font-weight: 700; font-size: 0.85rem; letter-spacing: 1.5px; text-transform: uppercase; display: block; margin-bottom: 15px; }
+    .team-info p { font-size: 0.95rem; color: var(--color-text); line-height: 1.6; }
     
-    .hero-pre-title {
-      font-family: var(--font-modern);
-      font-size: 1rem;
-      font-weight: 700;
-      letter-spacing: 8px;
-      color: var(--color-accent);
-      text-transform: uppercase;
-      margin-bottom: 24px;
-      opacity: 0;
-      animation: fadeInUp 1s ease-out forwards;
-      animation-delay: 0.2s;
-    }
+    /* --- FOOTER --- */
+    .footer-premium { background: var(--color-primary); color: var(--color-light); padding: 60px; text-align: center; }
+    .footer-premium p { font-family: var(--font-modern); font-size: 0.9rem; opacity: 0.8; letter-spacing: 1px; }
+    .footer-premium a { color: var(--color-accent); text-decoration: none; border-bottom: 1px solid var(--color-accent); transition: opacity 0.3s; }
+    .footer-premium a:hover { opacity: 0.7; }
     
-    .hero-content h1 {
-      font-family: var(--font-classic);
-      font-size: 5.5rem;
-      font-weight: 400;
-      color: var(--color-light);
-      line-height: 1.1;
-      margin-bottom: 24px;
-      letter-spacing: 2px;
-      text-shadow: 0 4px 25px rgba(0,0,0,0.6);
-      opacity: 0;
-      animation: fadeInUp 1.2s ease-out forwards;
-      animation-delay: 0.4s;
-    }
-    
-    .hero-divider {
-      width: 80px;
-      height: 3px;
-      background: var(--color-accent);
-      margin: 0 auto 30px auto;
-      opacity: 0;
-      animation: fadeInUp 1s ease-out forwards;
-      animation-delay: 0.5s;
-    }
-    
-    .hero-content p {
-      font-family: var(--font-modern);
-      font-size: 1.25rem;
-      font-weight: 400;
-      color: rgba(255,255,255,0.95);
-      margin-bottom: 40px;
-      letter-spacing: 0.5px;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
-      opacity: 0;
-      animation: fadeInUp 1.2s ease-out forwards;
-      animation-delay: 0.6s;
-    }
-    
-    .hero-cta {
-      display: inline-block;
-      padding: 16px 48px;
-      background: transparent;
-      color: var(--color-light);
-      text-decoration: none;
-      font-family: var(--font-modern);
-      font-weight: 600;
-      font-size: 0.85rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      border: 2px solid rgba(255,255,255,0.6);
-      transition: all 0.4s ease;
-      opacity: 0;
-      animation: fadeInUp 1.2s ease-out forwards;
-      animation-delay: 0.8s;
-    }
-    
-    .hero-cta:hover {
-      background: var(--color-accent);
-      color: var(--color-primary);
-      border-color: var(--color-accent);
-      transform: translateY(-3px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-    }
-    
-    /* --- PREMIUM SPLIT-SCREEN --- */
-    .split-premium {
-      display: flex;
-      min-height: 90vh;
-      width: 100%;
-      align-items: center;
-    }
-    
-    .split-visual-premium {
-      flex: 1;
-      height: 100%;
-      min-height: 600px;
-      overflow: hidden;
-      position: relative;
-    }
-    
-    .split-visual-premium video,
-    .split-visual-premium img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 1.2s ease;
-    }
-    
-    .split-visual-premium:hover video,
-    .split-visual-premium:hover img {
-      transform: scale(1.05);
-    }
-    
-    .split-content-premium {
-      flex: 1;
-      padding: 100px 80px;
-      background: var(--color-light);
-    }
-    
-    .split-content-premium.alt-bg {
-      background: var(--color-bg-alt);
-    }
-    
-    .split-content-premium h2 {
-      font-family: var(--font-classic);
-      font-size: 3.2rem;
-      font-weight: 400;
-      margin-bottom: 30px;
-      color: var(--color-primary);
-      letter-spacing: 2px;
-    }
-    
-    .split-content-premium p {
-      font-family: var(--font-modern);
-      font-size: 1.1rem;
-      color: var(--color-text);
-      margin-bottom: 24px;
-      line-height: 1.8;
-      font-weight: 400;
-    }
-    
-    .split-content-premium strong {
-      font-weight: 700;
-      color: var(--color-primary);
-    }
-    
-    .values-list {
-      list-style: none;
-      margin-top: 40px;
-    }
-    
-    .values-list li {
-      padding: 16px 0;
-      padding-left: 45px;
-      position: relative;
-      font-family: var(--font-modern);
-      font-size: 1.05rem;
-      color: var(--color-text);
-      border-bottom: 1px solid rgba(10,14,39,0.08);
-      transition: all 0.3s ease;
-    }
-    
-    .values-list li:hover {
-      padding-left: 50px;
-      color: var(--color-primary);
-    }
-    
-    .values-list li::before {
-      content: '✦';
-      position: absolute;
-      left: 0;
-      top: 16px;
-      color: var(--color-accent);
-      font-size: 1.4rem;
-      font-weight: 300;
-    }
-    
-    /* --- ANIMATIONS --- */
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    
-    /* --- RESPONSIVE --- */
+    /* --- ANIMATIONS & RESPONSIVE --- */
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
     @media (max-width: 968px) {
-      .header-premium, .header-premium.scrolled {
-        padding: 20px 30px;
-        flex-direction: column;
-        gap: 20px;
-      }
-      .header-premium .main-nav {
-        gap: 20px;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
+      .header-premium, .header-premium.scrolled { padding: 20px 30px; flex-direction: column; gap: 20px; }
+      .header-premium .main-nav { gap: 20px; flex-wrap: wrap; justify-content: center; }
       .hero-content h1 { font-size: 3rem; }
       .hero-pre-title { font-size: 0.85rem; letter-spacing: 5px; }
-      .hero-content p { font-size: 1.1rem; }
       .split-premium { flex-direction: column; }
       .split-visual-premium { min-height: 400px; width: 100%; }
       .split-content-premium { padding: 60px 30px; }
-      .split-content-premium h2 { font-size: 2.2rem; }
+      .solutions-section, .team-section, .footer-premium { padding: 60px 30px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- PREMIUM HEADER -->
+  <!-- HEADER -->
   <header class="header-premium" id="mainHeader">
-    <div class="logo">
-      <img src="assets/zeustech-logo-newlayout.jpg" alt="ZEUSTECH">
-    </div>
+    <div class="logo"><img src="assets/zeustech-logo-newlayout.jpg" alt="ZEUSTECH"></div>
     <nav class="main-nav">
       <a href="#story">Our Story</a>
-      <a href="#innovations">Innovations</a>
       <a href="#solutions">Solutions</a>
       <a href="#team">Leadership</a>
       <a href="mailto:ceo@zeustechafrica.com" class="nav-cta">Contact Us</a>
     </nav>
   </header>
 
-  <!-- PREMIUM HERO SECTION -->
+  <!-- HERO -->
   <section class="hero-premium">
     <video autoplay muted loop playsinline>
       <source src="assets/hero/hero.mp4" type="video/mp4">
@@ -403,7 +145,7 @@
     </div>
   </section>
 
-  <!-- OUR STORY - PREMIUM SPLIT-SCREEN -->
+  <!-- OUR STORY -->
   <section id="story" class="split-premium">
     <div class="split-visual-premium">
       <video autoplay muted loop playsinline>
@@ -414,7 +156,6 @@
       <h2>Our Story & Vision</h2>
       <p><strong>Mission:</strong> To structure, protect, and commercialize African innovation — transforming ideas into scalable, investor-ready technologies that solve real-world problems.</p>
       <p><strong>Vision:</strong> To become Africa's foremost technology and innovation powerhouse — empowering creators, advancing IP ownership, and driving inclusive economic growth.</p>
-      
       <h3 style="font-family: var(--font-classic); font-size: 1.8rem; margin-top: 50px; margin-bottom: 20px; color: var(--color-primary); letter-spacing: 1.5px;">Core Values</h3>
       <ul class="values-list">
         <li><strong>Innovation:</strong> Constantly challenging the status quo to build solutions that matter.</li>
@@ -425,23 +166,92 @@
     </div>
   </section>
 
+  <!-- SOLUTIONS -->
+  <section id="solutions" class="solutions-section">
+    <div class="section-header">
+      <h2>Our Innovation Portfolio</h2>
+      <p>Scalable, protected, and investor-ready technologies designed to solve real-world African challenges.</p>
+    </div>
+    <div class="solutions-grid">
+      
+      <div class="solution-card">
+        <div class="solution-visual"><img src="assets/zeusclean-data.jpg" alt="ZEUSCLEAN"></div>
+        <div class="solution-content">
+          <h3>ZEUSCLEAN</h3>
+          <p>The first POPIA-certified identity & location engine for South Africa. Turn messy data into gold with human-in-the-loop AI.</p>
+          <a href="mailto:ceo@zeustechafrica.com?subject=ZEUSCLEAN%20Inquiry" class="solution-link">Learn More →</a>
+        </div>
+      </div>
+
+      <div class="solution-card">
+        <div class="solution-visual"><img src="assets/steeze-studio.jpg" alt="STEEZE"></div>
+        <div class="solution-content">
+          <h3>STEEZE</h3>
+          <p>The verified entertainment platform where creators keep 70% of their earnings and connect directly with fans, free from algorithmic noise.</p>
+          <a href="https://steeze.zeustechafrica.com" target="_blank" class="solution-link">Explore Platform →</a>
+        </div>
+      </div>
+
+      <div class="solution-card">
+        <div class="solution-visual"><img src="assets/oyin-ops-dashboard.jpg" alt="OYIN OPS V1"></div>
+        <div class="solution-content">
+          <h3>OYIN OPS V1</h3>
+          <p>A complete, production-ready admin system handling client onboarding, 9-stage order workflows, photo evidence, and financial tracking.</p>
+          <a href="https://oyinluxurygarmentcare.zeustechafrica.com" target="_blank" class="solution-link">View Case Study →</a>
+        </div>
+      </div>
+
+      <div class="solution-card">
+        <div class="solution-visual" style="background: var(--color-primary); display: flex; align-items: center; justify-content: center; color: var(--color-accent); font-size: 3rem;">
+          <i class="fas fa-gas-pump"></i>
+        </div>
+        <div class="solution-content">
+          <h3>FuelPass Estimator</h3>
+          <p>Plan fuel costs with precision for any trip and any vehicle. A practical, real-time tool for African drivers.</p>
+          <a href="/fuelpass-estimator/" target="_blank" class="solution-link">Try the Tool →</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- LEADERSHIP -->
+  <section id="team" class="team-section">
+    <div class="section-header">
+      <h2>Leadership Team</h2>
+      <p>The visionary architects shaping Africa's innovation future.</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-photo"><img src="assets/team/ceo.jpg" alt="Oghenetega Blondy Obebeduo"></div>
+        <div class="team-info">
+          <h3>Oghenetega Blondy Obebeduo</h3>
+          <span class="role">Founder & CEO</span>
+          <p>A visionary technologist and serial entrepreneur driving ZeusTech's mission to protect, scale, and commercialize African innovations globally.</p>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-photo"><img src="assets/team/sisipho.jpg" alt="Sisipho Ngombane"></div>
+        <div class="team-info">
+          <h3>Sisipho Ngombane</h3>
+          <span class="role">Director & Co-Founder</span>
+          <p>A strategic leader and innovation advocate overseeing corporate direction, stakeholder engagement, and the commercialization of protected technologies.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- FOOTER -->
-  <footer style="background: var(--color-primary); color: var(--color-light); padding: 50px 60px; text-align: center;">
-    <p style="font-family: var(--font-modern); font-size: 0.9rem; opacity: 0.9; letter-spacing: 1px;">© 2025 ZeusTech (Pty) Ltd — CIPC Reg: 2025/794787/07</p>
-    <p style="font-family: var(--font-modern); font-size: 0.9rem; margin-top: 15px; opacity: 0.8;">
-      <a href="mailto:ceo@zeustechafrica.com" style="color: var(--color-accent); text-decoration: none; border-bottom: 1px solid var(--color-accent);">ceo@zeustechafrica.com</a>
-    </p>
+  <footer class="footer-premium">
+    <p>© 2025 ZeusTech (Pty) Ltd — CIPC Reg: 2025/794787/07</p>
+    <p style="margin-top: 15px;"><a href="mailto:ceo@zeustechafrica.com">ceo@zeustechafrica.com</a></p>
   </footer>
 
-  <!-- SCROLL EFFECT SCRIPT -->
   <script>
     window.addEventListener('scroll', function() {
       const header = document.getElementById('mainHeader');
-      if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
+      if (window.scrollY > 50) { header.classList.add('scrolled'); } 
+      else { header.classList.remove('scrolled'); }
     });
   </script>
 
