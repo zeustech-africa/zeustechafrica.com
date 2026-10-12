@@ -7,61 +7,115 @@
   <meta name="description" content="ZeusTech is Africa's innovation powerhouse — building protected, high-impact technologies.">
   <link rel="icon" type="image/png" href="favicon.png">
   
-  <!-- Clean, Professional Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Premium Typography: Classic Serif + Modern Sans -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   
   <style>
-    /* --- NEW CLEAN & PROFESSIONAL THEME --- */
+    /* --- PREMIUM CLASSIC THEME --- */
     :root {
-      --bg-light: #FFFFFF;
-      --bg-alt: #F8F9FA;
-      --text-primary: #0F172A;
-      --text-secondary: #475569;
-      --accent-gold: #D4AF37;
-      --accent-blue: #2563EB;
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Manrope', sans-serif;
-      background: var(--bg-light);
-      color: var(--text-primary);
-      line-height: 1.6;
-    }
-    h1, h2, h3, h4 {
-      font-family: 'Manrope', sans-serif;
-      font-weight: 700;
-      color: var(--text-primary);
-      letter-spacing: -0.02em;
+      --color-primary: #0A0E27; /* Deep Navy */
+      --color-secondary: #1A1F3A; /* Rich Blue */
+      --color-accent: #C9A961; /* Premium Gold */
+      --color-text: #2C3E50; /* Sophisticated Gray */
+      --color-light: #FFFFFF;
+      --color-bg-alt: #F5F5F0; /* Warm Off-White */
+      --font-classic: 'Cormorant Garamond', serif;
+      --font-modern: 'Manrope', sans-serif;
     }
     
-    /* --- CLEAN HEADER --- */
-    .header-clean {
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: var(--font-modern);
+      background: var(--color-light);
+      color: var(--color-text);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+    
+    h1, h2, h3, h4 {
+      font-family: var(--font-classic);
+      font-weight: 600;
+      color: var(--color-primary);
+      letter-spacing: 0.02em;
+    }
+    
+    /* --- PREMIUM HEADER --- */
+    .header-premium {
       position: fixed;
       top: 0;
       width: 100%;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 20px 40px;
+      padding: 25px 60px;
       z-index: 1000;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(0,0,0,0.05);
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid rgba(10, 14, 39, 0.08);
+      transition: all 0.4s ease;
     }
-    .header-clean .logo img { height: 45px; }
-    .header-clean .main-nav a {
-      color: var(--text-primary);
-      text-decoration: none;
-      margin-left: 32px;
-      font-size: 0.9rem;
+    
+    .header-premium .logo img {
+      height: 50px;
+      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.1));
+    }
+    
+    .header-premium .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+    
+    .header-premium .main-nav a {
+      font-family: var(--font-modern);
+      font-size: 0.85rem;
       font-weight: 600;
-      transition: color 0.3s;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--color-primary);
+      text-decoration: none;
+      position: relative;
+      transition: color 0.3s ease;
     }
-    .header-clean .main-nav a:hover { color: var(--accent-blue); }
-
-    /* --- CLEAN HERO --- */
-    .hero-clean {
+    
+    .header-premium .main-nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--color-accent);
+      transition: width 0.3s ease;
+    }
+    
+    .header-premium .main-nav a:hover {
+      color: var(--color-accent);
+    }
+    
+    .header-premium .main-nav a:hover::after {
+      width: 100%;
+    }
+    
+    .header-premium .nav-cta {
+      padding: 12px 32px;
+      background: var(--color-primary);
+      color: var(--color-light) !important;
+      border-radius: 0;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+    
+    .header-premium .nav-cta::after { display: none; }
+    .header-premium .nav-cta:hover {
+      background: var(--color-accent);
+      color: var(--color-primary) !important;
+    }
+    
+    /* --- PREMIUM HERO (NO CARD, CLASSIC TEXT) --- */
+    .hero-premium {
       position: relative;
       height: 100vh;
       width: 100%;
@@ -70,99 +124,217 @@
       justify-content: center;
       overflow: hidden;
     }
-    .hero-clean video {
+    
+    .hero-premium video {
       position: absolute;
       top: 0; left: 0;
       width: 100%; height: 100%;
       object-fit: cover;
       z-index: 0;
     }
-    .hero-clean .overlay-clean {
+    
+    /* Subtle cinematic overlay */
+    .hero-premium::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: linear-gradient(135deg, rgba(10,14,39,0.6) 0%, rgba(10,14,39,0.3) 100%);
+      z-index: 1;
+    }
+    
+    .hero-content {
       position: relative;
       z-index: 2;
       text-align: center;
-      max-width: 900px;
-      padding: 40px;
-      background: rgba(255, 255, 255, 0.90);
-      backdrop-filter: blur(8px);
-      border-radius: 12px;
-      border: 1px solid rgba(255,255,255,0.5);
-      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+      max-width: 1100px;
+      padding: 0 40px;
     }
-    .hero-clean h1 { font-size: 3.5rem; margin-bottom: 16px; color: var(--text-primary); }
-    .hero-clean p { font-size: 1.2rem; color: var(--text-secondary); margin-bottom: 32px; }
-    .btn-clean {
+    
+    .hero-content h1 {
+      font-family: var(--font-classic);
+      font-size: 5.5rem;
+      font-weight: 400;
+      color: var(--color-light);
+      line-height: 1.1;
+      margin-bottom: 24px;
+      letter-spacing: 3px;
+      text-shadow: 0 4px 20px rgba(0,0,0,0.4);
+      opacity: 0;
+      animation: fadeInUp 1.2s ease-out forwards;
+      animation-delay: 0.3s;
+    }
+    
+    .hero-content p {
+      font-family: var(--font-modern);
+      font-size: 1.3rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.95);
+      margin-bottom: 40px;
+      letter-spacing: 1px;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+      opacity: 0;
+      animation: fadeInUp 1.2s ease-out forwards;
+      animation-delay: 0.6s;
+    }
+    
+    .hero-cta {
       display: inline-block;
-      padding: 14px 32px;
-      background: var(--text-primary);
-      color: #FFFFFF;
+      padding: 16px 48px;
+      background: transparent;
+      color: var(--color-light);
       text-decoration: none;
+      font-family: var(--font-modern);
       font-weight: 600;
-      border-radius: 6px;
-      transition: all 0.3s ease;
+      font-size: 0.85rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      border: 2px solid rgba(255,255,255,0.6);
+      transition: all 0.4s ease;
+      opacity: 0;
+      animation: fadeInUp 1.2s ease-out forwards;
+      animation-delay: 0.9s;
     }
-    .btn-clean:hover { background: var(--accent-blue); transform: translateY(-2px); }
-
-    /* --- SPLIT-SCREEN LAYOUT --- */
-    .split-section {
+    
+    .hero-cta:hover {
+      background: var(--color-light);
+      color: var(--color-primary);
+      border-color: var(--color-light);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+    
+    /* --- PREMIUM SPLIT-SCREEN --- */
+    .split-premium {
       display: flex;
-      min-height: 80vh;
+      min-height: 90vh;
       width: 100%;
       align-items: center;
     }
-    .split-visual {
+    
+    .split-visual-premium {
       flex: 1;
       height: 100%;
-      min-height: 500px;
+      min-height: 600px;
       overflow: hidden;
       position: relative;
     }
-    .split-visual img, .split-visual video {
+    
+    .split-visual-premium video,
+    .split-visual-premium img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
+      transition: transform 1.2s ease;
     }
-    .split-content {
-      flex: 1;
-      padding: 80px 60px;
-      background: var(--bg-light);
-    }
-    .split-content.alt-bg { background: var(--bg-alt); }
-    .split-content h2 { font-size: 2.5rem; margin-bottom: 20px; color: var(--text-primary); }
-    .split-content p { font-size: 1.1rem; color: var(--text-secondary); margin-bottom: 24px; }
     
-    .value-list { list-style: none; padding: 0; margin: 20px 0; }
-    .value-list li {
-      padding: 8px 0;
-      padding-left: 28px;
-      position: relative;
-      color: var(--text-secondary);
-      font-size: 1rem;
+    .split-visual-premium:hover video,
+    .split-visual-premium:hover img {
+      transform: scale(1.05);
     }
-    .value-list li::before {
-      content: "✓";
-      color: var(--accent-gold);
-      font-weight: bold;
+    
+    .split-content-premium {
+      flex: 1;
+      padding: 100px 80px;
+      background: var(--color-light);
+    }
+    
+    .split-content-premium.alt-bg {
+      background: var(--color-bg-alt);
+    }
+    
+    .split-content-premium h2 {
+      font-family: var(--font-classic);
+      font-size: 3.2rem;
+      font-weight: 400;
+      margin-bottom: 30px;
+      color: var(--color-primary);
+      letter-spacing: 2px;
+    }
+    
+    .split-content-premium p {
+      font-family: var(--font-modern);
+      font-size: 1.1rem;
+      color: var(--color-text);
+      margin-bottom: 24px;
+      line-height: 1.8;
+      font-weight: 400;
+    }
+    
+    .split-content-premium strong {
+      font-weight: 700;
+      color: var(--color-primary);
+    }
+    
+    .values-list {
+      list-style: none;
+      margin-top: 40px;
+    }
+    
+    .values-list li {
+      padding: 16px 0;
+      padding-left: 45px;
+      position: relative;
+      font-family: var(--font-modern);
+      font-size: 1.05rem;
+      color: var(--color-text);
+      border-bottom: 1px solid rgba(10,14,39,0.08);
+      transition: all 0.3s ease;
+    }
+    
+    .values-list li:hover {
+      padding-left: 50px;
+      color: var(--color-primary);
+    }
+    
+    .values-list li::before {
+      content: '✦';
       position: absolute;
       left: 0;
+      top: 16px;
+      color: var(--color-accent);
+      font-size: 1.4rem;
+      font-weight: 300;
     }
-
+    
+    /* --- ANIMATIONS --- */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
     /* --- RESPONSIVE --- */
-    @media (max-width: 900px) {
-      .header-clean { padding: 15px 20px; flex-direction: column; gap: 15px; }
-      .header-clean .main-nav a { margin: 0 10px; font-size: 0.8rem; }
-      .split-section { flex-direction: column; }
-      .split-visual { min-height: 300px; width: 100%; }
-      .split-content { padding: 40px 24px; }
-      .hero-clean h1 { font-size: 2.2rem; }
+    @media (max-width: 968px) {
+      .header-premium {
+        padding: 20px 30px;
+        flex-direction: column;
+        gap: 20px;
+      }
+      .header-premium .main-nav {
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .hero-content h1 { font-size: 3rem; }
+      .hero-content p { font-size: 1.1rem; }
+      .split-premium { flex-direction: column; }
+      .split-visual-premium { min-height: 400px; width: 100%; }
+      .split-content-premium { padding: 60px 30px; }
+      .split-content-premium h2 { font-size: 2.2rem; }
     }
   </style>
 </head>
 <body>
 
-  <!-- CLEAN HEADER -->
-  <header class="header-clean">
+  <!-- PREMIUM HEADER -->
+  <header class="header-premium">
     <div class="logo">
       <img src="assets/zeustech-logo-newlayout.jpg" alt="ZEUSTECH">
     </div>
@@ -170,37 +342,37 @@
       <a href="#story">Our Story</a>
       <a href="#innovations">Innovations</a>
       <a href="#solutions">Solutions</a>
-      <a href="#team">Team</a>
-      <a href="mailto:ceo@zeustechafrica.com" class="btn-clean" style="padding: 10px 24px; margin-left: 32px;">Contact Us</a>
+      <a href="#team">Leadership</a>
+      <a href="mailto:ceo@zeustechafrica.com" class="nav-cta">Contact Us</a>
     </nav>
   </header>
 
-  <!-- 1. CLEAN HERO SECTION -->
-  <section class="hero-clean">
+  <!-- PREMIUM HERO SECTION -->
+  <section class="hero-premium">
     <video autoplay muted loop playsinline>
       <source src="assets/hero/hero.mp4" type="video/mp4">
     </video>
-    <div class="overlay-clean">
+    <div class="hero-content">
       <h1>Innovating Africa at the Level of Creation</h1>
       <p>We structure, protect, and commercialize African innovation — transforming ideas into scalable, investor-ready technologies.</p>
-      <a href="#story" class="btn-clean">Discover Our Vision</a>
+      <a href="#story" class="hero-cta">Discover Our Vision</a>
     </div>
   </section>
 
-  <!-- 2. OUR STORY & VISION (SPLIT-SCREEN) -->
-  <section id="story" class="split-section">
-    <div class="split-visual">
+  <!-- OUR STORY - PREMIUM SPLIT-SCREEN -->
+  <section id="story" class="split-premium">
+    <div class="split-visual-premium">
       <video autoplay muted loop playsinline>
         <source src="assets/vision/story-vision.mp4" type="video/mp4">
       </video>
     </div>
-    <div class="split-content alt-bg">
+    <div class="split-content-premium alt-bg">
       <h2>Our Story & Vision</h2>
       <p><strong>Mission:</strong> To structure, protect, and commercialize African innovation — transforming ideas into scalable, investor-ready technologies that solve real-world problems.</p>
-      <p><strong>Vision:</strong> To become Africa’s foremost technology and innovation powerhouse — empowering creators, advancing IP ownership, and driving inclusive economic growth.</p>
+      <p><strong>Vision:</strong> To become Africa's foremost technology and innovation powerhouse — empowering creators, advancing IP ownership, and driving inclusive economic growth.</p>
       
-      <h3 style="margin-top: 30px; font-size: 1.3rem; margin-bottom: 15px;">Core Values</h3>
-      <ul class="value-list">
+      <h3 style="font-family: var(--font-classic); font-size: 1.8rem; margin-top: 50px; margin-bottom: 20px; color: var(--color-primary); letter-spacing: 1.5px;">Core Values</h3>
+      <ul class="values-list">
         <li><strong>Innovation:</strong> Constantly challenging the status quo to build solutions that matter.</li>
         <li><strong>Integrity:</strong> Upholding transparency, accountability, and ethical leadership.</li>
         <li><strong>Empowerment:</strong> Elevating innovators through knowledge, resources, and strategic partnerships.</li>
@@ -209,11 +381,11 @@
     </div>
   </section>
 
-  <!-- FOOTER (Simple & Clean) -->
-  <footer style="background: var(--bg-alt); padding: 40px; text-align: center; border-top: 1px solid rgba(0,0,0,0.05);">
-    <p style="color: var(--text-secondary); font-size: 0.9rem;">© 2025 ZeusTech (Pty) Ltd — CIPC Reg: 2025/794787/07</p>
-    <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 10px;">
-      <a href="mailto:ceo@zeustechafrica.com" style="color: var(--accent-blue); text-decoration: none;">ceo@zeustechafrica.com</a>
+  <!-- FOOTER -->
+  <footer style="background: var(--color-primary); color: var(--color-light); padding: 50px 60px; text-align: center;">
+    <p style="font-family: var(--font-modern); font-size: 0.9rem; opacity: 0.9; letter-spacing: 1px;">© 2025 ZeusTech (Pty) Ltd — CIPC Reg: 2025/794787/07</p>
+    <p style="font-family: var(--font-modern); font-size: 0.9rem; margin-top: 15px; opacity: 0.8;">
+      <a href="mailto:ceo@zeustechafrica.com" style="color: var(--color-accent); text-decoration: none; border-bottom: 1px solid var(--color-accent);">ceo@zeustechafrica.com</a>
     </p>
   </footer>
 
