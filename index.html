@@ -6,11 +6,11 @@
   <title>ZEUSTECH — Innovating Africa at the Level of Creation</title>
   <meta name="description" content="ZeusTech is Africa's innovation powerhouse — building protected, high-impact technologies in FinTech, Human Tech, and smart infrastructure.">
   <link rel="icon" type="image/png" href="favicon.png">
-  
+
   <!-- Premium Typography -->
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  
+
   <style>
     :root {
       --color-primary: #0A0E27;
@@ -22,12 +22,12 @@
       --font-classic: 'Cormorant Garamond', serif;
       --font-modern: 'Manrope', sans-serif;
     }
-    
+
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: var(--font-modern); background: var(--color-light); color: var(--color-text); line-height: 1.7; overflow-x: hidden; }
     h1, h2, h3, h4 { font-family: var(--font-classic); font-weight: 600; color: var(--color-primary); letter-spacing: 0.02em; }
     a { text-decoration: none; transition: all 0.3s ease; }
-    
+
     /* --- HEADER --- */
     .header-premium { position: fixed; top: 0; width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 25px 60px; z-index: 1000; background: linear-gradient(to bottom, rgba(10,14,39,0.6) 0%, transparent 100%); backdrop-filter: blur(2px); transition: all 0.4s ease; }
     .header-premium.scrolled { background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(15px); padding: 15px 60px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
@@ -64,7 +64,7 @@
     .bg-alt { background: var(--color-bg-alt); }
     .bg-light { background: var(--color-light); }
 
-    /* --- SPLIT SCREEN (Handles both Video and Image) --- */
+    /* --- SPLIT SCREEN --- */
     .split-premium { display: flex; min-height: 80vh; width: 100%; align-items: center; }
     .split-visual-premium { flex: 1; height: 100%; min-height: 500px; overflow: hidden; position: relative; background: var(--color-primary); }
     .split-visual-premium video, .split-visual-premium img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 1.2s ease; }
@@ -85,7 +85,7 @@
     .innovation-card p { font-size: 0.9rem; margin-bottom: 15px; }
     .lock-icon { font-size: 2rem; color: var(--color-accent); margin-bottom: 15px; }
 
-    /* --- DEEP DIVES (OYIN, ETC) --- */
+    /* --- DEEP DIVES --- */
     .tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin: 30px 0; }
     .tech-item { background: var(--color-bg-alt); padding: 15px; border-radius: 6px; font-size: 0.9rem; display: flex; align-items: center; gap: 10px; }
     .tech-item i { color: var(--color-accent); }
@@ -97,7 +97,7 @@
     .btn-outline { padding: 12px 28px; background: transparent; color: var(--color-primary); border: 1px solid var(--color-primary); border-radius: 4px; font-weight: 600; font-size: 0.85rem; }
     .btn-outline:hover { background: var(--color-primary); color: var(--color-light); }
 
-    /* --- CAMPAIGN (50 FOR 50) --- */
+    /* --- CAMPAIGN --- */
     .campaign-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin: 30px 0; }
     .campaign-feature { background: var(--color-light); padding: 20px; border-radius: 8px; border-left: 3px solid var(--color-accent); font-size: 0.9rem; }
     .price-box { background: var(--color-bg-alt); padding: 30px; border-radius: 8px; text-align: center; margin: 30px 0; }
@@ -166,223 +166,290 @@
       .pricing-table { font-size: 0.8rem; }
       .pricing-table th, .pricing-table td { padding: 10px; }
     }
-  
-/* ZEUSTECH / Pearl cinema. No build step or external animation library. */
-:root {
-  --color-primary: #16324d;
-  --color-secondary: #edf4fa;
-  --color-accent: #236c97;
-  --color-text: #43576a;
-  --color-light: #fff;
-  --color-bg-alt: #f5f8fb;
-  --metal: linear-gradient(112deg, #193951 5%, #537b95 28%, #246085 48%, #7e9cab 62%, #1b4260 85%);
-  --ease-cinema: cubic-bezier(.22,1,.36,1);
-}
-html { scroll-behavior: smooth; scroll-padding-top: 110px; }
-body { background: #fff; font-size: 16px; -webkit-font-smoothing: antialiased; }
-body::before { content: ''; position: fixed; inset: 0; background: radial-gradient(ellipse at 90% 10%, #d9eaf530, transparent 60%); pointer-events: none; z-index: -1; }
-::selection { background: #d4e7f4; color: #16324d; }
-h1,h2,h3,h4 { letter-spacing: -.035em; line-height: 1.12; }
-p { line-height: 1.85; }
-a:focus-visible, button:focus-visible { outline: 3px solid #277fa8; outline-offset: 6px; }
-.skip-link { position: fixed; top: 12px; left: 12px; transform: translateY(-180%); z-index: 2000; padding: 12px 20px; background: #fff; color: #16324d; border: 1px solid #277fa8; }
-.skip-link:focus { transform: none; }
-.scroll-progress { position: fixed; top: 0; left: 0; width: 100%; height: 3px; z-index: 1200; background: linear-gradient(90deg,#a5bdcb,#236c97,#b9d6e5); transform-origin: left; transform: scaleX(var(--reading-progress,0)); pointer-events: none; }
-.header-premium, .header-premium.scrolled { width: calc(100% - 64px); max-width: 1520px; left: 50%; transform: translateX(-50%); top: 20px; padding: 14px 25px; gap: 20px; border: 1px solid #d9e5ed; border-radius: 16px; background: rgba(255,255,255,.94); backdrop-filter: blur(20px); box-shadow: 0 10px 40px #2346660c; }
-.header-premium.scrolled { top: 12px; padding: 10px 25px; box-shadow: 0 10px 35px #23466612; }
-.header-premium .logo img, .header-premium.scrolled .logo img { height: 44px; width: auto; max-width: 180px; object-fit: contain; filter: none; }
-.brand-fallback { font: 800 1.05rem var(--font-modern); letter-spacing: .2em; color: #16324d; }
-.header-premium .main-nav { gap: clamp(12px,2vw,28px); }
-.header-premium .main-nav a, .header-premium.scrolled .main-nav a { color: #314a61; font-size: .67rem; letter-spacing: .13em; }
-.header-premium .main-nav a:hover { color: #236c97; }
-.header-premium .nav-cta,.header-premium.scrolled .nav-cta { color: #16324d !important; border: 1px solid #b7cedc; background: linear-gradient(120deg,#f3f8fc,#fff); border-radius: 30px; padding: 10px 22px; }
-.header-premium .nav-cta:hover { color: #16324d !important; background: #e8f3fa; border-color: #236c97; }
-.menu-toggle { display: none; align-items: center; gap: 8px; padding: 10px 12px; color: #16324d; border: 1px solid #ccdae5; background: #fff; border-radius: 8px; font: 600 .75rem var(--font-modern); cursor: pointer; }
-.hero-premium { min-height: 850px; height: 100svh; max-height: 1200px; padding: 150px 6% 110px; background: #f5f9fc; isolation: isolate; }
-.hero-premium video { opacity: .27; filter: saturate(.6) contrast(.9) brightness(1.15); }
-.hero-premium::before { background: linear-gradient(90deg,#fffffff0 0%,#ffffffae 45%,#ffffff5c 100%),linear-gradient(0deg,#fff,transparent 35%); }
-.hero-premium::after { content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: radial-gradient(ellipse at 85% 35%,#9ccce12e,transparent 55%), repeating-linear-gradient(0deg,transparent 0 89px,#a6c4d812 90px),repeating-linear-gradient(90deg,transparent 0 89px,#a6c4d812 90px); mask-image: linear-gradient(90deg,transparent,#000); }
-.hero-content { text-align: left; max-width: 1280px; width: 100%; padding: 0; transform: translateY(calc(var(--hero-shift,0) * 1px)); opacity: var(--hero-opacity,1); }
-.hero-pre-title { display: flex; align-items: center; gap: 16px; color: #236c97; font-size: .72rem; letter-spacing: .32em; animation: none; opacity: 1; margin-bottom: 30px; }
-.hero-pre-title::before { content: ''; width: 40px; height: 1px; background: #81a8bc; }
-.hero-content h1 { max-width: 1000px; font-size: clamp(3.4rem,6.7vw,7.5rem); font-weight: 500; letter-spacing: -.055em; line-height: .99; text-shadow: none; margin-bottom: 30px; animation: none; opacity: 1; color: #16324d; }
-@supports (background-clip: text) {
-  .glossy-title { background-image: var(--metal); background-size: 200% 100%; background-position: 30% 50%; background-clip: text; -webkit-background-clip: text; color: transparent !important; }
-  .glossy-title .dissolve-word { background-image: var(--metal); background-clip: text; -webkit-background-clip: text; color: transparent; }
-}
-.hero-divider { margin: 0 0 28px; width: 110px; height: 2px; opacity: 1; animation: none; background: linear-gradient(90deg,#236c97,#b8d2df,transparent); }
-.hero-content p { max-width: 650px; font-size: clamp(1rem,1.3vw,1.15rem); color: #425b70; text-shadow: none; font-weight: 400; opacity: 1; animation: none; margin-bottom: 32px; }
-.hero-cta { opacity: 1; animation: none; border: 1px solid #97b6c9; border-radius: 50px; padding: 17px 30px; color: #16324d; font-size: .7rem; background: linear-gradient(135deg,#fff,#eff7fb); box-shadow: 0 8px 30px #2c668310; }
-.hero-cta:hover { background: #e6f1f8; border-color: #236c97; color: #16324d; }
-.hero-cta::after { content: ' ↗'; font-size: 1rem; padding-left: 20px; }
-.hero-caption { position: absolute; bottom: 36px; left: 6%; right: 6%; z-index: 2; display: flex; justify-content: space-between; border-top: 1px solid #bed2df; padding-top: 19px; color: #647d91; font: 600 .65rem var(--font-modern); text-transform: uppercase; letter-spacing: .18em; }
-.hero-caption a { color: #42667e; }
-.section-padding { padding: 110px max(6%, calc((100vw - 1280px)/2)); position: relative; }
-.bg-light { background: #fff; }
-.bg-alt { background: linear-gradient(135deg,#f7f9fc,#f0f6fa); }
-.section-header { max-width: 800px; margin-bottom: 55px; }
-.section-header h2 { font-size: clamp(2.7rem,4.2vw,4.8rem); margin-bottom: 22px; }
-.section-header p { font-size: 1rem; }
-.chapter-label { display: flex; align-items: center; gap: 14px; color: #658296; font: 600 .62rem var(--font-modern); letter-spacing: .21em; text-transform: uppercase; margin-bottom: 22px; }
-.section-header .chapter-label { justify-content: center; }
-.chapter-label::before { content: ''; width: 28px; height: 1px; background: #9fbdce; }
-.split-premium { min-height: auto; align-items: stretch; padding: 72px 4%; gap: 4%; border-top: 1px solid #e7eef3; position: relative; }
-.split-content-premium { flex: 1 1 50%; padding: 40px 2%; min-width: 0; display: flex; flex-direction: column; justify-content: center; }
-.split-content-premium h2 { font-size: clamp(2.5rem,3.8vw,4.4rem); margin-bottom: 22px; }
-.split-content-premium p { font-size: .96rem; }
-.split-content-premium > p[style*="font-classic"] { font-size: 1.4rem !important; line-height: 1.4; color: #446e87 !important; }
-.split-visual-premium { flex: 1 1 46%; min-width: 0; min-height: 530px; height: auto; align-self: stretch; border-radius: 16px; background: radial-gradient(ellipse at 30% 20%,#fff,#e5f0f7 65%,#d8e9f3); border: 1px solid #dce7ef; box-shadow: 0 30px 70px -40px #406d8a55; isolation: isolate; }
-.split-visual-premium video,.split-visual-premium img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: saturate(.9) contrast(1.02); transform: scale(1.015); transition: transform 1.8s var(--ease-cinema),filter 1s ease; }
-.split-visual-premium::after { content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 1; border-radius: inherit; background: linear-gradient(135deg,#ffffff28,transparent 35%,#aecadd12); box-shadow: inset 0 0 0 1px #ffffff55; }
-.split-visual-premium::before { content: ''; position: absolute; height: 120%; width: 45%; top: -10%; left: -85%; transform: skewX(-20deg); background: linear-gradient(90deg,transparent,#ffffff32,transparent); z-index: 2; pointer-events: none; }
-@media (hover:hover) {
-  .split-visual-premium:hover video,.split-visual-premium:hover img { transform: scale(1.055); filter: saturate(1) contrast(1.02); }
-  .split-visual-premium:hover::before { animation: visual-sheen 1.6s var(--ease-cinema); }
-}
-@keyframes visual-sheen { to { left: 150%; } }
-.visual-fallback { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; padding: 25px; text-align: center; color: #6f8ea2; background: repeating-linear-gradient(0deg,transparent 0 49px,#c3d9e42b 50px),repeating-linear-gradient(90deg,transparent 0 49px,#c3d9e42b 50px); }
-.visual-fallback::before { content: '✦'; font-size: 3rem; font-family: var(--font-classic); color: #91afc1; }
-.visual-fallback span { font: 600 .68rem var(--font-modern); letter-spacing: .15em; text-transform: uppercase; }
-.values-list,.feature-list { margin-top: 12px; }
-.values-list li,.feature-list li { font-size: .88rem; padding: 13px 0 13px 26px; border-color: #dfe8ef; }
-.values-list li::before,.feature-list li::before { font-size: .9rem; top: 14px; }
-.btn-group { gap: 10px; margin-top: 26px; }
-.btn-primary,.btn-outline { display: inline-flex; align-items: center; justify-content: center; border: 1px solid #b9cedb; border-radius: 30px; padding: 13px 23px; font-size: .73rem; line-height: 1.5; background: linear-gradient(135deg,#eef5fa,#fff); color: #234e69; box-shadow: 0 4px 12px #355a7310; position: relative; overflow: hidden; }
-.btn-primary { border-color: #8fb3ca; background: linear-gradient(120deg,#dfeef8,#f6fbff); }
-.btn-primary:hover,.btn-outline:hover { background: #e7f2f9; color: #16324d; border-color: #4084a8; transform: translateY(-3px); box-shadow: 0 10px 22px #355a7315; }
-.innovations-grid { grid-template-columns: repeat(4,minmax(0,1fr)); gap: 22px; max-width: 1280px; }
-.innovation-card { border: 1px solid #dce7ee; border-radius: 14px; padding: 16px 16px 26px; text-align: left; box-shadow: 0 10px 30px #1f4c6705; }
-.innovation-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px #1f4c6710; }
-.innovation-card img { height: 180px; border-radius: 9px; background: #edf5fa; filter: saturate(.8); }
-.innovation-card h3 { font-size: 1.6rem; }
-.innovation-card p { font-size: .8rem; }
-.innovation-card .btn-outline { font-size: .68rem !important; }
-.lock-icon { font-size: .9rem; margin-bottom: 10px; color: #6f92a7; }
-.tech-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px; margin: 20px 0; }
-.tech-item { border: 1px solid #dbe7ef; background: #f6f9fc; border-radius: 8px; font-size: .74rem; padding: 12px; }
-.tech-tag { color: #426b83; background: #edf5fa; border: 1px solid #d7e7f0; font-size: .65rem; }
-.campaign-grid { grid-template-columns: repeat(4,minmax(0,1fr)); gap: 15px; }
-.campaign-feature { border: 1px solid #dce7ef; border-radius: 10px; font-size: .79rem; padding: 22px; box-shadow: 0 10px 30px #274f6705; }
-.price-box { max-width: 900px; margin: 40px auto; border: 1px solid #cbdde9; border-radius: 16px; padding: 45px 25px; background: linear-gradient(120deg,#fff,#eaf4fb,#fff); }
-.price-new { color: #236c97; font-size: clamp(2rem,4vw,3rem); letter-spacing: -.04em; }
-.slot-bar { background: #dfeaf1; height: 5px; }
-.slot-fill { background: linear-gradient(90deg,#7ca5bd,#236c97); }
-.process-grid { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 0; border: 1px solid #dfe8ee; border-radius: 14px; overflow: hidden; }
-.process-step { padding: 35px 25px; border: 1px solid #edf1f5; background: #fff; text-align: left; }
-.process-step i { font-size: 1.3rem; }
-.process-step h4 { font-size: 1.5rem; }
-.pricing-table { box-shadow: none; border: 1px solid #dce6ee; }
-.pricing-table th { color: #234b65; background: #eaf3f9; padding: 20px; font-size: .72rem; letter-spacing: .05em; }
-.pricing-table td { font-size: .8rem; padding: 18px 20px; }
-.pricing-table tr:last-child td { background: #edf5fa; }
-.testimonial-card { background: #fff; border: 1px solid #d9e6ee; border-radius: 14px; padding: 35px; position: relative; }
-.testimonial-card p { font: italic 1.6rem/1.5 var(--font-classic); color: #314f66; }
-.testimonial-card span { font-size: .7rem; letter-spacing: .05em; }
-.faq-item { border: 1px solid #dce7ee; background: #ffffffba; padding: 25px; border-radius: 10px; }
-.faq-item h4 { font-size: 1.5rem; }
-.faq-item p { font-size: .88rem; }
-.team-grid { max-width: 1280px; grid-template-columns: repeat(3,minmax(0,1fr)); }
-.team-card { padding: 38px 25px; border: 1px solid #e0e9ef; background: linear-gradient(145deg,#fff,#f8fbfd); border-radius: 14px; }
-.team-photo { width: 115px; height: 115px; border: 3px solid #e1edf5; outline: 1px solid #c5d9e6; background: #edf5fa; }
-.team-info h3 { font-size: 1.65rem; }
-.team-info .role { font-size: .64rem; letter-spacing: .13em; }
-.team-info p { font-size: .82rem; }
-.verification-grid,.partnerships-grid { max-width: 1280px; }
-.verification-box,.partnership-box { border: 1px solid #dce7ef; border-radius: 14px; background: #fff; padding: 35px; box-shadow: none; }
-.verification-box h3,.partnership-box h3 { font-size: 1.65rem; }
-.verification-box p,.partnership-box p,.verification-box li { font-size: .85rem; }
-.supporter-tag { background: #f6f9fc; border-color: #dce8f0; font-size: .73rem; padding: 10px 20px; }
-.footer-premium { color: #405d73; background: linear-gradient(135deg,#f7fafc,#eaf3fa); padding: 70px 6% 35px; border-top: 1px solid #d7e4ed; text-align: left; position: relative; }
-.footer-heading { max-width: 750px; font-size: clamp(2.5rem,5vw,5.5rem); margin-bottom: 30px; }
-.footer-premium p { opacity: 1; font-size: .75rem; }
-.footer-premium a { color: #236c97; border-bottom-color: #a7c4d5; }
-.footer-bottom { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; border-top: 1px solid #ccdfea; padding-top: 25px; margin-top: 55px; }
-.footer-top-link { font-size: .7rem; letter-spacing: .08em; }
-.motion-toggle { margin: 18px 0 0 18px; padding: 12px 20px; border: 1px solid #b9cedb; border-radius: 30px; background: #fff; color: #426b83; font: 600 .7rem var(--font-modern); cursor: pointer; }
-.motion-toggle:disabled { cursor: default; }
-.back-to-top { position: fixed; bottom: 24px; right: 24px; z-index: 500; width: 44px; height: 44px; border-radius: 50%; border: 1px solid #b9cedb; background: #fffffff0; color: #236c97; box-shadow: 0 8px 20px #224b6710; display: grid; place-items: center; transition: transform .3s,opacity .3s; }
-.back-to-top[hidden] { display: none; }
-.dissolve-word { display: inline-block; white-space: nowrap; }
-.dissolving .dissolve-word { animation: dissolve-rebuild 2.4s var(--ease-cinema) both; animation-delay: calc(var(--word-index) * 65ms); }
-@keyframes dissolve-rebuild { 0%,100% { opacity: 1; filter: blur(0); transform: translateY(0); } 28% { opacity: 0; filter: blur(7px); transform: translateY(-9px); } 46% { opacity: 0; filter: blur(7px); transform: translateY(12px); } 80% { opacity: 1; filter: blur(0); transform: translateY(0); } }
-.motion-enabled .reveal { transition: opacity 1s var(--ease-cinema),transform 1.1s var(--ease-cinema); transition-delay: var(--reveal-delay,0ms); }
-.motion-enabled .reveal.awaiting-reveal { opacity: 0; transform: translateY(24px); }
-.motion-enabled .innovations-grid > :nth-child(2), .motion-enabled .campaign-grid > :nth-child(2), .motion-enabled .team-grid > :nth-child(2) { --reveal-delay: 80ms; }
-.motion-enabled .innovations-grid > :nth-child(3), .motion-enabled .campaign-grid > :nth-child(3), .motion-enabled .team-grid > :nth-child(3) { --reveal-delay: 160ms; }
-.motion-enabled .innovations-grid > :nth-child(4), .motion-enabled .campaign-grid > :nth-child(4) { --reveal-delay: 240ms; }
-.motion-enabled .fade-passage { transition: opacity .9s ease; }
-.motion-enabled .fade-passage.passage-out { opacity: .12; }
-.motion-enabled .glossy-title.is-in-view { animation: metal-shift 9s ease-in-out 1; }
-@keyframes metal-shift { 0%,100% { background-position: 30% 50%; } 50% { background-position: 80% 50%; } }
-@media (max-width:1100px) {
-  .innovations-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
-  .campaign-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
-  .header-premium .main-nav { gap: 13px; }
-  .split-premium { gap: 2%; padding: 50px 3%; }
-  .split-content-premium { padding: 30px 2%; }
-}
-@media (max-width:968px) {
-  .header-premium,.header-premium.scrolled { flex-direction: row; width: calc(100% - 32px); top: 12px; padding: 12px 16px; gap: 12px; }
-  .header-premium .main-nav { gap: 14px; }
-  .hero-premium { min-height: 760px; }
-  .split-premium { flex-direction: column; padding: 55px 6%; gap: 28px; }
-  .split-content-premium { padding: 10px 0; flex: auto; order: 0; }
-  .split-visual-premium { flex: auto; width: 100%; min-height: 420px; order: 1; }
-  .section-padding { padding: 80px 6%; }
-  .team-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
-}
-@media (max-width:760px) {
-  html { scroll-padding-top: 90px; }
-  .menu-toggle { display: inline-flex; }
-  .header-premium .logo img,.header-premium.scrolled .logo img { height: 35px; }
-  .header-premium .main-nav { position: absolute; top: calc(100% + 8px); left: 0; right: 0; display: flex; flex-direction: column; align-items: stretch; padding: 20px; background: #fff; border: 1px solid #dbe7ef; border-radius: 14px; box-shadow: 0 16px 35px #23466612; gap: 0; }
-  .header-premium .main-nav a { padding: 13px 10px; font-size: .75rem; }
-  .header-premium .main-nav .nav-cta { margin-top: 8px; text-align: center; }
-  .navigation-ready .header-premium .main-nav:not(.is-open) { display: none; }
-  body:not(.navigation-ready) .header-premium { position: relative; margin: 12px auto; left: auto; transform: none; top: auto; flex-wrap: wrap; }
-  body:not(.navigation-ready) .header-premium .main-nav { position: static; width: 100%; box-shadow: none; }
-  .hero-premium { min-height: 740px; max-height: none; height: auto; padding: 145px 6% 120px; }
-  .hero-content h1 { font-size: clamp(3.15rem,11.5vw,5.3rem); }
-  .hero-content p { font-size: .95rem; }
-  .hero-pre-title { font-size: .65rem; margin-bottom: 25px; }
-  .hero-caption { font-size: .55rem; gap: 15px; }
-  .hero-caption span { max-width: 190px; }
-  .section-header h2,.split-content-premium h2 { font-size: clamp(2.5rem,9vw,3.5rem); }
-  .section-header { margin-bottom: 35px; }
-  .split-visual-premium { min-height: 330px; }
-  .split-content-premium > div[style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
-  .innovations-grid,.team-grid,.verification-grid,.partnerships-grid { grid-template-columns: 1fr; }
-  .innovation-card img { height: 220px; }
-  .campaign-grid { grid-template-columns: 1fr; }
-  .process-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
-  .process-step { padding: 25px 18px; }
-  .pricing-table { min-width: 590px; }
-  .pricing-table th,.pricing-table td { padding: 14px; }
-  .footer-bottom { flex-direction: column; align-items: flex-start; }
-  .footer-premium { padding-bottom: 70px; }
-  .testimonial-card { padding: 28px; }
-  .testimonial-card p { font-size: 1.4rem; }
-}
-@media (prefers-reduced-motion:reduce) {
-  html { scroll-behavior: auto; }
-  *,*::before,*::after { animation: none !important; transition: none !important; }
-  .hero-content { transform: none !important; opacity: 1 !important; }
-  .motion-enabled .reveal.awaiting-reveal,.motion-enabled .fade-passage.passage-out { opacity: 1 !important; transform: none !important; }
-  .split-visual-premium:hover img,.split-visual-premium:hover video { transform: none; }
-}
-.motion-paused *, .motion-paused *::before, .motion-paused *::after { animation: none !important; transition: none !important; }
-html:has(.motion-paused) { scroll-behavior: auto; }
 
+    /* --- PEARL CINEMATIC DESIGN --- */
+    :root {
+      --color-primary: #16324d;
+      --color-secondary: #edf4fa;
+      --color-accent: #236c97;
+      --color-text: #43576a;
+      --color-light: #fff;
+      --color-bg-alt: #f5f8fb;
+      --metal: linear-gradient(112deg, #193951 5%, #537b95 28%, #246085 48%, #7e9cab 62%, #1b4260 85%);
+      --ease-cinema: cubic-bezier(.22,1,.36,1);
+    }
+
+    html { scroll-behavior: smooth; scroll-padding-top: 110px; }
+    body { background: #fff; font-size: 16px; -webkit-font-smoothing: antialiased; }
+    body::before { content: ''; position: fixed; inset: 0; background: radial-gradient(ellipse at 90% 10%, #d9eaf530, transparent 60%); pointer-events: none; z-index: -1; }
+    ::selection { background: #d4e7f4; color: #16324d; }
+    h1,h2,h3,h4 { letter-spacing: -.035em; line-height: 1.12; }
+    p { line-height: 1.85; }
+    a:focus-visible, button:focus-visible { outline: 3px solid #277fa8; outline-offset: 6px; }
+
+    .skip-link { position: fixed; top: 12px; left: 12px; transform: translateY(-180%); z-index: 2000; padding: 12px 20px; background: #fff; color: #16324d; border: 1px solid #277fa8; }
+    .skip-link:focus { transform: none; }
+    .scroll-progress { position: fixed; top: 0; left: 0; width: 100%; height: 3px; z-index: 1200; background: linear-gradient(90deg,#a5bdcb,#236c97,#b9d6e5); transform-origin: left; transform: scaleX(var(--reading-progress,0)); pointer-events: none; }
+
+    .header-premium, .header-premium.scrolled { width: calc(100% - 64px); max-width: 1520px; left: 50%; transform: translateX(-50%); top: 20px; padding: 14px 25px; gap: 20px; border: 1px solid #d9e5ed; border-radius: 16px; background: rgba(255,255,255,.94); backdrop-filter: blur(20px); box-shadow: 0 10px 40px #2346660c; }
+    .header-premium.scrolled { top: 12px; padding: 10px 25px; box-shadow: 0 10px 35px #23466612; }
+    .header-premium .logo img, .header-premium.scrolled .logo img { height: 44px; width: auto; max-width: 180px; object-fit: contain; filter: none; }
+    .brand-fallback { font: 800 1.05rem var(--font-modern); letter-spacing: .2em; color: #16324d; }
+    .header-premium .main-nav { gap: clamp(12px,2vw,28px); }
+    .header-premium .main-nav a, .header-premium.scrolled .main-nav a { color: #314a61; font-size: .67rem; letter-spacing: .13em; }
+    .header-premium .main-nav a:hover { color: #236c97; }
+    .header-premium .nav-cta,.header-premium.scrolled .nav-cta { color: #16324d !important; border: 1px solid #b7cedc; background: linear-gradient(120deg,#f3f8fc,#fff); border-radius: 30px; padding: 10px 22px; }
+    .header-premium .nav-cta:hover { color: #16324d !important; background: #e8f3fa; border-color: #236c97; }
+    .menu-toggle { display: none; align-items: center; gap: 8px; padding: 10px 12px; color: #16324d; border: 1px solid #ccdae5; background: #fff; border-radius: 8px; font: 600 .75rem var(--font-modern); cursor: pointer; }
+
+    /* Hero video stays clear, with no white or dark overlay. */
+    .hero-premium { min-height: 850px; height: 100svh; max-height: 1200px; padding: 150px 6% 110px; background: #f5f9fc; isolation: isolate; }
+    .hero-premium video { opacity: 1; filter: none; }
+    .hero-premium::before, .hero-premium::after { content: none; background: none; }
+    .hero-content { text-align: left; max-width: 1280px; width: 100%; padding: 0; transform: translateY(calc(var(--hero-shift,0) * 1px)); opacity: var(--hero-opacity,1); }
+    .hero-pre-title { display: flex; align-items: center; gap: 16px; color: #236c97; font-size: .72rem; letter-spacing: .32em; animation: none; opacity: 1; margin-bottom: 30px; }
+    .hero-pre-title::before { content: ''; width: 40px; height: 1px; background: #81a8bc; }
+    .hero-content h1 { max-width: 1000px; font-size: clamp(3.4rem,6.7vw,7.5rem); font-weight: 500; letter-spacing: -.055em; line-height: .99; text-shadow: none; margin-bottom: 30px; animation: none; opacity: 1; color: #16324d; }
+
+    @supports (background-clip: text) {
+      .glossy-title { background-image: var(--metal); background-size: 200% 100%; background-position: 30% 50%; background-clip: text; -webkit-background-clip: text; color: transparent !important; }
+      .glossy-title .dissolve-word { background-image: var(--metal); background-clip: text; -webkit-background-clip: text; color: transparent; }
+    }
+
+    .hero-divider { margin: 0 0 28px; width: 110px; height: 2px; opacity: 1; animation: none; background: linear-gradient(90deg,#236c97,#b8d2df,transparent); }
+    .hero-content p { max-width: 650px; font-size: clamp(1rem,1.3vw,1.15rem); color: #425b70; text-shadow: none; font-weight: 400; opacity: 1; animation: none; margin-bottom: 32px; }
+    .hero-cta { opacity: 1; animation: none; border: 1px solid #97b6c9; border-radius: 50px; padding: 17px 30px; color: #16324d; font-size: .7rem; background: linear-gradient(135deg,#fff,#eff7fb); box-shadow: 0 8px 30px #2c668310; }
+    .hero-cta:hover { background: #e6f1f8; border-color: #236c97; color: #16324d; }
+    .hero-cta::after { content: ' ↗'; font-size: 1rem; padding-left: 20px; }
+    .hero-caption { position: absolute; bottom: 36px; left: 6%; right: 6%; z-index: 2; display: flex; justify-content: space-between; border-top: 1px solid #bed2df; padding-top: 19px; color: #647d91; font: 600 .65rem var(--font-modern); text-transform: uppercase; letter-spacing: .18em; }
+    .hero-caption a { color: #42667e; }
+    .hero-content, .hero-content h1, .hero-content p, .hero-pre-title, .hero-caption { background-color: transparent; }
+    .hero-content h1 { background-image: none; color: #fff !important; text-shadow: 0 2px 8px #16324da6, 0 1px 2px #16324dcc; -webkit-text-stroke: .35px #16324d70; }
+    .hero-content p, .hero-pre-title, .hero-caption, .hero-caption a { color: #fff; text-shadow: 0 1px 4px #16324dcc, 0 1px 2px #16324d; }
+    .hero-pre-title::before { background: #ffffffb3; }
+    .hero-divider { background: linear-gradient(90deg,#fff,#ffffff80,transparent); }
+    .hero-caption { border-top-color: #ffffff80; }
+    .hero-cta, .hero-cta:hover { color: #fff; border-color: #ffffffb3; background: transparent; backdrop-filter: none; box-shadow: none; text-shadow: 0 1px 4px #16324dcc; }
+    .hero-premium.video-unavailable h1, .hero-premium.video-unavailable p, .hero-premium.video-unavailable .hero-pre-title, .hero-premium.video-unavailable .hero-caption, .hero-premium.video-unavailable .hero-caption a, .hero-premium.video-unavailable .hero-cta { color: #16324d !important; text-shadow: none; -webkit-text-stroke: 0; }
+    .hero-premium.video-unavailable .hero-cta, .hero-premium.video-unavailable .hero-caption { border-color: #97b6c9; }
+
+    /* Clickable Live Studio showcase. */
+    .studio-channel-link { display: block; flex: 1 1 46%; min-width: 0; position: relative; border: 0; }
+    .studio-channel-link .split-visual-premium { height: 100%; min-height: 530px; }
+    .studio-channel-link .split-visual-premium video { filter: none; opacity: 1; }
+    .studio-channel-link .split-visual-premium::after { background: none; }
+    .studio-channel-badge { position: absolute; z-index: 5; left: 22px; bottom: 22px; right: 22px; display: flex; justify-content: space-between; align-items: center; gap: 12px; border-radius: 30px; padding: 13px 20px; color: #234e69; background: #fffffff0; border: 1px solid #d5e3ec; font: 600 .75rem var(--font-modern); box-shadow: 0 5px 20px #16324d15; }
+    .studio-channel-link:hover .studio-channel-badge { background: #fff; }
+
+    .section-padding { padding: 110px max(6%, calc((100vw - 1280px)/2)); position: relative; }
+    .bg-light { background: #fff; }
+    .bg-alt { background: linear-gradient(135deg,#f7f9fc,#f0f6fa); }
+    .section-header { max-width: 800px; margin-bottom: 55px; }
+    .section-header h2 { font-size: clamp(2.7rem,4.2vw,4.8rem); margin-bottom: 22px; }
+    .section-header p { font-size: 1rem; }
+    .chapter-label { display: flex; align-items: center; gap: 14px; color: #658296; font: 600 .62rem var(--font-modern); letter-spacing: .21em; text-transform: uppercase; margin-bottom: 22px; }
+    .section-header .chapter-label { justify-content: center; }
+    .chapter-label::before { content: ''; width: 28px; height: 1px; background: #9fbdce; }
+
+    .split-premium { min-height: auto; align-items: stretch; padding: 72px 4%; gap: 4%; border-top: 1px solid #e7eef3; position: relative; }
+    .split-content-premium { flex: 1 1 50%; padding: 40px 2%; min-width: 0; display: flex; flex-direction: column; justify-content: center; }
+    .split-content-premium h2 { font-size: clamp(2.5rem,3.8vw,4.4rem); margin-bottom: 22px; }
+    .split-content-premium p { font-size: .96rem; }
+    .split-content-premium > p[style*="font-classic"] { font-size: 1.4rem !important; line-height: 1.4; color: #446e87 !important; }
+    .split-visual-premium { flex: 1 1 46%; min-width: 0; min-height: 530px; height: auto; align-self: stretch; border-radius: 16px; background: radial-gradient(ellipse at 30% 20%,#fff,#e5f0f7 65%,#d8e9f3); border: 1px solid #dce7ef; box-shadow: 0 30px 70px -40px #406d8a55; isolation: isolate; }
+    .split-visual-premium video,.split-visual-premium img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: saturate(.9) contrast(1.02); transform: scale(1.015); transition: transform 1.8s var(--ease-cinema),filter 1s ease; }
+    .split-visual-premium::after { content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 1; border-radius: inherit; background: linear-gradient(135deg,#ffffff28,transparent 35%,#aecadd12); box-shadow: inset 0 0 0 1px #ffffff55; }
+    .split-visual-premium::before { content: ''; position: absolute; height: 120%; width: 45%; top: -10%; left: -85%; transform: skewX(-20deg); background: linear-gradient(90deg,transparent,#ffffff32,transparent); z-index: 2; pointer-events: none; }
+
+    @media (hover:hover) {
+      .split-visual-premium:hover video,.split-visual-premium:hover img { transform: scale(1.055); filter: saturate(1) contrast(1.02); }
+      .split-visual-premium:hover::before { animation: visual-sheen 1.6s var(--ease-cinema); }
+    }
+
+    @keyframes visual-sheen { to { left: 150%; } }
+
+    .visual-fallback { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; padding: 25px; text-align: center; color: #6f8ea2; background: repeating-linear-gradient(0deg,transparent 0 49px,#c3d9e42b 50px),repeating-linear-gradient(90deg,transparent 0 49px,#c3d9e42b 50px); }
+    .visual-fallback::before { content: '✦'; font-size: 3rem; font-family: var(--font-classic); color: #91afc1; }
+    .visual-fallback span { font: 600 .68rem var(--font-modern); letter-spacing: .15em; text-transform: uppercase; }
+
+    .values-list,.feature-list { margin-top: 12px; }
+    .values-list li,.feature-list li { font-size: .88rem; padding: 13px 0 13px 26px; border-color: #dfe8ef; }
+    .values-list li::before,.feature-list li::before { font-size: .9rem; top: 14px; }
+    .btn-group { gap: 10px; margin-top: 26px; }
+    .btn-primary,.btn-outline { display: inline-flex; align-items: center; justify-content: center; border: 1px solid #b9cedb; border-radius: 30px; padding: 13px 23px; font-size: .73rem; line-height: 1.5; background: linear-gradient(135deg,#eef5fa,#fff); color: #234e69; box-shadow: 0 4px 12px #355a7310; position: relative; overflow: hidden; }
+    .btn-primary { border-color: #8fb3ca; background: linear-gradient(120deg,#dfeef8,#f6fbff); }
+    .btn-primary:hover,.btn-outline:hover { background: #e7f2f9; color: #16324d; border-color: #4084a8; transform: translateY(-3px); box-shadow: 0 10px 22px #355a7315; }
+
+    .innovations-grid { grid-template-columns: repeat(4,minmax(0,1fr)); gap: 22px; max-width: 1280px; }
+    .innovation-card { border: 1px solid #dce7ee; border-radius: 14px; padding: 16px 16px 26px; text-align: left; box-shadow: 0 10px 30px #1f4c6705; }
+    .innovation-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px #1f4c6710; }
+    .innovation-card img { height: 180px; border-radius: 9px; background: #edf5fa; filter: saturate(.8); }
+    .innovation-card h3 { font-size: 1.6rem; }
+    .innovation-card p { font-size: .8rem; }
+    .innovation-card .btn-outline { font-size: .68rem !important; }
+    .lock-icon { font-size: .9rem; margin-bottom: 10px; color: #6f92a7; }
+
+    .tech-grid { grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px; margin: 20px 0; }
+    .tech-item { border: 1px solid #dbe7ef; background: #f6f9fc; border-radius: 8px; font-size: .74rem; padding: 12px; }
+    .tech-tag { color: #426b83; background: #edf5fa; border: 1px solid #d7e7f0; font-size: .65rem; }
+
+    .campaign-grid { grid-template-columns: repeat(4,minmax(0,1fr)); gap: 15px; }
+    .campaign-feature { border: 1px solid #dce7ef; border-radius: 10px; font-size: .79rem; padding: 22px; box-shadow: 0 10px 30px #274f6705; }
+    .price-box { max-width: 900px; margin: 40px auto; border: 1px solid #cbdde9; border-radius: 16px; padding: 45px 25px; background: linear-gradient(120deg,#fff,#eaf4fb,#fff); }
+    .price-new { color: #236c97; font-size: clamp(2rem,4vw,3rem); letter-spacing: -.04em; }
+    .slot-bar { background: #dfeaf1; height: 5px; }
+    .slot-fill { background: linear-gradient(90deg,#7ca5bd,#236c97); }
+
+    .process-grid { grid-template-columns: repeat(3,minmax(0,1fr)); gap: 0; border: 1px solid #dfe8ee; border-radius: 14px; overflow: hidden; }
+    .process-step { padding: 35px 25px; border: 1px solid #edf1f5; background: #fff; text-align: left; }
+    .process-step i { font-size: 1.3rem; }
+    .process-step h4 { font-size: 1.5rem; }
+    .pricing-table { box-shadow: none; border: 1px solid #dce6ee; }
+    .pricing-table th { color: #234b65; background: #eaf3f9; padding: 20px; font-size: .72rem; letter-spacing: .05em; }
+    .pricing-table td { font-size: .8rem; padding: 18px 20px; }
+    .pricing-table tr:last-child td { background: #edf5fa; }
+
+    .testimonial-card { background: #fff; border: 1px solid #d9e6ee; border-radius: 14px; padding: 35px; position: relative; }
+    .testimonial-card p { font: italic 1.6rem/1.5 var(--font-classic); color: #314f66; }
+    .testimonial-card span { font-size: .7rem; letter-spacing: .05em; }
+    .faq-item { border: 1px solid #dce7ee; background: #ffffffba; padding: 25px; border-radius: 10px; }
+    .faq-item h4 { font-size: 1.5rem; }
+    .faq-item p { font-size: .88rem; }
+
+    .team-grid { max-width: 1280px; grid-template-columns: repeat(3,minmax(0,1fr)); }
+    .team-card { padding: 38px 25px; border: 1px solid #e0e9ef; background: linear-gradient(145deg,#fff,#f8fbfd); border-radius: 14px; }
+    .team-photo { width: 115px; height: 115px; border: 3px solid #e1edf5; outline: 1px solid #c5d9e6; background: #edf5fa; }
+    .team-info h3 { font-size: 1.65rem; }
+    .team-info .role { font-size: .64rem; letter-spacing: .13em; }
+    .team-info p { font-size: .82rem; }
+
+    .verification-grid,.partnerships-grid { max-width: 1280px; }
+    .verification-box,.partnership-box { border: 1px solid #dce7ef; border-radius: 14px; background: #fff; padding: 35px; box-shadow: none; }
+    .verification-box h3,.partnership-box h3 { font-size: 1.65rem; }
+    .verification-box p,.partnership-box p,.verification-box li { font-size: .85rem; }
+    .supporter-tag { background: #f6f9fc; border-color: #dce8f0; font-size: .73rem; padding: 10px 20px; }
+
+    .footer-premium { color: #405d73; background: linear-gradient(135deg,#f7fafc,#eaf3fa); padding: 70px 6% 35px; border-top: 1px solid #d7e4ed; text-align: left; position: relative; }
+    .footer-heading { max-width: 750px; font-size: clamp(2.5rem,5vw,5.5rem); margin-bottom: 30px; }
+    .footer-premium p { opacity: 1; font-size: .75rem; }
+    .footer-premium a { color: #236c97; border-bottom-color: #a7c4d5; }
+    .footer-bottom { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; border-top: 1px solid #ccdfea; padding-top: 25px; margin-top: 55px; }
+    .footer-top-link { font-size: .7rem; letter-spacing: .08em; }
+    .motion-toggle { margin: 18px 0 0 18px; padding: 12px 20px; border: 1px solid #b9cedb; border-radius: 30px; background: #fff; color: #426b83; font: 600 .7rem var(--font-modern); cursor: pointer; }
+    .motion-toggle:disabled { cursor: default; }
+
+    .back-to-top { position: fixed; bottom: 24px; right: 24px; z-index: 500; width: 44px; height: 44px; border-radius: 50%; border: 1px solid #b9cedb; background: #fffffff0; color: #236c97; box-shadow: 0 8px 20px #224b6710; display: grid; place-items: center; transition: transform .3s,opacity .3s; }
+    .back-to-top[hidden] { display: none; }
+
+    /* Text dissolves and rebuilds. */
+    .dissolve-word { display: inline-block; white-space: nowrap; }
+    .dissolving .dissolve-word { animation: dissolve-rebuild 2.4s var(--ease-cinema) both; animation-delay: calc(var(--word-index) * 65ms); }
+
+    @keyframes dissolve-rebuild {
+      0%,100% { opacity: 1; filter: blur(0); transform: translateY(0); }
+      28% { opacity: 0; filter: blur(7px); transform: translateY(-9px); }
+      46% { opacity: 0; filter: blur(7px); transform: translateY(12px); }
+      80% { opacity: 1; filter: blur(0); transform: translateY(0); }
+    }
+
+    .motion-enabled .reveal { transition: opacity 1s var(--ease-cinema),transform 1.1s var(--ease-cinema); transition-delay: var(--reveal-delay,0ms); }
+    .motion-enabled .reveal.awaiting-reveal { opacity: 0; transform: translateY(24px); }
+    .motion-enabled .innovations-grid > :nth-child(2), .motion-enabled .campaign-grid > :nth-child(2), .motion-enabled .team-grid > :nth-child(2) { --reveal-delay: 80ms; }
+    .motion-enabled .innovations-grid > :nth-child(3), .motion-enabled .campaign-grid > :nth-child(3), .motion-enabled .team-grid > :nth-child(3) { --reveal-delay: 160ms; }
+    .motion-enabled .innovations-grid > :nth-child(4), .motion-enabled .campaign-grid > :nth-child(4) { --reveal-delay: 240ms; }
+    .motion-enabled .fade-passage { transition: opacity .9s ease; }
+    .motion-enabled .fade-passage.passage-out { opacity: .12; }
+    .motion-enabled .glossy-title.is-in-view { animation: metal-shift 9s ease-in-out 1; }
+
+    @keyframes metal-shift {
+      0%,100% { background-position: 30% 50%; }
+      50% { background-position: 80% 50%; }
+    }
+
+    @media (max-width:1100px) {
+      .innovations-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+      .campaign-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+      .header-premium .main-nav { gap: 13px; }
+      .split-premium { gap: 2%; padding: 50px 3%; }
+      .split-content-premium { padding: 30px 2%; }
+    }
+
+    @media (max-width:968px) {
+      .header-premium,.header-premium.scrolled { flex-direction: row; width: calc(100% - 32px); top: 12px; padding: 12px 16px; gap: 12px; }
+      .header-premium .main-nav { gap: 14px; }
+      .hero-premium { min-height: 760px; }
+      .split-premium { flex-direction: column; padding: 55px 6%; gap: 28px; }
+      .split-content-premium { padding: 10px 0; flex: auto; order: 0; }
+      .split-visual-premium { flex: auto; width: 100%; min-height: 420px; order: 1; }
+      .studio-channel-link { flex: auto; width: 100%; order: 1; }
+      .studio-channel-link .split-visual-premium { min-height: 420px; }
+      .section-padding { padding: 80px 6%; }
+      .team-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+    }
+
+    @media (max-width:760px) {
+      html { scroll-padding-top: 90px; }
+      .menu-toggle { display: inline-flex; }
+      .header-premium .logo img,.header-premium.scrolled .logo img { height: 35px; }
+      .header-premium .main-nav { position: absolute; top: calc(100% + 8px); left: 0; right: 0; display: flex; flex-direction: column; align-items: stretch; padding: 20px; background: #fff; border: 1px solid #dbe7ef; border-radius: 14px; box-shadow: 0 16px 35px #23466612; gap: 0; }
+      .header-premium .main-nav a { padding: 13px 10px; font-size: .75rem; }
+      .header-premium .main-nav .nav-cta { margin-top: 8px; text-align: center; }
+      .navigation-ready .header-premium .main-nav:not(.is-open) { display: none; }
+      body:not(.navigation-ready) .header-premium { position: relative; margin: 12px auto; left: auto; transform: none; top: auto; flex-wrap: wrap; }
+      body:not(.navigation-ready) .header-premium .main-nav { position: static; width: 100%; box-shadow: none; }
+      .hero-premium { min-height: 740px; max-height: none; height: auto; padding: 145px 6% 120px; }
+      .hero-content h1 { font-size: clamp(3.15rem,11.5vw,5.3rem); }
+      .hero-content p { font-size: .95rem; }
+      .hero-pre-title { font-size: .65rem; margin-bottom: 25px; }
+      .hero-caption { font-size: .55rem; gap: 15px; }
+      .hero-caption span { max-width: 190px; }
+      .section-header h2,.split-content-premium h2 { font-size: clamp(2.5rem,9vw,3.5rem); }
+      .section-header { margin-bottom: 35px; }
+      .split-visual-premium { min-height: 330px; }
+      .studio-channel-link .split-visual-premium { min-height: 330px; }
+      .studio-channel-badge { left: 14px; right: 14px; bottom: 14px; padding: 12px 16px; font-size: .68rem; }
+      .split-content-premium > div[style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
+      .innovations-grid,.team-grid,.verification-grid,.partnerships-grid { grid-template-columns: 1fr; }
+      .innovation-card img { height: 220px; }
+      .campaign-grid { grid-template-columns: 1fr; }
+      .process-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+      .process-step { padding: 25px 18px; }
+      .pricing-table { min-width: 590px; }
+      .pricing-table th,.pricing-table td { padding: 14px; }
+      .footer-bottom { flex-direction: column; align-items: flex-start; }
+      .footer-premium { padding-bottom: 70px; }
+      .testimonial-card { padding: 28px; }
+      .testimonial-card p { font-size: 1.4rem; }
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+      html { scroll-behavior: auto; }
+      *,*::before,*::after { animation: none !important; transition: none !important; }
+      .hero-content { transform: none !important; opacity: 1 !important; }
+      .motion-enabled .reveal.awaiting-reveal,.motion-enabled .fade-passage.passage-out { opacity: 1 !important; transform: none !important; }
+      .split-visual-premium:hover img,.split-visual-premium:hover video { transform: none; }
+    }
+
+    .motion-paused *, .motion-paused *::before, .motion-paused *::after { animation: none !important; transition: none !important; }
+    html:has(.motion-paused) { scroll-behavior: auto; }
   </style>
 </head>
+
 <body id="top">
   <a class="skip-link" href="#mainContent">Skip to content</a>
   <div class="scroll-progress" aria-hidden="true"></div>
 
   <!-- HEADER -->
   <header class="header-premium" id="mainHeader">
-    <div class="logo"><img src="assets/zeustech-logo-newlayout.jpg" alt="ZEUSTECH"></div>
-    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mainNavigation"><span>Menu</span><span aria-hidden="true">☰</span></button>
+    <div class="logo">
+      <img src="assets/zeustech-logo-newlayout.jpg" alt="ZEUSTECH">
+    </div>
+
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mainNavigation">
+      <span>Menu</span>
+      <span aria-hidden="true">☰</span>
+    </button>
+
     <nav class="main-nav" id="mainNavigation" aria-label="Main navigation">
       <a href="#story">Story</a>
       <a href="#innovations">Innovations</a>
@@ -394,705 +461,1011 @@ html:has(.motion-paused) { scroll-behavior: auto; }
   </header>
 
   <main id="mainContent">
-  <!-- 1. HERO (New Combined Video) -->
-  <section class="hero-premium">
-    <video autoplay muted loop playsinline>
-      <source src="assets/hero/hero.mp4" type="video/mp4">
-    </video>
-    <div class="hero-content">
-      <div class="hero-pre-title reveal">ZEUSTECH</div>
-      <h1 class="glossy-title reveal">Innovating Africa at the Level of Creation</h1>
-      <div class="hero-divider reveal"></div>
-      <p class="reveal">We structure, protect, and commercialize African innovation — transforming ideas into scalable, investor-ready technologies.</p>
-      <a href="#story" class="hero-cta reveal">Discover Our Vision</a>
-    </div>
-    <div class="hero-caption"><span>African innovation · Global ambition</span><a href="#story">Scroll to explore ↓</a></div>
-  </section>
 
-  <!-- 2. OUR STORY (New Video) -->
-  <section id="story" class="split-premium bg-alt">
-    <div class="split-visual-premium reveal">
+    <!-- 1. HERO -->
+    <section class="hero-premium">
       <video autoplay muted loop playsinline>
-        <source src="assets/vision/story-vision.mp4" type="video/mp4">
+        <source src="assets/hero/hero.mp4" type="video/mp4">
       </video>
-    </div>
-    <div class="split-content-premium">
-      <div class="chapter-label reveal">01 / The foundation</div>
-      <h2 class="glossy-title reveal">Our Story & Vision</h2>
-      <p><strong>Mission:</strong> To structure, protect, and commercialize African innovation — transforming ideas into scalable, investor-ready technologies that solve real-world problems.</p>
-      <p><strong>Vision:</strong> To become Africa's foremost technology and innovation powerhouse — empowering creators, advancing IP ownership, and driving inclusive economic growth.</p>
-      <h3 style="margin-top: 30px; font-size: 1.5rem; margin-bottom: 15px;">Core Values</h3>
-      <ul class="values-list">
-        <li><strong>Innovation:</strong> Constantly challenging the status quo to build solutions that matter.</li>
-        <li><strong>Integrity:</strong> Upholding transparency, accountability, and ethical leadership.</li>
-        <li><strong>Empowerment:</strong> Elevating innovators through knowledge, resources, and strategic partnerships.</li>
-        <li><strong>Excellence:</strong> Delivering measurable impact and long-term value in every project.</li>
-      </ul>
-    </div>
-  </section>
 
-  <!-- 3. INNOVATION PORTFOLIO (Old Images in Clean Grid) -->
-  <section id="innovations" class="section-padding bg-light">
-    <div class="section-header">
-      <div class="chapter-label reveal">02 / Innovation portfolio</div>
-      <h2 class="glossy-title reveal" data-dissolve>Innovation Portfolio</h2>
-      <p>Scalable, protected, and investor-ready technologies designed to solve real-world African challenges.</p>
-    </div>
-    <div class="innovations-grid">
-      <div class="innovation-card reveal">
-        <img src="assets/innovations/techlab.jpg" alt="FuelPass Estimator">
-        <h3>FuelPass Estimator</h3>
-        <p>Real-time fuel cost planning for African drivers.</p>
-        <a href="/fuelpass-estimator/" target="_blank" class="btn-outline" style="font-size: 0.8rem; padding: 8px 20px;">Use Tool</a>
-      </div>
-      <div class="innovation-card reveal">
-        <img src="assets/innovations/ai-brain.jpg" alt="Smart Urban Flow">
-        <div class="lock-icon"><i class="fas fa-lock"></i></div>
-        <h3>Smart Urban Flow</h3>
-        <p>Optimizing city movement and resource efficiency.</p>
-        <p style="font-size: 0.8rem; color: var(--color-accent); font-weight: 600;">R2–4B/year revenue potential</p>
-        <a href="mailto:ceo@zeustechafrica.com?subject=Innovation%20Access%20Request" class="btn-outline" style="font-size: 0.8rem; padding: 8px 20px;">Request Access</a>
-      </div>
-      <div class="innovation-card reveal">
-        <img src="assets/innovations/humanandaibrains.JPG" alt="Seamless Daily Services">
-        <div class="lock-icon"><i class="fas fa-lock"></i></div>
-        <h3>Seamless Daily Services</h3>
-        <p>Empowering communities with instant access to trusted professionals.</p>
-        <p style="font-size: 0.8rem; color: var(--color-accent); font-weight: 600;">Scalable across 10M+ households</p>
-        <a href="mailto:ceo@zeustechafrica.com?subject=Innovation%20Access%20Request" class="btn-outline" style="font-size: 0.8rem; padding: 8px 20px;">Request Access</a>
-      </div>
-      <div class="innovation-card reveal">
-        <img src="assets/innovations/digital-hand.jpg" alt="Next-Gen Finance Tools">
-        <div class="lock-icon"><i class="fas fa-lock"></i></div>
-        <h3>Next-Gen Finance Tools</h3>
-        <p>Smarter, safer financial solutions for everyday users.</p>
-        <p style="font-size: 0.8rem; color: var(--color-accent); font-weight: 600;">Licensing value: R500M–R2B</p>
-        <a href="mailto:ceo@zeustechafrica.com?subject=Innovation%20Access%20Request" class="btn-outline" style="font-size: 0.8rem; padding: 8px 20px;">Request Access</a>
-      </div>
-    </div>
-  </section>
-
-  <div id="solutions">
-  <!-- 4. DEEP DIVE: FUELPASS (Old Video in Split-Screen) -->
-  <section class="split-premium bg-alt">
-    <div class="split-visual-premium reveal">
-      <video autoplay muted loop playsinline>
-        <source src="assets/fuelpass/fuelpass_calculator_bg.mp4" type="video/mp4">
-      </video>
-    </div>
-    <div class="split-content-premium">
-      <div class="chapter-label reveal">03 / Mobility intelligence</div>
-      <h2 class="glossy-title reveal">FuelPass Estimator</h2>
-      <p style="font-size: 1.2rem; font-family: var(--font-classic); color: var(--color-accent); margin-bottom: 20px;">Know Your Journey.</p>
-      <p>Plan fuel costs with precision for any trip and any vehicle. A practical, real-time tool designed specifically for African drivers to optimize their travel expenses.</p>
-      <ul class="feature-list">
-        <li>✓ Real-time Fuel Price Data</li>
-        <li>✓ Trip Distance Calculator</li>
-        <li>✓ Cost Comparison Tool</li>
-      </ul>
-      <div class="btn-group">
-        <a href="/fuelpass-estimator/" target="_blank" class="btn-primary">Try the Tool Now</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- 5. DEEP DIVE: ORDER (Old Video in Split-Screen) -->
-  <section class="split-premium bg-light">
-    <div class="split-content-premium">
-      <div class="chapter-label reveal">04 / Connected services</div>
-      <h2 class="glossy-title reveal">ORDER (Verilinked)</h2>
-      <p style="font-size: 1.2rem; font-family: var(--font-classic); color: var(--color-accent); margin-bottom: 20px;">Services at Your Fingertips.</p>
-      <p>Connecting communities with verified professionals on demand. A multi-billion rand opportunity to bring trust and efficiency to everyday services.</p>
-      <ul class="feature-list">
-        <li>✓ Verified Professional Network</li>
-        <li>✓ Real-time Service Booking</li>
-        <li>✓ Secure, Integrated Payments</li>
-      </ul>
-      <div class="btn-group">
-        <a href="mailto:ceo@zeustechafrica.com?subject=ORDER%20Innovation%20Access%20Request" class="btn-primary">Request Access</a>
-      </div>
-    </div>
-    <div class="split-visual-premium reveal">
-      <video autoplay muted loop playsinline>
-        <source src="assets/order/order.mp4" type="video/mp4">
-      </video>
-    </div>
-  </section>
-
-  <!-- 6. DEEP DIVE: LIVE STUDIO (Old Video in Split-Screen) -->
-  <section class="split-premium bg-alt">
-    <div class="split-visual-premium reveal">
-      <video autoplay muted loop playsinline>
-        <source src="assets/studio/live_studio_4k_effect.mp4" type="video/mp4">
-      </video>
-    </div>
-    <div class="split-content-premium">
-      <div class="chapter-label reveal">05 / Creative technology</div>
-      <h2 class="glossy-title reveal">ZeusTech Live Studio</h2>
-      <p style="font-size: 1.2rem; font-family: var(--font-classic); color: var(--color-accent); margin-bottom: 20px;">The Stage for Africa's Future.</p>
-      <p>A multi-billion-rand creative-technology hub in Cape Town, empowering the next generation of African creators with world-class production facilities and digital distribution.</p>
-      <div class="btn-group">
-        <a href="mailto:ceo@zeustechafrica.com?subject=Live%20Studio%20Partnership" class="btn-primary">See the Vision</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- 7. DEEP DIVE: ZEUSCLEAN (Old Video in Split-Screen) -->
-  <section class="split-premium bg-light">
-    <div class="split-content-premium">
-      <div class="chapter-label reveal">06 / Data intelligence</div>
-      <h2 class="glossy-title reveal" data-dissolve>ZEUSCLEAN</h2>
-      <p style="font-size: 1.2rem; font-family: var(--font-classic); color: var(--color-accent); margin-bottom: 20px;">The First POPIA-Certified Identity & Location Engine for the New South Africa</p>
-      <p>South Africa's most advanced data cleaning platform. We turn messy data into gold with human-in-the-loop AI, ensuring your original data is never destroyed.</p>
-      <ul class="feature-list">
-        <li>🇿🇦 SA ID Validation & Verification (Luhn Algorithm + DHA Ready)</li>
-        <li>🏠 SANS 1883 Address Standardisation (12 Official Address Types)</li>
-        <li>⚖️ POPIA-Specific Governance (Audit Trails & Consent Tracking)</li>
-        <li>🔒 Zero-Knowledge Privacy (Your Data Never Stored)</li>
-      </ul>
-      <div class="btn-group">
-        <a href="mailto:ceo@zeustechafrica.com?subject=ZEUSCLEAN%20Free%20Data%20Audit" class="btn-primary">📋 FREE DATA AUDIT</a>
-        <a href="mailto:ceo@zeustechafrica.com?subject=ZEUSCLEAN%20Quote%20Request" class="btn-outline">💰 GET A QUOTE</a>
-      </div>
-    </div>
-    <div class="split-visual-premium reveal">
-      <img src="assets/zeusclean-data.jpg" alt="ZEUSCLEAN Dashboard">
-    </div>
-  </section>
-
-  <!-- 8. DEEP DIVE: STEEZE (Old Video in Split-Screen) -->
-  <section class="split-premium bg-alt">
-    <div class="split-visual-premium reveal">
-      <img src="assets/steeze-studio.jpg" alt="STEEZE Platform">
-    </div>
-    <div class="split-content-premium">
-      <div class="chapter-label reveal">07 / Verified entertainment</div>
-      <h2 class="glossy-title reveal" data-dissolve>STEEZE</h2>
-      <p style="font-size: 1.2rem; font-family: var(--font-classic); color: var(--color-accent); margin-bottom: 20px;">The Verified Entertainment Platform</p>
-      <p>Where creators get their own premium website-style profile, keep 70% of their earnings, and connect directly with verified fans — all without the noise of traditional social media.</p>
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px;">
-        <div style="background: var(--color-light); padding: 20px; border-radius: 8px;">
-          <h4 style="margin-bottom: 10px; color: var(--color-accent);">🎤 FOR CREATORS</h4>
-          <ul style="list-style: none; font-size: 0.85rem; line-height: 1.8;">
-            <li>✅ Your own fully designed profile</li>
-            <li>✅ Earn 70% (independent) or 50/50 (signed)</li>
-            <li>✅ Distribute to DistroKid, YouTube & Spotify</li>
-          </ul>
-        </div>
-        <div style="background: var(--color-light); padding: 20px; border-radius: 8px;">
-          <h4 style="margin-bottom: 10px; color: var(--color-accent);">🎧 FOR FANS</h4>
-          <ul style="list-style: none; font-size: 0.85rem; line-height: 1.8;">
-            <li>✅ Pure entertainment — no politics or news</li>
-            <li>✅ Subscribe to creators (Gold = DMs + calls)</li>
-            <li>✅ Every account is ID + selfie verified</li>
-          </ul>
-        </div>
-      </div>
-      <div class="btn-group">
-        <a href="https://steeze.zeustechafrica.com" target="_blank" class="btn-primary">Explore STEEZE</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- 9. OYIN OPS V1 CASE STUDY (Split-Screen with Image) -->
-  <section id="oyin" class="split-premium bg-light">
-    <div class="split-content-premium">
-      <div class="chapter-label reveal">08 / Business systems</div>
-      <h2 class="glossy-title reveal" data-dissolve>OYIN OPS V1</h2>
-      <p style="font-size: 1.2rem; font-family: var(--font-classic); color: var(--color-accent); margin-bottom: 20px;">The System Behind OYIN Laundry Atelier</p>
-      <p>OYIN OPS V1 is a complete, production-ready admin system built by ZeusTech. It handles the entire business — from client onboarding, order management, and photo evidence, to financial tracking, invoicing, and audit logs.</p>
-      
-      <div class="tech-grid">
-        <div class="tech-item"><i class="fas fa-clipboard-list"></i> Client Onboarding</div>
-        <div class="tech-item"><i class="fas fa-sync-alt"></i> 9-Stage Order Workflow</div>
-        <div class="tech-item"><i class="fas fa-camera"></i> Photo Evidence System</div>
-        <div class="tech-item"><i class="fas fa-mobile-alt"></i> Real-Time Order Tracking</div>
-        <div class="tech-item"><i class="fas fa-file-invoice"></i> Invoicing & Receipts</div>
-        <div class="tech-item"><i class="fas fa-chart-line"></i> Financial Dashboard</div>
-        <div class="tech-item"><i class="fas fa-users-cog"></i> Subscription Management</div>
-        <div class="tech-item"><i class="fas fa-shield-alt"></i> Complete Audit Log</div>
-      </div>
-      
-      <div class="tech-stack">
-        <span class="tech-tag">Next.js 16</span>
-        <span class="tech-tag">TypeScript</span>
-        <span class="tech-tag">PostgreSQL</span>
-        <span class="tech-tag">Supabase</span>
-        <span class="tech-tag">Vercel</span>
-        <span class="tech-tag">Tailwind CSS</span>
-      </div>
-      
-      <div class="btn-group">
-        <a href="https://oyinluxurygarmentcare.zeustechafrica.com/onboarding" target="_blank" class="btn-primary">📋 Become a Client</a>
-        <a href="https://oyinluxurygarmentcare.zeustechafrica.com/order-request" target="_blank" class="btn-outline">📦 Request an Order</a>
-        <a href="https://oyinluxurygarmentcare.zeustechafrica.com" target="_blank" class="btn-outline">🔗 Visit Live Site</a>
-      </div>
-    </div>
-    <div class="split-visual-premium reveal">
-      <img src="assets/oyin-ops-dashboard.jpg" alt="OYIN OPS Dashboard">
-    </div>
-  </section>
-
-  </div>
-
-  <!-- 10. 50 FOR 50 CAMPAIGN -->
-  <section id="campaign" class="section-padding bg-alt">
-    <div class="section-header">
-      <span style="color: var(--color-accent); font-weight: 700; letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem;">Corporate Social Investment</span>
-      <div class="chapter-label reveal">09 / Digital empowerment</div>
-      <h2 style="margin-top: 10px;" class="glossy-title reveal">"50 FOR 50" Digital Empowerment</h2>
-      <p>Zeustech is investing <strong>R500,000</strong> to help <strong>50 Cape Town small businesses</strong> get online with professional, enterprise-grade websites at <strong>70% below market rates</strong>.</p>
-    </div>
-    
-    <div class="campaign-grid">
-      <div class="campaign-feature reveal">✓ Custom design (no templates)</div>
-      <div class="campaign-feature reveal">✓ Mobile responsive + cross-browser tested</div>
-      <div class="campaign-feature reveal">✓ SEO optimized structure</div>
-      <div class="campaign-feature reveal">✓ Content management system (you edit)</div>
-      <div class="campaign-feature reveal">✓ WhatsApp business integration</div>
-      <div class="campaign-feature reveal">✓ 30 days free post-launch support</div>
-      <div class="campaign-feature reveal">✓ Free hosting + domain for 1 year</div>
-      <div class="campaign-feature reveal">✓ Google Analytics setup</div>
-    </div>
-
-    <div class="price-box">
-      <div style="font-size: 0.9rem; color: #666;">Normal Market Price</div>
-      <div class="price-old">R15,000 - R45,000</div>
-      <div style="font-size: 0.9rem; color: var(--color-accent); margin-top: 15px;">Campaign Price</div>
-      <div class="price-new">R2,500 - R12,000</div>
-      <div style="font-size: 0.85rem; color: #666;">Save R15,000+ | 70% OFF market rates</div>
-      <a href="https://wa.me/27739304732?text=Hi!%20I'm%20interested%20in%20the%2050%20FOR%2050%20website%20campaign." target="_blank" class="btn-primary" style="margin-top: 20px; display: inline-block;">🎯 APPLY FOR CAMPAIGN</a>
-    </div>
-
-    <div style="text-align: center; max-width: 400px; margin: 0 auto;">
-      <div style="display: flex; justify-content: space-between; font-size: 0.85rem; font-weight: 600; color: var(--color-primary);">
-        <span>🚨 ONLY 47 SLOTS REMAINING</span>
-        <span>3 claimed this week</span>
-      </div>
-      <div class="slot-bar"><div class="slot-fill"></div></div>
-      <p style="font-size: 0.8rem; color: #666;">Apply before 30 June 2025 to secure your slot</p>
-    </div>
-  </section>
-
-  <!-- 11. PROCESS & PRICING -->
-  <section id="process" class="section-padding bg-light">
-    <div class="section-header">
-      <div class="chapter-label reveal">10 / From vision to launch</div>
-      <h2 class="glossy-title reveal">Our Proven Process</h2>
-      <p>Professional website development in 2-3 weeks — real work, real quality.</p>
-    </div>
-    <div class="process-grid">
-      <div class="process-step reveal"><i class="fas fa-phone-alt"></i><h4>1. Discovery</h4><p>Understand your business and goals (Day 1)</p></div>
-      <div class="process-step reveal"><i class="fas fa-paint-brush"></i><h4>2. Design</h4><p>Wireframes and mockup for approval (Day 2-3)</p></div>
-      <div class="process-step reveal"><i class="fas fa-code"></i><h4>3. Development</h4><p>Custom website based on approved design (Day 4-7)</p></div>
-      <div class="process-step reveal"><i class="fas fa-bug"></i><h4>4. QA Testing</h4><p>Test on all devices and browsers (Day 8)</p></div>
-      <div class="process-step reveal"><i class="fas fa-rocket"></i><h4>5. Launch</h4><p>Deploy website + train you to update (Day 9)</p></div>
-      <div class="process-step reveal"><i class="fas fa-heart"></i><h4>6. Support</h4><p>30 days free post-launch support (Day 10-40)</p></div>
-    </div>
-
-    <div style="margin-top: 60px; overflow-x: auto;">
-      <table class="pricing-table">
-        <thead>
-          <tr><th>Feature</th><th>Market Rate</th><th>Campaign Rate</th><th>Your Savings</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Discovery & Strategy</td><td>R2,500</td><td style="color: var(--color-accent);">Included</td><td style="color: #22c55e;">R2,500</td></tr>
-          <tr><td>UI/UX Design</td><td>R5,000</td><td style="color: var(--color-accent);">Included</td><td style="color: #22c55e;">R5,000</td></tr>
-          <tr><td>Custom Development</td><td>R8,000-25,000</td><td style="color: var(--color-accent);">Included</td><td style="color: #22c55e;">R8,000-25,000</td></tr>
-          <tr><td>QA Testing</td><td>R2,000</td><td style="color: var(--color-accent);">Included</td><td style="color: #22c55e;">R2,000</td></tr>
-          <tr><td>Hosting (1 year)</td><td>R1,200</td><td style="color: var(--color-accent);">Included</td><td style="color: #22c55e;">R1,200</td></tr>
-          <tr><td>Domain (1 year)</td><td>R200</td><td style="color: var(--color-accent);">Included</td><td style="color: #22c55e;">R200</td></tr>
-          <tr><td>Support (30 days)</td><td>R3,000</td><td style="color: var(--color-accent);">Included</td><td style="color: #22c55e;">R3,000</td></tr>
-          <tr><td>TOTAL MARKET VALUE</td><td>R21,900 - R38,900</td><td style="color: var(--color-accent);">CAMPAIGN PRICE</td><td style="color: #22c55e;">SAVE R15,000+</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <!-- 12. TESTIMONIALS & FAQ -->
-  <section class="section-padding bg-alt">
-    <div style="max-width: 900px; margin: 0 auto;">
-      <div class="section-header"><div class="chapter-label reveal">11 / Client perspectives</div>
-      <h2 class="glossy-title reveal">What Clients Say</h2></div>
-      <div class="testimonial-card reveal fade-passage">
-        <p>"Zeustech built our company website. The team was professional and delivered exactly what we asked for. Highly recommend!"</p>
-        <span>— Thabo N., Cape Town</span>
-      </div>
-      <div class="testimonial-card reveal fade-passage">
-        <p>"The 50-for-50 campaign made it possible for our small business to finally have a professional online presence."</p>
-        <span>— Sarah K., Woodstock</span>
+      <div class="hero-content">
+        <div class="hero-pre-title reveal">ZEUSTECH</div>
+        <h1 class="glossy-title reveal">Innovating Africa at the Level of Creation</h1>
+        <div class="hero-divider reveal"></div>
+        <p class="reveal">We structure, protect, and commercialize African innovation — transforming ideas into scalable, investor-ready technologies.</p>
+        <a href="#story" class="hero-cta reveal">Discover Our Vision</a>
       </div>
 
-      <div class="section-header" style="margin-top: 60px;"><div class="chapter-label reveal">Your questions, answered</div>
-      <h2 class="glossy-title reveal">Frequently Asked Questions</h2></div>
-      <div class="faq-item reveal"><h4>Is this a template or AI website?</h4><p>No. Each website is custom designed and hand-coded by our development team.</p></div>
-      <div class="faq-item reveal"><h4>How long does it take?</h4><p>2-3 weeks for complete design, development, and testing.</p></div>
-      <div class="faq-item reveal"><h4>Do I own the website?</h4><p>Yes. Full ownership is transferred to you upon final payment.</p></div>
-    </div>
-  </section>
+      <div class="hero-caption">
+        <span>African innovation · Global ambition</span>
+        <a href="#story">Scroll to explore ↓</a>
+      </div>
+    </section>
 
-  <!-- 13. LEADERSHIP TEAM (All 5 Members with New Images) -->
-  <section id="team" class="section-padding bg-light">
-    <div class="section-header">
-      <div class="chapter-label reveal">12 / The people behind the vision</div>
-      <h2 class="glossy-title reveal">Leadership Team</h2>
-      <p>The visionary architects shaping Africa's innovation future.</p>
-    </div>
-    <div class="team-grid">
-      <div class="team-card reveal">
-        <div class="team-photo"><img src="assets/team/ceo-new.jpg" alt="Oghenetega Blondy Obebeduo"></div>
-        <div class="team-info">
-          <h3>Oghenetega Blondy Obebeduo</h3>
-          <span class="role">Founder & CEO</span>
-          <p>A visionary technologist and serial entrepreneur driving ZeusTech's mission to protect, scale, and commercialize African innovations globally.</p>
-        </div>
+    <!-- 2. OUR STORY -->
+    <section id="story" class="split-premium bg-alt">
+      <div class="split-visual-premium reveal">
+        <video autoplay muted loop playsinline>
+          <source src="assets/vision/story-vision.mp4" type="video/mp4">
+        </video>
       </div>
-      <div class="team-card reveal">
-        <div class="team-photo"><img src="assets/team/sisipho.jpg" alt="Sisipho Ngombane"></div>
-        <div class="team-info">
-          <h3>Sisipho Ngombane</h3>
-          <span class="role">Director & Operations Manager</span>
-          <p>A strategic leader and innovation advocate overseeing corporate direction, stakeholder engagement, and the commercialization of protected technologies.</p>
-        </div>
-      </div>
-      <div class="team-card reveal">
-        <div class="team-photo"><img src="assets/team/cody.jpg" alt="Cody Haricombe"></div>
-        <div class="team-info">
-          <h3>Cody Haricombe</h3>
-          <span class="role">Legal Counsel (IP & Corporate)</span>
-          <p>Specializes in intellectual property law and corporate structuring, ensuring ZeusTech innovations are fully protected, compliant, and legally sound.</p>
-        </div>
-      </div>
-      <div class="team-card reveal">
-        <div class="team-photo"><img src="assets/team/ogheneovo.jpg" alt="Ogheneovo Vicent Obebeduo"></div>
-        <div class="team-info">
-          <h3>Ogheneovo Vicent Obebeduo</h3>
-          <span class="role">Chief Technology Officer</span>
-          <p>Leads all technical architecture, software development, and integration efforts, ensuring our platforms are scalable, secure, and cutting-edge.</p>
-        </div>
-      </div>
-      <div class="team-card reveal">
-        <div class="team-photo"><img src="assets/team/cyril.jpg" alt="Cyril Aiyewhenre Imhenrion"></div>
-        <div class="team-info">
-          <h3>Cyril Aiyewhenre Imhenrion</h3>
-          <span class="role">Chief Operations Officer</span>
-          <p>Manages operational execution, strategic partnerships, and project rollouts, ensuring concepts move to market efficiently with maximum impact.</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- 14. VERIFICATION & COMPLIANCE -->
-  <section class="section-padding bg-alt">
-    <div class="section-header">
-      <div class="chapter-label reveal">13 / Built on trust</div>
-      <h2 class="glossy-title reveal">Verification & Compliance</h2>
-      <p>Built on a foundation of legal protection, regulatory compliance, and industry expertise.</p>
-    </div>
-    <div class="verification-grid">
-      <div class="verification-box reveal">
-        <h3><i class="fas fa-shield-alt" style="color: var(--color-accent);"></i> Legal & Corporate</h3>
-        <ul>
-          <li><strong>Legal Partner:</strong> Cody Haricombe Attorneys (Cape Town, SA) — IP Law & Corporate Structuring.</li>
-          <li><strong>CIPC Registration:</strong> 2025/794787/07</li>
-          <li><strong>SARS Tax Reference:</strong> Fully registered and tax compliant under ZeusTech (Pty) Ltd.</li>
+      <div class="split-content-premium">
+        <div class="chapter-label reveal">01 / The foundation</div>
+        <h2 class="glossy-title reveal">Our Story & Vision</h2>
+        <p><strong>Mission:</strong> To structure, protect, and commercialize African innovation — transforming ideas into scalable, investor-ready technologies that solve real-world problems.</p>
+        <p><strong>Vision:</strong> To become Africa's foremost technology and innovation powerhouse — empowering creators, advancing IP ownership, and driving inclusive economic growth.</p>
+
+        <h3 style="margin-top: 30px; font-size: 1.5rem; margin-bottom: 15px;">Core Values</h3>
+
+        <ul class="values-list">
+          <li><strong>Innovation:</strong> Constantly challenging the status quo to build solutions that matter.</li>
+          <li><strong>Integrity:</strong> Upholding transparency, accountability, and ethical leadership.</li>
+          <li><strong>Empowerment:</strong> Elevating innovators through knowledge, resources, and strategic partnerships.</li>
+          <li><strong>Excellence:</strong> Delivering measurable impact and long-term value in every project.</li>
         </ul>
       </div>
-      <div class="verification-box reveal">
-        <h3><i class="fas fa-microphone-alt" style="color: var(--color-accent);"></i> Thought Leadership</h3>
-        <p>ZeusTech leadership regularly speaks on key industry topics, including:</p>
-        <ul>
-          <li>African Innovation Ownership & IP Protection</li>
-          <li>Commercializing African Tech for Global Markets</li>
-          <li>Building Resilient African Innovation Ecosystems</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- 15. PARTNERSHIPS & SUPPORTERS (Using Old Image) -->
-  <section class="section-padding bg-light" style="border-top: 1px solid rgba(10,14,39,0.05);">
-    <div class="section-header">
-      <div class="chapter-label reveal">14 / Connected for impact</div>
-      <h2 class="glossy-title reveal">Partnerships & Ecosystem</h2>
-      <p>Collaborating with forward-thinking organizations to scale African innovation.</p>
-    </div>
-    
-    <!-- Old Partnerships Image as a clean visual banner -->
-    <div style="max-width: 1100px; margin: 0 auto 40px auto; border-radius: 8px; overflow: hidden; height: 300px;">
-      <img src="assets/partnerships/innovationcollaboration.JPG" alt="Partnerships" style="width: 100%; height: 100%; object-fit: cover;">
+    <!-- 3. INNOVATION PORTFOLIO -->
+    <section id="innovations" class="section-padding bg-light">
+      <div class="section-header">
+        <div class="chapter-label reveal">02 / Innovation portfolio</div>
+        <h2 class="glossy-title reveal" data-dissolve>Innovation Portfolio</h2>
+        <p>Scalable, protected, and investor-ready technologies designed to solve real-world African challenges.</p>
+      </div>
+
+      <div class="innovations-grid">
+        <div class="innovation-card reveal">
+          <img src="assets/innovations/techlab.jpg" alt="FuelPass Estimator">
+          <h3>FuelPass Estimator</h3>
+          <p>Real-time fuel cost planning for African drivers.</p>
+          <a href="/fuelpass-estimator/" target="_blank" class="btn-outline" style="font-size: 0.8rem; padding: 8px 20px;">Use Tool</a>
+        </div>
+
+        <div class="innovation-card reveal">
+          <img src="assets/innovations/ai-brain.jpg" alt="Smart Urban Flow">
+          <div class="lock-icon"><i class="fas fa-lock"></i></div>
+          <h3>Smart Urban Flow</h3>
+          <p>Optimizing city movement and resource efficiency.</p>
+          <p style="font-size: 0.8rem; color: var(--color-accent); font-weight: 600;">R2–4B/year revenue potential</p>
+          <a href="mailto:ceo@zeustechafrica.com?subject=Innovation%20Access%20Request" class="btn-outline" style="font-size: 0.8rem; padding: 8px 20px;">Request Access</a>
+        </div>
+
+        <div class="innovation-card reveal">
+          <img src="assets/innovations/humanandaibrains.JPG" alt="Seamless Daily Services">
+          <div class="lock-icon"><i class="fas fa-lock"></i></div>
+          <h3>Seamless Daily Services</h3>
+          <p>Empowering communities with instant access to trusted professionals.</p>
+          <p style="font-size: 0.8rem; color: var(--color-accent); font-weight: 600;">Scalable across 10M+ households</p>
+          <a href="mailto:ceo@zeustechafrica.com?subject=Innovation%20Access%20Request" class="btn-outline" style="font-size: 0.8rem; padding: 8px 20px;">Request Access</a>
+        </div>
+
+        <div class="innovation-card reveal">
+          <img src="assets/innovations/digital-hand.jpg" alt="Next-Gen Finance Tools">
+          <div class="lock-icon"><i class="fas fa-lock"></i></div>
+          <h3>Next-Gen Finance Tools</h3>
+          <p>Smarter, safer financial solutions for everyday users.</p>
+          <p style="font-size: 0.8rem; color: var(--color-accent); font-weight: 600;">Licensing value: R500M–R2B</p>
+          <a href="mailto:ceo@zeustechafrica.com?subject=Innovation%20Access%20Request" class="btn-outline" style="font-size: 0.8rem; padding: 8px 20px;">Request Access</a>
+        </div>
+      </div>
+    </section>
+
+    <div id="solutions">
+
+      <!-- 4. FUELPASS -->
+      <section class="split-premium bg-alt">
+        <div class="split-visual-premium reveal">
+          <video autoplay muted loop playsinline>
+            <source src="assets/fuelpass/fuelpass_calculator_bg.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <div class="split-content-premium">
+          <div class="chapter-label reveal">03 / Mobility intelligence</div>
+          <h2 class="glossy-title reveal">FuelPass Estimator</h2>
+          <p style="font-size: 1.2rem; font-family: var(--font-classic); color: var(--color-accent); margin-bottom: 20px;">Know Your Journey.</p>
+          <p>Plan fuel costs with precision for any trip and any vehicle. A practical, real-time tool designed specifically for African drivers to optimize their travel expenses.</p>
+
+          <ul class="feature-list">
+            <li>✓ Real-time Fuel Price Data</li>
+            <li>✓ Trip Distance Calculator</li>
+            <li>✓ Cost Comparison Tool</li>
+          </ul>
+
+          <div class="btn-group">
+            <a href="/fuelpass-estimator/" target="_blank" class="btn-primary">Try the Tool Now</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 5. ORDER -->
+      <section class="split-premium bg-light">
+        <div class="split-content-premium">
+          <div class="chapter-label reveal">04 / Connected services</div>
+          <h2 class="glossy-title reveal">ORDER (Verilinked)</h2>
+          <p style="font-size: 1.2rem; font-family: var(--font-classic); color: var(--color-accent); margin-bottom: 20px;">Services at Your Fingertips.</p>
+          <p>Connecting communities with verified professionals on demand. A multi-billion rand opportunity to bring trust and efficiency to everyday services.</p>
+
+          <ul class="feature-list">
+            <li>✓ Verified Professional Network</li>
+            <li>✓ Real-time Service Booking</li>
+            <li>✓ Secure, Integrated Payments</li>
+          </ul>
+
+          <div class="btn-group">
+            <a href="mailto:ceo@zeustechafrica.com?subject=ORDER%20Innovation%20Access%20Request" class="btn-primary">Request Access</a>
+          </div>
+        </div>
+
+        <div class="split-visual-premium reveal">
+          <video autoplay muted loop playsinline>
+            <source src="assets/order/order.mp4" type="video/mp4">
+          </video>
+        </div>
+      </section>
+
+      <!-- 6. ZEUSTECH LIVE STUDIO -->
+      <section id="live-studio" class="split-premium bg-alt">
+        <a class="studio-channel-link"
+           href="https://www.youtube.com/@ZeusTechLiveStudio"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="Watch ZeusTech Live Studio artists and music videos on YouTube (opens in a new tab)">
+          <div class="split-visual-premium reveal">
+            <video autoplay muted loop playsinline>
+              <source src="assets/studio/live_studio_browser.mp4" type="video/mp4">
+              <source src="assets/studio/live_studio_4k_effect.mp4" type="video/mp4">
+            </video>
+          </div>
+
+          <span class="studio-channel-badge">
+            <span>▶ Watch on YouTube</span>
+            <span aria-hidden="true">↗</span>
+          </span>
+        </a>
+
+        <div class="split-content-premium">
+          <div class="chapter-label reveal">05 / Creative technology</div>
+          <h2 class="glossy-title reveal">ZeusTech Live Studio</h2>
+          <p style="font-size: 1.2rem; font-family: var(--font-classic); color: var(--color-accent); margin-bottom: 20px;">The Stage for Africa's Future.</p>
+          <p>A multi-billion-rand creative-technology hub in Cape Town, empowering the next generation of African creators with world-class production facilities and digital distribution.</p>
+
+          <div class="btn-group">
+            <a href="https://www.youtube.com/@ZeusTechLiveStudio"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="btn-primary">▶ Watch on YouTube</a>
+            <a href="mailto:ceo@zeustechafrica.com?subject=Live%20Studio%20Partnership" class="btn-primary">See the Vision</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. ZEUSCLEAN -->
+      <section class="split-premium bg-light">
+        <div class="split-content-premium">
+          <div class="chapter-label reveal">06 / Data intelligence</div>
+          <h2 class="glossy-title reveal" data-dissolve>ZEUSCLEAN</h2>
+          <p style="font-size: 1.2rem; font-family: var(--font-classic); color: var(--color-accent); margin-bottom: 20px;">The First POPIA-Certified Identity & Location Engine for the New South Africa</p>
+          <p>South Africa's most advanced data cleaning platform. We turn messy data into gold with human-in-the-loop AI, ensuring your original data is never destroyed.</p>
+
+          <ul class="feature-list">
+            <li>🇿🇦 SA ID Validation & Verification (Luhn Algorithm + DHA Ready)</li>
+            <li>🏠 SANS 1883 Address Standardisation (12 Official Address Types)</li>
+            <li>⚖️ POPIA-Specific Governance (Audit Trails & Consent Tracking)</li>
+            <li>🔒 Zero-Knowledge Privacy (Your Data Never Stored)</li>
+          </ul>
+
+          <div class="btn-group">
+            <a href="mailto:ceo@zeustechafrica.com?subject=ZEUSCLEAN%20Free%20Data%20Audit" class="btn-primary">📋 FREE DATA AUDIT</a>
+            <a href="mailto:ceo@zeustechafrica.com?subject=ZEUSCLEAN%20Quote%20Request" class="btn-outline">💰 GET A QUOTE</a>
+          </div>
+        </div>
+
+        <div class="split-visual-premium reveal">
+          <img src="assets/zeusclean-data.jpg" alt="ZEUSCLEAN Dashboard">
+        </div>
+      </section>
+
+      <!-- 8. STEEZE -->
+      <section class="split-premium bg-alt">
+        <div class="split-visual-premium reveal">
+          <img src="assets/steeze-studio.jpg" alt="STEEZE Platform">
+        </div>
+
+        <div class="split-content-premium">
+          <div class="chapter-label reveal">07 / Verified entertainment</div>
+          <h2 class="glossy-title reveal" data-dissolve>STEEZE</h2>
+          <p style="font-size: 1.2rem; font-family: var(--font-classic); color: var(--color-accent); margin-bottom: 20px;">The Verified Entertainment Platform</p>
+          <p>Where creators get their own premium website-style profile, keep 70% of their earnings, and connect directly with verified fans — all without the noise of traditional social media.</p>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px;">
+            <div style="background: var(--color-light); padding: 20px; border-radius: 8px;">
+              <h4 style="margin-bottom: 10px; color: var(--color-accent);">🎤 FOR CREATORS</h4>
+              <ul style="list-style: none; font-size: 0.85rem; line-height: 1.8;">
+                <li>✅ Your own fully designed profile</li>
+                <li>✅ Earn 70% (independent) or 50/50 (signed)</li>
+                <li>✅ Distribute to DistroKid, YouTube & Spotify</li>
+              </ul>
+            </div>
+
+            <div style="background: var(--color-light); padding: 20px; border-radius: 8px;">
+              <h4 style="margin-bottom: 10px; color: var(--color-accent);">🎧 FOR FANS</h4>
+              <ul style="list-style: none; font-size: 0.85rem; line-height: 1.8;">
+                <li>✅ Pure entertainment — no politics or news</li>
+                <li>✅ Subscribe to creators (Gold = DMs + calls)</li>
+                <li>✅ Every account is ID + selfie verified</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="btn-group">
+            <a href="https://steeze.zeustechafrica.com" target="_blank" class="btn-primary">Explore STEEZE</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 9. OYIN OPS V1 CASE STUDY -->
+      <section id="oyin" class="split-premium bg-light">
+        <div class="split-content-premium">
+          <div class="chapter-label reveal">08 / Business systems</div>
+          <h2 class="glossy-title reveal" data-dissolve>OYIN OPS V1</h2>
+          <p style="font-size: 1.2rem; font-family: var(--font-classic); color: var(--color-accent); margin-bottom: 20px;">The System Behind OYIN Laundry Atelier</p>
+          <p>OYIN OPS V1 is a complete, production-ready admin system built by ZeusTech. It handles the entire business — from client onboarding, order management, and photo evidence, to financial tracking, invoicing, and audit logs.</p>
+
+          <div class="tech-grid">
+            <div class="tech-item"><i class="fas fa-clipboard-list"></i> Client Onboarding</div>
+            <div class="tech-item"><i class="fas fa-sync-alt"></i> 9-Stage Order Workflow</div>
+            <div class="tech-item"><i class="fas fa-camera"></i> Photo Evidence System</div>
+            <div class="tech-item"><i class="fas fa-mobile-alt"></i> Real-Time Order Tracking</div>
+            <div class="tech-item"><i class="fas fa-file-invoice"></i> Invoicing & Receipts</div>
+            <div class="tech-item"><i class="fas fa-chart-line"></i> Financial Dashboard</div>
+            <div class="tech-item"><i class="fas fa-users-cog"></i> Subscription Management</div>
+            <div class="tech-item"><i class="fas fa-shield-alt"></i> Complete Audit Log</div>
+          </div>
+
+          <div class="tech-stack">
+            <span class="tech-tag">Next.js 16</span>
+            <span class="tech-tag">TypeScript</span>
+            <span class="tech-tag">PostgreSQL</span>
+            <span class="tech-tag">Supabase</span>
+            <span class="tech-tag">Vercel</span>
+            <span class="tech-tag">Tailwind CSS</span>
+          </div>
+
+          <div class="btn-group">
+            <a href="https://oyinluxurygarmentcare.zeustechafrica.com/onboarding" target="_blank" class="btn-primary">📋 Become a Client</a>
+            <a href="https://oyinluxurygarmentcare.zeustechafrica.com/order-request" target="_blank" class="btn-outline">📦 Request an Order</a>
+            <a href="https://oyinluxurygarmentcare.zeustechafrica.com" target="_blank" class="btn-outline">🔗 Visit Live Site</a>
+          </div>
+        </div>
+
+        <div class="split-visual-premium reveal">
+          <img src="assets/oyin-ops-dashboard.jpg" alt="OYIN OPS Dashboard">
+        </div>
+      </section>
     </div>
 
-    <div class="partnerships-grid">
-      <div class="partnership-box reveal">
-        <h3><i class="fas fa-landmark" style="color: var(--color-accent);"></i> Government</h3>
-        <p>TIA, CSIR, and Municipalities — digitizing public infrastructure and services.</p>
+    <!-- 10. 50 FOR 50 CAMPAIGN -->
+    <section id="campaign" class="section-padding bg-alt">
+      <div class="section-header">
+        <span style="color: var(--color-accent); font-weight: 700; letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem;">Corporate Social Investment</span>
+        <div class="chapter-label reveal">09 / Digital empowerment</div>
+        <h2 style="margin-top: 10px;" class="glossy-title reveal">"50 FOR 50" Digital Empowerment</h2>
+        <p>Zeustech is investing <strong>R500,000</strong> to help <strong>50 Cape Town small businesses</strong> get online with professional, enterprise-grade websites at <strong>70% below market rates</strong>.</p>
       </div>
-      <div class="partnership-box reveal">
-        <h3><i class="fas fa-building" style="color: var(--color-accent);"></i> Private Sector</h3>
-        <p>Tech firms, telecoms, and energy companies integrating scalable, protected innovation.</p>
+
+      <div class="campaign-grid">
+        <div class="campaign-feature reveal">✓ Custom design (no templates)</div>
+        <div class="campaign-feature reveal">✓ Mobile responsive + cross-browser tested</div>
+        <div class="campaign-feature reveal">✓ SEO optimized structure</div>
+        <div class="campaign-feature reveal">✓ Content management system (you edit)</div>
+        <div class="campaign-feature reveal">✓ WhatsApp business integration</div>
+        <div class="campaign-feature reveal">✓ 30 days free post-launch support</div>
+        <div class="campaign-feature reveal">✓ Free hosting + domain for 1 year</div>
+        <div class="campaign-feature reveal">✓ Google Analytics setup</div>
       </div>
-      <div class="partnership-box reveal">
-        <h3><i class="fas fa-hands-helping" style="color: var(--color-accent);"></i> NGOs & Community</h3>
-        <p>Youth empowerment, STEM education, and financial inclusion initiatives.</p>
+
+      <div class="price-box">
+        <div style="font-size: 0.9rem; color: #666;">Normal Market Price</div>
+        <div class="price-old">R15,000 - R45,000</div>
+        <div style="font-size: 0.9rem; color: var(--color-accent); margin-top: 15px;">Campaign Price</div>
+        <div class="price-new">R2,500 - R12,000</div>
+        <div style="font-size: 0.85rem; color: #666;">Save R15,000+ | 70% OFF market rates</div>
+        <a href="https://wa.me/27739304732?text=Hi!%20I'm%20interested%20in%20the%2050%20FOR%2050%20website%20campaign." target="_blank" class="btn-primary" style="margin-top: 20px; display: inline-block;">🎯 APPLY FOR CAMPAIGN</a>
       </div>
-    </div>
-    <div style="text-align: center; margin-top: 50px;">
-      <h3 style="font-family: var(--font-classic); font-size: 1.3rem; color: var(--color-primary); margin-bottom: 15px;">Current Supporters</h3>
-      <div class="supporters-list">
-        <span class="supporter-tag">ElizzCollections</span>
-        <span class="supporter-tag">Zizipho Collections</span>
-        <span class="supporter-tag">Picknstyle</span>
-        <span class="supporter-tag">ANTHONY C ENTERPRISE Pty Ltd</span>
+
+      <div style="text-align: center; max-width: 400px; margin: 0 auto;">
+        <div style="display: flex; justify-content: space-between; font-size: 0.85rem; font-weight: 600; color: var(--color-primary);">
+          <span>🚨 ONLY 47 SLOTS REMAINING</span>
+          <span>3 claimed this week</span>
+        </div>
+        <div class="slot-bar"><div class="slot-fill"></div></div>
+        <p style="font-size: 0.8rem; color: #666;">Apply before 30 June 2025 to secure your slot</p>
       </div>
-    </div>
-  </section>
+    </section>
+
+    <!-- 11. PROCESS & PRICING -->
+    <section id="process" class="section-padding bg-light">
+      <div class="section-header">
+        <div class="chapter-label reveal">10 / From vision to launch</div>
+        <h2 class="glossy-title reveal">Our Proven Process</h2>
+        <p>Professional website development in 2-3 weeks — real work, real quality.</p>
+      </div>
+
+      <div class="process-grid">
+        <div class="process-step reveal">
+          <i class="fas fa-phone-alt"></i>
+          <h4>1. Discovery</h4>
+          <p>Understand your business and goals (Day 1)</p>
+        </div>
+
+        <div class="process-step reveal">
+          <i class="fas fa-paint-brush"></i>
+          <h4>2. Design</h4>
+          <p>Wireframes and mockup for approval (Day 2-3)</p>
+        </div>
+
+        <div class="process-step reveal">
+          <i class="fas fa-code"></i>
+          <h4>3. Development</h4>
+          <p>Custom website based on approved design (Day 4-7)</p>
+        </div>
+
+        <div class="process-step reveal">
+          <i class="fas fa-bug"></i>
+          <h4>4. QA Testing</h4>
+          <p>Test on all devices and browsers (Day 8)</p>
+        </div>
+
+        <div class="process-step reveal">
+          <i class="fas fa-rocket"></i>
+          <h4>5. Launch</h4>
+          <p>Deploy website + train you to update (Day 9)</p>
+        </div>
+
+        <div class="process-step reveal">
+          <i class="fas fa-heart"></i>
+          <h4>6. Support</h4>
+          <p>30 days free post-launch support (Day 10-40)</p>
+        </div>
+      </div>
+
+      <div style="margin-top: 60px; overflow-x: auto;">
+        <table class="pricing-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Market Rate</th>
+              <th>Campaign Rate</th>
+              <th>Your Savings</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Discovery & Strategy</td><td>R2,500</td><td style="color: var(--color-accent);">Included</td><td style="color: #22c55e;">R2,500</td></tr>
+            <tr><td>UI/UX Design</td><td>R5,000</td><td style="color: var(--color-accent);">Included</td><td style="color: #22c55e;">R5,000</td></tr>
+            <tr><td>Custom Development</td><td>R8,000-25,000</td><td style="color: var(--color-accent);">Included</td><td style="color: #22c55e;">R8,000-25,000</td></tr>
+            <tr><td>QA Testing</td><td>R2,000</td><td style="color: var(--color-accent);">Included</td><td style="color: #22c55e;">R2,000</td></tr>
+            <tr><td>Hosting (1 year)</td><td>R1,200</td><td style="color: var(--color-accent);">Included</td><td style="color: #22c55e;">R1,200</td></tr>
+            <tr><td>Domain (1 year)</td><td>R200</td><td style="color: var(--color-accent);">Included</td><td style="color: #22c55e;">R200</td></tr>
+            <tr><td>Support (30 days)</td><td>R3,000</td><td style="color: var(--color-accent);">Included</td><td style="color: #22c55e;">R3,000</td></tr>
+            <tr><td>TOTAL MARKET VALUE</td><td>R21,900 - R38,900</td><td style="color: var(--color-accent);">CAMPAIGN PRICE</td><td style="color: #22c55e;">SAVE R15,000+</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- 12. TESTIMONIALS & FAQ -->
+    <section class="section-padding bg-alt">
+      <div style="max-width: 900px; margin: 0 auto;">
+        <div class="section-header">
+          <div class="chapter-label reveal">11 / Client perspectives</div>
+          <h2 class="glossy-title reveal">What Clients Say</h2>
+        </div>
+
+        <div class="testimonial-card reveal fade-passage">
+          <p>"Zeustech built our company website. The team was professional and delivered exactly what we asked for. Highly recommend!"</p>
+          <span>— Thabo N., Cape Town</span>
+        </div>
+
+        <div class="testimonial-card reveal fade-passage">
+          <p>"The 50-for-50 campaign made it possible for our small business to finally have a professional online presence."</p>
+          <span>— Sarah K., Woodstock</span>
+        </div>
+
+        <div class="section-header" style="margin-top: 60px;">
+          <div class="chapter-label reveal">Your questions, answered</div>
+          <h2 class="glossy-title reveal">Frequently Asked Questions</h2>
+        </div>
+
+        <div class="faq-item reveal">
+          <h4>Is this a template or AI website?</h4>
+          <p>No. Each website is custom designed and hand-coded by our development team.</p>
+        </div>
+
+        <div class="faq-item reveal">
+          <h4>How long does it take?</h4>
+          <p>2-3 weeks for complete design, development, and testing.</p>
+        </div>
+
+        <div class="faq-item reveal">
+          <h4>Do I own the website?</h4>
+          <p>Yes. Full ownership is transferred to you upon final payment.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 13. LEADERSHIP TEAM -->
+    <section id="team" class="section-padding bg-light">
+      <div class="section-header">
+        <div class="chapter-label reveal">12 / The people behind the vision</div>
+        <h2 class="glossy-title reveal">Leadership Team</h2>
+        <p>The visionary architects shaping Africa's innovation future.</p>
+      </div>
+
+      <div class="team-grid">
+        <div class="team-card reveal">
+          <div class="team-photo">
+            <img src="assets/team/ceo-new.jpg" alt="Oghenetega Blondy Obebeduo">
+          </div>
+          <div class="team-info">
+            <h3>Oghenetega Blondy Obebeduo</h3>
+            <span class="role">Founder & CEO</span>
+            <p>A visionary technologist and serial entrepreneur driving ZeusTech's mission to protect, scale, and commercialize African innovations globally.</p>
+          </div>
+        </div>
+
+        <div class="team-card reveal">
+          <div class="team-photo">
+            <img src="assets/team/sisipho.jpg" alt="Sisipho Ngombane">
+          </div>
+          <div class="team-info">
+            <h3>Sisipho Ngombane</h3>
+            <span class="role">Director & Operations Manager</span>
+            <p>A strategic leader and innovation advocate overseeing corporate direction, stakeholder engagement, and the commercialization of protected technologies.</p>
+          </div>
+        </div>
+
+        <div class="team-card reveal">
+          <div class="team-photo">
+            <img src="assets/team/cody.jpg" alt="Cody Haricombe">
+          </div>
+          <div class="team-info">
+            <h3>Cody Haricombe</h3>
+            <span class="role">Legal Counsel (IP & Corporate)</span>
+            <p>Specializes in intellectual property law and corporate structuring, ensuring ZeusTech innovations are fully protected, compliant, and legally sound.</p>
+          </div>
+        </div>
+
+        <div class="team-card reveal">
+          <div class="team-photo">
+            <img src="assets/team/ogheneovo.jpg" alt="Ogheneovo Vicent Obebeduo">
+          </div>
+          <div class="team-info">
+            <h3>Ogheneovo Vicent Obebeduo</h3>
+            <span class="role">Chief Technology Officer</span>
+            <p>Leads all technical architecture, software development, and integration efforts, ensuring our platforms are scalable, secure, and cutting-edge.</p>
+          </div>
+        </div>
+
+        <div class="team-card reveal">
+          <div class="team-photo">
+            <img src="assets/team/cyril.jpg" alt="Cyril Aiyewhenre Imhenrion">
+          </div>
+          <div class="team-info">
+            <h3>Cyril Aiyewhenre Imhenrion</h3>
+            <span class="role">Chief Operations Officer</span>
+            <p>Manages operational execution, strategic partnerships, and project rollouts, ensuring concepts move to market efficiently with maximum impact.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 14. VERIFICATION & COMPLIANCE -->
+    <section class="section-padding bg-alt">
+      <div class="section-header">
+        <div class="chapter-label reveal">13 / Built on trust</div>
+        <h2 class="glossy-title reveal">Verification & Compliance</h2>
+        <p>Built on a foundation of legal protection, regulatory compliance, and industry expertise.</p>
+      </div>
+
+      <div class="verification-grid">
+        <div class="verification-box reveal">
+          <h3><i class="fas fa-shield-alt" style="color: var(--color-accent);"></i> Legal & Corporate</h3>
+          <ul>
+            <li><strong>Legal Partner:</strong> Cody Haricombe Attorneys (Cape Town, SA) — IP Law & Corporate Structuring.</li>
+            <li><strong>CIPC Registration:</strong> 2025/794787/07</li>
+            <li><strong>SARS Tax Reference:</strong> Fully registered and tax compliant under ZeusTech (Pty) Ltd.</li>
+          </ul>
+        </div>
+
+        <div class="verification-box reveal">
+          <h3><i class="fas fa-microphone-alt" style="color: var(--color-accent);"></i> Thought Leadership</h3>
+          <p>ZeusTech leadership regularly speaks on key industry topics, including:</p>
+          <ul>
+            <li>African Innovation Ownership & IP Protection</li>
+            <li>Commercializing African Tech for Global Markets</li>
+            <li>Building Resilient African Innovation Ecosystems</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 15. PARTNERSHIPS & SUPPORTERS -->
+    <section class="section-padding bg-light" style="border-top: 1px solid rgba(10,14,39,0.05);">
+      <div class="section-header">
+        <div class="chapter-label reveal">14 / Connected for impact</div>
+        <h2 class="glossy-title reveal">Partnerships & Ecosystem</h2>
+        <p>Collaborating with forward-thinking organizations to scale African innovation.</p>
+      </div>
+
+      <div style="max-width: 1100px; margin: 0 auto 40px auto; border-radius: 8px; overflow: hidden; height: 300px;">
+        <img src="assets/partnerships/innovationcollaboration.JPG" alt="Partnerships" style="width: 100%; height: 100%; object-fit: cover;">
+      </div>
+
+      <div class="partnerships-grid">
+        <div class="partnership-box reveal">
+          <h3><i class="fas fa-landmark" style="color: var(--color-accent);"></i> Government</h3>
+          <p>TIA, CSIR, and Municipalities — digitizing public infrastructure and services.</p>
+        </div>
+
+        <div class="partnership-box reveal">
+          <h3><i class="fas fa-building" style="color: var(--color-accent);"></i> Private Sector</h3>
+          <p>Tech firms, telecoms, and energy companies integrating scalable, protected innovation.</p>
+        </div>
+
+        <div class="partnership-box reveal">
+          <h3><i class="fas fa-hands-helping" style="color: var(--color-accent);"></i> NGOs & Community</h3>
+          <p>Youth empowerment, STEM education, and financial inclusion initiatives.</p>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 50px;">
+        <h3 style="font-family: var(--font-classic); font-size: 1.3rem; color: var(--color-primary); margin-bottom: 15px;">Current Supporters</h3>
+        <div class="supporters-list">
+          <span class="supporter-tag">ElizzCollections</span>
+          <span class="supporter-tag">Zizipho Collections</span>
+          <span class="supporter-tag">Picknstyle</span>
+          <span class="supporter-tag">ANTHONY C ENTERPRISE Pty Ltd</span>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <!-- 16. FOOTER -->
-  </main>
   <footer class="footer-premium">
     <div class="chapter-label reveal">ZEUSTECH / The next chapter</div>
     <h2 class="footer-heading glossy-title reveal" data-dissolve>Innovating Africa at the Level of Creation</h2>
     <a class="btn-primary reveal" href="mailto:ceo@zeustechafrica.com">Start a conversation ↗</a>
     <button class="motion-toggle" type="button" aria-pressed="false">Pause animations</button>
+
     <div class="footer-bottom">
-    <p>© 2025 ZeusTech (Pty) Ltd — CIPC Reg: 2025/794787/07</p>
-    <p style="margin-top: 15px;"><a href="mailto:ceo@zeustechafrica.com">ceo@zeustechafrica.com</a></p>
+      <p>© 2025 ZeusTech (Pty) Ltd — CIPC Reg: 2025/794787/07</p>
+      <p style="margin-top: 15px;">
+        <a href="mailto:ceo@zeustechafrica.com">ceo@zeustechafrica.com</a>
+      </p>
       <a class="footer-top-link" href="#top">Back to the beginning ↑</a>
     </div>
   </footer>
+
   <a class="back-to-top" href="#top" aria-label="Back to top" hidden>↑</a>
 
-  <!-- Accessible cinematic interactions -->
+  <!-- ACCESSIBLE CINEMATIC INTERACTIONS -->
   <script>
-(() => {
-  'use strict';
-  const body = document.body;
-  const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
-  const header = document.getElementById('mainHeader');
-  const nav = document.getElementById('mainNavigation');
-  const toggle = document.querySelector('.menu-toggle');
-  const topLink = document.querySelector('.back-to-top');
-  const hero = document.querySelector('.hero-premium');
-  const motionToggle = document.querySelector('.motion-toggle');
-  let userPaused = false;
-  let motionEnabled = !motionPreference.matches;
-  let framePending = false;
-  let revealObserver;
-  let dissolveObserver;
-  let passageObserver;
-  let dissolveTimer;
-  const visibleTitles = new Set();
+    (() => {
+      'use strict';
 
-  // Navigation remains available when JavaScript is disabled.
-  body.classList.add('navigation-ready');
-  function closeMenu() {
-    nav.classList.remove('is-open');
-    toggle.setAttribute('aria-expanded', 'false');
-  }
-  toggle.addEventListener('click', () => {
-    const open = !nav.classList.contains('is-open');
-    nav.classList.toggle('is-open', open);
-    toggle.setAttribute('aria-expanded', String(open));
-  });
-  nav.addEventListener('click', event => {
-    if (event.target.closest('a')) closeMenu();
-  });
-  document.addEventListener('keydown', event => {
-    if (event.key === 'Escape' && nav.classList.contains('is-open')) {
-      closeMenu();
-      toggle.focus();
-    }
-  });
-  document.addEventListener('click', event => {
-    if (!header.contains(event.target)) closeMenu();
-  });
-  window.matchMedia('(min-width: 761px)').addEventListener('change', closeMenu);
+      const body = document.body;
+      const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)');
+      const header = document.getElementById('mainHeader');
+      const nav = document.getElementById('mainNavigation');
+      const toggle = document.querySelector('.menu-toggle');
+      const topLink = document.querySelector('.back-to-top');
+      const hero = document.querySelector('.hero-premium');
+      const motionToggle = document.querySelector('.motion-toggle');
 
-  function updateScroll() {
-    framePending = false;
-    const y = window.scrollY;
-    const distance = document.documentElement.scrollHeight - window.innerHeight;
-    document.documentElement.style.setProperty('--reading-progress', distance > 0 ? Math.min(1, y / distance) : 0);
-    header.classList.toggle('scrolled', y > 50);
-    topLink.hidden = y < 650;
-    const progress = Math.min(1, y / Math.max(1, hero.offsetHeight));
-    hero.style.setProperty('--hero-shift', motionEnabled ? progress * 45 : 0);
-    hero.style.setProperty('--hero-opacity', motionEnabled ? Math.max(0, 1 - progress * 1.2) : 1);
-  }
-  function scheduleScroll() {
-    if (!framePending) {
-      framePending = true;
-      requestAnimationFrame(updateScroll);
-    }
-  }
-  window.addEventListener('scroll', scheduleScroll, { passive: true });
-  window.addEventListener('resize', scheduleScroll, { passive: true });
-  updateScroll();
+      let userPaused = false;
+      let motionEnabled = !motionPreference.matches;
+      let framePending = false;
+      let revealObserver;
+      let dissolveObserver;
+      let passageObserver;
+      let dissolveTimer;
 
-  // Keep the whole heading accessible while animating its visual words.
-  document.querySelectorAll('[data-dissolve]').forEach(title => {
-    const original = title.textContent.trim();
-    title.setAttribute('aria-label', original);
-    title.replaceChildren();
-    original.split(/\s+/).forEach((word, index, words) => {
-      const span = document.createElement('span');
-      span.className = 'dissolve-word';
-      span.style.setProperty('--word-index', index);
-      span.setAttribute('aria-hidden', 'true');
-      span.textContent = word;
-      title.append(span);
-      if (index < words.length - 1) title.append(document.createTextNode(' '));
-    });
-  });
-  function dissolve(title) {
-    if (!motionEnabled || document.hidden || title.classList.contains('dissolving')) return;
-    title.classList.add('dissolving');
-    const duration = 2500 + title.querySelectorAll('.dissolve-word').length * 65;
-    window.setTimeout(() => title.classList.remove('dissolving'), duration);
-  }
-  function stopMotion() {
-    body.classList.remove('motion-enabled');
-    revealObserver?.disconnect();
-    dissolveObserver?.disconnect();
-    passageObserver?.disconnect();
-    window.clearInterval(dissolveTimer);
-    visibleTitles.clear();
-    document.querySelectorAll('.awaiting-reveal,.passage-out,.dissolving').forEach(el => {
-      el.classList.remove('awaiting-reveal','passage-out','dissolving');
-    });
-  }
-  function startMotion() {
-    if (!motionEnabled || !('IntersectionObserver' in window)) return;
-    body.classList.add('motion-enabled');
-    revealObserver = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.remove('awaiting-reveal');
-          entry.target.classList.add('is-in-view');
-          revealObserver.unobserve(entry.target);
+      const visibleTitles = new Set();
+
+      // Navigation remains available when JavaScript is disabled.
+      body.classList.add('navigation-ready');
+
+      function closeMenu() {
+        nav.classList.remove('is-open');
+        toggle.setAttribute('aria-expanded', 'false');
+      }
+
+      toggle.addEventListener('click', () => {
+        const open = !nav.classList.contains('is-open');
+        nav.classList.toggle('is-open', open);
+        toggle.setAttribute('aria-expanded', String(open));
+      });
+
+      nav.addEventListener('click', event => {
+        if (event.target.closest('a')) closeMenu();
+      });
+
+      document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && nav.classList.contains('is-open')) {
+          closeMenu();
+          toggle.focus();
         }
       });
-    }, { threshold: .08 });
-    document.querySelectorAll('.reveal').forEach(el => {
-      const rect = el.getBoundingClientRect();
-      if (rect.top >= window.innerHeight) el.classList.add('awaiting-reveal');
-      revealObserver.observe(el);
-    });
-    dissolveObserver = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          visibleTitles.add(entry.target);
-          if (!entry.target.dataset.played) {
-            entry.target.dataset.played = 'true';
-            dissolve(entry.target);
+
+      document.addEventListener('click', event => {
+        if (!header.contains(event.target)) closeMenu();
+      });
+
+      window.matchMedia('(min-width: 761px)').addEventListener('change', closeMenu);
+
+      function updateScroll() {
+        framePending = false;
+
+        const y = window.scrollY;
+        const distance = document.documentElement.scrollHeight - window.innerHeight;
+
+        document.documentElement.style.setProperty(
+          '--reading-progress',
+          distance > 0 ? Math.min(1, y / distance) : 0
+        );
+
+        header.classList.toggle('scrolled', y > 50);
+        topLink.hidden = y < 650;
+
+        const progress = Math.min(1, y / Math.max(1, hero.offsetHeight));
+
+        hero.style.setProperty('--hero-shift', motionEnabled ? progress * 45 : 0);
+        hero.style.setProperty(
+          '--hero-opacity',
+          motionEnabled ? Math.max(0, 1 - progress * 1.2) : 1
+        );
+      }
+
+      function scheduleScroll() {
+        if (!framePending) {
+          framePending = true;
+          requestAnimationFrame(updateScroll);
+        }
+      }
+
+      window.addEventListener('scroll', scheduleScroll, { passive: true });
+      window.addEventListener('resize', scheduleScroll, { passive: true });
+      updateScroll();
+
+      // Keep headings accessible while animating their visual words.
+      document.querySelectorAll('[data-dissolve]').forEach(title => {
+        const original = title.textContent.trim();
+
+        title.setAttribute('aria-label', original);
+        title.replaceChildren();
+
+        original.split(/\s+/).forEach((word, index, words) => {
+          const span = document.createElement('span');
+
+          span.className = 'dissolve-word';
+          span.style.setProperty('--word-index', index);
+          span.setAttribute('aria-hidden', 'true');
+          span.textContent = word;
+
+          title.append(span);
+
+          if (index < words.length - 1) {
+            title.append(document.createTextNode(' '));
           }
-        } else visibleTitles.delete(entry.target);
+        });
       });
-    }, { threshold: .6 });
-    document.querySelectorAll('[data-dissolve]').forEach(el => dissolveObserver.observe(el));
-    // Only a few visible titles cycle, and only one dissolves at a time.
-    dissolveTimer = window.setInterval(() => {
-      if (document.hidden || !visibleTitles.size) return;
-      const titles = [...visibleTitles];
-      dissolve(titles[Math.floor(Date.now() / 14000) % titles.length]);
-    }, 14000);
-    passageObserver = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        entry.target.classList.toggle('passage-out', !entry.isIntersecting);
+
+      function dissolve(title) {
+        if (
+          !motionEnabled ||
+          document.hidden ||
+          title.classList.contains('dissolving')
+        ) {
+          return;
+        }
+
+        title.classList.add('dissolving');
+
+        const duration =
+          2500 + title.querySelectorAll('.dissolve-word').length * 65;
+
+        window.setTimeout(
+          () => title.classList.remove('dissolving'),
+          duration
+        );
+      }
+
+      function stopMotion() {
+        body.classList.remove('motion-enabled');
+
+        revealObserver?.disconnect();
+        dissolveObserver?.disconnect();
+        passageObserver?.disconnect();
+
+        window.clearInterval(dissolveTimer);
+        visibleTitles.clear();
+
+        document.querySelectorAll(
+          '.awaiting-reveal,.passage-out,.dissolving'
+        ).forEach(el => {
+          el.classList.remove(
+            'awaiting-reveal',
+            'passage-out',
+            'dissolving'
+          );
+        });
+      }
+
+      function startMotion() {
+        if (!motionEnabled || !('IntersectionObserver' in window)) {
+          return;
+        }
+
+        body.classList.add('motion-enabled');
+
+        revealObserver = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.remove('awaiting-reveal');
+              entry.target.classList.add('is-in-view');
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: .08 });
+
+        document.querySelectorAll('.reveal').forEach(el => {
+          const rect = el.getBoundingClientRect();
+
+          if (rect.top >= window.innerHeight) {
+            el.classList.add('awaiting-reveal');
+          }
+
+          revealObserver.observe(el);
+        });
+
+        dissolveObserver = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              visibleTitles.add(entry.target);
+
+              if (!entry.target.dataset.played) {
+                entry.target.dataset.played = 'true';
+                dissolve(entry.target);
+              }
+            } else {
+              visibleTitles.delete(entry.target);
+            }
+          });
+        }, { threshold: .6 });
+
+        document.querySelectorAll('[data-dissolve]').forEach(el => {
+          dissolveObserver.observe(el);
+        });
+
+        // Cycle only visible titles, one at a time.
+        dissolveTimer = window.setInterval(() => {
+          if (document.hidden || !visibleTitles.size) return;
+
+          const titles = [...visibleTitles];
+
+          dissolve(
+            titles[Math.floor(Date.now() / 14000) % titles.length]
+          );
+        }, 14000);
+
+        passageObserver = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            entry.target.classList.toggle(
+              'passage-out',
+              !entry.isIntersecting
+            );
+          });
+        }, {
+          rootMargin: '-5% 0px -5% 0px',
+          threshold: 0
+        });
+
+        document.querySelectorAll('.fade-passage').forEach(el => {
+          passageObserver.observe(el);
+        });
+      }
+
+      // Preserve image URLs and provide clean fallbacks if unavailable.
+      document.querySelectorAll('img').forEach(img => {
+        const fallback = () => {
+          if (img.dataset.fallbackShown) return;
+
+          img.dataset.fallbackShown = 'true';
+          img.hidden = true;
+          img.style.display = 'none';
+
+          if (img.closest('.logo')) {
+            const brand = document.createElement('span');
+
+            brand.className = 'brand-fallback';
+            brand.textContent = 'ZEUSTECH';
+            img.after(brand);
+
+          } else if (
+            img.parentElement.classList.contains('split-visual-premium')
+          ) {
+            const panel = document.createElement('div');
+            const label = document.createElement('span');
+
+            panel.className = 'visual-fallback';
+            label.textContent = img.alt;
+
+            panel.append(label);
+            img.after(panel);
+
+          } else {
+            img.style.display = 'block';
+            img.style.visibility = 'hidden';
+          }
+        };
+
+        img.addEventListener('error', fallback, { once: true });
+
+        if (img.complete && img.naturalWidth === 0) {
+          fallback();
+        }
       });
-    }, { rootMargin: '-5% 0px -5% 0px', threshold: 0 });
-    document.querySelectorAll('.fade-passage').forEach(el => passageObserver.observe(el));
-  }
 
-  // No missing image icons: retain source URLs and show a restrained fallback.
-  document.querySelectorAll('img').forEach(img => {
-    const fallback = () => {
-      if (img.dataset.fallbackShown) return;
-      img.dataset.fallbackShown = 'true';
-      img.hidden = true;
-      img.style.display = 'none';
-      if (img.closest('.logo')) {
-        const brand = document.createElement('span');
-        brand.className = 'brand-fallback';
-        brand.textContent = 'ZEUSTECH';
-        img.after(brand);
-      } else if (img.parentElement.classList.contains('split-visual-premium')) {
-        const panel = document.createElement('div');
-        panel.className = 'visual-fallback';
-        const label = document.createElement('span');
-        label.textContent = img.alt;
-        panel.append(label);
-        img.after(panel);
-      } else {
-        img.style.display = 'block';
-        img.style.visibility = 'hidden';
-      }
-    };
-    img.addEventListener('error', fallback, { once: true });
-    if (img.complete && img.naturalWidth === 0) fallback();
-  });
-  const videoObserver = 'IntersectionObserver' in window ? new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      const video = entry.target;
-      if (entry.isIntersecting && motionEnabled && !document.hidden) video.play().catch(() => {});
-      else video.pause();
-    });
-  }, { rootMargin: '100px' }) : null;
-  document.querySelectorAll('video').forEach(video => {
-    function unavailableVideo() {
-      if (video.dataset.fallbackShown) return;
-      video.dataset.fallbackShown = 'true';
-      video.style.display = 'none';
-      if (video.parentElement.classList.contains('split-visual-premium')) {
-        const panel = document.createElement('div');
-        panel.className = 'visual-fallback';
-        const label = document.createElement('span');
-        label.textContent = video.closest('section').querySelector('h2')?.textContent || 'ZEUSTECH';
-        panel.append(label);
-        video.after(panel);
-      }
-    }
-    video.addEventListener('error', unavailableVideo, { once: true });
-    video.querySelectorAll('source').forEach(source => source.addEventListener('error', unavailableVideo, { once: true }));
-    if (video.error || video.networkState === 3) unavailableVideo();
-    video.muted = true;
-    video.preload = 'metadata';
-    if (!motionEnabled) video.pause();
-    videoObserver?.observe(video);
-  });
-  document.addEventListener('visibilitychange', () => {
-    document.querySelectorAll('video').forEach(video => {
-      const rect = video.getBoundingClientRect();
-      if (!document.hidden && motionEnabled && rect.bottom > 0 && rect.top < innerHeight) video.play().catch(() => {});
-      else video.pause();
-    });
-  });
-  function applyMotionPreference() {
-    motionEnabled = !motionPreference.matches && !userPaused;
-    body.classList.toggle('motion-paused', !motionEnabled);
-    stopMotion();
-    startMotion();
-    updateScroll();
-    motionToggle.disabled = motionPreference.matches;
-    motionToggle.textContent = motionPreference.matches ? 'Reduced motion enabled' : userPaused ? 'Resume animations' : 'Pause animations';
-    motionToggle.setAttribute('aria-pressed', String(!motionEnabled));
-    document.querySelectorAll('video').forEach(video => {
-      video.autoplay = motionEnabled;
-      const rect = video.getBoundingClientRect();
-      if (motionEnabled && !document.hidden && rect.bottom > 0 && rect.top < innerHeight) video.play().catch(() => {});
-      else video.pause();
-    });
-  }
-  motionToggle.addEventListener('click', () => {
-    userPaused = !userPaused;
-    applyMotionPreference();
-  });
-  motionPreference.addEventListener('change', applyMotionPreference);
-  applyMotionPreference();
-})();
+      // Play videos near the viewport; pause when off-screen.
+      const videoObserver = 'IntersectionObserver' in window
+        ? new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+              const video = entry.target;
 
+              if (
+                entry.isIntersecting &&
+                motionEnabled &&
+                !document.hidden
+              ) {
+                video.play().catch(() => {});
+              } else {
+                video.pause();
+              }
+            });
+          }, { rootMargin: '100px' })
+        : null;
+
+      document.querySelectorAll('video').forEach(video => {
+        function restoreVideo() {
+          video.parentElement.classList.remove('video-unavailable');
+          video.style.removeProperty('display');
+          delete video.dataset.fallbackShown;
+
+          const panel = video.nextElementSibling;
+
+          if (panel?.classList.contains('visual-fallback')) {
+            panel.remove();
+          }
+        }
+
+        video.addEventListener('loadeddata', restoreVideo);
+        video.addEventListener('playing', restoreVideo);
+
+        function unavailableVideo() {
+          if (video.dataset.fallbackShown) return;
+
+          video.dataset.fallbackShown = 'true';
+          video.parentElement.classList.add('video-unavailable');
+          video.style.display = 'none';
+
+          if (
+            video.parentElement.classList.contains('split-visual-premium')
+          ) {
+            const panel = document.createElement('div');
+            const label = document.createElement('span');
+
+            panel.className = 'visual-fallback';
+            label.textContent =
+              video.closest('section').querySelector('h2')?.textContent
+              || 'ZEUSTECH';
+
+            panel.append(label);
+            video.after(panel);
+          }
+        }
+
+        video.addEventListener('error', unavailableVideo, { once: true });
+
+        // Let the browser try alternative sources before showing a fallback.
+        video.querySelectorAll('source').forEach(source => {
+          source.addEventListener('error', () => {
+            window.setTimeout(() => {
+              if (video.error || video.networkState === 3) {
+                unavailableVideo();
+              }
+            }, 500);
+          }, { once: true });
+        });
+
+        if (video.error || video.networkState === 3) {
+          unavailableVideo();
+        }
+
+        video.muted = true;
+        video.preload = 'metadata';
+
+        if (!motionEnabled) video.pause();
+
+        videoObserver?.observe(video);
+      });
+
+      document.addEventListener('visibilitychange', () => {
+        document.querySelectorAll('video').forEach(video => {
+          const rect = video.getBoundingClientRect();
+
+          if (
+            !document.hidden &&
+            motionEnabled &&
+            rect.bottom > 0 &&
+            rect.top < innerHeight
+          ) {
+            video.play().catch(() => {});
+          } else {
+            video.pause();
+          }
+        });
+      });
+
+      function applyMotionPreference() {
+        motionEnabled = !motionPreference.matches && !userPaused;
+
+        body.classList.toggle('motion-paused', !motionEnabled);
+
+        stopMotion();
+        startMotion();
+        updateScroll();
+
+        motionToggle.disabled = motionPreference.matches;
+        motionToggle.textContent = motionPreference.matches
+          ? 'Reduced motion enabled'
+          : userPaused
+            ? 'Resume animations'
+            : 'Pause animations';
+
+        motionToggle.setAttribute(
+          'aria-pressed',
+          String(!motionEnabled)
+        );
+
+        document.querySelectorAll('video').forEach(video => {
+          video.autoplay = motionEnabled;
+
+          const rect = video.getBoundingClientRect();
+
+          if (
+            motionEnabled &&
+            !document.hidden &&
+            rect.bottom > 0 &&
+            rect.top < innerHeight
+          ) {
+            video.play().catch(() => {});
+          } else {
+            video.pause();
+          }
+        });
+      }
+
+      motionToggle.addEventListener('click', () => {
+        userPaused = !userPaused;
+        applyMotionPreference();
+      });
+
+      motionPreference.addEventListener('change', applyMotionPreference);
+      applyMotionPreference();
+    })();
   </script>
-
 </body>
 </html>
