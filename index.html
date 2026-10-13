@@ -152,7 +152,6 @@
     .footer-premium a { color: var(--color-accent); border-bottom: 1px solid var(--color-accent); }
     .footer-premium a:hover { opacity: 0.7; }
 
-    /* BASE RESPONSIVE STYLES */
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(30px); }
       to { opacity: 1; transform: translateY(0); }
@@ -205,7 +204,7 @@
     .header-premium .nav-cta:hover { color: #16324d !important; background: #e8f3fa; border-color: #236c97; }
     .menu-toggle { display: none; align-items: center; gap: 8px; padding: 10px 12px; color: #16324d; border: 1px solid #ccdae5; background: #fff; border-radius: 8px; font: 600 .75rem var(--font-modern); cursor: pointer; }
 
-    /* Full-strength hero video */
+    /* HERO VIDEO: NO OVERLAY */
     .hero-premium { min-height: 850px; height: 100svh; max-height: 1200px; padding: 150px 6% 110px; background: #f5f9fc; isolation: isolate; }
     .hero-premium video { opacity: 1; filter: none; }
     .hero-premium::before, .hero-premium::after { content: none; background: none; }
@@ -251,7 +250,7 @@
       border-color: #97b6c9;
     }
 
-    /* Clickable Studio video */
+    /* CLICKABLE STUDIO VIDEO */
     .studio-channel-link { display: block; flex: 1 1 46%; min-width: 0; position: relative; border: 0; }
     .studio-channel-link .split-visual-premium { height: 100%; min-height: 530px; }
     .studio-channel-link .split-visual-premium video { filter: none; opacity: 1; }
@@ -386,7 +385,6 @@
       50% { background-position: 80% 50%; }
     }
 
-    /* RESPONSIVE CINEMATIC LAYOUT */
     @media (max-width:1100px) {
       .innovations-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
       .campaign-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
@@ -460,7 +458,7 @@
       scroll-behavior: auto;
     }
 
-    /* HERO READABILITY CORRECTION */
+    /* PREVIOUS HERO TYPOGRAPHY SETTINGS */
     .hero-content {
       max-width: 1000px;
       margin-right: auto;
@@ -512,7 +510,6 @@
       background: #e7f2f9;
     }
 
-    /* MUSIC LABEL / FUTURE VENUE CLARITY */
     .studio-concept-label {
       position: absolute;
       z-index: 5;
@@ -564,6 +561,139 @@
         left: 14px;
         right: 14px;
         font-size: .6rem;
+      }
+    }
+
+    /* FINAL HERO CORRECTION: TRANSPARENT BACKGROUND */
+    .hero-content {
+      max-width: 1280px;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      box-shadow: none;
+    }
+
+    .hero-content h1 {
+      color: #fff !important;
+      background-image: none;
+      -webkit-text-stroke: 1px #17334c;
+      text-shadow: 0 2px 2px #17334c, 0 4px 12px #071d35cc;
+    }
+
+    .hero-content p,
+    .hero-content .hero-pre-title {
+      color: #fff;
+      text-shadow:
+        -1px -1px 0 #17334c,
+         1px -1px 0 #17334c,
+        -1px  1px 0 #17334c,
+         1px  1px 0 #17334c,
+         0 3px 7px #071d35;
+    }
+
+    .hero-content p {
+      font-weight: 600;
+    }
+
+    .hero-content .hero-pre-title::before {
+      background: #fff;
+    }
+
+    .hero-content .hero-divider {
+      background: linear-gradient(90deg,#fff,#ffffffa6,transparent);
+    }
+
+    .hero-content .hero-cta,
+    .hero-content .hero-cta:hover {
+      color: #fff;
+      background: transparent;
+      border-color: #fff;
+      text-shadow:
+        -1px -1px 0 #17334c,
+         1px 1px 0 #17334c,
+         0 2px 6px #071d35;
+      box-shadow: 0 0 0 1px #17334c70;
+    }
+
+    /* STUDIO OVERVIEW AND EXPANDED INFORMATION */
+    .studio-services {
+      font-size: .78rem !important;
+      font-weight: 600;
+      line-height: 1.9;
+      color: #426b83;
+    }
+
+    .studio-details {
+      margin: 0;
+      padding: 26px 6%;
+      border-top: 1px solid #dce7ef;
+      border-bottom: 1px solid #dce7ef;
+      background: #f7fafc;
+    }
+
+    .studio-details > summary {
+      cursor: pointer;
+      color: #234e69;
+      font: 600 .85rem/1.7 var(--font-modern);
+      padding: 12px 0;
+    }
+
+    .studio-details > summary:focus-visible {
+      outline: 3px solid #277fa8;
+      outline-offset: 6px;
+    }
+
+    .studio-details[open] {
+      padding-top: 40px;
+      padding-bottom: 60px;
+    }
+
+    .studio-details-content {
+      max-width: 1000px;
+      margin: 20px auto 0;
+    }
+
+    .studio-details-content h2 {
+      font-size: clamp(2.3rem,4vw,3.8rem);
+      margin-bottom: 20px;
+    }
+
+    .studio-details-content h3 {
+      font-size: 1.9rem;
+      margin: 32px 0 16px;
+    }
+
+    .studio-details-content h4 {
+      font-size: 1.4rem;
+      margin: 20px 0 10px;
+    }
+
+    .studio-details-content p {
+      margin-bottom: 18px;
+      font-size: .96rem;
+    }
+
+    .studio-details-content .studio-details-tagline {
+      font: 500 1.45rem/1.4 var(--font-classic);
+      color: #446e87;
+    }
+
+    @media (max-width:760px) {
+      .hero-content {
+        padding: 0;
+        border-radius: 0;
+      }
+
+      .hero-content h1 {
+        -webkit-text-stroke: .7px #17334c;
+      }
+
+      .studio-details {
+        padding-left: 6%;
+        padding-right: 6%;
       }
     }
   </style>
@@ -740,7 +870,7 @@
         </div>
       </section>
 
-      <!-- 6. ZEUSTECH LIVE STUDIO — MUSIC LABEL -->
+      <!-- 6. ZEUSTECH LIVE STUDIO — HOMEPAGE OVERVIEW -->
       <section id="live-studio" class="split-premium bg-alt">
         <a
           class="studio-channel-link"
@@ -767,35 +897,41 @@
         </a>
 
         <div class="split-content-premium">
-          <div class="chapter-label reveal">05 / Music label & artist development</div>
+          <div class="chapter-label reveal">
+            05 / Music label & artist development
+          </div>
+
           <h2 class="glossy-title reveal">ZeusTech Live Studio</h2>
 
           <p style="font-size: 1.2rem; font-family: var(--font-classic); color: var(--color-accent); margin-bottom: 20px;">
-            African Talent. Original Sound. A Bigger Stage.
+            Building Artists. Producing Music. Creating Global Entertainment.
           </p>
 
           <p>
-            ZeusTech Live Studio is an active music label and production company
-            dedicated to young, emerging African artists. We sign and support
-            upcoming talent, record and produce their music, and promote their
-            releases through our platforms, including STEEZE.
+            ZeusTech Live Studio is the music, artist development and
+            entertainment division of ZeusTech (Pty) Ltd. We discover,
+            develop, produce, manage and promote selected artists through
+            long-term creative partnerships designed to build sustainable
+            careers and valuable entertainment brands.
           </p>
 
           <p>
-            Our artists are already recording their songs under ZeusTech Live
-            Studio. Discover their music and music videos on our YouTube channel,
-            and follow the talent we are helping bring to new audiences.
+            From music production and artist management to live performance,
+            visual content, branding and digital promotion, we provide artists
+            with the creative and business infrastructure required to grow.
           </p>
 
-          <div class="studio-future">
-            <h3>Our next chapter: a live music theatre</h3>
-            <p>
-              We plan to build a ZeusTech Live Studio music theatre where our
-              artists can perform and connect with live audiences. Our ambition
-              is to create Africa's biggest live music stage for emerging talent.
-              The theatre is a future project and has not yet been built.
-            </p>
-          </div>
+          <p>
+            <strong>KingZizi is the first artist being developed under
+            ZeusTech Live Studio</strong>, marking the beginning of our
+            mission to build a new generation of African artists for
+            global audiences.
+          </p>
+
+          <p class="studio-services">
+            Artist Development • Music Production • Artist Management •
+            Live Performance • Promotion • Visual Production
+          </p>
 
           <div class="btn-group">
             <a
@@ -808,14 +944,162 @@
             </a>
 
             <a
+              href="#studio-details"
+              class="btn-outline"
+              data-explore-studio
+            >
+              Explore more ↗
+            </a>
+
+            <a
               href="mailto:ceo@zeustechafrica.com?subject=Live%20Studio%20Partnership"
-              class="btn-primary"
+              class="btn-outline"
             >
               Label & Artist Enquiries
             </a>
           </div>
         </div>
       </section>
+
+      <!-- EXPLORE MORE: FULL STUDIO INFORMATION -->
+      <details id="studio-details" class="studio-details">
+        <summary>Explore ZeusTech Live Studio</summary>
+
+        <div class="studio-details-content">
+          <h2>ZeusTech Live Studio</h2>
+
+          <p class="studio-details-tagline">
+            Building Artists. Producing Music. Creating Global Entertainment.
+          </p>
+
+          <p>
+            <strong>ZeusTech Live Studio</strong> is the music, artist
+            development and entertainment division of
+            <strong>ZeusTech (Pty) Ltd</strong>, created to discover,
+            develop and build talented artists into sustainable
+            entertainment brands.
+          </p>
+
+          <p>
+            We work with artists from the beginning of their journey
+            through music production, creative direction, artist
+            development, branding, visual content, live performance
+            and digital promotion. Our approach goes beyond simply
+            releasing music — we build long-term partnerships with
+            the artists we represent.
+          </p>
+
+          <p>
+            Through our artist partnership model, ZeusTech Live Studio
+            invests its creative, production, technology and promotional
+            resources into developing selected artists. As the artist
+            grows, both the artist and the company participate in the
+            value and opportunities created through the partnership.
+          </p>
+
+          <h3>What We Do</h3>
+
+          <h4>Artist Discovery & Signing</h4>
+          <p>
+            We identify promising artists with strong creative potential
+            and provide them with the structure, resources and support
+            required to develop professionally.
+          </p>
+
+          <h4>Music Production</h4>
+          <p>
+            From original songs and studio production to live
+            arrangements, collaborations and performance recordings,
+            we help artists create music capable of competing in
+            today's global entertainment market.
+          </p>
+
+          <h4>Artist Development & Management</h4>
+          <p>
+            We help shape the complete artist — their sound, identity,
+            performance, brand positioning, content strategy and
+            long-term career direction.
+          </p>
+
+          <h4>Promotion & Digital Growth</h4>
+          <p>
+            Using digital platforms, social media, video content and
+            ZeusTech's wider technology capabilities, we help artists
+            build audiences and expand their reach locally and
+            internationally.
+          </p>
+
+          <h4>Live Performance & Visual Production</h4>
+          <p>
+            ZeusTech Live Studio develops performance concepts,
+            live-band productions, music visuals, promotional content
+            and other creative assets that bring each artist's
+            identity to life.
+          </p>
+
+          <h3>Our First Artist — KingZizi</h3>
+
+          <p>
+            <strong>KingZizi</strong> is the first artist being developed
+            under ZeusTech Live Studio.
+          </p>
+
+          <p>
+            Through KingZizi, we are building the foundation of our
+            artist-development model — combining original music,
+            live performances, collaborations, visual production
+            and digital promotion under one coordinated
+            entertainment strategy.
+          </p>
+
+          <p>
+            Projects produced through ZeusTech Live Studio include
+            original releases such as <strong>JESUS BABY</strong>
+            as well as live music productions and collaborations,
+            including <strong>Give Me The Money by Davido —
+            Reggae Live Cover by KingZizi featuring Black J on Sax</strong>.
+          </p>
+
+          <h3>More Than a Record Label</h3>
+
+          <p>
+            ZeusTech Live Studio combines
+            <strong>music, entertainment, technology and
+            business development</strong>.
+          </p>
+
+          <p>
+            As part of the wider ZeusTech ecosystem, our long-term
+            vision is to build an African entertainment company
+            capable of discovering talent, producing world-class
+            creative work, developing valuable artist brands and
+            connecting African artists with audiences across the world.
+          </p>
+
+          <h3>Watch ZeusTech Live Studio</h3>
+
+          <p>
+            Follow the journey of our artists, watch live performances,
+            music releases, collaborations and new productions on the
+            <strong>ZeusTech Live Studio YouTube Channel</strong>.
+          </p>
+
+          <div class="btn-group">
+            <a
+              href="https://www.youtube.com/@ZeusTechLiveStudio"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-primary"
+            >
+              ▶ WATCH ON YOUTUBE
+            </a>
+
+            <a href="#live-studio" class="btn-outline">
+              Back to the Studio overview ↑
+            </a>
+          </div>
+        </div>
+      </details>
 
       <!-- 7. ZEUSCLEAN -->
       <section class="split-premium bg-light">
@@ -1251,6 +1535,28 @@
 
       const visibleTitles = new Set();
 
+      // Explore more reveals the complete Studio information.
+      const studioDetails = document.getElementById('studio-details');
+
+      document.querySelectorAll('[data-explore-studio]').forEach(link => {
+        link.addEventListener('click', () => {
+          studioDetails.open = true;
+          studioDetails.querySelector('summary').focus({
+            preventScroll: true
+          });
+        });
+      });
+
+      if (window.location.hash === '#studio-details') {
+        studioDetails.open = true;
+      }
+
+      window.addEventListener('hashchange', () => {
+        if (window.location.hash === '#studio-details') {
+          studioDetails.open = true;
+        }
+      });
+
       // Navigation remains available when JavaScript is disabled.
       body.classList.add('navigation-ready');
 
@@ -1286,7 +1592,8 @@
         framePending = false;
 
         const y = window.scrollY;
-        const distance = document.documentElement.scrollHeight - window.innerHeight;
+        const distance =
+          document.documentElement.scrollHeight - window.innerHeight;
 
         document.documentElement.style.setProperty(
           '--reading-progress',
@@ -1296,7 +1603,10 @@
         header.classList.toggle('scrolled', y > 50);
         topLink.hidden = y < 650;
 
-        const progress = Math.min(1, y / Math.max(1, hero.offsetHeight));
+        const progress = Math.min(
+          1,
+          y / Math.max(1, hero.offsetHeight)
+        );
 
         hero.style.setProperty(
           '--hero-shift',
@@ -1316,8 +1626,14 @@
         }
       }
 
-      window.addEventListener('scroll', scheduleScroll, { passive: true });
-      window.addEventListener('resize', scheduleScroll, { passive: true });
+      window.addEventListener('scroll', scheduleScroll, {
+        passive: true
+      });
+
+      window.addEventListener('resize', scheduleScroll, {
+        passive: true
+      });
+
       updateScroll();
 
       // Preserve accessible headings while animating their visual words.
@@ -1557,9 +1873,11 @@
           }
         }
 
-        video.addEventListener('error', unavailableVideo, { once: true });
+        video.addEventListener('error', unavailableVideo, {
+          once: true
+        });
 
-        // Try alternative video sources before showing a fallback.
+        // Try alternative sources before displaying a fallback.
         video.querySelectorAll('source').forEach(source => {
           source.addEventListener('error', () => {
             window.setTimeout(() => {
