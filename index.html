@@ -4,88 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>ZEUSTECH — Innovating Africa at the Level of Creation</title>
-  <meta name="description" content="ZeusTech is Africa's innovation powerhouse — building protected, high-impact technologies.">
+  <meta name="description" content="ZeusTech is Africa's innovation powerhouse — building protected, high-impact technologies in FinTech, Human Tech, and smart infrastructure.">
   <link rel="icon" type="image/png" href="favicon.png">
   
   <!-- Premium Typography -->
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-      /* --- VERIFICATION & PARTNERSHIPS --- */
-    .verification-section, .partnerships-section {
-      padding: 80px 60px;
-    }
-    .verification-section { background: var(--color-bg-alt); }
-    .partnerships-section { background: var(--color-light); border-top: 1px solid rgba(10,14,39,0.05); }
-    
-    .verification-grid, .partnerships-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 40px;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-    .verification-box, .partnership-box {
-      background: var(--color-light);
-      padding: 30px;
-      border-radius: 8px;
-      border-left: 4px solid var(--color-accent);
-      box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-    }
-    .partnership-box {
-      background: var(--color-bg-alt);
-      border-left: none;
-      border-top: 4px solid var(--color-accent);
-      text-align: center;
-    }
-    .verification-box h3, .partnership-box h3 {
-      font-family: var(--font-classic);
-      font-size: 1.5rem;
-      margin-bottom: 15px;
-      color: var(--color-primary);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      justify-content: center;
-    }
-    .verification-box h3 { justify-content: flex-start; }
-    
-    .verification-box p, .verification-box li, .partnership-box p, .partnership-box li {
-      font-size: 0.95rem;
-      color: var(--color-text);
-      line-height: 1.7;
-      margin-bottom: 8px;
-    }
-    .verification-box ul, .partnership-box ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      text-align: left;
-    }
-    .verification-box li::before, .partnership-box li::before {
-      content: "•";
-      color: var(--color-accent);
-      font-weight: bold;
-      margin-right: 8px;
-    }
-    .supporters-list {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 15px;
-      margin-top: 20px;
-    }
-    .supporter-tag {
-      background: var(--color-light);
-      padding: 8px 20px;
-      border-radius: 20px;
-      font-size: 0.85rem;
-      font-weight: 600;
-      color: var(--color-primary);
-      border: 1px solid rgba(10,14,39,0.1);
-    }
-    @media (max-width: 968px) {
-      .verification-section, .partnerships-section { padding: 60px 30px; }
-    }
+  
   <style>
     :root {
       --color-primary: #0A0E27;
@@ -99,490 +24,147 @@
     }
     
     * { margin: 0; padding: 0; box-sizing: border-box; }
-    
-    body { 
-      font-family: var(--font-modern); 
-      background: var(--color-light); 
-      color: var(--color-text); 
-      line-height: 1.7; 
-      overflow-x: hidden; 
-    }
-    
-    h1, h2, h3, h4 { 
-      font-family: var(--font-classic); 
-      font-weight: 600; 
-      color: var(--color-primary); 
-      letter-spacing: 0.02em; 
-    }
+    body { font-family: var(--font-modern); background: var(--color-light); color: var(--color-text); line-height: 1.7; overflow-x: hidden; }
+    h1, h2, h3, h4 { font-family: var(--font-classic); font-weight: 600; color: var(--color-primary); letter-spacing: 0.02em; }
+    a { text-decoration: none; transition: all 0.3s ease; }
     
     /* --- HEADER --- */
-    .header-premium { 
-      position: fixed; 
-      top: 0; 
-      width: 100%; 
-      display: flex; 
-      justify-content: space-between; 
-      align-items: center; 
-      padding: 35px 60px; 
-      z-index: 1000; 
-      background: linear-gradient(to bottom, rgba(10,14,39,0.5) 0%, transparent 100%); 
-      backdrop-filter: blur(2px); 
-      transition: all 0.4s ease; 
-    }
-    .header-premium.scrolled { 
-      background: rgba(255, 255, 255, 0.98); 
-      backdrop-filter: blur(15px); 
-      padding: 20px 60px; 
-      box-shadow: 0 4px 20px rgba(0,0,0,0.05); 
-    }
-    .header-premium .logo img { 
-      height: 75px; 
-      filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4)); 
-      transition: height 0.4s ease; 
-    }
-    .header-premium.scrolled .logo img { 
-      height: 55px; 
-      filter: drop-shadow(0 2px 8px rgba(0,0,0,0.1)); 
-    }
-    .header-premium .main-nav { 
-      display: flex; 
-      align-items: center; 
-      gap: 40px; 
-    }
-    .header-premium .main-nav a { 
-      font-family: var(--font-modern); 
-      font-size: 0.85rem; 
-      font-weight: 600; 
-      letter-spacing: 2px; 
-      text-transform: uppercase; 
-      color: #FFFFFF; 
-      text-decoration: none; 
-      position: relative; 
-      transition: color 0.3s ease; 
-    }
-    .header-premium.scrolled .main-nav a { 
-      color: var(--color-primary); 
-    }
-    .header-premium .main-nav a::after { 
-      content: ''; 
-      position: absolute; 
-      bottom: -5px; 
-      left: 0; 
-      width: 0; 
-      height: 2px; 
-      background: var(--color-accent); 
-      transition: width 0.3s ease; 
-    }
-    .header-premium .main-nav a:hover { 
-      color: var(--color-accent); 
-    }
-    .header-premium .main-nav a:hover::after { 
-      width: 100%; 
-    }
-    .header-premium .nav-cta { 
-      padding: 12px 32px; 
-      background: rgba(255,255,255,0.1); 
-      color: #FFFFFF !important; 
-      border: 1px solid rgba(255,255,255,0.4); 
-      border-radius: 0; 
-      font-weight: 700; 
-      letter-spacing: 2px; 
-    }
-    .header-premium.scrolled .nav-cta { 
-      background: var(--color-primary); 
-      color: var(--color-light) !important; 
-      border-color: var(--color-primary); 
-    }
-    .header-premium .nav-cta::after { 
-      display: none; 
-    }
-    .header-premium .nav-cta:hover { 
-      background: var(--color-accent); 
-      color: var(--color-primary) !important; 
-      border-color: var(--color-accent); 
-    }
-    
+    .header-premium { position: fixed; top: 0; width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 25px 60px; z-index: 1000; background: linear-gradient(to bottom, rgba(10,14,39,0.6) 0%, transparent 100%); backdrop-filter: blur(2px); transition: all 0.4s ease; }
+    .header-premium.scrolled { background: rgba(255, 255, 255, 0.98); backdrop-filter: blur(15px); padding: 15px 60px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+    .header-premium .logo img { height: 65px; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.4)); transition: height 0.4s ease; }
+    .header-premium.scrolled .logo img { height: 50px; filter: drop-shadow(0 2px 8px rgba(0,0,0,0.1)); }
+    .header-premium .main-nav { display: flex; align-items: center; gap: 30px; }
+    .header-premium .main-nav a { font-family: var(--font-modern); font-size: 0.8rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; color: #FFFFFF; position: relative; }
+    .header-premium.scrolled .main-nav a { color: var(--color-primary); }
+    .header-premium .main-nav a::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 0; height: 2px; background: var(--color-accent); transition: width 0.3s ease; }
+    .header-premium .main-nav a:hover { color: var(--color-accent); }
+    .header-premium .main-nav a:hover::after { width: 100%; }
+    .header-premium .nav-cta { padding: 10px 24px; background: rgba(255,255,255,0.15); color: #FFFFFF !important; border: 1px solid rgba(255,255,255,0.4); border-radius: 4px; }
+    .header-premium.scrolled .nav-cta { background: var(--color-primary); color: var(--color-light) !important; border-color: var(--color-primary); }
+    .header-premium .nav-cta:hover { background: var(--color-accent); border-color: var(--color-accent); color: var(--color-primary) !important; }
+    .header-premium .nav-cta::after { display: none; }
+
     /* --- HERO --- */
-    .hero-premium { 
-      position: relative; 
-      height: 100vh; 
-      width: 100%; 
-      display: flex; 
-      align-items: center; 
-      justify-content: center; 
-      overflow: hidden; 
-    }
-    .hero-premium video { 
-      position: absolute; 
-      top: 0; 
-      left: 0; 
-      width: 100%; 
-      height: 100%; 
-      object-fit: cover; 
-      z-index: 0; 
-    }
-    .hero-premium::before { 
-      content: ''; 
-      position: absolute; 
-      top: 0; 
-      left: 0; 
-      width: 100%; 
-      height: 100%; 
-      background: linear-gradient(to bottom, rgba(10,14,39,0.75) 0%, rgba(10,14,39,0.45) 100%); 
-      z-index: 1; 
-    }
-    .hero-content { 
-      position: relative; 
-      z-index: 2; 
-      text-align: center; 
-      max-width: 1100px; 
-      padding: 0 40px; 
-    }
-    .hero-pre-title { 
-      font-family: var(--font-modern); 
-      font-size: 1rem; 
-      font-weight: 700; 
-      letter-spacing: 8px; 
-      color: var(--color-accent); 
-      text-transform: uppercase; 
-      margin-bottom: 24px; 
-      opacity: 0; 
-      animation: fadeInUp 1s ease-out forwards; 
-      animation-delay: 0.2s; 
-    }
-    .hero-content h1 { 
-      font-family: var(--font-classic); 
-      font-size: 5.5rem; 
-      font-weight: 400; 
-      color: var(--color-light); 
-      line-height: 1.1; 
-      margin-bottom: 24px; 
-      letter-spacing: 2px; 
-      text-shadow: 0 4px 25px rgba(0,0,0,0.6); 
-      opacity: 0; 
-      animation: fadeInUp 1.2s ease-out forwards; 
-      animation-delay: 0.4s; 
-    }
-    .hero-divider { 
-      width: 80px; 
-      height: 3px; 
-      background: var(--color-accent); 
-      margin: 0 auto 30px auto; 
-      opacity: 0; 
-      animation: fadeInUp 1s ease-out forwards; 
-      animation-delay: 0.5s; 
-    }
-    .hero-content p { 
-      font-family: var(--font-modern); 
-      font-size: 1.25rem; 
-      font-weight: 400; 
-      color: rgba(255,255,255,0.95); 
-      margin-bottom: 40px; 
-      letter-spacing: 0.5px; 
-      text-shadow: 0 2px 10px rgba(0,0,0,0.5); 
-      opacity: 0; 
-      animation: fadeInUp 1.2s ease-out forwards; 
-      animation-delay: 0.6s; 
-    }
-    .hero-cta { 
-      display: inline-block; 
-      padding: 16px 48px; 
-      background: transparent; 
-      color: var(--color-light); 
-      text-decoration: none; 
-      font-family: var(--font-modern); 
-      font-weight: 600; 
-      font-size: 0.85rem; 
-      letter-spacing: 3px; 
-      text-transform: uppercase; 
-      border: 2px solid rgba(255,255,255,0.6); 
-      transition: all 0.4s ease; 
-      opacity: 0; 
-      animation: fadeInUp 1.2s ease-out forwards; 
-      animation-delay: 0.8s; 
-    }
-    .hero-cta:hover { 
-      background: var(--color-accent); 
-      color: var(--color-primary); 
-      border-color: var(--color-accent); 
-      transform: translateY(-3px); 
-      box-shadow: 0 10px 30px rgba(0,0,0,0.4); 
-    }
-    
-    /* --- SPLIT-SCREEN --- */
-    .split-premium { 
-      display: flex; 
-      min-height: 90vh; 
-      width: 100%; 
-      align-items: center; 
-    }
-    .split-visual-premium { 
-      flex: 1; 
-      height: 100%; 
-      min-height: 600px; 
-      overflow: hidden; 
-      position: relative; 
-    }
-    .split-visual-premium video, .split-visual-premium img { 
-      width: 100%; 
-      height: 100%; 
-      object-fit: cover; 
-      display: block; 
-      transition: transform 1.2s ease; 
-    }
-    .split-visual-premium:hover video, .split-visual-premium:hover img { 
-      transform: scale(1.05); 
-    }
-    .split-content-premium { 
-      flex: 1; 
-      padding: 100px 80px; 
-      background: var(--color-light); 
-    }
-    .split-content-premium.alt-bg { 
-      background: var(--color-bg-alt); 
-    }
-    .split-content-premium h2 { 
-      font-family: var(--font-classic); 
-      font-size: 3.2rem; 
-      font-weight: 400; 
-      margin-bottom: 30px; 
-      color: var(--color-primary); 
-      letter-spacing: 2px; 
-    }
-    .split-content-premium p { 
-      font-family: var(--font-modern); 
-      font-size: 1.1rem; 
-      color: var(--color-text); 
-      margin-bottom: 24px; 
-      line-height: 1.8; 
-      font-weight: 400; 
-    }
-    .split-content-premium strong { 
-      font-weight: 700; 
-      color: var(--color-primary); 
-    }
-    .values-list { 
-      list-style: none; 
-      margin-top: 40px; 
-    }
-    .values-list li { 
-      padding: 16px 0; 
-      padding-left: 45px; 
-      position: relative; 
-      font-family: var(--font-modern); 
-      font-size: 1.05rem; 
-      color: var(--color-text); 
-      border-bottom: 1px solid rgba(10,14,39,0.08); 
-      transition: all 0.3s ease; 
-    }
-    .values-list li:hover { 
-      padding-left: 50px; 
-      color: var(--color-primary); 
-    }
-    .values-list li::before { 
-      content: '✦'; 
-      position: absolute; 
-      left: 0; 
-      top: 16px; 
-      color: var(--color-accent); 
-      font-size: 1.4rem; 
-      font-weight: 300; 
-    }
-    
-    /* --- SOLUTIONS GRID --- */
-    .solutions-section { 
-      padding: 100px 60px; 
-      background: var(--color-bg-alt); 
-    }
-    .section-header { 
-      text-align: center; 
-      max-width: 800px; 
-      margin: 0 auto 60px auto; 
-    }
-    .section-header h2 { 
-      font-size: 3.2rem; 
-      margin-bottom: 20px; 
-    }
-    .section-header p { 
-      font-size: 1.1rem; 
-      color: var(--color-text); 
-    }
-    .solutions-grid { 
-      display: grid; 
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
-      gap: 40px; 
-      max-width: 1200px; 
-      margin: 0 auto; 
-    }
-    .solution-card { 
-      background: var(--color-light); 
-      border-radius: 8px; 
-      overflow: hidden; 
-      box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
-      transition: all 0.4s ease; 
-    }
-    .solution-card:hover { 
-      transform: translateY(-8px); 
-      box-shadow: 0 20px 40px rgba(0,0,0,0.1); 
-    }
-    .solution-visual { 
-      height: 220px; 
-      overflow: hidden; 
-    }
-    .solution-visual img { 
-      width: 100%; 
-      height: 100%; 
-      object-fit: cover; 
-      transition: transform 0.6s ease; 
-    }
-    .solution-card:hover .solution-visual img { 
-      transform: scale(1.05); 
-    }
-    .solution-content { 
-      padding: 30px; 
-    }
-    .solution-content h3 { 
-      font-family: var(--font-classic); 
-      font-size: 1.8rem; 
-      margin-bottom: 12px; 
-      color: var(--color-primary); 
-    }
-    .solution-content p { 
-      font-size: 1rem; 
-      color: var(--color-text); 
-      margin-bottom: 20px; 
-      line-height: 1.6; 
-    }
-    .solution-link { 
-      font-family: var(--font-modern); 
-      font-size: 0.85rem; 
-      font-weight: 700; 
-      color: var(--color-accent); 
-      text-decoration: none; 
-      letter-spacing: 1px; 
-      text-transform: uppercase; 
-      transition: color 0.3s ease; 
-    }
-    .solution-link:hover { 
-      color: var(--color-primary); 
-    }
-    
+    .hero-premium { position: relative; height: 100vh; width: 100%; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+    .hero-premium video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+    .hero-premium::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(10,14,39,0.75) 0%, rgba(10,14,39,0.45) 100%); z-index: 1; }
+    .hero-content { position: relative; z-index: 2; text-align: center; max-width: 1100px; padding: 0 40px; }
+    .hero-pre-title { font-family: var(--font-modern); font-size: 0.9rem; font-weight: 700; letter-spacing: 6px; color: var(--color-accent); text-transform: uppercase; margin-bottom: 20px; opacity: 0; animation: fadeInUp 1s ease-out forwards; animation-delay: 0.2s; }
+    .hero-content h1 { font-family: var(--font-classic); font-size: 5rem; font-weight: 400; color: var(--color-light); line-height: 1.1; margin-bottom: 20px; letter-spacing: 2px; text-shadow: 0 4px 25px rgba(0,0,0,0.6); opacity: 0; animation: fadeInUp 1.2s ease-out forwards; animation-delay: 0.4s; }
+    .hero-divider { width: 80px; height: 3px; background: var(--color-accent); margin: 0 auto 25px auto; opacity: 0; animation: fadeInUp 1s ease-out forwards; animation-delay: 0.5s; }
+    .hero-content p { font-family: var(--font-modern); font-size: 1.2rem; font-weight: 400; color: rgba(255,255,255,0.95); margin-bottom: 35px; letter-spacing: 0.5px; text-shadow: 0 2px 10px rgba(0,0,0,0.5); opacity: 0; animation: fadeInUp 1.2s ease-out forwards; animation-delay: 0.6s; }
+    .hero-cta { display: inline-block; padding: 14px 40px; background: transparent; color: var(--color-light); font-family: var(--font-modern); font-weight: 600; font-size: 0.8rem; letter-spacing: 2px; text-transform: uppercase; border: 2px solid rgba(255,255,255,0.6); border-radius: 4px; opacity: 0; animation: fadeInUp 1.2s ease-out forwards; animation-delay: 0.8s; }
+    .hero-cta:hover { background: var(--color-accent); color: var(--color-primary); border-color: var(--color-accent); transform: translateY(-3px); }
+
+    /* --- GENERAL SECTIONS --- */
+    .section-padding { padding: 100px 60px; }
+    .section-header { text-align: center; max-width: 800px; margin: 0 auto 60px auto; }
+    .section-header h2 { font-size: 3rem; margin-bottom: 15px; }
+    .section-header p { font-size: 1.1rem; color: var(--color-text); }
+    .bg-alt { background: var(--color-bg-alt); }
+    .bg-light { background: var(--color-light); }
+
+    /* --- SPLIT SCREEN (Handles both Video and Image) --- */
+    .split-premium { display: flex; min-height: 80vh; width: 100%; align-items: center; }
+    .split-visual-premium { flex: 1; height: 100%; min-height: 500px; overflow: hidden; position: relative; background: var(--color-primary); }
+    .split-visual-premium video, .split-visual-premium img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 1.2s ease; }
+    .split-visual-premium:hover video, .split-visual-premium:hover img { transform: scale(1.03); }
+    .split-content-premium { flex: 1; padding: 80px 60px; }
+    .split-content-premium h2 { font-size: 2.8rem; margin-bottom: 20px; }
+    .split-content-premium p { font-size: 1.05rem; margin-bottom: 20px; }
+    .values-list, .feature-list { list-style: none; margin-top: 30px; }
+    .values-list li, .feature-list li { padding: 12px 0; padding-left: 35px; position: relative; font-size: 1rem; border-bottom: 1px solid rgba(10,14,39,0.06); }
+    .values-list li::before, .feature-list li::before { content: '✦'; position: absolute; left: 0; top: 12px; color: var(--color-accent); font-size: 1.2rem; }
+
+    /* --- INNOVATION GRID --- */
+    .innovations-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
+    .innovation-card { background: var(--color-light); border-radius: 8px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.04); transition: all 0.4s ease; border: 1px solid rgba(10,14,39,0.05); text-align: center; padding: 30px 20px; }
+    .innovation-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px rgba(0,0,0,0.08); }
+    .innovation-card img { width: 100%; height: 180px; object-fit: cover; border-radius: 6px; margin-bottom: 20px; }
+    .innovation-card h3 { font-size: 1.4rem; margin-bottom: 10px; }
+    .innovation-card p { font-size: 0.9rem; margin-bottom: 15px; }
+    .lock-icon { font-size: 2rem; color: var(--color-accent); margin-bottom: 15px; }
+
+    /* --- DEEP DIVES (OYIN, ETC) --- */
+    .tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin: 30px 0; }
+    .tech-item { background: var(--color-bg-alt); padding: 15px; border-radius: 6px; font-size: 0.9rem; display: flex; align-items: center; gap: 10px; }
+    .tech-item i { color: var(--color-accent); }
+    .tech-stack { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+    .tech-tag { background: var(--color-primary); color: var(--color-light); padding: 6px 16px; border-radius: 20px; font-size: 0.75rem; font-weight: 600; letter-spacing: 0.5px; }
+    .btn-group { display: flex; gap: 15px; margin-top: 30px; flex-wrap: wrap; }
+    .btn-primary { padding: 12px 28px; background: var(--color-primary); color: var(--color-light); border-radius: 4px; font-weight: 600; font-size: 0.85rem; }
+    .btn-primary:hover { background: var(--color-accent); color: var(--color-primary); }
+    .btn-outline { padding: 12px 28px; background: transparent; color: var(--color-primary); border: 1px solid var(--color-primary); border-radius: 4px; font-weight: 600; font-size: 0.85rem; }
+    .btn-outline:hover { background: var(--color-primary); color: var(--color-light); }
+
+    /* --- CAMPAIGN (50 FOR 50) --- */
+    .campaign-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; margin: 30px 0; }
+    .campaign-feature { background: var(--color-light); padding: 20px; border-radius: 8px; border-left: 3px solid var(--color-accent); font-size: 0.9rem; }
+    .price-box { background: var(--color-bg-alt); padding: 30px; border-radius: 8px; text-align: center; margin: 30px 0; }
+    .price-old { font-size: 1.5rem; color: #999; text-decoration: line-through; }
+    .price-new { font-size: 2.5rem; font-weight: 800; color: var(--color-accent); margin: 10px 0; }
+    .slot-bar { width: 100%; max-width: 400px; height: 8px; background: #ddd; border-radius: 4px; margin: 20px auto; overflow: hidden; }
+    .slot-fill { width: 10%; height: 100%; background: var(--color-accent); }
+
+    /* --- PROCESS & PRICING --- */
+    .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 20px; margin-top: 40px; }
+    .process-step { text-align: center; padding: 20px; }
+    .process-step i { font-size: 2rem; color: var(--color-accent); margin-bottom: 15px; }
+    .process-step h4 { font-size: 1.1rem; margin-bottom: 10px; }
+    .process-step p { font-size: 0.85rem; color: var(--color-text); }
+    .pricing-table { width: 100%; max-width: 900px; margin: 0 auto; border-collapse: collapse; background: var(--color-light); box-shadow: 0 10px 30px rgba(0,0,0,0.04); border-radius: 8px; overflow: hidden; }
+    .pricing-table th, .pricing-table td { padding: 15px 20px; text-align: left; border-bottom: 1px solid rgba(10,14,39,0.06); font-size: 0.9rem; }
+    .pricing-table th { background: var(--color-primary); color: var(--color-light); font-weight: 600; }
+    .pricing-table tr:last-child td { border-bottom: none; font-weight: 700; background: var(--color-bg-alt); }
+
+    /* --- TESTIMONIALS & FAQ --- */
+    .testimonial-card { background: var(--color-bg-alt); padding: 30px; border-radius: 8px; border-left: 4px solid var(--color-accent); margin-bottom: 20px; }
+    .testimonial-card p { font-style: italic; margin-bottom: 15px; }
+    .testimonial-card span { font-weight: 700; color: var(--color-primary); font-size: 0.9rem; }
+    .faq-item { background: var(--color-light); border: 1px solid rgba(10,14,39,0.06); border-radius: 8px; padding: 20px; margin-bottom: 15px; }
+    .faq-item h4 { font-size: 1.1rem; margin-bottom: 10px; color: var(--color-primary); }
+    .faq-item p { font-size: 0.95rem; }
+
     /* --- TEAM GRID --- */
-    .team-section { 
-      padding: 100px 60px; 
-      background: var(--color-light); 
-    }
-    .team-grid { 
-      display: grid; 
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-      gap: 40px; 
-      max-width: 900px; 
-      margin: 0 auto; 
-    }
-    .team-card { 
-      text-align: center; 
-      padding: 40px 30px; 
-      background: var(--color-bg-alt); 
-      border-radius: 8px; 
-      transition: all 0.4s ease; 
-    }
-    .team-card:hover { 
-      transform: translateY(-5px); 
-      box-shadow: 0 15px 30px rgba(0,0,0,0.08); 
-    }
-    .team-photo { 
-      width: 150px; 
-      height: 150px; 
-      border-radius: 50%; 
-      overflow: hidden; 
-      margin: 0 auto 20px auto; 
-      border: 3px solid var(--color-accent); 
-    }
-    .team-photo img { 
-      width: 100%; 
-      height: 100%; 
-      object-fit: cover; 
-    }
-    .team-info h3 { 
-      font-family: var(--font-classic); 
-      font-size: 1.6rem; 
-      margin-bottom: 8px; 
-    }
-    .team-info .role { 
-      color: var(--color-accent); 
-      font-weight: 700; 
-      font-size: 0.85rem; 
-      letter-spacing: 1.5px; 
-      text-transform: uppercase; 
-      display: block; 
-      margin-bottom: 15px; 
-    }
-    .team-info p { 
-      font-size: 0.95rem; 
-      color: var(--color-text); 
-      line-height: 1.6; 
-    }
-    
+    .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; max-width: 1100px; margin: 0 auto; }
+    .team-card { text-align: center; padding: 30px 20px; background: var(--color-light); border-radius: 8px; border: 1px solid rgba(10,14,39,0.05); transition: all 0.4s ease; }
+    .team-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.06); }
+    .team-photo { width: 130px; height: 130px; border-radius: 50%; overflow: hidden; margin: 0 auto 20px auto; border: 3px solid var(--color-accent); }
+    .team-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .team-info h3 { font-size: 1.4rem; margin-bottom: 5px; }
+    .team-info .role { color: var(--color-accent); font-weight: 700; font-size: 0.8rem; letter-spacing: 1px; text-transform: uppercase; display: block; margin-bottom: 15px; }
+    .team-info p { font-size: 0.9rem; }
+
+    /* --- VERIFICATION & PARTNERSHIPS --- */
+    .verification-grid, .partnerships-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1100px; margin: 0 auto; }
+    .verification-box, .partnership-box { background: var(--color-light); padding: 30px; border-radius: 8px; border-left: 4px solid var(--color-accent); box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
+    .partnership-box { background: var(--color-bg-alt); border-left: none; border-top: 4px solid var(--color-accent); text-align: center; }
+    .verification-box h3, .partnership-box h3 { font-size: 1.3rem; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; justify-content: flex-start; }
+    .partnership-box h3 { justify-content: center; }
+    .verification-box ul, .partnership-box ul { list-style: none; padding: 0; margin: 0; text-align: left; }
+    .verification-box li, .partnership-box li { font-size: 0.9rem; margin-bottom: 8px; }
+    .verification-box li::before, .partnership-box li::before { content: "•"; color: var(--color-accent); font-weight: bold; margin-right: 8px; }
+    .supporters-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin-top: 30px; }
+    .supporter-tag { background: var(--color-light); padding: 8px 20px; border-radius: 20px; font-size: 0.85rem; font-weight: 600; border: 1px solid rgba(10,14,39,0.1); }
+
     /* --- FOOTER --- */
-    .footer-premium { 
-      background: var(--color-primary); 
-      color: var(--color-light); 
-      padding: 60px; 
-      text-align: center; 
-    }
-    .footer-premium p { 
-      font-family: var(--font-modern); 
-      font-size: 0.9rem; 
-      opacity: 0.8; 
-      letter-spacing: 1px; 
-    }
-    .footer-premium a { 
-      color: var(--color-accent); 
-      text-decoration: none; 
-      border-bottom: 1px solid var(--color-accent); 
-      transition: opacity 0.3s; 
-    }
-    .footer-premium a:hover { 
-      opacity: 0.7; 
-    }
-    
+    .footer-premium { background: var(--color-primary); color: var(--color-light); padding: 50px 60px; text-align: center; }
+    .footer-premium p { font-size: 0.85rem; opacity: 0.8; letter-spacing: 0.5px; }
+    .footer-premium a { color: var(--color-accent); border-bottom: 1px solid var(--color-accent); }
+    .footer-premium a:hover { opacity: 0.7; }
+
     /* --- ANIMATIONS & RESPONSIVE --- */
-    @keyframes fadeInUp { 
-      from { opacity: 0; transform: translateY(30px); } 
-      to { opacity: 1; transform: translateY(0); } 
-    }
-    
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
     @media (max-width: 968px) {
-      .header-premium, .header-premium.scrolled { 
-        padding: 20px 30px; 
-        flex-direction: column; 
-        gap: 20px; 
-      }
-      .header-premium .main-nav { 
-        gap: 20px; 
-        flex-wrap: wrap; 
-        justify-content: center; 
-      }
-      .hero-content h1 { 
-        font-size: 3rem; 
-      }
-      .hero-pre-title { 
-        font-size: 0.85rem; 
-        letter-spacing: 5px; 
-      }
-      .split-premium { 
-        flex-direction: column; 
-      }
-      .split-visual-premium { 
-        min-height: 400px; 
-        width: 100%; 
-      }
-      .split-content-premium { 
-        padding: 60px 30px; 
-      }
-      .solutions-section, .team-section, .footer-premium { 
-        padding: 60px 30px; 
-      }
+      .header-premium, .header-premium.scrolled { padding: 15px 20px; flex-direction: column; gap: 15px; }
+      .header-premium .main-nav { gap: 15px; flex-wrap: wrap; justify-content: center; }
+      .hero-content h1 { font-size: 2.8rem; }
+      .split-premium { flex-direction: column; }
+      .split-visual-premium { min-height: 300px; width: 100%; }
+      .split-content-premium { padding: 40px 25px; }
+      .section-padding { padding: 60px 25px; }
+      .pricing-table { font-size: 0.8rem; }
+      .pricing-table th, .pricing-table td { padding: 10px; }
     }
   </style>
 </head>
@@ -590,18 +172,18 @@
 
   <!-- HEADER -->
   <header class="header-premium" id="mainHeader">
-    <div class="logo">
-      <img src="assets/zeustech-logo-newlayout.jpg" alt="ZEUSTECH">
-    </div>
+    <div class="logo"><img src="assets/zeustech-logo-newlayout.jpg" alt="ZEUSTECH"></div>
     <nav class="main-nav">
-      <a href="#story">Our Story</a>
+      <a href="#story">Story</a>
+      <a href="#innovations">Innovations</a>
       <a href="#solutions">Solutions</a>
+      <a href="#campaign">50 FOR 50</a>
       <a href="#team">Leadership</a>
-      <a href="mailto:ceo@zeustechafrica.com" class="nav-cta">Contact Us</a>
+      <a href="mailto:ceo@zeustechafrica.com" class="nav-cta">Contact</a>
     </nav>
   </header>
 
-  <!-- HERO -->
+  <!-- 1. HERO (New Combined Video) -->
   <section class="hero-premium">
     <video autoplay muted loop playsinline>
       <source src="assets/hero/hero.mp4" type="video/mp4">
@@ -615,18 +197,18 @@
     </div>
   </section>
 
-  <!-- OUR STORY -->
-  <section id="story" class="split-premium">
+  <!-- 2. OUR STORY (New Video) -->
+  <section id="story" class="split-premium bg-alt">
     <div class="split-visual-premium">
       <video autoplay muted loop playsinline>
         <source src="assets/vision/story-vision.mp4" type="video/mp4">
       </video>
     </div>
-    <div class="split-content-premium alt-bg">
+    <div class="split-content-premium">
       <h2>Our Story & Vision</h2>
       <p><strong>Mission:</strong> To structure, protect, and commercialize African innovation — transforming ideas into scalable, investor-ready technologies that solve real-world problems.</p>
       <p><strong>Vision:</strong> To become Africa's foremost technology and innovation powerhouse — empowering creators, advancing IP ownership, and driving inclusive economic growth.</p>
-      <h3 style="font-family: var(--font-classic); font-size: 1.8rem; margin-top: 50px; margin-bottom: 20px; color: var(--color-primary); letter-spacing: 1.5px;">Core Values</h3>
+      <h3 style="margin-top: 30px; font-size: 1.5rem; margin-bottom: 15px;">Core Values</h3>
       <ul class="values-list">
         <li><strong>Innovation:</strong> Constantly challenging the status quo to build solutions that matter.</li>
         <li><strong>Integrity:</strong> Upholding transparency, accountability, and ethical leadership.</li>
@@ -636,150 +218,351 @@
     </div>
   </section>
 
-  <!-- SOLUTIONS -->
-  <section id="solutions" class="solutions-section">
+  <!-- 3. INNOVATION PORTFOLIO (Old Images in Clean Grid) -->
+  <section id="innovations" class="section-padding bg-light">
     <div class="section-header">
-      <h2>Our Innovation Portfolio</h2>
+      <h2>Innovation Portfolio</h2>
       <p>Scalable, protected, and investor-ready technologies designed to solve real-world African challenges.</p>
     </div>
-    <div class="solutions-grid">
-      
-      <div class="solution-card">
-        <div class="solution-visual">
-          <img src="assets/zeusclean-data.jpg" alt="ZEUSCLEAN">
-        </div>
-        <div class="solution-content">
-          <h3>ZEUSCLEAN</h3>
-          <p>The first POPIA-certified identity & location engine for South Africa. Turn messy data into gold with human-in-the-loop AI.</p>
-          <a href="mailto:ceo@zeustechafrica.com?subject=ZEUSCLEAN%20Inquiry" class="solution-link">Learn More →</a>
-        </div>
+    <div class="innovations-grid">
+      <div class="innovation-card">
+        <img src="assets/innovations/techlab.jpg" alt="FuelPass Estimator">
+        <h3>FuelPass Estimator</h3>
+        <p>Real-time fuel cost planning for African drivers.</p>
+        <a href="/fuelpass-estimator/" target="_blank" class="btn-outline" style="font-size: 0.8rem; padding: 8px 20px;">Use Tool</a>
       </div>
-
-      <div class="solution-card">
-        <div class="solution-visual">
-          <img src="assets/steeze-studio.jpg" alt="STEEZE">
-        </div>
-        <div class="solution-content">
-          <h3>STEEZE</h3>
-          <p>The verified entertainment platform where creators keep 70% of their earnings and connect directly with fans, free from algorithmic noise.</p>
-          <a href="https://steeze.zeustechafrica.com" target="_blank" class="solution-link">Explore Platform →</a>
-        </div>
+      <div class="innovation-card">
+        <img src="assets/innovations/ai-brain.jpg" alt="Smart Urban Flow">
+        <div class="lock-icon"><i class="fas fa-lock"></i></div>
+        <h3>Smart Urban Flow</h3>
+        <p>Optimizing city movement and resource efficiency.</p>
+        <p style="font-size: 0.8rem; color: var(--color-accent); font-weight: 600;">R2–4B/year revenue potential</p>
+        <a href="mailto:ceo@zeustechafrica.com?subject=Innovation%20Access%20Request" class="btn-outline" style="font-size: 0.8rem; padding: 8px 20px;">Request Access</a>
       </div>
-
-      <div class="solution-card">
-        <div class="solution-visual">
-          <img src="assets/oyin-ops-dashboard.jpg" alt="OYIN OPS V1">
-        </div>
-        <div class="solution-content">
-          <h3>OYIN OPS V1</h3>
-          <p>A complete, production-ready admin system handling client onboarding, 9-stage order workflows, photo evidence, and financial tracking.</p>
-          <a href="https://oyinluxurygarmentcare.zeustechafrica.com" target="_blank" class="solution-link">View Case Study →</a>
-        </div>
+      <div class="innovation-card">
+        <img src="assets/innovations/humanandaibrains.JPG" alt="Seamless Daily Services">
+        <div class="lock-icon"><i class="fas fa-lock"></i></div>
+        <h3>Seamless Daily Services</h3>
+        <p>Empowering communities with instant access to trusted professionals.</p>
+        <p style="font-size: 0.8rem; color: var(--color-accent); font-weight: 600;">Scalable across 10M+ households</p>
+        <a href="mailto:ceo@zeustechafrica.com?subject=Innovation%20Access%20Request" class="btn-outline" style="font-size: 0.8rem; padding: 8px 20px;">Request Access</a>
       </div>
-
-      <div class="solution-card">
-        <div class="solution-visual">
-          <img src="assets/fuelpass-new.jpg" alt="FuelPass Estimator">
-        </div>      
-        <div class="solution-content">
-          <h3>FuelPass Estimator</h3>
-          <p>Plan fuel costs with precision for any trip and any vehicle. A practical, real-time tool for African drivers.</p>
-          <a href="/fuelpass-estimator/" target="_blank" class="solution-link">Try the Tool →</a>
-        </div>
+      <div class="innovation-card">
+        <img src="assets/innovations/digital-hand.jpg" alt="Next-Gen Finance Tools">
+        <div class="lock-icon"><i class="fas fa-lock"></i></div>
+        <h3>Next-Gen Finance Tools</h3>
+        <p>Smarter, safer financial solutions for everyday users.</p>
+        <p style="font-size: 0.8rem; color: var(--color-accent); font-weight: 600;">Licensing value: R500M–R2B</p>
+        <a href="mailto:ceo@zeustechafrica.com?subject=Innovation%20Access%20Request" class="btn-outline" style="font-size: 0.8rem; padding: 8px 20px;">Request Access</a>
       </div>
-
     </div>
   </section>
 
-    <!-- LEADERSHIP -->
-  <section id="team" class="team-section">
+  <!-- 4. DEEP DIVE: FUELPASS (Old Video in Split-Screen) -->
+  <section class="split-premium bg-alt">
+    <div class="split-visual-premium">
+      <video autoplay muted loop playsinline>
+        <source src="assets/fuelpass/fuelpass_calculator_bg.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="split-content-premium">
+      <h2>FuelPass Estimator</h2>
+      <p style="font-size: 1.2rem; font-family: var(--font-classic); color: var(--color-accent); margin-bottom: 20px;">Know Your Journey.</p>
+      <p>Plan fuel costs with precision for any trip and any vehicle. A practical, real-time tool designed specifically for African drivers to optimize their travel expenses.</p>
+      <ul class="feature-list">
+        <li>✓ Real-time Fuel Price Data</li>
+        <li>✓ Trip Distance Calculator</li>
+        <li>✓ Cost Comparison Tool</li>
+      </ul>
+      <div class="btn-group">
+        <a href="/fuelpass-estimator/" target="_blank" class="btn-primary">Try the Tool Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. DEEP DIVE: ORDER (Old Video in Split-Screen) -->
+  <section class="split-premium bg-light">
+    <div class="split-content-premium">
+      <h2>ORDER (Verilinked)</h2>
+      <p style="font-size: 1.2rem; font-family: var(--font-classic); color: var(--color-accent); margin-bottom: 20px;">Services at Your Fingertips.</p>
+      <p>Connecting communities with verified professionals on demand. A multi-billion rand opportunity to bring trust and efficiency to everyday services.</p>
+      <ul class="feature-list">
+        <li>✓ Verified Professional Network</li>
+        <li>✓ Real-time Service Booking</li>
+        <li>✓ Secure, Integrated Payments</li>
+      </ul>
+      <div class="btn-group">
+        <a href="mailto:ceo@zeustechafrica.com?subject=ORDER%20Innovation%20Access%20Request" class="btn-primary">Request Access</a>
+      </div>
+    </div>
+    <div class="split-visual-premium">
+      <video autoplay muted loop playsinline>
+        <source src="assets/order/order.mp4" type="video/mp4">
+      </video>
+    </div>
+  </section>
+
+  <!-- 6. DEEP DIVE: LIVE STUDIO (Old Video in Split-Screen) -->
+  <section class="split-premium bg-alt">
+    <div class="split-visual-premium">
+      <video autoplay muted loop playsinline>
+        <source src="assets/studio/live_studio_4k_effect.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="split-content-premium">
+      <h2>ZeusTech Live Studio</h2>
+      <p style="font-size: 1.2rem; font-family: var(--font-classic); color: var(--color-accent); margin-bottom: 20px;">The Stage for Africa's Future.</p>
+      <p>A multi-billion-rand creative-technology hub in Cape Town, empowering the next generation of African creators with world-class production facilities and digital distribution.</p>
+      <div class="btn-group">
+        <a href="mailto:ceo@zeustechafrica.com?subject=Live%20Studio%20Partnership" class="btn-primary">See the Vision</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. DEEP DIVE: ZEUSCLEAN (Old Video in Split-Screen) -->
+  <section class="split-premium bg-light">
+    <div class="split-content-premium">
+      <h2>ZEUSCLEAN</h2>
+      <p style="font-size: 1.2rem; font-family: var(--font-classic); color: var(--color-accent); margin-bottom: 20px;">The First POPIA-Certified Identity & Location Engine for the New South Africa</p>
+      <p>South Africa's most advanced data cleaning platform. We turn messy data into gold with human-in-the-loop AI, ensuring your original data is never destroyed.</p>
+      <ul class="feature-list">
+        <li>🇿🇦 SA ID Validation & Verification (Luhn Algorithm + DHA Ready)</li>
+        <li>🏠 SANS 1883 Address Standardisation (12 Official Address Types)</li>
+        <li>⚖️ POPIA-Specific Governance (Audit Trails & Consent Tracking)</li>
+        <li>🔒 Zero-Knowledge Privacy (Your Data Never Stored)</li>
+      </ul>
+      <div class="btn-group">
+        <a href="mailto:ceo@zeustechafrica.com?subject=ZEUSCLEAN%20Free%20Data%20Audit" class="btn-primary">📋 FREE DATA AUDIT</a>
+        <a href="mailto:ceo@zeustechafrica.com?subject=ZEUSCLEAN%20Quote%20Request" class="btn-outline">💰 GET A QUOTE</a>
+      </div>
+    </div>
+    <div class="split-visual-premium">
+      <video autoplay muted loop playsinline>
+        <source src="assets/datacleanse/datacleanse_bg.mp4" type="video/mp4">
+      </video>
+    </div>
+  </section>
+
+  <!-- 8. DEEP DIVE: STEEZE (Old Video in Split-Screen) -->
+  <section class="split-premium bg-alt">
+    <div class="split-visual-premium">
+      <video autoplay muted loop playsinline>
+        <source src="assets/videos/steeze-websitepage.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="split-content-premium">
+      <h2>STEEZE</h2>
+      <p style="font-size: 1.2rem; font-family: var(--font-classic); color: var(--color-accent); margin-bottom: 20px;">The Verified Entertainment Platform</p>
+      <p>Where creators get their own premium website-style profile, keep 70% of their earnings, and connect directly with verified fans — all without the noise of traditional social media.</p>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px;">
+        <div style="background: var(--color-light); padding: 20px; border-radius: 8px;">
+          <h4 style="margin-bottom: 10px; color: var(--color-accent);">🎤 FOR CREATORS</h4>
+          <ul style="list-style: none; font-size: 0.85rem; line-height: 1.8;">
+            <li>✅ Your own fully designed profile</li>
+            <li>✅ Earn 70% (independent) or 50/50 (signed)</li>
+            <li>✅ Distribute to DistroKid, YouTube & Spotify</li>
+          </ul>
+        </div>
+        <div style="background: var(--color-light); padding: 20px; border-radius: 8px;">
+          <h4 style="margin-bottom: 10px; color: var(--color-accent);">🎧 FOR FANS</h4>
+          <ul style="list-style: none; font-size: 0.85rem; line-height: 1.8;">
+            <li>✅ Pure entertainment — no politics or news</li>
+            <li>✅ Subscribe to creators (Gold = DMs + calls)</li>
+            <li>✅ Every account is ID + selfie verified</li>
+          </ul>
+        </div>
+      </div>
+      <div class="btn-group">
+        <a href="https://steeze.zeustechafrica.com" target="_blank" class="btn-primary">Explore STEEZE</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. OYIN OPS V1 CASE STUDY (Old Logo & Layout) -->
+  <section id="oyin" class="section-padding bg-light">
+    <div class="section-header">
+      <img src="assets/images/oyinlogo.png" alt="OYIN Laundry Atelier" style="max-width: 100px; border-radius: 50%; border: 3px solid var(--color-accent); margin-bottom: 20px;">
+      <h2>OYIN OPS V1</h2>
+      <p>The complete, production-ready admin system powering OYIN Laundry Atelier.</p>
+    </div>
+    <div class="tech-grid">
+      <div class="tech-item"><i class="fas fa-clipboard-list"></i> Client Onboarding</div>
+      <div class="tech-item"><i class="fas fa-sync-alt"></i> 9-Stage Order Workflow</div>
+      <div class="tech-item"><i class="fas fa-camera"></i> Photo Evidence System</div>
+      <div class="tech-item"><i class="fas fa-mobile-alt"></i> Real-Time Order Tracking</div>
+      <div class="tech-item"><i class="fas fa-file-invoice"></i> Invoicing & Receipts</div>
+      <div class="tech-item"><i class="fas fa-chart-line"></i> Financial Dashboard</div>
+      <div class="tech-item"><i class="fas fa-users-cog"></i> Subscription Management</div>
+      <div class="tech-item"><i class="fas fa-shield-alt"></i> Complete Audit Log</div>
+    </div>
+    <div class="tech-stack">
+      <span class="tech-tag">Next.js 16</span><span class="tech-tag">TypeScript</span><span class="tech-tag">PostgreSQL</span><span class="tech-tag">Supabase</span><span class="tech-tag">Vercel</span><span class="tech-tag">Tailwind CSS</span>
+    </div>
+    <div class="btn-group" style="justify-content: center;">
+      <a href="https://oyinluxurygarmentcare.zeustechafrica.com/onboarding" target="_blank" class="btn-primary">📋 Become a Client</a>
+      <a href="https://oyinluxurygarmentcare.zeustechafrica.com" target="_blank" class="btn-outline">🔗 Visit Live Site</a>
+    </div>
+  </section>
+
+  <!-- 10. 50 FOR 50 CAMPAIGN -->
+  <section id="campaign" class="section-padding bg-alt">
+    <div class="section-header">
+      <span style="color: var(--color-accent); font-weight: 700; letter-spacing: 2px; text-transform: uppercase; font-size: 0.8rem;">Corporate Social Investment</span>
+      <h2 style="margin-top: 10px;">"50 FOR 50" Digital Empowerment</h2>
+      <p>Zeustech is investing <strong>R500,000</strong> to help <strong>50 Cape Town small businesses</strong> get online with professional, enterprise-grade websites at <strong>70% below market rates</strong>.</p>
+    </div>
+    
+    <div class="campaign-grid">
+      <div class="campaign-feature">✓ Custom design (no templates)</div>
+      <div class="campaign-feature">✓ Mobile responsive + cross-browser tested</div>
+      <div class="campaign-feature">✓ SEO optimized structure</div>
+      <div class="campaign-feature">✓ Content management system (you edit)</div>
+      <div class="campaign-feature">✓ WhatsApp business integration</div>
+      <div class="campaign-feature">✓ 30 days free post-launch support</div>
+      <div class="campaign-feature">✓ Free hosting + domain for 1 year</div>
+      <div class="campaign-feature">✓ Google Analytics setup</div>
+    </div>
+
+    <div class="price-box">
+      <div style="font-size: 0.9rem; color: #666;">Normal Market Price</div>
+      <div class="price-old">R15,000 - R45,000</div>
+      <div style="font-size: 0.9rem; color: var(--color-accent); margin-top: 15px;">Campaign Price</div>
+      <div class="price-new">R2,500 - R12,000</div>
+      <div style="font-size: 0.85rem; color: #666;">Save R15,000+ | 70% OFF market rates</div>
+      <a href="https://wa.me/27739304732?text=Hi!%20I'm%20interested%20in%20the%2050%20FOR%2050%20website%20campaign." target="_blank" class="btn-primary" style="margin-top: 20px; display: inline-block;">🎯 APPLY FOR CAMPAIGN</a>
+    </div>
+
+    <div style="text-align: center; max-width: 400px; margin: 0 auto;">
+      <div style="display: flex; justify-content: space-between; font-size: 0.85rem; font-weight: 600; color: var(--color-primary);">
+        <span>🚨 ONLY 47 SLOTS REMAINING</span>
+        <span>3 claimed this week</span>
+      </div>
+      <div class="slot-bar"><div class="slot-fill"></div></div>
+      <p style="font-size: 0.8rem; color: #666;">Apply before 30 June 2025 to secure your slot</p>
+    </div>
+  </section>
+
+  <!-- 11. PROCESS & PRICING -->
+  <section id="process" class="section-padding bg-light">
+    <div class="section-header">
+      <h2>Our Proven Process</h2>
+      <p>Professional website development in 2-3 weeks — real work, real quality.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-step"><i class="fas fa-phone-alt"></i><h4>1. Discovery</h4><p>Understand your business and goals (Day 1)</p></div>
+      <div class="process-step"><i class="fas fa-paint-brush"></i><h4>2. Design</h4><p>Wireframes and mockup for approval (Day 2-3)</p></div>
+      <div class="process-step"><i class="fas fa-code"></i><h4>3. Development</h4><p>Custom website based on approved design (Day 4-7)</p></div>
+      <div class="process-step"><i class="fas fa-bug"></i><h4>4. QA Testing</h4><p>Test on all devices and browsers (Day 8)</p></div>
+      <div class="process-step"><i class="fas fa-rocket"></i><h4>5. Launch</h4><p>Deploy website + train you to update (Day 9)</p></div>
+      <div class="process-step"><i class="fas fa-heart"></i><h4>6. Support</h4><p>30 days free post-launch support (Day 10-40)</p></div>
+    </div>
+
+    <div style="margin-top: 60px; overflow-x: auto;">
+      <table class="pricing-table">
+        <thead>
+          <tr><th>Feature</th><th>Market Rate</th><th>Campaign Rate</th><th>Your Savings</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Discovery & Strategy</td><td>R2,500</td><td style="color: var(--color-accent);">Included</td><td style="color: #22c55e;">R2,500</td></tr>
+          <tr><td>UI/UX Design</td><td>R5,000</td><td style="color: var(--color-accent);">Included</td><td style="color: #22c55e;">R5,000</td></tr>
+          <tr><td>Custom Development</td><td>R8,000-25,000</td><td style="color: var(--color-accent);">Included</td><td style="color: #22c55e;">R8,000-25,000</td></tr>
+          <tr><td>QA Testing</td><td>R2,000</td><td style="color: var(--color-accent);">Included</td><td style="color: #22c55e;">R2,000</td></tr>
+          <tr><td>Hosting (1 year)</td><td>R1,200</td><td style="color: var(--color-accent);">Included</td><td style="color: #22c55e;">R1,200</td></tr>
+          <tr><td>Domain (1 year)</td><td>R200</td><td style="color: var(--color-accent);">Included</td><td style="color: #22c55e;">R200</td></tr>
+          <tr><td>Support (30 days)</td><td>R3,000</td><td style="color: var(--color-accent);">Included</td><td style="color: #22c55e;">R3,000</td></tr>
+          <tr><td>TOTAL MARKET VALUE</td><td>R21,900 - R38,900</td><td style="color: var(--color-accent);">CAMPAIGN PRICE</td><td style="color: #22c55e;">SAVE R15,000+</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- 12. TESTIMONIALS & FAQ -->
+  <section class="section-padding bg-alt">
+    <div style="max-width: 900px; margin: 0 auto;">
+      <div class="section-header"><h2>What Clients Say</h2></div>
+      <div class="testimonial-card">
+        <p>"Zeustech built our company website. The team was professional and delivered exactly what we asked for. Highly recommend!"</p>
+        <span>— Thabo N., Cape Town</span>
+      </div>
+      <div class="testimonial-card">
+        <p>"The 50-for-50 campaign made it possible for our small business to finally have a professional online presence."</p>
+        <span>— Sarah K., Woodstock</span>
+      </div>
+
+      <div class="section-header" style="margin-top: 60px;"><h2>Frequently Asked Questions</h2></div>
+      <div class="faq-item"><h4>Is this a template or AI website?</h4><p>No. Each website is custom designed and hand-coded by our development team.</p></div>
+      <div class="faq-item"><h4>How long does it take?</h4><p>2-3 weeks for complete design, development, and testing.</p></div>
+      <div class="faq-item"><h4>Do I own the website?</h4><p>Yes. Full ownership is transferred to you upon final payment.</p></div>
+    </div>
+  </section>
+
+  <!-- 13. LEADERSHIP TEAM (All 5 Members with New Images) -->
+  <section id="team" class="section-padding bg-light">
     <div class="section-header">
       <h2>Leadership Team</h2>
       <p>The visionary architects shaping Africa's innovation future.</p>
     </div>
     <div class="team-grid">
-      
-      <!-- CEO -->
       <div class="team-card">
-        <div class="team-photo">
-          <img src="assets/team/ceo-new.jpg" alt="Oghenetega Blondy Obebeduo">
-        </div>
+        <div class="team-photo"><img src="assets/team/ceo-new.jpg" alt="Oghenetega Blondy Obebeduo"></div>
         <div class="team-info">
           <h3>Oghenetega Blondy Obebeduo</h3>
           <span class="role">Founder & CEO</span>
           <p>A visionary technologist and serial entrepreneur driving ZeusTech's mission to protect, scale, and commercialize African innovations globally.</p>
         </div>
       </div>
-
-      <!-- Director & Operations Manager -->
       <div class="team-card">
-        <div class="team-photo">
-          <img src="assets/team/sisipho.jpg" alt="Sisipho Ngombane">
-        </div>
+        <div class="team-photo"><img src="assets/team/sisipho.jpg" alt="Sisipho Ngombane"></div>
         <div class="team-info">
           <h3>Sisipho Ngombane</h3>
           <span class="role">Director & Operations Manager</span>
           <p>A strategic leader and innovation advocate overseeing corporate direction, stakeholder engagement, and the commercialization of protected technologies.</p>
         </div>
       </div>
-
-      <!-- Legal Counsel -->
       <div class="team-card">
-        <div class="team-photo">
-          <img src="assets/team/cody.jpg" alt="Cody Haricombe">
-        </div>
+        <div class="team-photo"><img src="assets/team/cody.jpg" alt="Cody Haricombe"></div>
         <div class="team-info">
           <h3>Cody Haricombe</h3>
           <span class="role">Legal Counsel (IP & Corporate)</span>
           <p>Specializes in intellectual property law and corporate structuring, ensuring ZeusTech innovations are fully protected, compliant, and legally sound.</p>
         </div>
       </div>
-
-      <!-- CTO -->
       <div class="team-card">
-        <div class="team-photo">
-          <img src="assets/team/ogheneovo.jpg" alt="Ogheneovo Vicent Obebeduo">
-        </div>
+        <div class="team-photo"><img src="assets/team/ogheneovo.jpg" alt="Ogheneovo Vicent Obebeduo"></div>
         <div class="team-info">
           <h3>Ogheneovo Vicent Obebeduo</h3>
           <span class="role">Chief Technology Officer</span>
           <p>Leads all technical architecture, software development, and integration efforts, ensuring our platforms are scalable, secure, and cutting-edge.</p>
         </div>
       </div>
-
-      <!-- COO -->
       <div class="team-card">
-        <div class="team-photo">
-          <img src="assets/team/cyril.jpg" alt="Cyril Aiyewhenre Imhenrion">
-        </div>
+        <div class="team-photo"><img src="assets/team/cyril.jpg" alt="Cyril Aiyewhenre Imhenrion"></div>
         <div class="team-info">
           <h3>Cyril Aiyewhenre Imhenrion</h3>
           <span class="role">Chief Operations Officer</span>
           <p>Manages operational execution, strategic partnerships, and project rollouts, ensuring concepts move to market efficiently with maximum impact.</p>
         </div>
       </div>
-
     </div>
   </section>
-  <!-- VERIFICATION & COMPLIANCE -->
-  <section class="verification-section">
+
+  <!-- 14. VERIFICATION & COMPLIANCE -->
+  <section class="section-padding bg-alt">
     <div class="section-header">
       <h2>Verification & Compliance</h2>
       <p>Built on a foundation of legal protection, regulatory compliance, and industry expertise.</p>
     </div>
-    
     <div class="verification-grid">
       <div class="verification-box">
-        <h3><i class="fas fa-shield-alt"></i> Legal & Corporate</h3>
+        <h3><i class="fas fa-shield-alt" style="color: var(--color-accent);"></i> Legal & Corporate</h3>
         <ul>
           <li><strong>Legal Partner:</strong> Cody Haricombe Attorneys (Cape Town, SA) — IP Law & Corporate Structuring.</li>
           <li><strong>CIPC Registration:</strong> 2025/794787/07</li>
           <li><strong>SARS Tax Reference:</strong> Fully registered and tax compliant under ZeusTech (Pty) Ltd.</li>
         </ul>
       </div>
-
       <div class="verification-box">
-        <h3><i class="fas fa-microphone-alt"></i> Thought Leadership</h3>
+        <h3><i class="fas fa-microphone-alt" style="color: var(--color-accent);"></i> Thought Leadership</h3>
         <p>ZeusTech leadership regularly speaks on key industry topics, including:</p>
         <ul>
           <li>African Innovation Ownership & IP Protection</li>
@@ -790,32 +573,34 @@
     </div>
   </section>
 
-  <!-- PARTNERSHIPS & SUPPORTERS (LAST SECTION BEFORE FOOTER) -->
-  <section class="partnerships-section">
+  <!-- 15. PARTNERSHIPS & SUPPORTERS (Using Old Image) -->
+  <section class="section-padding bg-light" style="border-top: 1px solid rgba(10,14,39,0.05);">
     <div class="section-header">
       <h2>Partnerships & Ecosystem</h2>
       <p>Collaborating with forward-thinking organizations to scale African innovation.</p>
     </div>
     
+    <!-- Old Partnerships Image as a clean visual banner -->
+    <div style="max-width: 1100px; margin: 0 auto 40px auto; border-radius: 8px; overflow: hidden; height: 300px;">
+      <img src="assets/partnerships/innovationcollaboration.JPG" alt="Partnerships" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+
     <div class="partnerships-grid">
       <div class="partnership-box">
-        <h3><i class="fas fa-landmark"></i> Government</h3>
+        <h3><i class="fas fa-landmark" style="color: var(--color-accent);"></i> Government</h3>
         <p>TIA, CSIR, and Municipalities — digitizing public infrastructure and services.</p>
       </div>
-      
       <div class="partnership-box">
-        <h3><i class="fas fa-building"></i> Private Sector</h3>
+        <h3><i class="fas fa-building" style="color: var(--color-accent);"></i> Private Sector</h3>
         <p>Tech firms, telecoms, and energy companies integrating scalable, protected innovation.</p>
       </div>
-      
       <div class="partnership-box">
-        <h3><i class="fas fa-hands-helping"></i> NGOs & Community</h3>
+        <h3><i class="fas fa-hands-helping" style="color: var(--color-accent);"></i> NGOs & Community</h3>
         <p>Youth empowerment, STEM education, and financial inclusion initiatives.</p>
       </div>
     </div>
-
     <div style="text-align: center; margin-top: 50px;">
-      <h3 style="font-family: var(--font-classic); font-size: 1.5rem; color: var(--color-primary); margin-bottom: 10px;">Current Supporters</h3>
+      <h3 style="font-family: var(--font-classic); font-size: 1.3rem; color: var(--color-primary); margin-bottom: 15px;">Current Supporters</h3>
       <div class="supporters-list">
         <span class="supporter-tag">ElizzCollections</span>
         <span class="supporter-tag">Zizipho Collections</span>
@@ -824,12 +609,11 @@
       </div>
     </div>
   </section>
-  <!-- FOOTER -->
+
+  <!-- 16. FOOTER -->
   <footer class="footer-premium">
     <p>© 2025 ZeusTech (Pty) Ltd — CIPC Reg: 2025/794787/07</p>
-    <p style="margin-top: 15px;">
-      <a href="mailto:ceo@zeustechafrica.com">ceo@zeustechafrica.com</a>
-    </p>
+    <p style="margin-top: 15px;"><a href="mailto:ceo@zeustechafrica.com">ceo@zeustechafrica.com</a></p>
   </footer>
 
   <!-- SCROLL EFFECT SCRIPT -->
