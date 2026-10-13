@@ -10,7 +10,82 @@
   <!-- Premium Typography -->
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  
+      /* --- VERIFICATION & PARTNERSHIPS --- */
+    .verification-section, .partnerships-section {
+      padding: 80px 60px;
+    }
+    .verification-section { background: var(--color-bg-alt); }
+    .partnerships-section { background: var(--color-light); border-top: 1px solid rgba(10,14,39,0.05); }
+    
+    .verification-grid, .partnerships-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .verification-box, .partnership-box {
+      background: var(--color-light);
+      padding: 30px;
+      border-radius: 8px;
+      border-left: 4px solid var(--color-accent);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    }
+    .partnership-box {
+      background: var(--color-bg-alt);
+      border-left: none;
+      border-top: 4px solid var(--color-accent);
+      text-align: center;
+    }
+    .verification-box h3, .partnership-box h3 {
+      font-family: var(--font-classic);
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+      color: var(--color-primary);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      justify-content: center;
+    }
+    .verification-box h3 { justify-content: flex-start; }
+    
+    .verification-box p, .verification-box li, .partnership-box p, .partnership-box li {
+      font-size: 0.95rem;
+      color: var(--color-text);
+      line-height: 1.7;
+      margin-bottom: 8px;
+    }
+    .verification-box ul, .partnership-box ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      text-align: left;
+    }
+    .verification-box li::before, .partnership-box li::before {
+      content: "•";
+      color: var(--color-accent);
+      font-weight: bold;
+      margin-right: 8px;
+    }
+    .supporters-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .supporter-tag {
+      background: var(--color-light);
+      padding: 8px 20px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--color-primary);
+      border: 1px solid rgba(10,14,39,0.1);
+    }
+    @media (max-width: 968px) {
+      .verification-section, .partnerships-section { padding: 60px 30px; }
+    }
   <style>
     :root {
       --color-primary: #0A0E27;
@@ -686,7 +761,69 @@
 
     </div>
   </section>
+  <!-- VERIFICATION & COMPLIANCE -->
+  <section class="verification-section">
+    <div class="section-header">
+      <h2>Verification & Compliance</h2>
+      <p>Built on a foundation of legal protection, regulatory compliance, and industry expertise.</p>
+    </div>
+    
+    <div class="verification-grid">
+      <div class="verification-box">
+        <h3><i class="fas fa-shield-alt"></i> Legal & Corporate</h3>
+        <ul>
+          <li><strong>Legal Partner:</strong> Cody Haricombe Attorneys (Cape Town, SA) — IP Law & Corporate Structuring.</li>
+          <li><strong>CIPC Registration:</strong> 2025/794787/07</li>
+          <li><strong>SARS Tax Reference:</strong> Fully registered and tax compliant under ZeusTech (Pty) Ltd.</li>
+        </ul>
+      </div>
 
+      <div class="verification-box">
+        <h3><i class="fas fa-microphone-alt"></i> Thought Leadership</h3>
+        <p>ZeusTech leadership regularly speaks on key industry topics, including:</p>
+        <ul>
+          <li>African Innovation Ownership & IP Protection</li>
+          <li>Commercializing African Tech for Global Markets</li>
+          <li>Building Resilient African Innovation Ecosystems</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTNERSHIPS & SUPPORTERS (LAST SECTION BEFORE FOOTER) -->
+  <section class="partnerships-section">
+    <div class="section-header">
+      <h2>Partnerships & Ecosystem</h2>
+      <p>Collaborating with forward-thinking organizations to scale African innovation.</p>
+    </div>
+    
+    <div class="partnerships-grid">
+      <div class="partnership-box">
+        <h3><i class="fas fa-landmark"></i> Government</h3>
+        <p>TIA, CSIR, and Municipalities — digitizing public infrastructure and services.</p>
+      </div>
+      
+      <div class="partnership-box">
+        <h3><i class="fas fa-building"></i> Private Sector</h3>
+        <p>Tech firms, telecoms, and energy companies integrating scalable, protected innovation.</p>
+      </div>
+      
+      <div class="partnership-box">
+        <h3><i class="fas fa-hands-helping"></i> NGOs & Community</h3>
+        <p>Youth empowerment, STEM education, and financial inclusion initiatives.</p>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 50px;">
+      <h3 style="font-family: var(--font-classic); font-size: 1.5rem; color: var(--color-primary); margin-bottom: 10px;">Current Supporters</h3>
+      <div class="supporters-list">
+        <span class="supporter-tag">ElizzCollections</span>
+        <span class="supporter-tag">Zizipho Collections</span>
+        <span class="supporter-tag">Picknstyle</span>
+        <span class="supporter-tag">ANTHONY C ENTERPRISE Pty Ltd</span>
+      </div>
+    </div>
+  </section>
   <!-- FOOTER -->
   <footer class="footer-premium">
     <p>© 2025 ZeusTech (Pty) Ltd — CIPC Reg: 2025/794787/07</p>
